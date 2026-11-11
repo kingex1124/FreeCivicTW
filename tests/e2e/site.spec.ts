@@ -555,16 +555,6 @@ test('無JavaScript仍能閱讀完整文章、角色與題目', async ({ browser
   await page.locator('#miaoli-heads summary').click();
   await expect(page.locator('#miaoli-heads .office-list')).toContainText('交通工務處處長');
   await expect(page.locator('.questioning-table')).toContainText('立法委員');
-  const citizenOversight = page.getByRole('region', { name: '公民也能監督：認識公督盟' });
-  await expect(citizenOversight).toContainText('民間非營利社團');
-  await expect(citizenOversight).toContainText('不等於政府法定考核或司法裁判');
-  await expect(citizenOversight.getByRole('link', { name: '查看公督盟立委評鑑' })).toHaveAttribute(
-    'href',
-    'https://ccw.org.tw/assess',
-  );
-  await expect(
-    citizenOversight.getByRole('link', { name: '查立法院原始議事與公報' }),
-  ).toHaveAttribute('href', 'https://ppg.ly.gov.tw/ppg/');
   await page.locator('.agency-directory > summary').click();
   await expect(page.locator('.agency-entry')).toHaveCount(agencyData.entries.length);
   const transport = page

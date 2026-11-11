@@ -11,11 +11,16 @@ test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('fc-consent', 'rejected'));
 });
 
-test('司法頁能從政府頁籤進入，機關分類、搜尋、選擇與無結果可操作', async ({ page }) => {
+test('政府範圍只保留中央地方，司法可從主導覽進入並操作機關', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('government/');
-  await page.locator('.scope-switch').getByRole('link', { name: '司法與警檢' }).click();
+  await expect(page.locator('.scope-switch button')).toHaveText(['中央政府', '地方政府']);
+  await expect(page.locator('.scope-switch a')).toHaveCount(0);
+  await page
+    .getByRole('navigation', { name: '主要導覽' })
+    .getByRole('link', { name: '司法與警檢' })
+    .click();
   await expect(page).toHaveURL(/\/justice\/$/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText('誰來調查');
   await expect(

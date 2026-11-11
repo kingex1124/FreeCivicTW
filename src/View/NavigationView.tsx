@@ -20,6 +20,7 @@ export function NavigationView() {
     ['/learn/', '公民入門'],
     ['/government/', '政府怎麼運作'],
     ['/justice/', '司法與警檢'],
+    ['/oversight/', '民間監督'],
     ['/media-literacy/', '媒體識讀'],
     ['/about/', '關於本站'],
   ];

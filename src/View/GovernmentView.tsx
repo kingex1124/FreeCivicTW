@@ -63,7 +63,7 @@ export function RoleDetails({ role }: RoleDetailsProps) {
               ))}
             </ul>
             {(role.id === 'people' || role.id === 'legislator') && (
-              <Link className="text-link" href="/government/#citizen-oversight">
+              <Link className="text-link" href="/oversight/#org-ccw">
                 用公督盟資料練習檢視立委表現
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
@@ -137,7 +137,6 @@ export function GovernmentView({ data, agencies }: GovernmentProps) {
         <a href="#agency-directory">中央、地方機關在做什麼？</a>
         <a href="#appointments">誰任命部長、局處長？</a>
         <a href="#questioning">誰質詢、誰備詢？</a>
-        <a href="#citizen-oversight">公督盟與公民監督</a>
         <a href="#integrity">政風處、政風室在做什麼？</a>
       </nav>
       <div className="government-workspace">
@@ -165,7 +164,6 @@ export function GovernmentView({ data, agencies }: GovernmentProps) {
             >
               地方政府
             </button>
-            <Link href="/justice/">司法與警檢</Link>
           </div>
           <div className="role-selection-area" id="government-agency-picker" ref={roleAreaRef}>
             <div className="board-caption">
@@ -522,65 +520,6 @@ export function GovernmentView({ data, agencies }: GovernmentProps) {
             </article>
           ))}
         </div>
-      </section>
-      <section
-        className="section-space citizen-oversight"
-        id="citizen-oversight"
-        aria-labelledby="citizen-oversight-title"
-      >
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">從理解質詢，到持續追蹤</div>
-            <h2 id="citizen-oversight-title">{data.citizenOversight.title}</h2>
-            <p>{data.citizenOversight.intro}</p>
-          </div>
-        </div>
-        <div className="citizen-oversight-layout">
-          <article className="citizen-oversight-card">
-            <span className="pill">{data.citizenOversight.kind}</span>
-            <h3>{data.citizenOversight.name}</h3>
-            <p>{data.citizenOversight.description}</p>
-            <dl className="citizen-oversight-work">
-              {data.citizenOversight.work.map((item) => (
-                <div key={item.title}>
-                  <dt>{item.title}</dt>
-                  <dd>{item.text}</dd>
-                </div>
-              ))}
-            </dl>
-            <div className="citizen-oversight-links">
-              {data.citizenOversight.links.map((link) => (
-                <a
-                  key={link.url}
-                  className="text-link"
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.label}
-                  <ArrowRight size={16} aria-hidden="true" />
-                </a>
-              ))}
-            </div>
-          </article>
-          <div className="citizen-oversight-card citizen-oversight-guide">
-            <h3>第一次看評鑑，可以這樣讀</h3>
-            <ol>
-              {data.citizenOversight.readingSteps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-            <div className="citizen-oversight-boundaries">
-              <h4>分清民間評價與法定權限</h4>
-              <ul>
-                {data.citizenOversight.boundaries.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <SourceList sourceIds={data.citizenOversight.sourceIds} compact headingLevel="h3" />
       </section>
       <section className="section-space" id="integrity" aria-labelledby="integrity-title">
         <div className="section-heading">

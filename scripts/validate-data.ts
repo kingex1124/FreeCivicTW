@@ -7,12 +7,28 @@ import { MediaLiteracyService } from '@/Service/MediaLiteracyService';
 import { SourceService } from '@/Service/SourceService';
 import { getAgencyDirectory } from '@/Service/AgencyService';
 import { JusticeService } from '@/Service/JusticeService';
+import { OversightService } from '@/Service/OversightService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
 const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
+const oversight = OversightService.get();
+unique(oversight.organizations.map((organization) => organization.id));
+unique(oversight.groups.map((group) => group.id));
+for (const id of OversightService.sourceIds(oversight))
+  assert(sourceIds.has(id), `民間監督來源不存在：${id}`);
+for (const organization of oversight.organizations) {
+  assert(
+    oversight.groups.some((group) => group.id === organization.group),
+    `民間監督分類不存在：${organization.id}`,
+  );
+  assert.equal(new URL(organization.officialUrl).protocol, 'https:');
+  unique(organization.resources.map((resource) => resource.url));
+  for (const resource of organization.resources)
+    assert.equal(new URL(resource.url).protocol, 'https:');
+}
 const justice = JusticeService.get();
 unique(justice.groups.map((group) => group.id));
 unique(justice.entities.map((entity) => entity.id));
@@ -103,7 +119,6 @@ for (const content of [
   ...civic.questioning.venues,
   ...civic.questioning.notes,
   civic.integrityGuide,
-  civic.citizenOversight,
 ])
   for (const id of content.sourceIds) assert(sourceIds.has(id), `任命／質詢來源不存在：${id}`);
 const articles = LearningService.getArticles();

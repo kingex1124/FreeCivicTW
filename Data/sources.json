@@ -1590,9 +1590,455 @@
       "checkedAt": "2026-11-11",
       "scope": "議案、會議、議事日程、公報與議事錄等政府原始資料查詢。",
       "note": "各筆資料日期與進度依原始紀錄確認；單一提案或會議紀錄不等於法案已通過或政策已執行。"
+    },
+    {
+      "id": "local-civic-kcscw-charter",
+      "title": "高雄市公民監督公僕聯盟組織章程（114年2月15日修訂）",
+      "publisher": "社團法人高雄市公民監督公僕聯盟",
+      "url": "https://www.kcscw.org/2010/12/blog-post.html",
+      "publishedAt": "2025-02-15",
+      "checkedAt": "2026-11-11",
+      "scope": "第1至6條：正式名稱、非營利性質、任務、組織區域及會員資格。",
+      "note": "頁面路徑含2010，不代表目前章程修訂日期為2010；本頁標示2025修訂。"
+    },
+    {
+      "id": "local-civic-kcscw-history-2025",
+      "title": "高督盟大事記（114年度）",
+      "publisher": "社團法人高雄市公民監督公僕聯盟",
+      "url": "https://www.kcscw.org/2026/01/114.html",
+      "publishedAt": "2026-01-12",
+      "checkedAt": "2026-11-11",
+      "scope": "2025議員評鑑、論壇、公聽會、課程參訪、志工與地方制度倡議紀錄；含評鑑報告連結。",
+      "note": "全文可讀。這是2025工作紀錄，不能當成2026活動報名公告。"
+    },
+    {
+      "id": "local-civic-kcscw-assessment-2026",
+      "title": "115-10-7新聞稿：議會問政有進步，第7會期11人獲優評",
+      "publisher": "社團法人高雄市公民監督公僕聯盟",
+      "url": "https://www.kcscw.org/2026/10/115-10-7711.html",
+      "publishedAt": "2026-10-07",
+      "checkedAt": "2026-11-11",
+      "scope": "第四屆第7會期議員評鑑發布與議會整體觀察。",
+      "note": "官方搜尋擷取可讀；單篇直讀曾遭Google驗證。只用來確認近期成果，不移植個別議員評價或人名。"
+    },
+    {
+      "id": "local-civic-national-network",
+      "title": "全國議會監督聯盟",
+      "publisher": "社團法人公民監督國會聯盟",
+      "url": "https://ccw.org.tw/index.php/organization/national",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "公督盟與地方團體合作的聯盟介紹、團體名稱及議會透明度工作。",
+      "note": "此頁列有後來被公告解散的團體，不能單靠此名單認定每個地方組織現在均在運作；合作不代表分會。"
+    },
+    {
+      "id": "local-civic-sprout-home",
+      "title": "台南新芽官方網站",
+      "publisher": "社團法人臺南市台南新芽協會",
+      "url": "https://www.tnsprout.org/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "近期活動、2026文章、議會監督、公民培力及志工入口。",
+      "note": "首頁可讀；個別招募頁可用狀態另核對，不因有選單就保證開放報名。"
+    },
+    {
+      "id": "local-civic-sprout-about",
+      "title": "關於新芽",
+      "publisher": "社團法人臺南市台南新芽協會",
+      "url": "https://www.tnsprout.org/about/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "臺南在地公民團體定位、公共參與宗旨及官方聯絡方式。",
+      "note": "未引用現任人名、個人電話或不必要的任期資料。"
+    },
+    {
+      "id": "local-civic-sprout-observatory-intro",
+      "title": "台南市議會觀測站：議會監督專案介紹",
+      "publisher": "社團法人臺南市台南新芽協會",
+      "url": "https://www.tnsprout.org/activity-info/tcco/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "議會質詢條目化、看選區找議員搜質詢讀分析、議會監督推動歷程。",
+      "note": "可讀的專案方法介紹；不要把站上民間分析等同議會官方完整紀錄。"
+    },
+    {
+      "id": "local-civic-sprout-observatory",
+      "title": "台南市議會觀測站：第四屆",
+      "publisher": "台南新芽",
+      "url": "https://tcco.tnsprout.org/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "議員、選區、質詢及議會分析的公開檢索入口。",
+      "note": "首頁及第四屆介面可讀；每筆內容有自己的期間，不保證當日已含所有最新會議。"
+    },
+    {
+      "id": "local-civic-sprout-report-2025",
+      "title": "2025年度工作報告",
+      "publisher": "社團法人臺南市台南新芽協會",
+      "url": "https://www.tnsprout.org/about/annual-report/annual-report-2025ver/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2025地方財政營、審議民主工作坊與其他年度工作及成果入口。",
+      "note": "報告年度不等於網頁發布日期；頁面未明確顯示日期，publishedAt保留null。"
+    },
+    {
+      "id": "local-civic-sprout-registration",
+      "title": "社團法人臺南市台南新芽協會變更登記公告",
+      "publisher": "臺灣臺南地方法院／司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-144-1306567-7e57b-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "社團法人正式名稱及法人登記身分佐證。",
+      "note": "與團體官方網站標示交叉核對；不引用理監事姓名。"
+    },
+    {
+      "id": "local-civic-ccat-home",
+      "title": "好民文化行動協會官方網站",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2026活動及新聞、年度報告、歷史議會專案、活動與電子報入口。",
+      "note": "持續運作證據；網站明列議會觀察2021及請願2018至2022，應保留年份。"
+    },
+    {
+      "id": "local-civic-ccat-about",
+      "title": "理念宗旨",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/article/20",
+      "publishedAt": "2021-08-25",
+      "checkedAt": "2026-11-11",
+      "scope": "臺中扎根、公民社會與市政參與定位，歷年請願及教育活動。",
+      "note": "頁面內容包含後續年度補充；日期為頁面所列發布日期，不表示所有描述止於2021。"
+    },
+    {
+      "id": "local-civic-ccat-council-archive",
+      "title": "2021議會觀察",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/project/43",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "志工旁聽、記錄、彙整與分析議會質詢的歷史專案。",
+      "note": "此為歷史成果，不代表2026仍定期提供議員評鑑。"
+    },
+    {
+      "id": "local-civic-ccat-petition-archive",
+      "title": "好民請願運動",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/project/183",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2018至2022請願、議會小旅行、市政財政及監督工作坊紀錄。",
+      "note": "系列頁無單一明確發布日，保留null；不要把舊活動寫成當期招募。"
+    },
+    {
+      "id": "local-civic-ccat-report-2025",
+      "title": "好民文化行動協會2025年度工作報告書出爐",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/report/1547",
+      "publishedAt": "2026-04-21",
+      "checkedAt": "2026-11-11",
+      "scope": "2025年度成果公開發布頁與歷年報告入口。",
+      "note": "僅確認報告發布頁與連結可讀；未逐頁審核外部Google相簿中的報告影像。"
+    },
+    {
+      "id": "local-civic-ccat-advocacy-2026",
+      "title": "臺中州廳全面開放相關民團聯合倡議新聞稿",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/news/1603",
+      "publishedAt": "2026-10-15",
+      "checkedAt": "2026-11-11",
+      "scope": "近期持續參與市政文化公共空間討論的第一方紀錄。",
+      "note": "只確認團體有提出倡議，不把其對政府的批評直接當已獨立查證的事實，不引用候選人名。"
+    },
+    {
+      "id": "local-civic-ccat-volunteer",
+      "title": "一起成為青台派：好民成員招募",
+      "publisher": "社團法人臺中市好民文化行動協會",
+      "url": "https://www.ccat.tw/civicrm/event/info?id=154&reset=1",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "志工參與方式、活動協作及當期招募限制。",
+      "note": "頁面顯示長期志工暫停、另有專案招募；活動欄位與內文年份混用，正式頁面宜只導向官網確認當期安排，不複製固定截止日。"
+    },
+    {
+      "id": "local-civic-ccat-registration",
+      "title": "社團法人臺中市好民文化行動協會變更登記公告",
+      "publisher": "臺灣臺中地方法院／司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-144-1059555-bc5b1-1.html",
+      "publishedAt": "2024-03-25",
+      "checkedAt": "2026-11-11",
+      "scope": "社團法人正式名稱及身分佐證。",
+      "note": "法院公告可讀；只引用正式法人名稱，現任人事以後續登記為準。"
+    },
+    {
+      "id": "civil-tict-about",
+      "title": "台灣透明組織",
+      "publisher": "台灣透明組織協會",
+      "url": "https://www.tict.org.tw/introducing/about-tict/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "官方搜尋索引可讀；直接載入部分頁面逾時，不將未取得的法人登記細節補寫為已證實。",
+      "scope": "官方介紹列宣導、研究、結盟、監測及廉潔文化等宗旨與任務。"
+    },
+    {
+      "id": "civil-tict-events",
+      "title": "年度活動",
+      "publisher": "台灣透明組織協會",
+      "url": "https://www.tict.org.tw/events/annual-event/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "年度是活動涵蓋期間，非網頁發布日期。",
+      "scope": "列多年活動、CPI發布、研究與廉政教育參與紀錄。"
+    },
+    {
+      "id": "civil-tict-governance",
+      "title": "台灣透明組織協會第7屆第1次會員大會資料",
+      "publisher": "台灣透明組織協會",
+      "url": "https://www.tict.org.tw/wp-content/uploads/%E7%AC%AC7%E5%B1%86%E7%AC%AC1%E6%AC%A1%E6%9C%83%E5%93%A1%E5%A4%A7%E6%9C%83.pdf",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "舊治理文件只用於確認組織基礎，不將舊會員年齡或資格當成今日申請承諾。",
+      "scope": "文件載2021-11-20會員大會，附利益衝突政策與會員行為規範，列理監事、秘書處與會員制度。"
+    },
+    {
+      "id": "civil-ti-cpi-method",
+      "title": "Corruption Perceptions Index 2025",
+      "publisher": "Transparency International",
+      "url": "https://www.transparency.org/en/publications/corruption-perceptions-index-2025",
+      "publishedAt": "2026-02-10",
+      "checkedAt": "2026-11-11",
+      "note": "只用於說明指標範圍與界線，未列任何排名、黨派或人物評分。",
+      "scope": "CPI依專家及企業人士對公共部門貪腐的感知，彙整外部資料來源形成指標。"
+    },
+    {
+      "id": "civil-jrf-about",
+      "title": "關於我們與組織章程",
+      "publisher": "財團法人民間司法改革基金會",
+      "url": "https://www.jrf.org.tw/about",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "章程末載最近修訂2024-12-09；不是整個網頁發布日。",
+      "scope": "章程列完整法人名、宗旨與司法制度研究、監督評鑑及教育業務。"
+    },
+    {
+      "id": "civil-jrf-court-watch",
+      "title": "法庭觀察",
+      "publisher": "財團法人民間司法改革基金會",
+      "url": "https://www.jrf.org.tw/keywords/63",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "不引用個別案件，也不把所有庭審都說成公開。",
+      "scope": "說明法庭觀察、參與方式、招募與公開審理注意事項。"
+    },
+    {
+      "id": "civil-jrf-books",
+      "title": "出版品",
+      "publisher": "財團法人民間司法改革基金會",
+      "url": "https://www.jrf.org.tw/articles/books",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "持續列出工作財報及法律教育、權益手冊等出版物。"
+    },
+    {
+      "id": "civil-jrf-report-2025",
+      "title": "2025.01.01-12.31工作與財務報告",
+      "publisher": "財團法人民間司法改革基金會",
+      "url": "https://www.jrf.org.tw/articles/3174",
+      "publishedAt": "2026-04-08",
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "提供年度工作報告PDF與收支、財產、淨值、現金流及資產負債等公開資料連結。"
+    },
+    {
+      "id": "civil-tahr-charter",
+      "title": "台灣人權促進會章程",
+      "publisher": "社團法人台灣人權促進會",
+      "url": "https://www.tahr.org.tw/news/3291/",
+      "publishedAt": "2022-12-16",
+      "checkedAt": "2026-11-11",
+      "note": "章程版本為2022-10-23修正版；不把自述超越政黨直接轉為完全無偏見的事實。",
+      "scope": "中英章程標題列社團法人名稱；第1、2、6條列名稱、民間組織定位、協助及教育任務。"
+    },
+    {
+      "id": "civil-tahr-report-2025",
+      "title": "2025年度工作報告／財報",
+      "publisher": "社團法人台灣人權促進會",
+      "url": "https://www.tahr.org.tw/publication/3861/",
+      "publishedAt": "2026-04-02",
+      "checkedAt": "2026-11-11",
+      "note": "只摘要制度及工作類型，不轉載時事政治評語。",
+      "scope": "列數位人權、集會結社、居住等年度工作及報告。"
+    },
+    {
+      "id": "civil-tahr-publications",
+      "title": "出版品",
+      "publisher": "社團法人台灣人權促進會",
+      "url": "https://www.tahr.org.tw/publication/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "提供人權報告、年度報告、季刊與其他出版品入口。"
+    },
+    {
+      "id": "civil-tahr-actions",
+      "title": "參加活動",
+      "publisher": "社團法人台灣人權促進會",
+      "url": "https://www.tahr.org.tw/action/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "官方人權教育與活動入口，並連結電子報。"
+    },
+    {
+      "id": "civil-ocf-about",
+      "title": "關於我們",
+      "publisher": "財團法人開放文化基金會",
+      "url": "https://ocf.tw/about/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "說明非營利定位、2014成立、五大核心領域、監督倡議及社群支援策略，提供志工與實習入口。"
+    },
+    {
+      "id": "civil-ocf-bylaws",
+      "title": "財團法人開放文化基金會捐助章程",
+      "publisher": "財團法人開放文化基金會",
+      "url": "https://ocf.tw/about/bylaws.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "頁首載最近修訂2021-11-30；未另標網頁發布日期。",
+      "scope": "第1、2條列完整法人名及開放文化宗旨；後文列董事會及工作財務制度。"
+    },
+    {
+      "id": "civil-ocf-report-2025",
+      "title": "開放文化基金會2025成果報告",
+      "publisher": "財團法人開放文化基金會",
+      "url": "https://ocf.tw/p/2025/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "2025為報告涵蓋年度，不自行推定發布月日。",
+      "scope": "列開放科技、數位權利、公共程式、社群與資安等年度工作，並提供財務及PDF。"
+    },
+    {
+      "id": "civil-ocf-projects",
+      "title": "基金會專案",
+      "publisher": "財團法人開放文化基金會",
+      "url": "https://ocf.tw/p/ocf",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "頁面同時列已終止專案；網站介紹須辨別是否持續執行。",
+      "scope": "公開數位人權、開放政府、開放資料、公民社會資安與開源工具專案。"
+    },
+    {
+      "id": "civil-cet-registry",
+      "title": "財團法人地球公民基金會年度報核資料",
+      "publisher": "環境部",
+      "url": "https://epjp.moenv.gov.tw/FreePage/NationwideJDetail.aspx?JPID=217",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "官方資料更新日期2026-05-28；發布日期未標。",
+      "scope": "以完整法人名列年度工作計畫、工作報告、財務與監察人等報核資料。"
+    },
+    {
+      "id": "civil-cet-about",
+      "title": "關於我們",
+      "publisher": "財團法人地球公民基金會",
+      "url": "https://www.cet-taiwan.org/about",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "列環境宗旨、調查研究、法規政策改革、教育工作及各地據點。"
+    },
+    {
+      "id": "civil-cet-report-2025",
+      "title": "2025年度報告",
+      "publisher": "財團法人地球公民基金會",
+      "url": "https://www.cet-taiwan.org/2025annualreport",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "正文署2026年1月，未標具體發布日，故publishedAt保留null；不轉載影響力排名或政治評語。",
+      "scope": "公開政策監督、研究轉譯、環境教育與年度財務資料。"
+    },
+    {
+      "id": "civil-cet-publications",
+      "title": "出版品",
+      "publisher": "財團法人地球公民基金會",
+      "url": "https://www.cet-taiwan.org/publication",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "官網出版與教育資源入口，連結通訊、影音、教育手冊等。"
+    },
+    {
+      "id": "civil-cet-join",
+      "title": "加入我們",
+      "publisher": "財團法人地球公民基金會",
+      "url": "https://www.cet-taiwan.org/node/2266",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "僅導向當期公告，不承諾每項目前均有名額。",
+      "scope": "官方列志工、實習、電子報及參與資源。"
+    },
+    {
+      "id": "civil-tfc-organization",
+      "title": "組織架構",
+      "publisher": "財團法人新北市台灣事實查核教育基金會／台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/organizational-structure/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "明載2018創立中心、2020年底轉型為現行完整法人名，並列董事會及執行長制度。"
+    },
+    {
+      "id": "civil-tfc-guidelines",
+      "title": "查核準則及說明",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/fact-checking-guidelines-and-explanation/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "列選題標準、只查核可驗證事實而不查核意見、公開證據及更正機制。"
+    },
+    {
+      "id": "civil-tfc-annual",
+      "title": "年度報告",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/annual-report/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "",
+      "scope": "公開2018–2019至2025等歷年報告入口，列查核、研究及媒體素養工作。"
+    },
+    {
+      "id": "civil-tfc-corrections",
+      "title": "更正政策",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/correction-policy/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "不將中心自己的查核認定用語『裁定』誤解成法院裁定。",
+      "scope": "提供讀者反映、重查、更新及更正的官方制度。"
+    },
+    {
+      "id": "civil-tfc-education",
+      "title": "台灣媒體素養計畫",
+      "publisher": "台灣事實查核教育基金會／台灣事實查核中心",
+      "url": "https://education.tfc-taiwan.org.tw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "note": "部分歷史頁仍有舊合作機構頁尾；法人名稱以現行組織架構頁為準。",
+      "scope": "提供教材、查核與媒體素養知識及教育活動入口。"
     }
   ],
   "corrections": [
+    {
+      "date": "2026-11-11",
+      "previous": "公督盟說明位於政府頁，尚未整合其他全國與地方民間監督資源。",
+      "correction": "公督盟移至民間監督專頁，依主題整合團體工作、公開資料、參與方式及權限界線。地方歷史專案標示年份，民間評鑑與法定權力分開說明。",
+      "scope": "民間監督與公民資源／oversight/"
+    },
     {
       "date": "2026-11-11",
       "previous": "司法頁尚未完整區分羈押、具保與停止羈押、科技監控、抗告及交保後的風險。",
