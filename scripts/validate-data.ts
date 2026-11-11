@@ -20,6 +20,13 @@ unique(justice.criminalFlow.steps.map((step) => step.id));
 unique(justice.courtPaths.map((path) => path.id));
 unique(justice.reporting.channels.map((channel) => channel.id));
 unique(justice.faq.map((item) => item.id));
+for (const items of [
+  justice.custodyGuide.concepts,
+  justice.custodyGuide.conditions,
+  justice.custodyGuide.risk.consequences,
+  justice.custodyGuide.review.steps,
+])
+  unique(items.map((item) => item.id));
 for (const id of JusticeService.sourceIds(justice))
   assert(sourceIds.has(id), `司法與警檢來源不存在：${id}`);
 for (const entity of justice.entities) {

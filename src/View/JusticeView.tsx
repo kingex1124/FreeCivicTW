@@ -97,6 +97,7 @@ export function JusticeView({ data }: JusticeViewProps) {
         <a href="#justice-directory">機關與角色在做什麼？</a>
         <a href="#justice-courts">法院分哪些種類？</a>
         <a href="#justice-process">刑事案件怎麼走？</a>
+        <a href="#justice-custody">羈押、交保與抗告</a>
         <a href="#justice-reporting">報案與按鈴申告</a>
       </nav>
 
@@ -421,6 +422,70 @@ export function JusticeView({ data }: JusticeViewProps) {
             </ol>
           </details>
         </div>
+      </section>
+
+      <section
+        className="section-space justice-custody"
+        id="justice-custody"
+        aria-labelledby="justice-custody-title"
+      >
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">分清人身自由、程序保全與救濟</div>
+            <h2 id="justice-custody-title">{data.custodyGuide.title}</h2>
+            <p>{data.custodyGuide.intro}</p>
+          </div>
+        </div>
+        <div className="justice-reporting-terms justice-custody-concepts">
+          {data.custodyGuide.concepts.map((item) => (
+            <article key={item.id}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+            </article>
+          ))}
+        </div>
+        <div className="justice-custody-conditions">
+          <h3>交保後，可能還有哪些條件？</h3>
+          <p>{data.custodyGuide.conditionsIntro}</p>
+          <div className="justice-custody-disclosures">
+            {data.custodyGuide.conditions.map((item) => (
+              <details key={item.id} id={`custody-${item.id}`}>
+                <summary>{item.title}</summary>
+                <p>{item.text}</p>
+                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+              </details>
+            ))}
+          </div>
+        </div>
+        <article className="justice-prepare justice-custody-risk">
+          <h3>{data.custodyGuide.risk.title}</h3>
+          <p>{data.custodyGuide.risk.text}</p>
+          <JusticeSources sourceIds={data.custodyGuide.risk.sourceIds} headingLevel="h4" />
+          <div className="justice-custody-consequences">
+            {data.custodyGuide.risk.consequences.map((item) => (
+              <section key={item.id}>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+              </section>
+            ))}
+          </div>
+        </article>
+        <article className="justice-custody-review">
+          <h3>{data.custodyGuide.review.title}</h3>
+          <p>{data.custodyGuide.review.intro}</p>
+          <ol>
+            {data.custodyGuide.review.steps.map((item) => (
+              <li key={item.id}>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+              </li>
+            ))}
+          </ol>
+          <JusticeSources sourceIds={data.custodyGuide.review.sourceIds} headingLevel="h4" />
+        </article>
       </section>
 
       <section

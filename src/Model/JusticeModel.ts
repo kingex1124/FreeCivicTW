@@ -73,6 +73,25 @@ export const JusticeSchema = z.object({
       .min(4),
     notes: z.array(paragraph).min(1),
   }),
+  custodyGuide: z.object({
+    title: paragraph,
+    intro: paragraph,
+    concepts: z.array(sourcedText).min(3),
+    conditionsIntro: paragraph,
+    conditions: z.array(sourcedText).min(4),
+    risk: z.object({
+      title: paragraph,
+      text: paragraph,
+      consequences: z.array(sourcedText).min(2),
+      sourceIds: sources,
+    }),
+    review: z.object({
+      title: paragraph,
+      intro: paragraph,
+      steps: z.array(sourcedText).min(3),
+      sourceIds: sources,
+    }),
+  }),
   reporting: z.object({
     intro: paragraph,
     terms: z.array(sourcedText).min(3),

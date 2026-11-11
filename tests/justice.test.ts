@@ -70,3 +70,30 @@ test('刑事流程保留不起訴與緩起訴分支，按鈴並不強迫先準�
   assert(reporting.steps.some((step) => step.text.includes('應立即詢問並製作筆錄')));
   assert(data.faq.some((item) => item.text.includes('聲請准許提起自訴')));
 });
+
+test('交保專區保留依法釋放、非必備監控、殘餘風險與不同救濟的界線', () => {
+  const data = JusticeService.get();
+  const guide = data.custodyGuide;
+  assert.match(guide.intro, /將被告釋放/);
+  assert.match(guide.intro, /不代表案件結束、無罪或完全不受限制/);
+  assert.match(
+    guide.conditions.find((item) => item.id === 'monitoring')!.text,
+    /並非每件交保都必須配戴/,
+  );
+  assert.match(guide.risk.text, /無法保證零風險/);
+  assert.match(
+    guide.risk.consequences.find((item) => item.id === 'forfeiture')!.text,
+    /被告逃匿時/,
+  );
+  assert.match(
+    guide.review.steps.find((item) => item.id === 'execution')!.text,
+    /沒有停止執行的效力/,
+  );
+  assert.match(guide.review.steps.find((item) => item.id === 'identify')!.text, /準抗告/);
+  assert(JusticeService.sourceIds(data).includes('justice-custody-monitoring-rules'));
+  assert(
+    JusticeService.filter(data, { group: 'all', query: '交保' }).some(
+      (entity) => entity.id === 'judges',
+    ),
+  );
+});

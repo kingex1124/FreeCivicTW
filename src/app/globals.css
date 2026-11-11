@@ -5386,6 +5386,67 @@ html[data-motion='reduced'] *:after {
   padding-top: 24px;
   margin-top: 46px;
 }
+.justice-custody-conditions > h3,
+.justice-custody-review > h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.justice-custody-conditions > p,
+.justice-custody-review > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.justice-custody-disclosures,
+.justice-custody-consequences {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.justice-custody-disclosures > details {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.justice-custody-disclosures > details > summary {
+  padding: 18px 20px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.justice-custody-disclosures > details > p,
+.justice-custody-disclosures > details > .justice-sources {
+  margin: 0;
+  padding: 0 20px 18px;
+  font-size: 14px;
+}
+.justice-custody-consequences {
+  margin-top: 22px;
+}
+.justice-custody-consequences > section {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--white);
+}
+.justice-custody-consequences h4,
+.justice-custody-review li > h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.justice-custody-review {
+  margin-top: 26px;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.justice-custody-review > ol > li {
+  padding: 12px 0;
+  font-size: 14px;
+}
 @media (max-width: 1000px) {
   .justice-workspace {
     grid-template-columns: 1fr;
@@ -5413,6 +5474,8 @@ html[data-motion='reduced'] *:after {
   .justice-reporting-terms,
   .justice-court-paths,
   .justice-reporting-channels,
+  .justice-custody-disclosures,
+  .justice-custody-consequences,
   .justice-outcomes {
     grid-template-columns: 1fr;
   }

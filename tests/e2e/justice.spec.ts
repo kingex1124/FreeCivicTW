@@ -138,6 +138,11 @@ test('司法完整內容不依賴JavaScript，含靜態metadata、引用與sitem
       justice.criminalFlow.steps.length,
     );
     await expect(page.locator('.justice-full-flow')).toContainText('緩起訴');
+    await expect(page.locator('#justice-custody')).toContainText(
+      '具保停止羈押在法律上會將被告釋放',
+    );
+    await page.locator('#custody-monitoring > summary').click();
+    await expect(page.locator('#custody-monitoring')).toContainText('並非每件交保都必須配戴');
     const canonicalBase = process.env.TEST_CANONICAL_ORIGIN
       ? process.env.TEST_CANONICAL_ORIGIN + (process.env.NEXT_PUBLIC_BASE_PATH ?? '') + '/'
       : baseURL;
@@ -155,5 +160,47 @@ test('司法完整內容不依賴JavaScript，含靜態metadata、引用與sitem
     );
   } finally {
     await context.close();
+  }
+});
+
+test('羈押交保抗告專區可用鍵盤展開監控與法源，手機不溢出', async ({ page }) => {
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto('justice/');
+    await page
+      .getByRole('navigation', { name: '司法教學段落' })
+      .getByRole('link', { name: '羈押、交保與抗告' })
+      .click();
+    const guide = page.locator('#justice-custody');
+    await expect(guide.getByRole('heading', { level: 2 })).toBeInViewport();
+    await expect(guide.locator('.justice-custody-concepts article')).toHaveCount(3);
+    await expect(guide).toContainText('不代表案件結束、無罪或完全不受限制');
+    const monitoring = page.locator('#custody-monitoring');
+    await monitoring.locator(':scope > summary').focus();
+    await monitoring.locator(':scope > summary').press('Enter');
+    await expect(monitoring).toHaveAttribute('open', '');
+    await expect(monitoring.locator(':scope > p')).toContainText('並非每件交保都必須配戴');
+    await monitoring.locator(':scope > .justice-sources > summary').click();
+    await expect(
+      monitoring.getByRole('link', { name: '刑事被告科技設備監控執行辦法', exact: true }),
+    ).toHaveAttribute('href', 'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010035');
+    await expect(guide.locator('.justice-custody-risk')).toContainText('無法保證零風險');
+    await expect(guide.locator('.justice-custody-review')).toContainText('沒有停止執行的效力');
+    const results = await new AxeBuilder({ page })
+      .include('#justice-custody')
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
+      .analyze();
+    expect(
+      results.violations.map((item) => ({
+        id: item.id,
+        targets: item.nodes.map((node) => node.target),
+      })),
+    ).toEqual([]);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    await mkdir('.qa', { recursive: true });
+    await guide.getByRole('heading', { level: 2 }).scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `.qa/justice-custody-${width}.png` });
   }
 });
