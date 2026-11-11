@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "contentStatus": "draft",
+  "updatedAt": "2026-11-10",
+  "name": "FreeCivicTW",
+  "locale": "zh-Hant",
+  "tagline": "從生活出發，看懂台灣民主與每一張選票。",
+  "description": "以白話教學、互動圖解與媒體識讀練習，幫助沒有公民基礎的人理解政府分工、選舉職務與查證方法。",
+  "mission": "讓沒有公民知識基礎的人，也能從生活問題出發，看懂台灣民主如何運作、自己選的是誰，以及遇到訊息時如何查證。",
+  "developerIntent": {
+    "title": "為什麼做這個網站",
+    "paragraphs": [
+      "我希望做一個讓任何人都能看懂的公民網站。即使沒有學過公民，也能知道台灣的政府如何運作、選票選出了哪些人，以及這些人能做什麼、需要接受誰的監督。",
+      "我也希望大家面對新聞、短影音與社群訊息時，可以多停一下、多問一句、多找一份來源。理解民主與學會查證，可以從生活中的小問題開始。這是我開發這個網站的初衷，也希望它能幫助更多人。"
+    ]
+  },
+  "contact": {
+    "email": "amaochen0110@gmail.com",
+    "label": "內容更正、功能建議與合作聯繫",
+    "mailto": "mailto:amaochen0110@gmail.com",
+    "correctionSubject": "FreeCivicTW 內容更正建議",
+    "correctionFields": ["頁面網址", "疑似問題", "建議修正與參考來源"]
+  },
+  "primaryEntries": [
+    {"id": "quick-start", "label": "先花 5 分鐘認識民主", "href": "/learn/", "learningPathId": "quick-start"},
+    {"id": "my-ballots", "label": "查我能選哪些職務", "href": "/my-ballots/", "learningPathId": "my-ballots"},
+    {"id": "media-practice", "label": "練習看懂一則訊息", "href": "/media-literacy/", "learningPathId": "media-practice"}
+  ],
+  "editorialPrinciples": [
+    "先用白話說明，再提供正式名稱與來源。",
+    "相同的查證標準適用於不同政黨、人物與主張。",
+    "區分事實、制度說明、虛構情境與價值討論。",
+    "保留適用條件、例外、來源與查核日期。",
+    "證據不足時，可以暫不下結論或轉傳。",
+    "互動與動畫之外，仍提供完整文字說明。"
+  ],
+  "notices": {
+    "educationalPurpose": "本站提供公民教育與制度說明；官方選務資訊請以主管機關公布資料為準。",
+    "ballotLookup": "這是依所選戶籍地整理的選舉職務類型，不是當次選舉的個人可領票認證。",
+    "fictionalScenario": "虛構教學情境，地名、素材與數字不對應真實事件。",
+    "quickStartDuration": "5 分鐘是快速摘要的體驗目標，完整文章可依自己的步調閱讀。"
+  }
+}
