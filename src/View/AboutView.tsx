@@ -68,7 +68,7 @@ export function PrivacyView() {
         </p>
         <h2>分析由你決定</h2>
         <p>
-          本站只有在啟用分析且你明確同意後，才載入 Google Analytics
+          本站只有在啟用分析且你明確同意後，才透過 Google Tag 載入 Google Analytics
           4。拒絕或撤回同意，仍可閱讀、查詢及練習。你可以隨時使用下方按鈕更改設定。
         </p>
         <ConsentSettingsButton />
@@ -103,7 +103,7 @@ export function PrivacyView() {
           </a>
         </p>
         <p>
-          此頁更新：2026-11-10。若有疑問，請聯絡{' '}
+          此頁更新：2026-11-11。若有疑問，請聯絡{' '}
           <a href={SiteService.get().contact.mailto}>{SiteService.get().contact.email}</a>。
         </p>
       </article>

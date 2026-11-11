@@ -1,8 +1,8 @@
-import { sendGAEvent } from '@next/third-parties/google';
 import { SiteConfig } from '@/Config/SiteConfig';
 import type { AnalyticsEvent, AnalyticsParameters, Consent } from '@/Model/AnalyticsModel';
 let inMemoryConsent: Consent | undefined;
 let previousLocation = '';
+let initialized = false;
 export const AnalyticsRepository = {
   readConsent(): Consent {
     if (inMemoryConsent) return inMemoryConsent;
@@ -46,6 +46,9 @@ export const AnalyticsRepository = {
   },
   prepare() {
     window.dataLayer ??= [];
+    window.gtag ??= function () {
+      window.dataLayer!.push(arguments);
+    };
     const locationSafe = location.origin + location.pathname;
     previousLocation = locationSafe;
     let referrerSafe = '';
@@ -55,34 +58,33 @@ export const AnalyticsRepository = {
     } catch {
       /* Direct visit. */
     }
-    window.dataLayer.push([
-      'set',
-      {
-        page_location: locationSafe,
-        page_referrer: referrerSafe,
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false,
-      },
-    ]);
-    window.dataLayer.push([
-      'consent',
-      'default',
-      {
-        analytics_storage: 'granted',
+    if (!initialized) {
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
         ad_storage: 'denied',
         ad_user_data: 'denied',
         ad_personalization: 'denied',
-      },
-    ]);
+      });
+    }
+    window.gtag('set', {
+      page_location: locationSafe,
+      page_referrer: referrerSafe,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+    });
+    AnalyticsRepository.applyConsent('accepted');
+    if (!initialized) {
+      window.gtag('js', new Date());
+      initialized = true;
+    }
   },
   routeChanged() {
     const current = location.origin + location.pathname;
     if (current === previousLocation) return;
-    window.dataLayer ??= [];
-    window.dataLayer.push(['set', { page_location: current, page_referrer: previousLocation }]);
+    window.gtag?.('set', { page_location: current, page_referrer: previousLocation });
     previousLocation = current;
   },
   send(event: AnalyticsEvent, parameters: AnalyticsParameters) {
-    sendGAEvent('event', event, parameters);
+    window.gtag?.('event', event, parameters);
   },
 };

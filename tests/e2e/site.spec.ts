@@ -5,6 +5,18 @@ import sourceData from '../../Data/sources.json';
 import civicData from '../../Data/civic-roles.json';
 import agencyData from '../../Data/government-agencies.json';
 
+test.beforeEach(async ({ page }, testInfo) => {
+  // 即使驗證正式建置，也不將自動化測試流量送到 Google。
+  await page.route(
+    /^https:\/\/([^/]+\.)?(googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//,
+    (route) => route.abort(),
+  );
+  // 一般功能使用拒絕統計的情境；同意流程另以假 ID 完整驗證。
+  if (!testInfo.title.includes('分析SDK')) {
+    await page.addInitScript(() => localStorage.setItem('fc-consent', 'rejected'));
+  }
+});
+
 test('首頁可閱讀並連到三條路徑，沒有瀏覽器執行錯誤', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
@@ -16,6 +28,54 @@ test('首頁可閱讀並連到三條路徑，沒有瀏覽器執行錯誤', async
   await page.locator('.path-vote').click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('我的一張票');
   expect(errors).toEqual([]);
+});
+
+test('首頁房子卡片能展開中央地方說明、切換與收起，手機及鍵盤可操作', async ({ page }) => {
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('./');
+    const executive = page.getByRole('button', { name: /行政團隊.*把事情做好/ });
+    const representative = page.getByRole('button', { name: /民意代表.*把權力看好/ });
+    const details = page.getByRole('region', { name: '誰負責把事情做好？' });
+    await expect(page.locator('#preview-role-details')).toBeHidden();
+    await executive.click();
+    await expect(executive).toHaveAttribute('aria-expanded', 'true');
+    await expect(details).toBeVisible();
+    await expect(details.getByRole('heading', { level: 3 })).toHaveText([
+      '各部部長',
+      '直轄市長／縣長／市長',
+    ]);
+    await expect(details).toContainText('中央');
+    await expect(details).toContainText('地方');
+    await representative.focus();
+    await representative.press('Enter');
+    const oversight = page.getByRole('region', { name: '誰負責把權力看好？' });
+    await expect(oversight).toBeVisible();
+    await expect(oversight.getByRole('heading', { level: 3 })).toHaveText([
+      '立法委員',
+      '直轄市議員／縣市議員',
+    ]);
+    await expect(executive).toHaveAttribute('aria-expanded', 'false');
+    await expect(representative).toHaveAttribute('aria-expanded', 'true');
+    await page.getByRole('button', { name: '收起分工說明' }).click();
+    await expect(page.locator('#preview-role-details')).toBeHidden();
+    await expect(representative).toBeFocused();
+    await representative.press('Space');
+    await expect(oversight).toBeVisible();
+    await page.getByRole('button', { name: '01誰負責做事？' }).click();
+    await expect(details).toBeVisible();
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
+      .analyze();
+    expect(
+      results.violations.map((v) => ({ id: v.id, nodes: v.nodes.map((n) => n.target) })),
+    ).toEqual([]);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    await details.getByRole('link', { name: '打開完整政府關係圖' }).click();
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('把角色連起來');
+  }
 });
 
 test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async ({ page }) => {
@@ -37,6 +97,7 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
   expect(requests).toEqual([]);
   await page.getByRole('button', { name: '允許使用統計', exact: true }).click();
   await expect.poll(() => requests.length).toBe(1);
+  expect(requests[0]).toBe('https://www.googletagmanager.com/gtm.js?id=GTM-TEST00001');
   await page
     .getByRole('navigation', { name: '主要導覽' })
     .getByRole('link', { name: '我的選票指南' })
@@ -50,12 +111,39 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
   expect(events.some((command) => command[1] === 'ballot_lookup_complete')).toBe(true);
   expect(JSON.stringify(commands)).not.toContain('苗栗');
   expect(JSON.stringify(commands)).not.toContain('mountain');
-  expect(commands.filter((command) => command[0] === 'config')).toHaveLength(1);
+  expect(commands.filter((command) => command[0] === 'js')).toHaveLength(1);
+  expect(commands.filter((command) => command[0] === 'config')).toHaveLength(0);
+  expect(commands[0]).toEqual([
+    'consent',
+    'default',
+    {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    },
+  ]);
   await page.getByRole('link', { name: '隱私與分析設定', exact: true }).click();
   await page.getByRole('button', { name: '管理分析同意' }).click();
   await page.getByRole('button', { name: '拒絕／撤回' }).click();
   expect(await page.evaluate(() => Reflect.get(window, 'ga-disable-G-TEST00001'))).toBe(true);
   expect(await page.evaluate(() => document.cookie)).not.toContain('_ga=');
+  expect(requests).toHaveLength(1);
+  const before = await page.evaluate(() => (window.dataLayer ?? []).length);
+  await page
+    .getByRole('navigation', { name: '主要導覽' })
+    .getByRole('link', { name: '我的選票指南' })
+    .click();
+  await page.getByRole('button', { name: '先看頭份市範例' }).click();
+  expect(await page.evaluate(() => (window.dataLayer ?? []).length)).toBe(before);
+  await page.getByRole('link', { name: '隱私與分析設定', exact: true }).click();
+  await page.getByRole('button', { name: '管理分析同意' }).click();
+  await page.getByRole('button', { name: '允許使用統計', exact: true }).click();
+  expect(await page.evaluate(() => Reflect.get(window, 'ga-disable-G-TEST00001'))).toBe(false);
+  const reinitialized = await page.evaluate(() =>
+    (window.dataLayer ?? []).map((item) => Array.from(item as Iterable<unknown>)),
+  );
+  expect(reinitialized.filter((command) => command[0] === 'js')).toHaveLength(1);
   expect(requests).toHaveLength(1);
 });
 

@@ -20,5 +20,6 @@ export const SiteConfig = {
   origin: parsed.origin,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
   gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '',
+  gtmId: process.env.NEXT_PUBLIC_GTM_CONTAINER_ID ?? '',
   analyticsEnabled: process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true',
 };

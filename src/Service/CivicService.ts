@@ -1,5 +1,5 @@
 import { CivicRepository } from '@/Repository/CivicRepository';
-import type { CivicData, Role, RelationFilter } from '@/Model/CivicModel';
+import type { CivicData, Role, RelationFilter, CivicPreviewProps } from '@/Model/CivicModel';
 const rolesForScope = (data: CivicData, scope: 'central' | 'local') =>
   data.roles.filter((r) =>
     r.scopes
@@ -11,6 +11,19 @@ const rolesForScope = (data: CivicData, scope: 'central' | 'local') =>
 export const CivicService = {
   get: CivicRepository.get,
   getRole: (id: string) => CivicRepository.get().roles.find((r) => r.id === id),
+  getPreviewGroups(): CivicPreviewProps['groups'] {
+    const roles = CivicRepository.get().roles;
+    const pick = (id: string) => {
+      const role = roles.find((r) => r.id === id);
+      if (!role) throw new Error(`首頁分工示意缺少角色：${id}`);
+      const { name, summary, level } = role;
+      return { id, name, summary, level };
+    };
+    return {
+      execute: ['ministers', 'county-chief'].map(pick),
+      oversee: ['legislator', 'county-council'].map(pick),
+    };
+  },
   related: (
     data: CivicData,
     id: string,

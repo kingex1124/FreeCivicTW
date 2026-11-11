@@ -1,5 +1,5 @@
 'use client';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -30,14 +30,13 @@ export function AnalyticsView() {
   }, []);
   function choose(value: Consent) {
     AnalyticsService.setConsent(value);
-    if (value === 'accepted') AnalyticsService.prepare();
     setConsent(value);
     setShow(false);
   }
   return (
     <>
       {ready && consent === 'accepted' && AnalyticsService.configured() && (
-        <GoogleAnalytics gaId={AnalyticsService.gaId()} />
+        <Script id="google-tag" src={AnalyticsService.scriptUrl()} strategy="afterInteractive" />
       )}{' '}
       {show && (
         <section className="consent-panel" aria-label="使用統計設定">

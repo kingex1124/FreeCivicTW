@@ -3,6 +3,7 @@ import { ArrowUpRight, ArrowRight, BookOpen, ScanSearch, Vote, Check, Sprout } f
 import { LearningService } from '@/Service/LearningService';
 import { SiteService } from '@/Service/SiteService';
 import { RegionService } from '@/Service/RegionService';
+import { CivicService } from '@/Service/CivicService';
 import { ActionLink, SectionHeading } from './SiteView';
 import { CivicPreviewView } from './CivicPreviewView';
 import { LearningPathLink } from './TrackingView';
@@ -48,7 +49,7 @@ export function HomeView() {
             </span>
           </div>
         </div>
-        <CivicPreviewView />
+        <CivicPreviewView groups={CivicService.getPreviewGroups()} />
       </section>
       <div className="guide-strip">
         <div className="container">

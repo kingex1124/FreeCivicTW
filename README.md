@@ -100,22 +100,26 @@ npm run validate:data
 
 ## GA4
 
-預設關閉。欲啟用正式分析，在 GitHub Repository **Settings → Secrets and variables → Actions → Variables** 設定：
+GitHub Pages 建置已預設啟用使用者提供的 Google Tag `GTM-5WLN6LNC`，對應 GA4 評估 ID 為 `G-M72DVMGDDH`。開發環境及 `build:preview` 仍預設關閉，不混入本機測試流量。若要覆寫或停用，可在 GitHub Repository **Settings → Secrets and variables → Actions → Variables** 設定：
 
-- `ANALYTICS_ENABLED`：`true`
-- `GA_MEASUREMENT_ID`：自己的 `G-...` Measurement ID
+- `ANALYTICS_ENABLED`：`true` 或 `false`（未設定時正式部署為 `true`）
+- `GTM_CONTAINER_ID`：`GTM-...`（預設 `GTM-5WLN6LNC`）
+- `GA_MEASUREMENT_ID`：`G-...`（預設 `G-M72DVMGDDH`，供撤回時停用該 GA 資源）
 
-GA ID 為公開設定，不是 API Secret。網站只有在啟用且讀者明確同意後才掛載 Google Analytics；拒絕／撤回後停用後續收集並處理分析 Cookie。隱私頁可重新開啟設定。
+這些 ID 為公開設定，不是 API Secret。網站只有在啟用且讀者明確同意後才初始化 `dataLayer`、`gtag('js', new Date())` 並載入 `gtm.js?id=GTM-5WLN6LNC`；拒絕／撤回後停用後續 GA 收集並處理分析 Cookie。隱私頁可重新開啟設定。
+
+採用 [Google 最新安裝方式](https://developers.google.com/tag-platform/gtagjs)，由 Google Tag Manager 管理目的地。程式不再另外掛載 `gtag/js` 或呼叫 `gtag('config')`，避免重複計數。請在 Google Tag Manager 確認該容器已將 `G-M72DVMGDDH` 設為 Google Analytics 目的地並發布；若容器已有設定，不必再建立另一組相同標記。這部分屬於 Google 帳戶設定，無法由本機程式確認或代為發布。
 
 在 GA4 網頁資料串流開啟 Enhanced Measurement 的頁面載入與 browser history 換頁追蹤；本站不再手動發送 `page_view`，避免雙重計數。請先以自己的測試資源檢查首次進站、Next.js 換頁與上一頁／下一頁。
 
-自訂事件經 Service 白名單，僅使用公開內容 ID 或必要步驟，不含戶籍、身分情境、搜尋原文、答題答案或來信內容。不在網址保存查詢條件。沒有提供真實 GA 資源，因此尚未驗證正式 GA 後台收數。
+自訂事件經 Service 白名單，僅使用公開內容 ID 或必要步驟，不含戶籍、身分情境、搜尋原文、答題答案或來信內容。不在網址保存查詢條件。已填入使用者提供的正式 ID；正式後台收數仍需部署後允許使用統計，並以 Tag Assistant／GA4 即時報表確認。
 
 隔離的 SDK 同意／撤回測試已使用假 ID 與攔截的第三方 script 執行，不送往真實 GA。可在 PowerShell 重現：
 
 ```powershell
 $env:NEXT_PUBLIC_SITE_ORIGIN = 'http://localhost:4173'
 $env:NEXT_PUBLIC_ANALYTICS_ENABLED = 'true'
+$env:NEXT_PUBLIC_GTM_CONTAINER_ID = 'GTM-TEST00001'
 $env:NEXT_PUBLIC_GA_MEASUREMENT_ID = 'G-TEST00001'
 $env:TEST_ANALYTICS = 'true'
 npm run build
