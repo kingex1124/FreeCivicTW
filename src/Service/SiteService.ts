@@ -8,8 +8,9 @@ export const SiteService = {
       ? pathname.slice(SiteConfig.basePath.length)
       : pathname;
   },
-  readMotion: SiteRepository.readMotion,
-  saveMotion: SiteRepository.saveMotion,
+  readTheme: SiteRepository.readTheme,
+  saveTheme: SiteRepository.saveTheme,
+  themeInitializationScript: SiteRepository.themeInitializationScript,
   asset(path: string) {
     return `${SiteConfig.basePath}${path.startsWith('/') ? path : `/${path}`}`;
   },

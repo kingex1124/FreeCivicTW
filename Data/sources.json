@@ -2030,6 +2030,76 @@
       "checkedAt": "2026-11-11",
       "note": "部分歷史頁仍有舊合作機構頁尾；法人名稱以現行組織架構頁為準。",
       "scope": "提供教材、查核與媒體素養知識及教育活動入口。"
+    },
+    {
+      "id": "civil-edu-about",
+      "title": "經濟民主連合簡介",
+      "publisher": "社團法人台灣經濟民主連合",
+      "url": "https://www.edunion.org.tw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "組織現行自我定位、三個智庫中心與公民參與架構。",
+      "note": "首頁會更新；用於核實組織自述，不用來證明其所有政策評論或成果因果關係。"
+    },
+    {
+      "id": "civil-edu-registration",
+      "title": "公告臺灣臺北地方法院111年度法登他字第1898號社團法人經濟民主連合變更登記",
+      "publisher": "臺灣臺北地方法院／司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-144-779222-28fd0-1.html",
+      "publishedAt": "2022-12-16",
+      "checkedAt": "2026-11-11",
+      "scope": "變更登記事項第一項：法人名稱為社團法人台灣經濟民主連合；另記載宗旨及章程變更。",
+      "note": "發文日期2022-12-15、頁面發布及更新日期2022-12-16。此處僅核實名稱與法人基礎，不列當年理監事姓名，也不當作現行人事名冊。"
+    },
+    {
+      "id": "civil-edu-report-2025",
+      "title": "台灣經濟民主連合2025年工作報告",
+      "publisher": "社團法人台灣經濟民主連合",
+      "url": "https://www.edunion.org.tw/年度報告與工作計畫/台灣經濟民主連合2025年工作報告/",
+      "publishedAt": "2026-06-26",
+      "checkedAt": "2026-11-11",
+      "scope": "國會觀察、經濟安全、薪資及社會保障等持續工作與組織分工自述。",
+      "note": "頁面顯示發布2026-06-26、更新2026-06-30；報告年度與網頁日期不同，內文另涉及後續活動。組織的倡議及法律主張應與官方法規、原始資料及有效裁判分開閱讀。"
+    },
+    {
+      "id": "civil-edu-parliament",
+      "title": "國會觀察電子報",
+      "publisher": "社團法人台灣經濟民主連合／台灣公民陣線秘書處",
+      "url": "https://www.edunion.org.tw/cw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "跨會期電子報公開入口、法案審議進度整理與五個燈級的組織自訂方法。",
+      "note": "頁面無整體發布日期；各期有各自日期。燈級非政府認定、司法裁判或違憲程度評分；取用時須確認當期並對照立法院原始資料。"
+    },
+    {
+      "id": "civil-edu-research",
+      "title": "智庫報告",
+      "publisher": "社團法人台灣經濟民主連合",
+      "url": "https://www.edunion.org.tw/category/thinktankreport/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "公開研究與政策分析分類入口，可依文章日期與個別引用查閱。",
+      "note": "分類頁會更新，不以其中一篇日期作整個資源發布日；研究與倡議不能直接替代官方法規、統計或裁判。"
+    },
+    {
+      "id": "civil-edu-events",
+      "title": "活動資訊",
+      "publisher": "社團法人台灣經濟民主連合",
+      "url": "https://www.edunion.org.tw/category/events/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "公開講座、討論、公民參與及志工交流公告入口。",
+      "note": "含歷史活動；不是所有活動仍可報名，也不承諾持續開放志工招募。官網『志工團』導向的分類亦含歷史紀錄，故加入方式應先由現行公告或窗口確認。"
+    },
+    {
+      "id": "civil-edu-contact",
+      "title": "聯絡我們",
+      "publisher": "社團法人台灣經濟民主連合",
+      "url": "https://www.edunion.org.tw/contact-us/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "組織聯絡入口及現行法人名稱，可供詢問參與協作。",
+      "note": "組織聯絡管道供詢問工作與參與協作，與政府陳情、檢舉或司法救濟窗口不同。"
     }
   ],
   "corrections": [

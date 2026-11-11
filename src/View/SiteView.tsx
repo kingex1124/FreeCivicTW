@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight, ArrowRight, Sprout } from 'lucide-react';
+import { ArrowUp, ArrowUpRight, ArrowRight, Sprout } from 'lucide-react';
 import { SiteService } from '@/Service/SiteService';
 import type { ActionProps, IntroProps, MarkProps, SectionHeadingProps } from '@/Model/UiModel';
 
@@ -124,5 +124,15 @@ export function Footer() {
         <span>制度資料查核：{site.updatedAt}</span>
       </div>
     </footer>
+  );
+}
+
+export function BackToTop() {
+  return (
+    <a className="back-to-top" href="#page-top" aria-label="Top 回到頂端">
+      <ArrowUp size={20} aria-hidden="true" />
+      <span>Top</span>
+      <small>回到頂端</small>
+    </a>
   );
 }

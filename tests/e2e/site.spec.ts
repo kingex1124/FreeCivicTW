@@ -508,7 +508,7 @@ test('來源、聯絡信箱與撤回設定可用，未同意不載入GA', async 
   await expect(page.locator('.source-catalog article')).toHaveCount(sourceData.sources.length + 1);
 });
 
-test('手機導覽、減少動畫與主要頁面不水平溢出', async ({ page }) => {
+test('手機導覽、預設動畫與主要頁面不水平溢出', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('./');
   await page.getByRole('button', { name: '開啟導覽' }).click();
@@ -518,8 +518,8 @@ test('手機導覽、減少動畫與主要頁面不水平溢出', async ({ page 
     .getByRole('link', { name: '公民入門', exact: true })
     .click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('不必先懂政治');
-  await page.getByRole('button', { name: '減少動畫' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-motion', 'reduced');
+  await expect(page.getByRole('button', { name: '減少動畫' })).toHaveCount(0);
+  await expect(page.locator('html')).toHaveAttribute('data-motion', 'full');
   for (const path of [
     './',
     'my-ballots/',

@@ -1,21 +1,15 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, Menu, X, Leaf } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Brand } from './SiteView';
+import { ThemeToggle } from './ThemeView';
 import { SiteService } from '@/Service/SiteService';
 export function NavigationView() {
   const pathname = SiteService.routePath(usePathname());
   const [open, setOpen] = useState(false);
-  const [reduced, setReduced] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    const preferred =
-      SiteService.readMotion() || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    document.documentElement.dataset.motion = preferred ? 'reduced' : 'full';
-    setReduced(preferred);
-  }, []);
   const links = [
     ['/learn/', '公民入門'],
     ['/government/', '政府怎麼運作'],
@@ -36,45 +30,45 @@ export function NavigationView() {
     >
       <div className="container header-inner">
         <Brand />
-        <nav className={`main-nav ${open ? 'is-open' : ''}`} aria-label="主要導覽">
-          {links.map(([href, label]) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              aria-current={pathname.startsWith(href.slice(0, -1)) ? 'page' : undefined}
-            >
-              {label}
-            </Link>
-          ))}
-          <Link href="/my-ballots/" className="nav-cta" onClick={() => setOpen(false)}>
+        <nav
+          id="main-navigation"
+          className={`main-nav ${open ? 'is-open' : ''}`}
+          aria-label="主要導覽"
+        >
+          <div className="nav-links">
+            {links.map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                aria-current={pathname.startsWith(href.slice(0, -1)) ? 'page' : undefined}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/my-ballots/"
+            className="nav-cta"
+            aria-current={pathname.startsWith('/my-ballots') ? 'page' : undefined}
+            onClick={() => setOpen(false)}
+          >
             我的選票指南
             <ArrowUpRight size={15} />
           </Link>
         </nav>
         <div className="header-actions">
-          <button
-            className="icon-button motion-toggle"
-            aria-label={reduced ? '開啟動畫' : '減少動畫'}
-            aria-pressed={reduced}
-            onClick={() => {
-              const next = !reduced;
-              setReduced(next);
-              SiteService.saveMotion(next);
-              document.documentElement.dataset.motion = next ? 'reduced' : 'full';
-            }}
-            title="切換減少動畫"
-          >
-            <Leaf size={18} />
-          </button>
+          <ThemeToggle />
           <button
             ref={menuButton}
             className="icon-button mobile-toggle"
             aria-label={open ? '關閉導覽' : '開啟導覽'}
             aria-expanded={open}
+            aria-controls="main-navigation"
             onClick={() => setOpen(!open)}
           >
-            {open ? <X /> : <Menu />}
+            {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+            <span>導覽</span>
           </button>
         </div>
       </div>

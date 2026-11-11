@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { SiteService } from '@/Service/SiteService';
 import { SeoService } from '@/Service/SeoService';
 import { NavigationView } from '@/View/NavigationView';
-import { Footer } from '@/View/SiteView';
+import { BackToTop, Footer } from '@/View/SiteView';
 import { AnalyticsView } from '@/View/AnalyticsView';
 import type { ChildrenProps } from '@/Model/UiModel';
 import './globals.css';
@@ -23,8 +23,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#f7f8f2' };
 export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html lang="zh-Hant">
-      <body>
+    <html
+      lang="zh-Hant"
+      data-scroll-behavior="smooth"
+      data-motion="full"
+      data-theme="light"
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          id="theme-preference"
+          dangerouslySetInnerHTML={{ __html: SiteService.themeInitializationScript() }}
+        />
+      </head>
+      <body id="page-top" tabIndex={-1}>
         <a href="#main-content" className="skip-link">
           跳到主要內容
         </a>
@@ -33,6 +45,7 @@ export default function RootLayout({ children }: ChildrenProps) {
           {children}
         </main>
         <Footer />
+        <BackToTop />
         <AnalyticsView />
       </body>
     </html>

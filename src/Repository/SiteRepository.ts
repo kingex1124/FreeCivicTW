@@ -1,23 +1,28 @@
 import raw from '@data/site.json';
 import { SiteSchema } from '@/Model/SiteModel';
+import type { ColorTheme } from '@/Model/SiteModel';
 const site = SiteSchema.parse(raw);
+const themeKey = 'fc-color-theme';
 export const SiteRepository = {
   get: () => site,
   copyEmail() {
     return navigator.clipboard.writeText(site.contact.email);
   },
-  readMotion() {
+  readTheme(): ColorTheme {
     try {
-      return localStorage.getItem('fc-reduced-motion') === 'true';
+      return localStorage.getItem(themeKey) === 'dark' ? 'dark' : 'light';
     } catch {
-      return false;
+      return 'light';
     }
   },
-  saveMotion(value: boolean) {
+  saveTheme(value: ColorTheme) {
     try {
-      localStorage.setItem('fc-reduced-motion', String(value));
+      localStorage.setItem(themeKey, value);
     } catch {
       /* Preference remains usable in this visit. */
     }
+  },
+  themeInitializationScript() {
+    return `(function(){var theme='light';try{if(localStorage.getItem(${JSON.stringify(themeKey)})==='dark')theme='dark';}catch{}document.documentElement.dataset.theme=theme;})();`;
   },
 };
