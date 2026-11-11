@@ -1550,6 +1550,46 @@
       "checkedAt": "2026-11-11",
       "scope": "辯護人不違反被告明示意思、為被告利益，對審判長、受命或受託法官羈押處分聲請撤銷或變更之救濟。",
       "note": "救濟權人須配合有效憲法判決理解，不能僅依刑事訴訟法第416條字面排除辯護人。"
+    },
+    {
+      "id": "ccw-about",
+      "title": "關於公督盟",
+      "publisher": "公民監督國會聯盟（民間團體）",
+      "url": "https://ccw.org.tw/about/brief",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "組織成立、國會監督、立委評鑑、公民教育及地方議會監督串聯。",
+      "note": "這是組織自我介紹；不將其宣傳、成果或公信力主張視為已獨立驗證的客觀結論。頁面未標示發布日期。"
+    },
+    {
+      "id": "ccw-charter",
+      "title": "社團法人公民監督國會聯盟章程",
+      "publisher": "公民監督國會聯盟（民間團體）",
+      "url": "https://ccw.org.tw/charter",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第 1、2、5 條：正式名稱、非營利社會團體性質、國會監督與公民教育任務。",
+      "note": "民間團體章程不賦予國家調查、起訴、審判或直接撤換立委的公權力。頁面未確認章程最新修正日期，故不推測填入。"
+    },
+    {
+      "id": "ccw-evaluation-method",
+      "title": "公督盟「評」什麼？",
+      "publisher": "公民監督國會聯盟（民間團體）",
+      "url": "https://ccw.org.tw/index.php/news/20261008",
+      "publishedAt": "2026-10-08",
+      "checkedAt": "2026-11-11",
+      "scope": "立委評鑑的量化與質化指標、原始資料、覆核、透明揭露與方法公開。",
+      "note": "為公督盟對自身評鑑方法的說明，應與當期辦法及原始議事資料併讀；不將民間評鑑視為政府考核或司法裁判，也不收錄個別立委或政黨排名。"
+    },
+    {
+      "id": "legislature-public-records",
+      "title": "立法院議事暨公報資訊網",
+      "publisher": "立法院",
+      "url": "https://ppg.ly.gov.tw/ppg/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "議案、會議、議事日程、公報與議事錄等政府原始資料查詢。",
+      "note": "各筆資料日期與進度依原始紀錄確認；單一提案或會議紀錄不等於法案已通過或政策已執行。"
     }
   ],
   "corrections": [

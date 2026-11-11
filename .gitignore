@@ -3,6 +3,7 @@ node_modules/
 out/
 public/Images/
 public/Data/
+public/google*.html
 .env*
 !.env.example
 *.tsbuildinfo

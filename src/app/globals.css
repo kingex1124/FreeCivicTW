@@ -1775,6 +1775,22 @@ summary:focus-visible {
 .agency-picker-dialog[open] {
   display: flex;
   flex-direction: column;
+  transform-origin: center 15%;
+  animation: agency-picker-enter 320ms cubic-bezier(0.22, 0.75, 0.3, 1);
+}
+@keyframes agency-picker-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.005);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 .agency-picker-header {
   display: flex;
@@ -2585,6 +2601,74 @@ summary:focus-visible {
   .questioning-table .source-list a,
   .questioning-table .source-list small {
     font-size: 12px;
+  }
+}
+.citizen-oversight-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+.citizen-oversight-card {
+  min-width: 0;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.citizen-oversight-card h3 {
+  font-size: 21px;
+  margin-block: 16px;
+}
+.citizen-oversight-work {
+  margin-block: 24px 0;
+}
+.citizen-oversight-work > div {
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+}
+.citizen-oversight-work dt,
+.citizen-oversight-boundaries h4 {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 15px;
+}
+.citizen-oversight-work dd {
+  margin: 8px 0 0;
+}
+.citizen-oversight-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-top: 12px;
+}
+.citizen-oversight-links a {
+  min-height: 44px;
+}
+.citizen-oversight-guide {
+  background: var(--sage);
+}
+.citizen-oversight-guide > h3 {
+  margin-top: 0;
+}
+.citizen-oversight-guide > ol {
+  list-style: decimal;
+}
+.citizen-oversight-boundaries > ul {
+  list-style: disc;
+}
+.citizen-oversight-guide li + li {
+  margin-top: 14px;
+}
+.citizen-oversight-boundaries {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #bdc9b5;
+}
+@media (max-width: 800px) {
+  .citizen-oversight-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 .situation-grid {

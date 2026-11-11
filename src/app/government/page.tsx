@@ -6,7 +6,7 @@ import { getAgencyDirectory } from '@/Service/AgencyService';
 export const metadata = SeoService.metadata({
   title: '政府怎麼運作',
   description:
-    '用可搜尋、展開收合的機關職責總覽，認識交通部、地方交通局處與各種中央地方機關，以及任用、質詢、選民服務與監督分工。',
+    '用可搜尋、展開收合的機關職責總覽，認識中央地方機關、任用、質詢與選民服務，並透過公督盟等民間監督資源練習檢視立委表現。',
   path: '/government/',
 });
 export default function GovernmentPage() {

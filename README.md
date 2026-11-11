@@ -59,10 +59,21 @@ npm run preview
 
 預覽網址為 `http://localhost:4173/FreeCivicTW/`。切回根目錄開發前，移除該環境變數並重新建置。`robots.txt` 僅在網域根目錄有效；專案型 Pages 請向 Search Console 提交專案 sitemap，不能依賴子路徑的 robots 檔案控制全網域。
 
+### Google Search Console 驗證
+
+專案根目錄的 `googlec50a17ce59ee8c3c.html` 會在開發及建置前原樣複製到 `public/`，再隨靜態匯出進入 `out/`，不需另加驗證 meta 標籤或修改 `robots.ts`。以目前 GitHub Pages 專案網址為例：
+
+1. 使用「網址前置字元」資源 `https://kingex1124.github.io/FreeCivicTW/`。
+2. 部署後確認 `https://kingex1124.github.io/FreeCivicTW/googlec50a17ce59ee8c3c.html` 可直接開啟，再回 Search Console 按「驗證」。實際路徑須與 Google 顯示的驗證網址一致。
+3. 提交 sitemap：`https://kingex1124.github.io/FreeCivicTW/sitemap.xml`。
+
+保留原始驗證檔，之後每次部署都會一併輸出。驗證成功不代表保證收錄或排名；也不需要把驗證檔加進 sitemap。檔名及內容須維持 Google 提供的形式，詳見 [Search Console 官方驗證說明](https://support.google.com/webmasters/answer/9008080?hl=zh-Hant)。
+
 ## 已實作的內容與功能
 
 - 首頁三條學習入口、四步快速摘要與八篇完整入門文章。
 - 可切換中央／地方的政府角色圖、關係篩選、三組程序導覽及三個生活情境。
+- 質詢教學後的公督盟與公民監督說明：區分民間評鑑及法定監督，提供評鑑、方法、公民參與與立法院原始資料入口。中央／地方機關選擇視窗加入輕量彈跳，支援系統及站內減少動畫設定。
 - 「司法與警檢」專頁：司法獨立、25項機關／角色說明、搜尋分類、法院分流、刑事公訴流程及分支、羈押與交保附帶條件／電子監控／逃亡風險／抗告、報案與按鈴申告、救濟與法律協助。資料集中於 `Data/justice-system.json`，各層集中於 `JusticeModel`、`JusticeRepository`、`JusticeService`、`JusticeView`。
 - 官方 22 縣市、368 鄉鎮市區查詢；包含全部六個山地原住民區，並分開呈現中央、地方職務。
 - 同名地區確認、台／臺正規化、一般／平地／山地原住民立委票別情境切換。

@@ -78,6 +78,18 @@ export const CivicSchema = z.object({
     }),
     sourceIds: z.array(z.string()).min(1),
   }),
+  citizenOversight: z.object({
+    title: z.string(),
+    intro: z.string(),
+    name: z.string(),
+    kind: z.string(),
+    description: z.string(),
+    work: z.array(z.object({ title: z.string(), text: z.string() })).min(1),
+    readingSteps: z.array(z.string()).min(1),
+    boundaries: z.array(z.string()).min(1),
+    links: z.array(z.object({ label: z.string(), url: z.url() })).min(1),
+    sourceIds: z.array(z.string()).min(1),
+  }),
   roles: z.array(RoleSchema),
   relations: z.array(
     z.object({

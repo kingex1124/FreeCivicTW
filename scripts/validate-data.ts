@@ -103,6 +103,7 @@ for (const content of [
   ...civic.questioning.venues,
   ...civic.questioning.notes,
   civic.integrityGuide,
+  civic.citizenOversight,
 ])
   for (const id of content.sourceIds) assert(sourceIds.has(id), `任命／質詢來源不存在：${id}`);
 const articles = LearningService.getArticles();
