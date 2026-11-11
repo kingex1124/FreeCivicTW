@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+public/Images/
+public/Data/
+.env*
+!.env.example
+*.tsbuildinfo
+test-results/
+playwright-report/
+.qa/
+coverage/

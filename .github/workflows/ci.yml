@@ -1,0 +1,31 @@
+name: Verify static site
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        base-path: ['', '/FreeCivicTW']
+    env:
+      NEXT_PUBLIC_SITE_ORIGIN: http://localhost:4173
+      NEXT_PUBLIC_BASE_PATH: ${{ matrix.base-path }}
+      NEXT_PUBLIC_ANALYTICS_ENABLED: 'false'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm audit --audit-level=high
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm run test:dev

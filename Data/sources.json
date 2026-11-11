@@ -1,0 +1,1215 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "constitution",
+      "title": "中華民國憲法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000001",
+      "publishedAt": "1947-01-01",
+      "checkedAt": "2026-11-11",
+      "scope": "基本權利與憲政機關職權；參考第 7、16 至 23、35 至 49、53、56、58 至 63、67、70、77、80、90 至 105 條，與增修條文及有效判決併讀。",
+      "note": "憲法本文須與增修條文一併閱讀；本文中已停止適用的程序，不作為現行制度說明。"
+    },
+    {
+      "id": "amendments",
+      "title": "中華民國憲法增修條文",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000002",
+      "publishedAt": "2005-06-10",
+      "checkedAt": "2026-11-11",
+      "scope": "第 2 至 7 條：總統副總統選舉、行政院長任命、行政立法關係、立委類型及憲政人事。",
+      "note": "日期為頁面所列修正日期；各項職權仍須配合相關法律與有效判決理解。"
+    },
+    {
+      "id": "local-government",
+      "title": "地方制度法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0040003",
+      "publishedAt": "2025-12-03",
+      "checkedAt": "2026-11-11",
+      "scope": "第 3、14、18 至 20、25 至 27、35 至 37、48、49、55 至 59 條及第 83-2 條以下：地方自治、質詢及列席說明、局處首長任免、一般區與山地原住民區。 本總覽亦參考：第55、56、58條人事例外、地方自治及一般區公所",
+      "note": "第 55、56 條第 1、2 項本次修正自 2026-01-01 施行。直轄市與縣／市的特殊人事、政務職範圍不同；個別職務仍須核對組織、編制及任用法律。"
+    },
+    {
+      "id": "elections",
+      "title": "公職人員選舉罷免法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
+      "publishedAt": "2026-07-01",
+      "checkedAt": "2026-11-10",
+      "scope": "公職種類、選舉方式、選舉人資格、原住民選舉及投票；參考第 2 至 4、14 至 17 條及選舉相關規定。",
+      "note": "本工具不取得名冊、不核定個人選舉資格；當次領票種類以選舉機關公告及名冊為準。"
+    },
+    {
+      "id": "president-elections",
+      "title": "總統副總統選舉罷免法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020053",
+      "publishedAt": "2026-08-19",
+      "checkedAt": "2026-11-10",
+      "scope": "總統副總統選舉方式、選舉區及選舉人條件。",
+      "note": "日期為頁面所列修正日期。僑居國外、遷籍與其他特殊資格不由本站自動判斷。"
+    },
+    {
+      "id": "government-intro",
+      "title": "國情簡介：政府組織",
+      "publisher": "行政院",
+      "url": "https://www.ey.gov.tw/state/62879155A536D543/f3662cb7-5806-4755-8aba-ab1d44b97d7a",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "中央憲政機關與地方政府的入門介紹。",
+      "note": "來源日期未在本次頁面擷取中確認，故不填入推測日期；現任人名與機關數量不作為本站固定規則。"
+    },
+    {
+      "id": "national-ballots",
+      "title": "國情簡介：選舉及公民投票",
+      "publisher": "行政院",
+      "url": "https://www.ey.gov.tw/state/62879155A536D543/c78552af-72f4-45ef-bb89-a044cf2f3f1c",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "總統聯名選舉、立委類型、候選人票與政黨票，以及地方民選職務。",
+      "note": "使用制度說明，不採用頁面中的現任名單或村里數作為當次選舉通知。"
+    },
+    {
+      "id": "local-overview",
+      "title": "我國地方制度概況",
+      "publisher": "內政部",
+      "url": "https://www.moi.gov.tw/cp.aspx?n=674",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "地方自治團體、縣市與鄉鎮市、一般區及山地原住民區的差異。",
+      "note": "查核日不是行政區名冊版本日；完整地區代碼與名冊版本另見地區資料來源。"
+    },
+    {
+      "id": "media-education",
+      "title": "數位時代媒體素養教育白皮書入口",
+      "publisher": "教育部綜合規劃司",
+      "url": "https://depart.moe.edu.tw/ED2100/News.aspx?n=1353704343B62511&sms=2ADD120E8E2615E3",
+      "publishedAt": "2023-03-30",
+      "checkedAt": "2026-11-10",
+      "scope": "媒體素養教育與數位時代資訊理解的政策背景。",
+      "note": "日期為入口所列白皮書發布日期；本站查證步驟與六題虛構題目為自編材料，不代表教育部對真實新聞的判定。"
+    },
+    {
+      "id": "public-participation",
+      "title": "公共政策網路參與平臺推動說明",
+      "publisher": "國家發展委員會",
+      "url": "https://www.ndc.gov.tw/Content_List.aspx?n=70C16EE6C4E9C1C5",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "政策諮詢、施政監督、國民提議、首長信箱及參與式預算等參與管道。",
+      "note": "平台有自己的適用範圍、認證及參與規則；提出意見不等於政策必須照案執行。"
+    },
+    {
+      "id": "audit",
+      "title": "總決算審核報告查詢平臺",
+      "publisher": "審計部",
+      "url": "https://auditreport.audit.gov.tw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "中央與地方總決算、特別決算及審核報告的查閱入口。",
+      "note": "各年度報告有自己的發布日期；此處作為找資料的入口，不以一份報告推定所有支出或工程均有問題。"
+    },
+    {
+      "id": "finance",
+      "title": "財政統計資料庫背景說明",
+      "publisher": "財政部統計處",
+      "url": "https://web02.mof.gov.tw/njswww/webMain.aspx?k=i5100",
+      "publishedAt": null,
+      "checkedAt": "2026-11-10",
+      "scope": "地方歲入歲出、自有財源、自籌財源、統籌分配與決算統計用語。",
+      "note": "用來解釋財源不只有單一路徑；本站不模擬當年度財政分配公式或金額。"
+    },
+    {
+      "id": "executive-organization",
+      "title": "行政院組織法",
+      "publisher": "行政院／人事處",
+      "url": "https://www.ey.gov.tw/Page/29F59CE082887C81",
+      "publishedAt": "2025-01-24",
+      "checkedAt": "2026-11-11",
+      "scope": "第 3 條列明行政院 15 個部；第 4 條以下另列委員會、總處、其他機關與政務委員。",
+      "note": "本次第 3 條修正自 2025-09-09 施行，包含運動部。本清單列職務，不列現任人名；其他機關任命仍查各自組織法律。"
+    },
+    {
+      "id": "taipei-organization",
+      "title": "臺北市政府組織架構暨機關網路電話",
+      "publisher": "臺北市政府",
+      "url": "https://www.gov.taipei/cp.aspx?n=8ABE1F397F219F70",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "核對交通局、社會局及其他列示局處的正式機關名稱，作為直轄市局長職務範例。 本總覽亦參考：臺北市一級機關、所屬機關、事業及區公所的對照 本總覽亦參考：一般區公所為派出機關、辦理區政及基層服務",
+      "note": "地方頁面列的是範例，不代表臺北市全部機關或全台所有縣市。任用程序依地方制度法與個別職務法規核對。"
+    },
+    {
+      "id": "miaoli-organization",
+      "title": "苗栗縣政府組織架構",
+      "publisher": "苗栗縣政府",
+      "url": "https://www.miaoli.gov.tw/cp.aspx?n=272",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "核對交通工務處、社會處、數位研考處及列示局處的正式名稱。 本總覽亦參考：17個府內一級單位處及6個所屬一級機關局",
+      "note": "苗栗縣交通業務目前列在交通工務處，不以其他縣市交通局的名稱套用；頁面範例並非完整機關清冊。"
+    },
+    {
+      "id": "miaoli-organization-law",
+      "title": "苗栗縣政府組織自治條例",
+      "publisher": "苗栗縣政府主管法規查詢系統",
+      "url": "https://law.miaoli.gov.tw/glrsnewsout/LawContent.aspx?id=FL033369",
+      "publishedAt": "2026-02-12",
+      "checkedAt": "2026-11-11",
+      "scope": "核對苗栗縣所設局處的組織、職稱與法定職掌。",
+      "note": "個別主管是政務職或常任文官，仍須併查編制表及任用法規，不能只從局處名稱判斷。"
+    },
+    {
+      "id": "constitutional-judgment-113-9",
+      "title": "憲法法庭 113 年憲判字第 9 號判決摘要",
+      "publisher": "司法院／憲法法庭",
+      "url": "https://www.judicial.gov.tw/tw/cp-1887-1187874-5cd85-1.html",
+      "publishedAt": "2024-10-25",
+      "checkedAt": "2026-11-11",
+      "scope": "本次引用總統國情報告部分：總統與立法院的憲政關係、國情報告與強制答詢的界線。",
+      "note": "此處用於區分總統國情報告與行政院長、部會首長質詢，不把摘要其他議題延伸為本站對個案的法律判斷。"
+    },
+    {
+      "id": "government-ethics-law",
+      "title": "政風機構人員設置管理條例",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0070001",
+      "publishedAt": "2012-02-03",
+      "checkedAt": "2026-11-11",
+      "scope": "第 2 至 4、6、8、9 條：中央地方政風機構、法定職掌、處室名稱、專屬人事與指揮監督。",
+      "note": "政風是機關內廉政專業單位，不是民選或獨立憲政機關；須區分機關政風與廉政署犯罪調查職務。"
+    },
+    {
+      "id": "government-ethics-rules",
+      "title": "政風機構人員設置管理條例施行細則",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0070002",
+      "publishedAt": "2013-09-26",
+      "checkedAt": "2026-11-11",
+      "scope": "第 4 至 11、14 條：廉政宣導、預防、財產申報利益迴避、廉政倫理、不法線索、公務機密、安全及專屬人事。",
+      "note": "內部行政查核、文書調閱與訪談不等同一般政風人員取得司法警察刑事偵查權。"
+    },
+    {
+      "id": "integrity-agency-law",
+      "title": "法務部廉政署組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000032",
+      "publishedAt": "2011-04-20",
+      "checkedAt": "2026-11-11",
+      "scope": "第 2 條：廉政署掌理廉政政策、防貪、肅貪及政風管理，執行犯罪調查的特定人員依法具有司法警察官或司法警察身分。",
+      "note": "不能從一般政風處室沒有概括刑事偵查權，推成廉政署也不能辦理犯罪調查。"
+    },
+    {
+      "id": "public-assets",
+      "title": "公職人員財產申報法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0070005",
+      "publishedAt": "2022-06-22",
+      "checkedAt": "2026-11-11",
+      "scope": "第 4 條等規定：監察院、政風機構及其他指定受理機關的財產申報分工。",
+      "note": "只說明受理分工；個別人員是否應申報、申報時點與受理機關須依當時法規確認。"
+    },
+    {
+      "id": "petitions",
+      "title": "請願法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030019",
+      "publishedAt": "1969-12-18",
+      "checkedAt": "2026-11-11",
+      "scope": "第 2 至 5、9 條：向有權民意或行政機關請願、司法界線與權利保障。",
+      "note": "服務處接案、行政陳情與正式請願不同；請願不取代訴願、訴訟等適用救濟程序。"
+    },
+    {
+      "id": "legislature-functions",
+      "title": "立法院職權行使法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0020058",
+      "publishedAt": "2024-06-24",
+      "checkedAt": "2026-11-11",
+      "scope": "施政報告與質詢、人事同意權、人民請願等議事程序；配合憲法及增修條文理解中央立委職掌。",
+      "note": "頁面列有部分已經憲法法庭判決失效的修正文字，須併讀 113 年憲判字第 9 號；本站不將強制總統答詢等失效內容列為立委權力。"
+    },
+    {
+      "id": "legislator-conduct",
+      "title": "立法委員行為法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0020064",
+      "publishedAt": "2002-01-25",
+      "checkedAt": "2026-11-11",
+      "scope": "第 3 至 5 條等規範：依法行使職權、為民服務與代表人民的公共責任。",
+      "note": "常見服務處協助形式不是每處均保證提供的法定行政服務，也不能取代承辦機關核准或司法裁判。"
+    },
+    {
+      "id": "integrity-report",
+      "title": "法務部廉政署：我要檢舉",
+      "publisher": "法務部廉政署",
+      "url": "https://www.aac.moj.gov.tw/6398/6624/6632/1181666/post",
+      "publishedAt": "2026-08-04",
+      "checkedAt": "2026-11-11",
+      "scope": "官方貪瀆或相關犯罪檢舉管道入口；一般行政服務爭議應向權責機關反映。",
+      "note": "查核官方入口與索引；網站僅提供連結，不收集檢舉證據或個資，不承諾適用特定保護措施。"
+    },
+    {
+      "id": "agency-central-list",
+      "title": "行政院所屬中央二級機關（現行名單）",
+      "publisher": "行政院",
+      "url": "https://www.ey.gov.tw/page/62ff949b3dbdd531",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "目前中央二級機關文字、連結與組織圖替代文字；含運動部及仍列的公共工程委員會。",
+      "note": "依目前名單逐筆計數32，與組織法規劃31分開。頁面同時有歷史組改時程，不把歷史曾設機關一併計入。"
+    },
+    {
+      "id": "agency-central-structure-law",
+      "title": "行政院組織法",
+      "publisher": "法務部全國法規資料庫／行政院",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010032",
+      "publishedAt": "2025-01-24",
+      "checkedAt": "2026-11-11",
+      "scope": "第3至6條的部會、獨立機關及特設機關架構。",
+      "note": "規劃15部、9會、3獨立機關、1行、1院、2總處；此規劃不能直接取代現行過渡名單。修正第3條於2025-09-09施行。"
+    },
+    {
+      "id": "agency-central-moi-law",
+      "title": "內政部組織法",
+      "publisher": "法務部全國法規資料庫／內政部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條之部級任務與所屬機關。",
+      "note": "以已施行職能作白話摘要，不展開所屬署局名冊。"
+    },
+    {
+      "id": "agency-central-mofa-law",
+      "title": "外交部組織法",
+      "publisher": "法務部全國法規資料庫／外交部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=E0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條之外交及領事職掌。",
+      "note": "涉外協調及旅外急難協助不等同境外司法權。"
+    },
+    {
+      "id": "agency-central-mnd-law",
+      "title": "國防部組織法",
+      "publisher": "法務部全國法規資料庫／國防部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=F0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條之國防政策、建軍及資源。",
+      "note": "不推論成一般民事行政或法院權限。"
+    },
+    {
+      "id": "agency-central-mof-law",
+      "title": "財政部組織法及生效狀態",
+      "publisher": "法務部全國法規資料庫／財政部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0300001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、5條與法規頁生效狀態。",
+      "note": "第2條第6款有關政府採購施行日期未定；本稿未把該未施行職掌當成現行財政部業務。"
+    },
+    {
+      "id": "agency-central-moe-law",
+      "title": "教育部組織法",
+      "publisher": "法務部全國法規資料庫／教育部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、5條之教育、青年及學校體育職能。",
+      "note": "2025修法後與運動部法定分工一併理解，不再列教育部體育署為現行二級機關。"
+    },
+    {
+      "id": "agency-central-moj-law",
+      "title": "法務部組織法",
+      "publisher": "法務部全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條之法務行政及所屬機關。",
+      "note": "檢察行政、矯正、保護與法院審判須分清。"
+    },
+    {
+      "id": "agency-central-moea-law",
+      "title": "經濟部組織法",
+      "publisher": "法務部全國法規資料庫／經濟部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條經貿、產業及所屬業務督導。",
+      "note": "採2023組改後經濟部名稱，不使用歷史預定的經濟及能源部。"
+    },
+    {
+      "id": "agency-central-motc-law",
+      "title": "交通部組織法",
+      "publisher": "法務部全國法規資料庫／交通部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0000001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、5條交通、觀光、氣象與所屬機關。",
+      "note": "中央與地方道路、運輸權責仍需按作用法及設施權屬確認。"
+    },
+    {
+      "id": "agency-central-mol-law",
+      "title": "勞動部組織法",
+      "publisher": "法務部全國法規資料庫／勞動部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0000030",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條勞動制度與業務督導。",
+      "note": "勞動行政、調解與法院裁判不得混為一談。"
+    },
+    {
+      "id": "agency-central-moa-law",
+      "title": "農業部組織法",
+      "publisher": "法務部全國法規資料庫／農業部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0000049",
+      "publishedAt": "2023-05-31",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條農林漁牧及自然資源相關職能。",
+      "note": "農委會為歷史名稱，現行二級機關是農業部。"
+    },
+    {
+      "id": "agency-central-mohw-law",
+      "title": "衛生福利部組織法及生效狀態",
+      "publisher": "法務部全國法規資料庫／衛生福利部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0000055",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "衛生福利部之部級衛生、醫療、保險及福利職能。",
+      "note": "2026-09-30修正有尚未施行條文；不可把全文新列兒少及家庭支持署、社會發展及長期照顧署等直接當成已運作名冊。"
+    },
+    {
+      "id": "agency-central-mohw-organization",
+      "title": "衛生福利部行政組織圖",
+      "publisher": "衛生福利部",
+      "url": "https://www.mohw.gov.tw/www/cp-7-8-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "官網現行行政組織與所屬機關說明。",
+      "note": "搭配組織法生效狀態核對；本稿只列部級職能，不另製待施行次級機關名單。"
+    },
+    {
+      "id": "agency-central-moenv-law",
+      "title": "環境部組織法",
+      "publisher": "法務部全國法規資料庫／環境部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=O0000031",
+      "publishedAt": "2023-05-24",
+      "checkedAt": "2026-11-11",
+      "scope": "第2、5條環境、氣候與污染防治。",
+      "note": "注意法條明列非屬原子能游離輻射污染等範圍，不把核安職權全部併入。"
+    },
+    {
+      "id": "agency-central-moc-law",
+      "title": "文化部組織法",
+      "publisher": "法務部全國法規資料庫／文化部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0000103",
+      "publishedAt": "2011-06-29",
+      "checkedAt": "2026-11-11",
+      "scope": "第2、5條文化、藝文及文化產業。",
+      "note": "文化輔導與通訊傳播證照監理分開。"
+    },
+    {
+      "id": "agency-central-moda-law",
+      "title": "數位發展部組織法",
+      "publisher": "法務部全國法規資料庫／數位發展部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0000199",
+      "publishedAt": "2022-01-19",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條數位發展、治理、產業與資安。",
+      "note": "不得以本部數位職掌概括成可任意管制所有網路言論。"
+    },
+    {
+      "id": "agency-central-sports-law",
+      "title": "運動部組織法",
+      "publisher": "法務部全國法規資料庫／運動部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0000195",
+      "publishedAt": "2025-01-24",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條全國運動與所屬全民運動業務。",
+      "note": "應區分法規公布日與機關施行成立日2025-09-09。"
+    },
+    {
+      "id": "agency-central-sports-established",
+      "title": "行政院：運動部成立與體育發展",
+      "publisher": "行政院",
+      "url": "https://www.ey.gov.tw/state/4DB91ABEA835042F",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "確認運動部2025-09-09成立與主要職能。",
+      "note": "非僅籌備或尚未施行機關。"
+    },
+    {
+      "id": "agency-central-ndc-law",
+      "title": "國家發展委員會組織法",
+      "publisher": "法務部全國法規資料庫／國家發展委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010106",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條國家發展協調與檔案管理。",
+      "note": "組織法兼任名單保留歷史預定稱呼，不用來另列不存在的現行部會。"
+    },
+    {
+      "id": "agency-central-nstc-law",
+      "title": "國家科學及技術委員會組織法",
+      "publisher": "法務部全國法規資料庫／國家科學及技術委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0000139",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條科學研究、科技資源及科學園區。",
+      "note": "國科會是九會之一，不與國發會混同。"
+    },
+    {
+      "id": "agency-central-mac-law",
+      "title": "大陸委員會組織法",
+      "publisher": "法務部全國法規資料庫／大陸委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=Q0000012",
+      "publishedAt": "2018-06-13",
+      "checkedAt": "2026-11-11",
+      "scope": "第1至3條兩岸、港澳政策與協調。",
+      "note": "政策統籌與移民、教育等個案許可分開。"
+    },
+    {
+      "id": "agency-central-fsc-law",
+      "title": "金融監督管理委員會組織法",
+      "publisher": "法務部全國法規資料庫／金融監督管理委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0300035",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1至4條金融市場、服務業監理與金融消費者保護。",
+      "note": "第2條明定金融支付系統由中央銀行主管。"
+    },
+    {
+      "id": "agency-central-oac-law",
+      "title": "海洋委員會組織法",
+      "publisher": "法務部全國法規資料庫／海洋委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0090030",
+      "publishedAt": "2015-07-01",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5條海洋統合、海巡與保育。",
+      "note": "不將海上所有事務概括為海委會單獨權責。"
+    },
+    {
+      "id": "agency-central-ocac-law",
+      "title": "僑務委員會組織法",
+      "publisher": "法務部全國法規資料庫／僑務委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=E0000005",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條僑務教育、經濟、社團及權益支持。",
+      "note": "僑務支持不同於護照簽證與境外居留核准。"
+    },
+    {
+      "id": "agency-central-vac-law",
+      "title": "國軍退除役官兵輔導委員會組織法",
+      "publisher": "法務部全國法規資料庫／國軍退除役官兵輔導委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=F0000081",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條退除役官兵服務與所屬機構督導。",
+      "note": "各項服務資格另依相應法規，不保證所有退役身分適用同一待遇。"
+    },
+    {
+      "id": "agency-central-cip-law",
+      "title": "原住民族委員會組織法",
+      "publisher": "法務部全國法規資料庫／原住民族委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0000172",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條原住民族政策、認定、文化與權益。",
+      "note": "依法辦理、協調，並非可取代所有土地、地方或司法程序。"
+    },
+    {
+      "id": "agency-central-hakka-law",
+      "title": "客家委員會組織法",
+      "publisher": "法務部全國法規資料庫／客家委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0000158",
+      "publishedAt": "2011-06-29",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條客家事務、語言文化與產業。",
+      "note": "不等於地方自治政府。"
+    },
+    {
+      "id": "agency-central-pcc-law",
+      "title": "行政院公共工程委員會組織條例",
+      "publisher": "法務部全國法規資料庫／行政院公共工程委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010037",
+      "publishedAt": "1995-07-10",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、4至6條工程統籌、採購制度、技術及管理。",
+      "note": "搭配現行行政院名單與工程會官網，確認仍運作，不以早年預定裁撤敘述當成已裁撤。"
+    },
+    {
+      "id": "agency-central-pcc-current",
+      "title": "行政院公共工程委員會官網現行業務資訊",
+      "publisher": "行政院公共工程委員會",
+      "url": "https://www.pcc.gov.tw/",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "現名與當期工程、採購及品質管理資訊。",
+      "note": "查核時可見2026年11月業務消息；頁面顯示更新不代表組織條例同日修正。"
+    },
+    {
+      "id": "agency-central-dgbas-law",
+      "title": "行政院主計總處組織法",
+      "publisher": "法務部全國法規資料庫／行政院主計總處",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=T0000004",
+      "publishedAt": "2012-02-03",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條歲計、會計、決算與統計。",
+      "note": "主計不等於立法議決或審計部外部審計。"
+    },
+    {
+      "id": "agency-central-dgpa-law",
+      "title": "行政院人事行政總處組織法",
+      "publisher": "法務部全國法規資料庫／行政院人事行政總處",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=S0000023",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條人事行政、組織員額與培訓。",
+      "note": "與考試院所屬機關法定職權區分。"
+    },
+    {
+      "id": "agency-central-cbc-law",
+      "title": "中央銀行法",
+      "publisher": "法務部全國法規資料庫／中央銀行",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0410001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、6、12、13條及貨幣、外匯、國庫業務規定。",
+      "note": "第12條業務對象原則為政府、銀行等金融機構與國際國外金融機構，非一般零售銀行。"
+    },
+    {
+      "id": "agency-central-npm-law",
+      "title": "國立故宮博物院組織法",
+      "publisher": "法務部全國法規資料庫／國立故宮博物院",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0190006",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2條典藏範圍、研究、展示與教育。",
+      "note": "法律明定隸屬行政院，不以博物館名稱誤判為文化部所屬。"
+    },
+    {
+      "id": "agency-central-cec-law",
+      "title": "中央選舉委員會組織法",
+      "publisher": "法務部全國法規資料庫／中央選舉委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0000153",
+      "publishedAt": "2009-06-10",
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、5、6條選務及獨立職權。",
+      "note": "須超出黨派依法獨立行使職權。"
+    },
+    {
+      "id": "agency-central-ftc-law",
+      "title": "公平交易委員會組織法",
+      "publisher": "法務部全國法規資料庫／公平交易委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0150011",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、2、8、9條公平競爭、傳銷與獨立合議職權。",
+      "note": "競爭執法與個別民事退款、賠償程序分開。"
+    },
+    {
+      "id": "agency-central-ncc-law",
+      "title": "國家通訊傳播委員會組織法",
+      "publisher": "法務部全國法規資料庫／國家通訊傳播委員會",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=P0000008",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、3、8、9條通訊傳播監理及依法獨立合議。",
+      "note": "不將數位政策、所有網路言論或任何商品申訴概括為NCC的個案職權。"
+    },
+    {
+      "id": "agency-src-taipei-organization-law",
+      "title": "臺北市政府組織自治條例",
+      "publisher": "臺北市政府法務局",
+      "url": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL023322",
+      "publishedAt": "2024-02-21",
+      "checkedAt": "2026-11-11",
+      "scope": "第6條32個局處委員會；第7條自來水事業；第8條區公所",
+      "note": "本次確認列有青年局、臺北翡翠水庫管理局及都市計畫委員會；使用名單，不引用已被函告無效的第6條序文作程序結論。"
+    },
+    {
+      "id": "agency-src-miaoli-organization-law",
+      "title": "苗栗縣政府組織自治條例",
+      "publisher": "苗栗縣政府",
+      "url": "https://law.miaoli.gov.tw/glrsnewsout/LawContent.aspx?id=FL033369&media=print",
+      "publishedAt": "2026-02-12",
+      "checkedAt": "2026-11-11",
+      "scope": "第5條及第6-1至6-3條各處職掌；第7條6局",
+      "note": "來源修正日期為 2026-02-12。各處不因此成為中央部會所屬機關。"
+    },
+    {
+      "id": "agency-src-miaoli-new-departments",
+      "title": "新設數位研考處與長期照護處揭牌說明",
+      "publisher": "苗栗縣政府",
+      "url": "https://www.miaoli.gov.tw/News_Content2.aspx?n=285&s=937083",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2026年新設地方單位及職能",
+      "note": "官方說明新設兩處並自3月1日施作組織調整；名單與職掌仍以現行組織自治條例核對。"
+    },
+    {
+      "id": "agency-src-local-directories",
+      "title": "地方政府官方網站連結",
+      "publisher": "內政部",
+      "url": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "22縣市政府官網入口",
+      "note": "本次核對全部22縣市官方網域；官網入口不表示已列出各地每一局處。舊HTTP入口改用同官方網域HTTPS，臺北採現行gov.taipei。"
+    },
+    {
+      "id": "agency-src-civil",
+      "title": "民政局組織架構",
+      "publisher": "臺北市政府民政局",
+      "url": "https://ca.gov.taipei/cp.aspx?n=F8C1F1D8EBE0A3A1",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "自治、區里、宗教、戶籍及人口行政",
+      "note": "殯葬管理處、戶政事務所為所屬機關，並非同名一級局處。"
+    },
+    {
+      "id": "agency-src-finance",
+      "title": "財政局財務管理科業務職掌",
+      "publisher": "臺北市政府財政局",
+      "url": "https://dof.gov.taipei/News_Content.aspx?n=67F4A482298C5D8E&s=C141AEBB150AD318",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "市庫、財務調度、債務及歲入管理",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-tax",
+      "title": "稅捐稽徵處業務職掌",
+      "publisher": "臺北市稅捐稽徵處",
+      "url": "https://tpctax.gov.taipei/cp.aspx?n=CC2C23F341C059D5",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "地方稅稽徵、欠稅管理及稅務服務",
+      "note": "臺北市稅捐稽徵處是財政局所屬；苗栗稅務局則是縣政府所屬一級機關。"
+    },
+    {
+      "id": "agency-src-education",
+      "title": "教育局組織架構及各單位職掌",
+      "publisher": "臺北市政府教育局",
+      "url": "https://www.doe.gov.taipei/cp.aspx?n=7ADFE35E698BC929",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "學前、國小、中等、技職、特殊及終身教育",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-industry",
+      "title": "產業發展局組織架構及職掌",
+      "publisher": "臺北市政府產業發展局",
+      "url": "https://doed.gov.taipei/cp.aspx?n=FDB09355A2F9129D",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "工商、科技產業、投資、農業與公用事業的地方分工",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-works",
+      "title": "工務局組織架構",
+      "publisher": "臺北市政府工務局",
+      "url": "https://pwd.gov.taipei/cp.aspx?n=2E68443353FB1EB0",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "地方公共工程、道路公園與所屬工程機關",
+      "note": "新建工程處、水利工程處、公園路燈工程管理處等是所屬機關，不全部另算一級局。"
+    },
+    {
+      "id": "agency-src-transport",
+      "title": "交通局各單位業務職掌",
+      "publisher": "臺北市政府交通局",
+      "url": "https://dot.gov.taipei/cp.aspx?n=6D88B77F1954D64A",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "交通規劃、公共運輸、交通工程及安全",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-social",
+      "title": "社會局業務職掌",
+      "publisher": "臺北市政府社會局",
+      "url": "https://dosw.gov.taipei/News.aspx?n=4229B0D1B86ACD17&sms=42201946EA95A64F",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "社會救助、兒少、身障、老人、托育及社會工作",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-longcare",
+      "title": "長期照護處業務簡介及職掌",
+      "publisher": "苗栗縣政府長期照護處",
+      "url": "https://longcare.miaoli.gov.tw/cp.aspx?n=9208",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "需求評估、居家與機構服務、輔具、交通及照顧支持",
+      "note": "頁面更新標示2026-10-16；其他縣市未必另設長照處，可能由衛生、社政共同辦理。"
+    },
+    {
+      "id": "agency-src-labor",
+      "title": "勞動局組織架構",
+      "publisher": "臺北市政府勞動局",
+      "url": "https://bola.gov.taipei/News.aspx?n=BDA8E54516749371&sms=16EAF08D05578B2F",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "勞動條件、勞資、就業及職業安全",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-youth",
+      "title": "青年局介紹及各單位職掌",
+      "publisher": "臺北市政府青年局",
+      "url": "https://youth.gov.taipei/about/intro/ddfc717c-671f-466a-9bf2-da1d39499b66",
+      "publishedAt": "2025-03-19",
+      "checkedAt": "2026-11-11",
+      "scope": "青年公共參與、職涯探索、國際交流及資源",
+      "note": "頁面明示2025-03-19發布、2025-10-21更新；青年局為2024年成立一級機關。"
+    },
+    {
+      "id": "agency-src-health",
+      "title": "衛生局各單位業務職掌",
+      "publisher": "臺北市政府衛生局",
+      "url": "https://health.gov.taipei/Content_List.aspx?n=4FD1B8E4B6F98A1A",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "防疫、食藥管理、醫事、健康、心理衛生與長照",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-environment",
+      "title": "環境保護局組織架構",
+      "publisher": "臺北市政府環境保護局",
+      "url": "https://www.dep.gov.taipei/News_Content.aspx?n=E7903FEF1462BF71&s=ADA4A0CE5F3330DB&sms=86EB4AD3389A54B3",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "空水噪音污染、廢棄物、清潔及環保稽查",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-culture",
+      "title": "文化局業務職掌",
+      "publisher": "臺北市政府文化局",
+      "url": "https://culture.gov.taipei/Content_List.aspx?n=0A1248CBB6BDBE59",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "藝文、文化資產、文化空間、文創與文化資源",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-miaoli-culture",
+      "title": "苗栗縣政府文化觀光局組織規程",
+      "publisher": "苗栗縣政府文化觀光局",
+      "url": "https://law.miaoli.gov.tw/glrsnewsout/LawContent.aspx?id=FL008342&media=print",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "文化、觀光及客家事務科等分工",
+      "note": "苗栗的文化、觀光及客家職能可同屬文化觀光局，不能誤稱另有獨立客委會。"
+    },
+    {
+      "id": "agency-src-tourism",
+      "title": "觀光傳播局組織架構及職掌",
+      "publisher": "臺北市政府觀光傳播局",
+      "url": "https://www.tpedoit.gov.taipei/cp.aspx?n=7F466A5F156BF757",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "觀光發展、產業輔導、旅遊服務與傳播事務",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-urban",
+      "title": "都市發展局組織架構",
+      "publisher": "臺北市政府都市發展局",
+      "url": "https://udd.gov.taipei/article/alnyrzu",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "都市規劃、土地使用、住宅、更新及建築管理",
+      "note": "與另設一級機關都市計畫委員會的審議工作分開；提案、審議、核定並非同一步。"
+    },
+    {
+      "id": "agency-src-land",
+      "title": "地政局組織架構及各單位職掌",
+      "publisher": "臺北市政府地政局",
+      "url": "https://land.gov.taipei/News_Content.aspx?n=73C790A2C42A1229&s=1417B7F69FAD7A06&sms=6ADFB49A7899D242",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "土地建物登記、測量、地價、地權及土地開發",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-digital",
+      "title": "資訊局組織架構",
+      "publisher": "臺北市政府資訊局",
+      "url": "https://doit.gov.taipei/News.aspx?n=901B854D160D919F&sms=195B0ABEEB22AF64",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "數位策略、資通安全、系統研發、數據治理與創新",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-research",
+      "title": "研究發展考核委員會組織架構",
+      "publisher": "臺北市政府研究發展考核委員會",
+      "url": "https://rdec.gov.taipei/News.aspx?n=E8DCC846913334FF&sms=D644D7CFE8579548",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "政策研究、綜合規劃、管考、服務品質及公民參與",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-sports",
+      "title": "體育局組織架構",
+      "publisher": "臺北市政府體育局",
+      "url": "https://sports.gov.taipei/cp.aspx?n=A8510B4DA93A6F92",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "全民及競技體育、運動場館及運動產業",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-indigenous",
+      "title": "原住民族事務委員會組織架構",
+      "publisher": "臺北市政府原住民族事務委員會",
+      "url": "https://www.ipc.gov.taipei/cp.aspx?n=46584CA0E5BDC12B",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "地方原住民族教育文化、福利、經濟及權益服務",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-hakka",
+      "title": "客家事務委員會組織架構及職掌",
+      "publisher": "臺北市政府客家事務委員會",
+      "url": "https://hac.gov.taipei/cp.aspx?n=572639CA8C20D820",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "地方客家政策、語言文化、場館及交流",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-military",
+      "title": "兵役局組織架構",
+      "publisher": "臺北市政府兵役局",
+      "url": "https://docms.gov.taipei/cp.aspx?n=A092631DEC05DD6E",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "兵籍、徵兵檢查、徵集、役男權益及替代役行政",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-metro",
+      "title": "捷運工程局組織架構及業務職掌",
+      "publisher": "臺北市政府捷運工程局",
+      "url": "https://www.dorts.gov.taipei/cp.aspx?n=9F700264D2606A34",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "捷運路網、設計、用地、施工、機電及工程管理",
+      "note": "工程局不等同捷運營運公司；不同地區建設主辦可能不同。"
+    },
+    {
+      "id": "agency-src-secretariat",
+      "title": "秘書處組織架構及職掌",
+      "publisher": "臺北市政府秘書處",
+      "url": "https://sec.gov.taipei/News.aspx?n=11F0D5930A3F08C2&sms=984706722BDB3061",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "文書檔案、總務、國際事務、市民服務與行政協調",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-legal",
+      "title": "法務局組織架構",
+      "publisher": "臺北市政府法務局",
+      "url": "https://legalaffairs.gov.taipei/cp.aspx?n=ECC32DA67F311F56",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "地方政府法制、訴願、消費者保護及爭議處理",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-training",
+      "title": "公務人員訓練處組織架構及業務職掌",
+      "publisher": "臺北市政府公務人員訓練處",
+      "url": "https://dcsd.gov.taipei/cp.aspx?n=39F0D44F045470D0&s=E492C6CC1416A864",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "市府公務人員訓練、教務、課程與研究",
+      "note": "頁面資料更新2023-12-28、資料檢視2026-01-05；與面向一般求職者的職訓分工不同。"
+    },
+    {
+      "id": "agency-src-accounting",
+      "title": "主計處業務職掌",
+      "publisher": "臺北市政府主計處",
+      "url": "https://dbas.gov.taipei/News.aspx?n=8FA2B3F5195B46ED&sms=825516F48CBD46F9",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "政府預算、會計、決算及公務統計",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-personnel",
+      "title": "人事處組織架構及業務職掌",
+      "publisher": "臺北市政府人事處",
+      "url": "https://dop.gov.taipei/cp.aspx?n=A14E0DE84E35FFDA",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "組織員額、任用、考訓、待遇福利與退撫",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-integrity",
+      "title": "政風處組織架構及職掌",
+      "publisher": "臺北市政府政風處",
+      "url": "https://doge.gov.taipei/cp.aspx?n=AEC511C9BB500036",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "廉政預防、貪瀆不法查處、公務機密及機關安全",
+      "note": "頁面更新2024-02-06；政風工作不是監察院彈劾或法院審判。"
+    },
+    {
+      "id": "agency-src-police",
+      "title": "警察局組織架構",
+      "publisher": "臺北市政府警察局",
+      "url": "https://police.gov.taipei/cp.aspx?n=F287EA8E2090B747",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "治安、犯罪預防偵查、交通秩序及民眾服務",
+      "note": "地方警察局仍屬地方政府組織；警政業務、人事另有依法定體系辦理之規範。"
+    },
+    {
+      "id": "agency-src-fire",
+      "title": "消防局組織架構",
+      "publisher": "臺北市政府消防局",
+      "url": "https://www.119.gov.taipei/cp.aspx?n=09C8261FD0DBCA04",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "火災預防、災害搶救、緊急救護及災防協調",
+      "note": "用於地方職能教學的代表來源；實際管轄、編制及申辦程序以所在地政府現行規定為準。"
+    },
+    {
+      "id": "agency-src-reservoir",
+      "title": "臺北翡翠水庫管理局組織架構及業務職掌",
+      "publisher": "臺北翡翠水庫管理局",
+      "url": "https://www.feitsui.gov.taipei/cp.aspx?n=0C78A91F3FAE039E",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "大壩安全、供原水、蓄洪、水質監測及庫區維護",
+      "note": "不是全台每個地方政府都設有水庫局；臺北自來水事業處另依組織自治條例第7條設置。"
+    },
+    {
+      "id": "oversight-aac-duties",
+      "title": "廉政署各組（室）業務職掌",
+      "publisher": "法務部廉政署",
+      "url": "https://www.aac.moj.gov.tw/6398/6400/6402/53729/",
+      "publishedAt": "2011-07-01",
+      "checkedAt": "2026-11-11",
+      "scope": "廉政署政策、防貪、肅貪、政風業務及人員管理分工。",
+      "note": "官方頁最後更新日期為 2026-05-12；一般政風機構與廉政署執行犯罪調查的人員須分開理解。"
+    },
+    {
+      "id": "oversight-control-functions",
+      "title": "監察院：職權篇",
+      "publisher": "監察院",
+      "url": "https://www.cy.gov.tw/News.aspx?n=119&sms=8885",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "監察院調查、彈劾、糾舉、糾正與其他法定職權的官方介紹。",
+      "note": "此為職權導覽入口；各個案的處理、程序與結果須讀相應資料，不以陳情受理推定違法成立。"
+    },
+    {
+      "id": "oversight-audit-functions",
+      "title": "公民參與審計",
+      "publisher": "審計部",
+      "url": "https://www.audit.gov.tw/p/412-1000-467.php?Lang=zh-tw",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "政府預算執行、財務收支、決算、財務效能及財務責任等審計職掌。",
+      "note": "審計職權與民意機關表決預算、政風內部查核及司法定罪不同。"
+    },
+    {
+      "id": "oversight-investigation-law",
+      "title": "法務部調查局組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000003",
+      "publishedAt": "2023-12-15",
+      "checkedAt": "2026-11-11",
+      "scope": "第 2 條等規定：國家安全、貪瀆賄選、重大經濟犯罪、洗錢、資安及鑑識等法定業務。",
+      "note": "日期為法規頁所列修正日期；組織職掌不代表可跳過刑事程序或由調查局自行定罪。"
+    },
+    {
+      "id": "oversight-police-law",
+      "title": "警察法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080001",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "警察任務、體制及第 9 條所列法定職權。",
+      "note": "用於警政與刑事調查的入門分工，不提供特定案件強制處分是否合法的判斷。"
+    },
+    {
+      "id": "oversight-police-powers",
+      "title": "警察職權行使法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080145",
+      "publishedAt": "2011-04-27",
+      "checkedAt": "2026-11-11",
+      "scope": "警察職權行使的法定措施、必要性、比例與程序限制。",
+      "note": "日期為法規頁所列修正日期；警察行政與刑事訴訟的強制處分依據須分開核對。"
+    },
+    {
+      "id": "oversight-prosecution-intro",
+      "title": "我們在為您做什麼",
+      "publisher": "臺灣新北地方檢察署",
+      "url": "https://www.pcc.moj.gov.tw/293833/293849/293852/362698/post",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "檢察機關犯罪偵查、實行公訴、刑事執行及相關服務的官方入門說明。",
+      "note": "作為檢察分工概念來源，不以地方檢察署的頁面取代各級機關實際管轄；起訴與有罪判決不同。"
+    },
+    {
+      "id": "oversight-court-organization",
+      "title": "法院組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "普通法院及相關檢察機關的組織與法定職掌，包含檢察官實施偵查、實行公訴及指揮執行等。",
+      "note": "法院與檢察署具有不同職權與所屬；名稱有對應層級不等於檢察署隸屬法院院長。"
+    },
+    {
+      "id": "oversight-ordinary-courts",
+      "title": "普通法院及專業法院",
+      "publisher": "司法院兒童網",
+      "url": "https://www.judicial.gov.tw/kids/cp-1556-57422-fb4d6-3.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "普通民刑事案件與少年家事等專業法院分工的入門介紹。",
+      "note": "只引用法院類型概念；個別案件審判權與管轄依現行法律判斷，不採用其他舊頁面的行政法院配置。"
+    },
+    {
+      "id": "oversight-administrative-litigation",
+      "title": "行政訴訟",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-85-349539-37538-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "公法爭議、行政訴訟目的、訴訟類型與程序分流；並說明交通裁決等特別程序。",
+      "note": "不一概要求所有案件先訴願；處分、訴訟類型、期限及管轄以相應法律與官方教示為準。"
+    },
+    {
+      "id": "oversight-constitutional-court",
+      "title": "憲法法庭：職權",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=10",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "法規範及裁判憲法審查、機關爭議、地方自治保障、總統副總統彈劾、政黨解散與統一解釋等案件類型。",
+      "note": "此處不列評議人數或票數門檻；聲請條件須併讀有效法律與憲法法庭判決，不以舊修法文字直接當現行有效程序。"
+    },
+    {
+      "id": "oversight-csptc-organization",
+      "title": "組織與職掌",
+      "publisher": "公務人員保障暨培訓委員會",
+      "url": "https://www.csptc.gov.tw/cp.aspx?n=291",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "保訓會隸屬考試院、保障審議與公務人員培訓等職掌。",
+      "note": "不把委員會依法審議的獨立性，寫成另有一個憲政院或具一般刑事定罪權。"
+    },
+    {
+      "id": "oversight-csptc-remedies",
+      "title": "保障業務",
+      "publisher": "公務人員保障暨培訓委員會",
+      "url": "https://www.csptc.gov.tw/cl.aspx?n=272",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "公務人員復審、申訴及再申訴須知與保障事件處理流程入口。",
+      "note": "各類程序與適用身分不同，本站不替個人案件認定程序或計算期限。"
+    },
+    {
+      "id": "oversight-appeals-law",
+      "title": "訴願法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030020",
+      "publishedAt": "2012-06-27",
+      "checkedAt": "2026-11-11",
+      "scope": "第 1 至 4 條等規定：行政處分、法定不作為、訴願管轄與相關審議救濟。",
+      "note": "日期為法規頁所列修正日期；訴願是行政救濟程序，不是普通陳情、法院訴訟或刑事告訴的同義詞。"
+    },
+    {
+      "id": "oversight-nhrc-organization",
+      "title": "國家人權委員會組織架構",
+      "publisher": "監察院國家人權委員會",
+      "url": "https://nhrc.cy.gov.tw/cp.aspx?n=7481",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "依監察院組織法設立，以及調查人權事件、政策研究、報告、教育與國際合作等職掌。",
+      "note": "國家人權委員會設於監察院，不另外構成憲法五院之外的一院；調查與救濟職能也不能直接等同刑事起訴或定罪。"
+    },
+    {
+      "id": "oversight-consumer-procedure",
+      "title": "消費爭議處理程序",
+      "publisher": "行政院消費者保護會",
+      "url": "https://cpc.ey.gov.tw/Page/71E988F034956960",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "企業、消費者服務中心、地方消保官、消費爭議調解委員會與法院的程序分工。",
+      "note": "申訴協調與調解不等於刑事定罪；消費者依法提起訴訟不以先走完申訴、調解為必要。"
+    }
+  ],
+  "corrections": [
+    {
+      "date": "2026-11-10",
+      "previous": "需求草稿將縣下鄉鎮市合計寫為 195，鎮寫為 35。",
+      "correction": "依官方概況整理為 198 個鄉鎮市，包含 146 鄉、38 鎮、14 縣轄市；完整名冊與版本另行核對。",
+      "scope": "地方制度入門與查詢資料設計"
+    },
+    {
+      "date": "2026-11-10",
+      "previous": "需求草稿以中央、第一級、第二級描述，容易把不同種類的市與區當成相同自治層級。",
+      "correction": "明確區分直轄市、市、縣轄市、一般區與山地原住民區；一般區不產生民選區長票。",
+      "scope": "地方角色與選舉職務查詢"
+    },
+    {
+      "date": "2026-11-10",
+      "previous": "需求草稿把預算與財源簡化為中央逐級撥款。",
+      "correction": "改為各級預算與依法分配財源的概念，分清編列、審議、執行、決算與審計。",
+      "scope": "預算教學"
+    },
+    {
+      "date": "2026-11-11",
+      "previous": "原角色說明未逐項列出部長、地方局處主管，也未完整區分地方人事例外與各層級質詢對象。",
+      "correction": "補列中央 15 個部部長、臺北市與苗栗縣局處範例，說明院長提請總統任命、地方專屬人事與政務職限制，新增各層級質詢及委員會備詢說明。",
+      "scope": "政府互動圖解、中央地方文章、任命與監督教學"
+    },
+    {
+      "date": "2026-11-11",
+      "previous": "互動關係圖合併行政院長與部會，漏列部長任命連線，並將總統提名大法官等憲政人事僅歸入任命。",
+      "correction": "拆出各部部長節點，補上院長提請及總統任命連線，直接展開 15 個部長職務。大法官、考試院及監察院憲政人事分列總統提名、立法院同意與同意後任命，顯示於相應篩選。",
+      "scope": "政府關係圖與關係篩選"
+    },
+    {
+      "date": "2026-11-11",
+      "previous": "地方任用關係圖尚未列出一般局處及公所主管；角色職掌多為摘要，未獨立說明選民服務與政風分工。",
+      "correction": "補列地方局處、公所主管任用及監督連線，全面擴充角色職掌與檢視表現方式；分列民代選民服務、行政權界線及政風人事、職掌、監督與檢舉分流。",
+      "scope": "政府角色、地方任用、選民服務與廉政監督教學"
+    },
+    {
+      "date": "2026-11-11",
+      "previous": "機關職掌分散於角色及政風說明，尚無完整的中央機關、地方職能與監督救濟查找總覽。",
+      "correction": "新增可搜尋、分類及批次展開收合的機關職責總覽，核對現行中央二級機關、地方常見職能及監督與權益機關，附全 22 縣市官網入口及官方來源。",
+      "scope": "政府機關職責總覽"
+    },
+    {
+      "date": "2026-11-11",
+      "previous": "人民角色僅列中央；個別機關的可點選介面位於下方總覽，尚未納入中央與地方角色區。",
+      "correction": "人民角色改為中央與地方共用，選舉關係依頁籤篩選。角色區新增可收合機關選擇，點選即顯示該機關職掌、生活關聯及來源；特定地方單位另保留實際權責的專屬說明。",
+      "scope": "政府頁籤機關選擇與生活關聯"
+    }
+  ]
+}

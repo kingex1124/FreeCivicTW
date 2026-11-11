@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+public
+package-lock.json
+Spec
+.qa
+test-results
+playwright-report

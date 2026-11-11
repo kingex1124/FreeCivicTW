@@ -1,0 +1,2376 @@
+{
+  "schemaVersion": 1,
+  "contentStatus": "published",
+  "checkedAt": "2026-11-10",
+  "source": {
+    "title": "代碼服務－縣市清單及鄉鎮市區清單（戶政）官方 API 快照",
+    "publisher": "內政部國土測繪中心",
+    "url": "https://data.gov.tw/dataset/102011",
+    "publishedAt": null,
+    "license": "政府資料開放授權條款－第1版（https://data.gov.tw/license）"
+  },
+  "counties": [
+    {
+      "id": "09007",
+      "name": "連江縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "09007010",
+          "name": "南竿鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "09007020",
+          "name": "北竿鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "09007030",
+          "name": "莒光鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "09007040",
+          "name": "東引鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "09020",
+      "name": "金門縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "09020010",
+          "name": "金城鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "09020020",
+          "name": "金沙鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "09020030",
+          "name": "金湖鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "09020040",
+          "name": "金寧鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "09020050",
+          "name": "烈嶼鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "09020060",
+          "name": "烏坵鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10002",
+      "name": "宜蘭縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10002010",
+          "name": "宜蘭市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10002020",
+          "name": "羅東鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10002030",
+          "name": "蘇澳鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10002040",
+          "name": "頭城鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10002050",
+          "name": "礁溪鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002060",
+          "name": "壯圍鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002070",
+          "name": "員山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002080",
+          "name": "冬山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002090",
+          "name": "五結鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002100",
+          "name": "三星鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002110",
+          "name": "大同鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10002120",
+          "name": "南澳鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10004",
+      "name": "新竹縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10004010",
+          "name": "竹北市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10004020",
+          "name": "竹東鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10004030",
+          "name": "新埔鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10004040",
+          "name": "關西鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10004050",
+          "name": "湖口鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004060",
+          "name": "新豐鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004070",
+          "name": "芎林鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004080",
+          "name": "橫山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004090",
+          "name": "北埔鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004100",
+          "name": "寶山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004110",
+          "name": "峨眉鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004120",
+          "name": "尖石鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10004130",
+          "name": "五峰鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10005",
+      "name": "苗栗縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10005010",
+          "name": "苗栗市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10005020",
+          "name": "苑裡鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10005030",
+          "name": "通霄鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10005040",
+          "name": "竹南鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10005050",
+          "name": "頭份市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10005060",
+          "name": "後龍鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10005070",
+          "name": "卓蘭鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10005080",
+          "name": "大湖鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005090",
+          "name": "公館鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005100",
+          "name": "銅鑼鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005110",
+          "name": "南庄鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005120",
+          "name": "頭屋鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005130",
+          "name": "三義鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005140",
+          "name": "西湖鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005150",
+          "name": "造橋鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005160",
+          "name": "三灣鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005170",
+          "name": "獅潭鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10005180",
+          "name": "泰安鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10007",
+      "name": "彰化縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10007010",
+          "name": "彰化市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10007020",
+          "name": "鹿港鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007030",
+          "name": "和美鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007040",
+          "name": "線西鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007050",
+          "name": "伸港鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007060",
+          "name": "福興鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007070",
+          "name": "秀水鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007080",
+          "name": "花壇鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007090",
+          "name": "芬園鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007100",
+          "name": "員林市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10007110",
+          "name": "溪湖鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007120",
+          "name": "田中鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007130",
+          "name": "大村鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007140",
+          "name": "埔鹽鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007150",
+          "name": "埔心鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007160",
+          "name": "永靖鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007170",
+          "name": "社頭鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007180",
+          "name": "二水鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007190",
+          "name": "北斗鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007200",
+          "name": "二林鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10007210",
+          "name": "田尾鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007220",
+          "name": "埤頭鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007230",
+          "name": "芳苑鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007240",
+          "name": "大城鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007250",
+          "name": "竹塘鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10007260",
+          "name": "溪州鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10008",
+      "name": "南投縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10008010",
+          "name": "南投市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10008020",
+          "name": "埔里鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10008030",
+          "name": "草屯鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10008040",
+          "name": "竹山鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10008050",
+          "name": "集集鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10008060",
+          "name": "名間鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008070",
+          "name": "鹿谷鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008080",
+          "name": "中寮鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008090",
+          "name": "魚池鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008100",
+          "name": "國姓鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008110",
+          "name": "水里鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008120",
+          "name": "信義鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10008130",
+          "name": "仁愛鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10009",
+      "name": "雲林縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10009010",
+          "name": "斗六市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10009020",
+          "name": "斗南鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10009030",
+          "name": "虎尾鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10009040",
+          "name": "西螺鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10009050",
+          "name": "土庫鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10009060",
+          "name": "北港鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10009070",
+          "name": "古坑鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009080",
+          "name": "大埤鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009090",
+          "name": "莿桐鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009100",
+          "name": "林內鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009110",
+          "name": "二崙鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009120",
+          "name": "崙背鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009130",
+          "name": "麥寮鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009140",
+          "name": "東勢鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009150",
+          "name": "褒忠鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009160",
+          "name": "臺西鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009170",
+          "name": "元長鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009180",
+          "name": "四湖鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009190",
+          "name": "口湖鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10009200",
+          "name": "水林鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10010",
+      "name": "嘉義縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10010010",
+          "name": "太保市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10010020",
+          "name": "朴子市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10010030",
+          "name": "布袋鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10010040",
+          "name": "大林鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10010050",
+          "name": "民雄鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010060",
+          "name": "溪口鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010070",
+          "name": "新港鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010080",
+          "name": "六腳鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010090",
+          "name": "東石鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010100",
+          "name": "義竹鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010110",
+          "name": "鹿草鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010120",
+          "name": "水上鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010130",
+          "name": "中埔鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010140",
+          "name": "竹崎鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010150",
+          "name": "梅山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010160",
+          "name": "番路鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010170",
+          "name": "大埔鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10010180",
+          "name": "阿里山鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10013",
+      "name": "屏東縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10013010",
+          "name": "屏東市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10013020",
+          "name": "潮州鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10013030",
+          "name": "東港鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10013040",
+          "name": "恆春鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10013050",
+          "name": "萬丹鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013060",
+          "name": "長治鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013070",
+          "name": "麟洛鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013080",
+          "name": "九如鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013090",
+          "name": "里港鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013100",
+          "name": "鹽埔鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013110",
+          "name": "高樹鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013120",
+          "name": "萬巒鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013130",
+          "name": "內埔鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013140",
+          "name": "竹田鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013150",
+          "name": "新埤鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013160",
+          "name": "枋寮鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013170",
+          "name": "新園鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013180",
+          "name": "崁頂鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013190",
+          "name": "林邊鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013200",
+          "name": "南州鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013210",
+          "name": "佳冬鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013220",
+          "name": "琉球鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013230",
+          "name": "車城鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013240",
+          "name": "滿州鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013250",
+          "name": "枋山鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013260",
+          "name": "三地門鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013270",
+          "name": "霧臺鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013280",
+          "name": "瑪家鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013290",
+          "name": "泰武鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013300",
+          "name": "來義鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013310",
+          "name": "春日鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013320",
+          "name": "獅子鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10013330",
+          "name": "牡丹鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10014",
+      "name": "臺東縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10014010",
+          "name": "臺東市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10014020",
+          "name": "成功鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10014030",
+          "name": "關山鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10014040",
+          "name": "卑南鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014050",
+          "name": "鹿野鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014060",
+          "name": "池上鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014070",
+          "name": "東河鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014080",
+          "name": "長濱鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014090",
+          "name": "太麻里鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014100",
+          "name": "大武鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014110",
+          "name": "綠島鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014120",
+          "name": "海端鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014130",
+          "name": "延平鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014140",
+          "name": "金峰鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014150",
+          "name": "達仁鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10014160",
+          "name": "蘭嶼鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10015",
+      "name": "花蓮縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10015010",
+          "name": "花蓮市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10015020",
+          "name": "鳳林鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10015030",
+          "name": "玉里鎮",
+          "type": "town",
+          "autonomous": false
+        },
+        {
+          "id": "10015040",
+          "name": "新城鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015050",
+          "name": "吉安鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015060",
+          "name": "壽豐鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015070",
+          "name": "光復鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015080",
+          "name": "豐濱鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015090",
+          "name": "瑞穗鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015100",
+          "name": "富里鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015110",
+          "name": "秀林鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015120",
+          "name": "萬榮鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10015130",
+          "name": "卓溪鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10016",
+      "name": "澎湖縣",
+      "type": "county",
+      "towns": [
+        {
+          "id": "10016010",
+          "name": "馬公市",
+          "type": "city",
+          "autonomous": false
+        },
+        {
+          "id": "10016020",
+          "name": "湖西鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10016030",
+          "name": "白沙鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10016040",
+          "name": "西嶼鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10016050",
+          "name": "望安鄉",
+          "type": "township",
+          "autonomous": false
+        },
+        {
+          "id": "10016060",
+          "name": "七美鄉",
+          "type": "township",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10017",
+      "name": "基隆市",
+      "type": "city",
+      "towns": [
+        {
+          "id": "10017010",
+          "name": "中正區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017020",
+          "name": "七堵區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017030",
+          "name": "暖暖區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017040",
+          "name": "仁愛區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017050",
+          "name": "中山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017060",
+          "name": "安樂區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10017070",
+          "name": "信義區",
+          "type": "district",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10018",
+      "name": "新竹市",
+      "type": "city",
+      "towns": [
+        {
+          "id": "10018010",
+          "name": "東區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10018020",
+          "name": "北區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10018030",
+          "name": "香山區",
+          "type": "district",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "10020",
+      "name": "嘉義市",
+      "type": "city",
+      "towns": [
+        {
+          "id": "10020010",
+          "name": "東區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "10020020",
+          "name": "西區",
+          "type": "district",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "63000",
+      "name": "臺北市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "63000010",
+          "name": "松山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000020",
+          "name": "信義區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000030",
+          "name": "大安區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000040",
+          "name": "中山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000050",
+          "name": "中正區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000060",
+          "name": "大同區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000070",
+          "name": "萬華區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000080",
+          "name": "文山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000090",
+          "name": "南港區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000100",
+          "name": "內湖區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000110",
+          "name": "士林區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "63000120",
+          "name": "北投區",
+          "type": "district",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "64000",
+      "name": "高雄市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "64000010",
+          "name": "鹽埕區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000020",
+          "name": "鼓山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000030",
+          "name": "左營區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000040",
+          "name": "楠梓區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000050",
+          "name": "三民區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000060",
+          "name": "新興區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000070",
+          "name": "前金區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000080",
+          "name": "苓雅區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000090",
+          "name": "前鎮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000100",
+          "name": "旗津區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000110",
+          "name": "小港區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000120",
+          "name": "鳳山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000130",
+          "name": "林園區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000140",
+          "name": "大寮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000150",
+          "name": "大樹區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000160",
+          "name": "大社區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000170",
+          "name": "仁武區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000180",
+          "name": "鳥松區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000190",
+          "name": "岡山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000200",
+          "name": "橋頭區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000210",
+          "name": "燕巢區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000220",
+          "name": "田寮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000230",
+          "name": "阿蓮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000240",
+          "name": "路竹區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000250",
+          "name": "湖內區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000260",
+          "name": "茄萣區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000270",
+          "name": "永安區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000280",
+          "name": "彌陀區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000290",
+          "name": "梓官區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000300",
+          "name": "旗山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000310",
+          "name": "美濃區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000320",
+          "name": "六龜區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000330",
+          "name": "甲仙區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000340",
+          "name": "杉林區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000350",
+          "name": "內門區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "64000360",
+          "name": "茂林區",
+          "type": "district",
+          "autonomous": true
+        },
+        {
+          "id": "64000370",
+          "name": "桃源區",
+          "type": "district",
+          "autonomous": true
+        },
+        {
+          "id": "64000380",
+          "name": "那瑪夏區",
+          "type": "district",
+          "autonomous": true
+        }
+      ]
+    },
+    {
+      "id": "65000",
+      "name": "新北市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "65000010",
+          "name": "板橋區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000020",
+          "name": "三重區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000030",
+          "name": "中和區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000040",
+          "name": "永和區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000050",
+          "name": "新莊區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000060",
+          "name": "新店區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000070",
+          "name": "樹林區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000080",
+          "name": "鶯歌區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000090",
+          "name": "三峽區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000100",
+          "name": "淡水區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000110",
+          "name": "汐止區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000120",
+          "name": "瑞芳區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000130",
+          "name": "土城區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000140",
+          "name": "蘆洲區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000150",
+          "name": "五股區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000160",
+          "name": "泰山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000170",
+          "name": "林口區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000180",
+          "name": "深坑區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000190",
+          "name": "石碇區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000200",
+          "name": "坪林區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000210",
+          "name": "三芝區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000220",
+          "name": "石門區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000230",
+          "name": "八里區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000240",
+          "name": "平溪區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000250",
+          "name": "雙溪區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000260",
+          "name": "貢寮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000270",
+          "name": "金山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000280",
+          "name": "萬里區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "65000290",
+          "name": "烏來區",
+          "type": "district",
+          "autonomous": true
+        }
+      ]
+    },
+    {
+      "id": "66000",
+      "name": "臺中市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "66000010",
+          "name": "中區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000020",
+          "name": "東區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000030",
+          "name": "南區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000040",
+          "name": "西區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000050",
+          "name": "北區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000060",
+          "name": "西屯區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000070",
+          "name": "南屯區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000080",
+          "name": "北屯區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000090",
+          "name": "豐原區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000100",
+          "name": "東勢區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000110",
+          "name": "大甲區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000120",
+          "name": "清水區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000130",
+          "name": "沙鹿區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000140",
+          "name": "梧棲區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000150",
+          "name": "后里區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000160",
+          "name": "神岡區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000170",
+          "name": "潭子區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000180",
+          "name": "大雅區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000190",
+          "name": "新社區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000200",
+          "name": "石岡區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000210",
+          "name": "外埔區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000220",
+          "name": "大安區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000230",
+          "name": "烏日區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000240",
+          "name": "大肚區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000250",
+          "name": "龍井區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000260",
+          "name": "霧峰區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000270",
+          "name": "太平區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000280",
+          "name": "大里區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "66000290",
+          "name": "和平區",
+          "type": "district",
+          "autonomous": true
+        }
+      ]
+    },
+    {
+      "id": "67000",
+      "name": "臺南市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "67000010",
+          "name": "新營區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000020",
+          "name": "鹽水區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000030",
+          "name": "白河區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000040",
+          "name": "柳營區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000050",
+          "name": "後壁區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000060",
+          "name": "東山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000070",
+          "name": "麻豆區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000080",
+          "name": "下營區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000090",
+          "name": "六甲區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000100",
+          "name": "官田區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000110",
+          "name": "大內區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000120",
+          "name": "佳里區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000130",
+          "name": "學甲區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000140",
+          "name": "西港區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000150",
+          "name": "七股區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000160",
+          "name": "將軍區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000170",
+          "name": "北門區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000180",
+          "name": "新化區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000190",
+          "name": "善化區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000200",
+          "name": "新市區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000210",
+          "name": "安定區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000220",
+          "name": "山上區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000230",
+          "name": "玉井區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000240",
+          "name": "楠西區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000250",
+          "name": "南化區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000260",
+          "name": "左鎮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000270",
+          "name": "仁德區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000280",
+          "name": "歸仁區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000290",
+          "name": "關廟區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000300",
+          "name": "龍崎區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000310",
+          "name": "永康區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000320",
+          "name": "東區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000330",
+          "name": "南區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000340",
+          "name": "北區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000350",
+          "name": "安南區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000360",
+          "name": "安平區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "67000370",
+          "name": "中西區",
+          "type": "district",
+          "autonomous": false
+        }
+      ]
+    },
+    {
+      "id": "68000",
+      "name": "桃園市",
+      "type": "municipality",
+      "towns": [
+        {
+          "id": "68000010",
+          "name": "桃園區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000020",
+          "name": "中壢區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000030",
+          "name": "大溪區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000040",
+          "name": "楊梅區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000050",
+          "name": "蘆竹區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000060",
+          "name": "大園區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000070",
+          "name": "龜山區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000080",
+          "name": "八德區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000090",
+          "name": "龍潭區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000100",
+          "name": "平鎮區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000110",
+          "name": "新屋區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000120",
+          "name": "觀音區",
+          "type": "district",
+          "autonomous": false
+        },
+        {
+          "id": "68000130",
+          "name": "復興區",
+          "type": "district",
+          "autonomous": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "contentStatus": "draft",
-  "updatedAt": "2026-11-10",
+  "contentStatus": "published",
+  "updatedAt": "2026-11-11",
   "name": "FreeCivicTW",
   "locale": "zh-Hant",
   "tagline": "從生活出發，看懂台灣民主與每一張選票。",
@@ -22,9 +22,24 @@
     "correctionFields": ["頁面網址", "疑似問題", "建議修正與參考來源"]
   },
   "primaryEntries": [
-    {"id": "quick-start", "label": "先花 5 分鐘認識民主", "href": "/learn/", "learningPathId": "quick-start"},
-    {"id": "my-ballots", "label": "查我能選哪些職務", "href": "/my-ballots/", "learningPathId": "my-ballots"},
-    {"id": "media-practice", "label": "練習看懂一則訊息", "href": "/media-literacy/", "learningPathId": "media-practice"}
+    {
+      "id": "quick-start",
+      "label": "先花 5 分鐘認識民主",
+      "href": "/learn/",
+      "learningPathId": "quick-start"
+    },
+    {
+      "id": "my-ballots",
+      "label": "查我能選哪些職務",
+      "href": "/my-ballots/",
+      "learningPathId": "my-ballots"
+    },
+    {
+      "id": "media-practice",
+      "label": "練習看懂一則訊息",
+      "href": "/media-literacy/",
+      "learningPathId": "media-practice"
+    }
   ],
   "editorialPrinciples": [
     "先用白話說明，再提供正式名稱與來源。",

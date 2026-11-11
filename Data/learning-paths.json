@@ -11,10 +11,14 @@
       "estimatedMinutes": 5,
       "format": "summary-first",
       "summarySteps": [
-        {"id": "central", "title": "誰施政，誰監督？", "moduleIds": ["central-government"]},
-        {"id": "local", "title": "縣、市、鄉、鎮、區為什麼不同？", "moduleIds": ["local-government"]},
-        {"id": "ballots", "title": "選票選出什麼權力？", "moduleIds": ["election-basics"]},
-        {"id": "verify", "title": "看到訊息先怎麼查？", "moduleIds": ["media-literacy-basics"]}
+        { "id": "central", "title": "誰施政，誰監督？", "moduleIds": ["central-government"] },
+        {
+          "id": "local",
+          "title": "縣、市、鄉、鎮、區為什麼不同？",
+          "moduleIds": ["local-government"]
+        },
+        { "id": "ballots", "title": "選票選出什麼權力？", "moduleIds": ["election-basics"] },
+        { "id": "verify", "title": "看到訊息先怎麼查？", "moduleIds": ["media-literacy-basics"] }
       ]
     },
     {
@@ -33,7 +37,14 @@
       "estimatedMinutes": 10,
       "format": "evidence-practice",
       "moduleIds": ["media-literacy-basics"],
-      "scenarioIds": ["headline-context", "old-message", "short-clip", "chart-scale", "shared-source", "ai-image"],
+      "scenarioIds": [
+        "headline-context",
+        "old-message",
+        "short-clip",
+        "chart-scale",
+        "shared-source",
+        "ai-image"
+      ],
       "goal": "練習尋找原始來源與完整脈絡，證據不足時保留判斷。"
     }
   ],
@@ -46,7 +57,12 @@
       "estimatedMinutes": 4,
       "openingQuestion": "民主只是每隔幾年投一次票嗎？",
       "learningGoals": ["認識權利、法治、參與與制衡", "理解多數決也須尊重基本權利"],
-      "sectionOutline": ["從生活中的公共決定開始", "選舉之外的民主", "權利保障與權力限制", "我可以怎麼參與"],
+      "sectionOutline": [
+        "從生活中的公共決定開始",
+        "選舉之外的民主",
+        "權利保障與權力限制",
+        "我可以怎麼參與"
+      ],
       "interaction": "比較只有投票與具備權利保障的兩種虛構制度情境。"
     },
     {
@@ -57,7 +73,12 @@
       "estimatedMinutes": 5,
       "openingQuestion": "總統當選後，所有政府機關都由他直接指揮嗎？",
       "learningGoals": ["分清元首、施政與立法監督", "認識其他憲政機關的基本定位"],
-      "sectionOutline": ["人民選出哪些角色", "行政院與部會的工作", "立法院如何依法監督", "司法院、考試院與監察院的位置"],
+      "sectionOutline": [
+        "人民選出哪些角色",
+        "行政院與部會的工作",
+        "立法院如何依法監督",
+        "司法院、考試院與監察院的位置"
+      ],
       "interaction": "點選政府角色，突出其產生方式與監督關係。"
     },
     {
@@ -68,7 +89,12 @@
       "estimatedMinutes": 5,
       "openingQuestion": "頭份市長和臺北市長，為什麼不能直接當成同一層？",
       "learningGoals": ["區分三種市與地方自治層次", "理解一般區與山地原住民區的差異"],
-      "sectionOutline": ["先找自己的縣市", "縣轄市、鎮與鄉", "一般區與自治區例外", "村里與基層服務"],
+      "sectionOutline": [
+        "先找自己的縣市",
+        "縣轄市、鎮與鄉",
+        "一般區與自治區例外",
+        "村里與基層服務"
+      ],
       "interaction": "比較頭份、大安與烏來的地方角色組合。"
     },
     {
@@ -78,8 +104,17 @@
       "order": 4,
       "estimatedMinutes": 5,
       "openingQuestion": "選行政首長與選民意代表，差在哪裡？",
-      "learningGoals": ["分清中央與地方票別", "認識立委候選人票與政黨票", "區分制度查詢與個人資格認證"],
-      "sectionOutline": ["選的是職務與權力", "總統與立委票別", "不同地方的職務組合", "戶籍與資格條件"],
+      "learningGoals": [
+        "分清中央與地方票別",
+        "認識立委候選人票與政黨票",
+        "區分制度查詢與個人資格認證"
+      ],
+      "sectionOutline": [
+        "選的是職務與權力",
+        "總統與立委票別",
+        "不同地方的職務組合",
+        "戶籍與資格條件"
+      ],
       "interaction": "切換地區與立委教學情境，比較職務類型。"
     },
     {
@@ -101,7 +136,12 @@
       "estimatedMinutes": 5,
       "openingQuestion": "預算審議通過，就等於工程明天會動工嗎？",
       "learningGoals": ["理解提案、審議與執行差異", "分清預算、決算與審計"],
-      "sectionOutline": ["法律怎麼從提案走到施行", "預算怎麼編列與審議", "執行之後的決算與監督", "中央地方財源不只一條線"],
+      "sectionOutline": [
+        "法律怎麼從提案走到施行",
+        "預算怎麼編列與審議",
+        "執行之後的決算與監督",
+        "中央地方財源不只一條線"
+      ],
       "interaction": "操作虛構公園改善的預算流程，辨認每一步的角色。"
     },
     {
@@ -112,7 +152,12 @@
       "estimatedMinutes": 4,
       "openingQuestion": "生活中的公共問題，要怎麼找到可以反映的地方？",
       "learningGoals": ["先確認權責與資料來源", "認識公開資訊、陳情及討論參與"],
-      "sectionOutline": ["把問題說清楚", "先確認設施與機關權責", "找資料與提出建議", "尊重差異並持續追蹤"],
+      "sectionOutline": [
+        "把問題說清楚",
+        "先確認設施與機關權責",
+        "找資料與提出建議",
+        "尊重差異並持續追蹤"
+      ],
       "interaction": "在路口安全情境中，選出下一個需要查明的資訊。"
     },
     {
@@ -122,8 +167,17 @@
       "order": 8,
       "estimatedMinutes": 4,
       "openingQuestion": "一則訊息讓我很生氣，是否就應該立刻轉傳？",
-      "learningGoals": ["檢查來源、日期、脈絡與證據", "區分事實、意見與推論", "接受證據不足時暫不下結論"],
-      "sectionOutline": ["先停一下", "追原始來源與完整內容", "找獨立資料交叉核對", "決定是否分享與如何更正"],
+      "learningGoals": [
+        "檢查來源、日期、脈絡與證據",
+        "區分事實、意見與推論",
+        "接受證據不足時暫不下結論"
+      ],
+      "sectionOutline": [
+        "先停一下",
+        "追原始來源與完整內容",
+        "找獨立資料交叉核對",
+        "決定是否分享與如何更正"
+      ],
       "interaction": "進入六種虛構素材練習，將查證步驟用在情境中。"
     }
   ]

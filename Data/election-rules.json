@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "contentStatus": "published",
+  "checkedAt": "2026-11-10",
+  "notice": "以下是依所選戶籍地整理的定期選舉職務類型教學，不是當次選舉的個人可領票認證。中央與地方通常屬不同定期選舉，不合計成這次一定領幾張。年齡、戶籍期間、身分與當次公告仍影響資格；補選、罷免、公投及其他特殊情況另有規則。",
+  "sourceIds": [
+    "amendments",
+    "local-government",
+    "elections",
+    "president-elections",
+    "national-ballots",
+    "local-overview"
+  ],
+  "national": [
+    {
+      "id": "president",
+      "title": "總統、副總統票",
+      "summary": "一張票圈選同一組總統、副總統候選人，不拆成兩張。",
+      "roleId": "president"
+    },
+    {
+      "id": "legislator",
+      "title": "立委候選人票",
+      "summary": "依適用資格圈選區域、平地原住民或山地原住民立委的相應一類；不是先領區域票再多領原住民票。",
+      "roleId": "legislator"
+    },
+    {
+      "id": "party",
+      "title": "政黨票",
+      "summary": "選擇政黨名單，依法影響全國不分區及僑居國外國民立委席次；不是直接圈選一位不分區候選人。",
+      "roleId": "legislator"
+    }
+  ],
+  "localProfiles": [
+    {
+      "id": "municipality-district",
+      "label": "直轄市一般區",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "選出直轄市行政首長，領導市政府依法施政。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "選出直轄市民意代表，依法審議議案、預算及監督市政府；精確選區與類別另依公告。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在里長",
+          "summary": "選出基層服務與聯繫的里長；未選里別時，不指定里名。一般區長依法任用，不另列區長或區民代表票。",
+          "roleId": "village-chief"
+        }
+      ]
+    },
+    {
+      "id": "city-district",
+      "label": "市的一般區",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "選出市政府行政首長；這裡的市不同於縣轄市。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "選出市議員，依法審議市級議案與預算、監督市政府。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在里長",
+          "summary": "選出基層里長。一般區為市政府派出機關，不另列民選區長或區民代表。",
+          "roleId": "village-chief"
+        }
+      ]
+    },
+    {
+      "id": "county-city",
+      "label": "縣轄市",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "縣級行政首長，領導縣政府。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "縣級民意代表，審議縣級議案與預算、監督縣政府。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "town-chief",
+          "title": "{town}長",
+          "summary": "縣轄市公所的行政首長，處理依法屬於公所的事務；不是直轄市長。",
+          "roleId": "town-chief"
+        },
+        {
+          "id": "town-council",
+          "title": "{town}民代表",
+          "summary": "審議市公所相關自治議案與預算，監督該公所。",
+          "roleId": "town-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在里長",
+          "summary": "辦理基層里公務及聯繫反映，不是市民代表，也不能自行通過公所預算。",
+          "roleId": "village-chief"
+        }
+      ]
+    },
+    {
+      "id": "county-town",
+      "label": "縣下的鎮",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "縣級行政首長，領導縣政府。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "縣級民意代表，監督縣政府及審議縣級議案。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "town-chief",
+          "title": "{town}長",
+          "summary": "領導鎮公所，處理依法分工的自治與委辦事項。",
+          "roleId": "town-chief"
+        },
+        {
+          "id": "town-council",
+          "title": "{town}民代表",
+          "summary": "審議鎮級自治議案與預算、監督鎮公所。",
+          "roleId": "town-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在里長",
+          "summary": "鎮下的基層編組為里，里長協助聯繫與反映。",
+          "roleId": "village-chief"
+        }
+      ]
+    },
+    {
+      "id": "county-township",
+      "label": "縣下的鄉",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "縣級行政首長，領導縣政府。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "縣級民意代表，監督縣政府及審議縣級議案。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "town-chief",
+          "title": "{town}長",
+          "summary": "領導鄉公所，處理依法分工的自治與委辦事項。",
+          "roleId": "town-chief"
+        },
+        {
+          "id": "town-council",
+          "title": "{town}民代表",
+          "summary": "審議鄉級自治議案與預算、監督鄉公所。",
+          "roleId": "town-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在村長",
+          "summary": "鄉下的基層編組為村，村長辦理村公務與聯繫服務。",
+          "roleId": "village-chief"
+        }
+      ]
+    },
+    {
+      "id": "indigenous-district",
+      "label": "直轄市山地原住民區",
+      "ballots": [
+        {
+          "id": "county-chief",
+          "title": "{county}長",
+          "summary": "直轄市行政首長，領導市政府；與自治區長是不同職務。",
+          "roleId": "county-chief"
+        },
+        {
+          "id": "county-council",
+          "title": "{county}議員",
+          "summary": "市級民意代表，監督市政府；所屬選區與類別須依身分及當屆公告確認。",
+          "roleId": "county-council"
+        },
+        {
+          "id": "indigenous-chief",
+          "title": "{town}長",
+          "summary": "具有自治地位的區公所首長，由該區具資格選舉人依法選出，與一般區長任用方式不同。",
+          "roleId": "indigenous-chief"
+        },
+        {
+          "id": "indigenous-council",
+          "title": "{town}民代表",
+          "summary": "自治區層級民意代表，依法審議議案與預算、監督區公所。",
+          "roleId": "indigenous-council"
+        },
+        {
+          "id": "village-chief",
+          "title": "戶籍所在里長",
+          "summary": "基層里公務及聯繫服務。個人原住民身分與地區自治類型不是同一條判定規則。",
+          "roleId": "village-chief"
+        }
+      ]
+    }
+  ]
+}
