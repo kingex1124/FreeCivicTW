@@ -7,10 +7,16 @@ export function CivicPreviewView({ groups }: CivicPreviewProps) {
   const [mode, setMode] = useState<CivicPreviewMode>('execute');
   const [expanded, setExpanded] = useState(false);
   const lastTrigger = useRef<HTMLButtonElement | null>(null);
+  const detailsRef = useRef<HTMLElement | null>(null);
   function explore(nextMode: CivicPreviewMode, trigger: HTMLButtonElement) {
     lastTrigger.current = trigger;
     setMode(nextMode);
     setExpanded(true);
+    if (nextMode === 'people') {
+      requestAnimationFrame(() =>
+        detailsRef.current?.scrollIntoView({ block: 'nearest', behavior: 'instant' }),
+      );
+    }
   }
   return (
     <div className="civic-preview">
@@ -18,11 +24,18 @@ export function CivicPreviewView({ groups }: CivicPreviewProps) {
         <span className="live-dot" />
         一張圖，開始認識民主<span>公民筆記 001</span>
       </div>
-      <div className="preview-people">
+      <button
+        type="button"
+        className="preview-people"
+        aria-expanded={expanded && mode === 'people'}
+        aria-controls="preview-role-details"
+        onClick={(event) => explore('people', event.currentTarget)}
+      >
         <Users size={23} />
         <strong>我們，每一個人</strong>
         <small>權力，來自人民</small>
-      </div>
+        <ArrowRight size={15} aria-hidden="true" />
+      </button>
       <div className="preview-vote">
         <span />
         <span>
@@ -105,19 +118,27 @@ export function CivicPreviewView({ groups }: CivicPreviewProps) {
       </div>
       <p className="preview-caption" aria-live="polite">
         <Sparkles size={16} />
-        {mode === 'execute'
-          ? '行政機關負責施政；不是每位官員都由人民直選。'
-          : '民意代表審議與監督，不是直接指揮工程的主管。'}
+        {mode === 'people'
+          ? '民主不只有投票；查閱資訊、提出建議與參與討論，也能讓改變發生。'
+          : mode === 'execute'
+            ? '行政機關負責施政；不是每位官員都由人民直選。'
+            : '民意代表審議與監督，不是直接指揮工程的主管。'}
       </p>
       <section
+        ref={detailsRef}
         id="preview-role-details"
         className="preview-detail"
+        data-mode={mode}
         aria-labelledby="preview-detail-title"
         hidden={!expanded}
       >
         <div className="preview-detail-heading">
           <h2 id="preview-detail-title">
-            {mode === 'execute' ? '誰負責把事情做好？' : '誰負責把權力看好？'}
+            {mode === 'people'
+              ? '我們可以怎麼參與？'
+              : mode === 'execute'
+                ? '誰負責把事情做好？'
+                : '誰負責把權力看好？'}
           </h2>
           <button
             type="button"
@@ -134,18 +155,27 @@ export function CivicPreviewView({ groups }: CivicPreviewProps) {
         <ul>
           {groups[mode].map((role) => (
             <li key={role.id}>
-              <span className="preview-detail-scope">
-                {role.level === 'central' ? '中央' : '地方'}
-              </span>
+              <span className="preview-detail-scope">{role.scopeLabel}</span>
               <div>
                 <h3>{role.name}</h3>
                 <p>{role.summary}</p>
+                {role.actions.length > 0 && (
+                  <ul className="preview-participation-actions">
+                    {role.actions.map((action) => (
+                      <li key={action}>{action}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
           ))}
         </ul>
-        <Link href="/government/" className="preview-detail-link">
-          打開完整政府關係圖 <ArrowRight size={15} />
+        <Link
+          href={mode === 'people' ? '/learn/civic-participation/' : '/government/'}
+          className="preview-detail-link"
+        >
+          {mode === 'people' ? '除了投票，我還可以做什麼？' : '打開完整政府關係圖'}{' '}
+          <ArrowRight size={15} />
         </Link>
       </section>
       <div className="preview-corner" aria-hidden="true">

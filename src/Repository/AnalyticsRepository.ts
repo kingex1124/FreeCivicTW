@@ -47,6 +47,8 @@ export const AnalyticsRepository = {
   prepare() {
     window.dataLayer ??= [];
     window.gtag ??= function () {
+      // Google tag uses IArguments for commands; a rest-parameter array changes that format.
+      // eslint-disable-next-line prefer-rest-params -- Preserve the official gtag command format.
       window.dataLayer!.push(arguments);
     };
     const locationSafe = location.origin + location.pathname;

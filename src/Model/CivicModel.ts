@@ -109,9 +109,12 @@ export const CivicSchema = z.object({
   ),
 });
 export type Role = z.infer<typeof RoleSchema>;
-export type CivicPreviewMode = 'execute' | 'oversee';
+export type CivicPreviewMode = 'people' | 'execute' | 'oversee';
 export type CivicPreviewProps = {
-  groups: Record<CivicPreviewMode, Pick<Role, 'id' | 'name' | 'summary' | 'level'>[]>;
+  groups: Record<
+    CivicPreviewMode,
+    (Pick<Role, 'id' | 'name' | 'summary'> & { scopeLabel: string; actions: string[] })[]
+  >;
 };
 export type RoleDetailsProps = { role: Role };
 export type CivicData = z.infer<typeof CivicSchema>;

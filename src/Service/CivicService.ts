@@ -16,10 +16,19 @@ export const CivicService = {
     const pick = (id: string) => {
       const role = roles.find((r) => r.id === id);
       if (!role) throw new Error(`首頁分工示意缺少角色：${id}`);
-      const { name, summary, level } = role;
-      return { id, name, summary, level };
+      const { name, summary } = role;
+      const scopeLabel =
+        role.scopes?.length === 2 ? '中央與地方' : role.level === 'central' ? '中央' : '地方';
+      return {
+        id,
+        name,
+        summary,
+        scopeLabel,
+        actions: id === 'people' ? role.powers.slice(0, 5) : [],
+      };
     };
     return {
+      people: ['people'].map(pick),
       execute: ['ministers', 'county-chief'].map(pick),
       oversee: ['legislator', 'county-council'].map(pick),
     };

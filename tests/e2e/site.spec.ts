@@ -30,15 +30,38 @@ test('首頁可閱讀並連到三條路徑，沒有瀏覽器執行錯誤', async
   expect(errors).toEqual([]);
 });
 
-test('首頁房子卡片能展開中央地方說明、切換與收起，手機及鍵盤可操作', async ({ page }) => {
+test('首頁人民與房子卡片能展開說明、切換與收起，手機及鍵盤可操作', async ({ page }) => {
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('./');
+    const people = page.getByRole('button', { name: /我們，每一個人/ });
     const executive = page.getByRole('button', { name: /行政團隊.*把事情做好/ });
     const representative = page.getByRole('button', { name: /民意代表.*把權力看好/ });
     const details = page.getByRole('region', { name: '誰負責把事情做好？' });
     await expect(page.locator('#preview-role-details')).toBeHidden();
+    await people.focus();
+    await people.press('Enter');
+    const participation = page.getByRole('region', { name: '我們可以怎麼參與？' });
+    await expect(participation).toBeVisible();
+    await expect(participation.getByRole('heading', { level: 2 })).toBeInViewport();
+    await expect(people).toHaveAttribute('aria-expanded', 'true');
+    await expect(participation).toContainText('中央與地方');
+    await expect(participation.locator('.preview-participation-actions li')).toHaveText(
+      civicData.roles.find((role) => role.id === 'people')!.powers.slice(0, 5),
+    );
+    const participationAccessibility = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
+      .analyze();
+    expect(participationAccessibility.violations.map((v) => v.id)).toEqual([]);
+    await mkdir('.qa', { recursive: true });
+    await participation.screenshot({ path: `.qa/home-participation-${width}.png` });
+    await page.getByRole('button', { name: '收起分工說明' }).click();
+    await expect(page.locator('#preview-role-details')).toBeHidden();
+    await expect(people).toBeFocused();
+    await people.press('Space');
+    await expect(participation).toBeVisible();
     await executive.click();
+    await expect(people).toHaveAttribute('aria-expanded', 'false');
     await expect(executive).toHaveAttribute('aria-expanded', 'true');
     await expect(details).toBeVisible();
     await expect(details.getByRole('heading', { level: 3 })).toHaveText([
@@ -75,6 +98,10 @@ test('首頁房子卡片能展開中央地方說明、切換與收起，手機�
     );
     await details.getByRole('link', { name: '打開完整政府關係圖' }).click();
     await expect(page.getByRole('heading', { level: 1 })).toContainText('把角色連起來');
+    await page.goto('./');
+    await people.click();
+    await participation.getByRole('link', { name: '除了投票，我還可以做什麼？' }).click();
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('除了投票，我還可以做什麼');
   }
 });
 
@@ -104,6 +131,13 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
     .click();
   await page.getByRole('button', { name: '先看頭份市範例' }).click();
   await page.getByLabel('立委票別教學情境').selectOption('mountain');
+  expect(
+    await page.evaluate(() =>
+      (window.dataLayer ?? []).every(
+        (command) => Object.prototype.toString.call(command) === '[object Arguments]',
+      ),
+    ),
+  ).toBe(true);
   const commands = await page.evaluate(() =>
     (window.dataLayer ?? []).map((item) => Array.from(item as Iterable<unknown>)),
   );

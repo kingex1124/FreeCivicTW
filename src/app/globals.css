@@ -634,6 +634,15 @@ summary:focus-visible {
   border-radius: 9px;
   position: relative;
   box-shadow: 0 3px 0 #d4ddca;
+  min-height: 44px;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+.preview-people:hover,
+.preview-people[aria-expanded='true'] {
+  background: var(--sage);
+  border-color: var(--green);
 }
 .preview-people > svg {
   color: var(--green);
@@ -829,13 +838,13 @@ summary:focus-visible {
   margin: 6px 0 16px;
   padding: 0;
 }
-.preview-detail li {
+.preview-detail > ul > li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   padding-block: 10px;
 }
-.preview-detail li + li {
+.preview-detail > ul > li + li {
   margin: 0;
   border-top: 1px solid var(--line);
 }
@@ -855,6 +864,20 @@ summary:focus-visible {
   margin-top: 4px;
   font-size: 12px;
   color: var(--muted);
+}
+.preview-detail .preview-participation-actions {
+  list-style: disc;
+  margin: 12px 0 0;
+  padding-left: 1.25em;
+  font-size: 12px;
+  color: var(--muted);
+}
+.preview-detail[data-mode='people'] > ul > li {
+  display: block;
+}
+.preview-detail[data-mode='people'] .preview-detail-scope {
+  display: inline-block;
+  margin-bottom: 8px;
 }
 .preview-detail-link {
   display: flex;
