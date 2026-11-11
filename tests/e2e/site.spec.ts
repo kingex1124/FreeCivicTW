@@ -524,6 +524,7 @@ test('手機導覽、減少動畫與主要頁面不水平溢出', async ({ page 
     './',
     'my-ballots/',
     'government/',
+    'justice/',
     'media-literacy/',
     'learn/democracy-and-rights/',
     'about/',

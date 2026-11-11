@@ -1682,13 +1682,14 @@ summary:focus-visible {
   border-radius: 7px;
   gap: 6px;
 }
-.scope-switch button {
+.scope-switch :is(button, a) {
   flex: 1;
   border: 0;
   background: none;
   border-radius: 5px;
   padding: 9px;
   font-size: 13px;
+  text-align: center;
 }
 .scope-switch button[aria-pressed='true'] {
   background: var(--green);
@@ -4967,6 +4968,497 @@ html[data-motion='reduced'] *:after {
 }
 .preview-tabs button:not([aria-pressed='true']) {
   color: #33552b;
+}
+
+/* 司法與警檢：組織分工、可探索的機關卡片與程序導覽。 */
+.justice-page section[id] {
+  scroll-margin-top: 115px;
+}
+.justice-principles > h2 {
+  margin-bottom: 22px;
+  font-size: 27px;
+}
+.justice-principle-grid,
+.justice-system-grid,
+.justice-reporting-terms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.justice-principle-grid > article,
+.justice-system-card,
+.justice-court-paths > article,
+.justice-reporting-terms > article,
+.justice-reporting-channels > article,
+.justice-prepare {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  min-width: 0;
+}
+.justice-principle-grid h3,
+.justice-system-card h3,
+.justice-court-paths h3,
+.justice-reporting-terms h3,
+.justice-reporting-channels h3,
+.justice-prepare h3 {
+  margin-bottom: 12px;
+  font-size: 19px;
+}
+.justice-principle-grid p,
+.justice-system-card p,
+.justice-court-paths p,
+.justice-reporting-terms p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.justice-index {
+  display: block;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.justice-system-card {
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--green);
+}
+.justice-system-prosecution {
+  border-top-color: #8a671f;
+}
+.justice-system-police {
+  border-top-color: #50677d;
+}
+.justice-system-icon {
+  color: var(--green);
+  margin-bottom: 16px;
+}
+.justice-organization-path {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+.justice-organization-path li {
+  border-left: 2px solid var(--line);
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.justice-system-card .text-link {
+  margin-top: auto;
+  padding-top: 20px;
+  min-height: 44px;
+}
+.justice-cooperation {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  background: var(--sage);
+  border-radius: 10px;
+  margin-top: 22px;
+  color: var(--green-dark);
+  font-size: 14px;
+}
+.justice-sources {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.justice-sources > summary {
+  min-height: 44px;
+  padding-block: 9px;
+  cursor: pointer;
+  color: var(--green);
+}
+.justice-sources .source-list {
+  margin: 12px 0 0;
+}
+.justice-directory-tools {
+  margin-bottom: 22px;
+}
+.justice-group-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.justice-group-filters button {
+  padding: 8px 17px;
+  min-height: 44px;
+  border: 1px solid #bacbb4;
+  border-radius: 7px;
+  background: var(--white);
+  font-size: 14px;
+}
+.justice-group-filters button[aria-pressed='true'] {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+.justice-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid #bacbb4;
+  border-radius: 8px;
+  padding: 0 16px;
+  max-width: 520px;
+  color: var(--green);
+}
+.justice-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+}
+.justice-directory-tools > p {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.justice-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.justice-entity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 20px;
+  background: #eff2e7;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  max-height: 760px;
+  overflow-y: auto;
+}
+.justice-entity-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 122px;
+  padding: 18px 12px;
+  background: var(--white);
+  border: 1px solid #c8d6be;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.justice-entity-card strong {
+  font-size: 14px;
+}
+.justice-entity-card span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.justice-entity-card:hover {
+  border-color: var(--green);
+}
+.justice-entity-card[aria-pressed='true'] {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+.justice-entity-card[aria-pressed='true'] span {
+  color: #ecf2e8;
+}
+.justice-inspector {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 28px;
+  position: sticky;
+  top: 110px;
+  max-height: calc(100dvh - 135px);
+  overflow-y: auto;
+  scroll-margin-top: 105px;
+}
+.justice-inspector > h3 {
+  font-size: 25px;
+  margin-block: 10px 20px;
+}
+.justice-return {
+  margin-bottom: 20px;
+}
+.justice-entity-details dl {
+  margin: 24px 0;
+}
+.justice-entity-details dl > div + div {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.justice-entity-details dt {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.justice-entity-details dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.justice-entity-details dd ul {
+  margin: 0;
+}
+.justice-entity-details a {
+  overflow-wrap: anywhere;
+}
+.justice-full-text,
+.justice-faq > details {
+  margin-top: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.justice-full-text > summary,
+.justice-full-flow > summary,
+.justice-faq > details > summary {
+  padding: 22px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.justice-full-text > section {
+  padding: 28px;
+  border-top: 1px solid var(--line);
+}
+.justice-full-text > section > h3 {
+  font-size: 23px;
+  margin-bottom: 16px;
+}
+.justice-coverage-notes,
+.justice-flow-notes,
+.justice-checked-at {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.justice-court-paths,
+.justice-reporting-channels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.justice-court-paths ul {
+  font-size: 14px;
+  padding-left: 1.2em;
+  margin-block: 18px;
+}
+.justice-flow-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 30px;
+}
+.justice-flow-progress {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+.justice-flow-progress li + li {
+  margin: 0;
+}
+.justice-flow-progress button {
+  width: 100%;
+  height: 100%;
+  min-height: 70px;
+  padding: 12px;
+  border: 0;
+  border-top: 3px solid var(--line);
+  background: var(--paper);
+  text-align: left;
+  font-size: 13px;
+}
+.justice-flow-progress button span {
+  display: block;
+  font: 12px monospace;
+  margin-bottom: 6px;
+}
+.justice-flow-progress button[aria-current='step'] {
+  border-color: var(--green);
+  background: var(--sage);
+  color: var(--green-dark);
+  font-weight: 700;
+}
+.justice-current-step {
+  background: #eff2e7;
+  border-radius: 10px;
+  padding: 28px;
+}
+.justice-current-step h3 {
+  font-size: 24px;
+  margin-block: 15px;
+}
+.justice-current-step p,
+.justice-current-step li,
+.justice-full-flow p,
+.justice-full-flow li {
+  font-size: 14px;
+}
+.justice-current-step > ul {
+  margin-block: 18px 0;
+}
+.justice-outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+.justice-outcomes article {
+  padding: 16px;
+  background: var(--white);
+  border-radius: 8px;
+}
+.justice-outcomes h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--green);
+}
+.justice-full-flow {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.justice-full-flow > ol > li {
+  padding-block: 12px;
+}
+.justice-full-flow h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.justice-reporting-terms {
+  margin-bottom: 24px;
+}
+.justice-reporting-channels {
+  align-items: start;
+}
+.justice-channel-where {
+  font-size: 14px;
+  color: var(--green);
+}
+.justice-reporting-channels ol {
+  margin-block: 25px;
+}
+.justice-reporting-channels ol li {
+  padding: 10px 0;
+}
+.justice-reporting-channels h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.justice-reporting-channels p,
+.justice-reporting-channels ul,
+.justice-prepare {
+  font-size: 14px;
+}
+.justice-reporting-channels ul {
+  color: var(--muted);
+}
+.justice-prepare {
+  margin-top: 24px;
+  background: var(--sage);
+}
+.justice-faq > details > p,
+.justice-faq > details > .justice-sources {
+  margin: 0;
+  padding: 0 22px 22px;
+  font-size: 14px;
+}
+.justice-empty {
+  grid-column: 1 / -1;
+  padding: 20px;
+}
+.justice-empty button {
+  margin-top: 16px;
+}
+.justice-checked-at {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 46px;
+}
+@media (max-width: 1000px) {
+  .justice-workspace {
+    grid-template-columns: 1fr;
+  }
+  .justice-inspector {
+    position: static;
+    max-height: none;
+  }
+  .justice-entity-grid {
+    max-height: 500px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .justice-principle-grid,
+  .justice-system-grid {
+    gap: 12px;
+  }
+  .justice-system-card,
+  .justice-principle-grid > article {
+    padding: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .justice-principle-grid,
+  .justice-system-grid,
+  .justice-reporting-terms,
+  .justice-court-paths,
+  .justice-reporting-channels,
+  .justice-outcomes {
+    grid-template-columns: 1fr;
+  }
+  .justice-entity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 12px;
+    gap: 9px;
+  }
+  .justice-entity-card {
+    padding: 15px 8px;
+  }
+  .justice-group-filters button {
+    padding-inline: 12px;
+  }
+  .justice-inspector,
+  .justice-reporting-channels > article,
+  .justice-prepare,
+  .justice-full-text > section,
+  .justice-court-paths > article {
+    padding: 22px;
+  }
+  .justice-flow-box {
+    padding: 16px;
+  }
+  .justice-flow-progress {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .justice-flow-progress button {
+    min-height: 44px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-top: 0;
+    border-left: 3px solid var(--line);
+  }
+  .justice-flow-progress button span {
+    margin: 0;
+  }
+  .justice-current-step {
+    padding: 20px;
+  }
+  .justice-cooperation {
+    padding: 18px;
+    gap: 12px;
+  }
 }
 .quick-step-list summary > span {
   color: #536d43;

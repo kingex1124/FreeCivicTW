@@ -98,6 +98,7 @@ export function Footer() {
             <strong>從這裡開始</strong>
             <Link href="/learn/">公民快速入門</Link>
             <Link href="/government/">政府怎麼運作</Link>
+            <Link href="/justice/">司法與警檢</Link>
             <Link href="/my-ballots/">我能選哪些職務</Link>
           </div>
           <div>

@@ -1,0 +1,1051 @@
+{
+  "schemaVersion": 1,
+  "contentStatus": "published",
+  "checkedAt": "2026-11-11",
+  "title": "司法與警檢：法院、檢察官、警察怎麼分工",
+  "description": "從司法獨立出發，認識法院、檢察署與警察的組織、職責與界線；用刑事案件流程看懂調查、起訴、審判，以及報案與按鈴申告的不同入口。",
+  "principles": [
+    {
+      "id": "independent-trial",
+      "title": "法官依法獨立審判",
+      "text": "總統、部長、民意代表或法院院長，都不能因為職位高，就命令法官把某個人判有罪。法院的行政管理，與個案的事實認定、法律適用及裁判結果，要分開看。",
+      "sourceIds": [
+        "constitution",
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro"
+      ]
+    },
+    {
+      "id": "different-jobs",
+      "title": "調查、起訴與審判分工",
+      "text": "警察依法調查犯罪，檢察官偵查並決定是否起訴，法院依法審判。檢察署與法院是分設機關，警察也不是司法院所屬單位；三者不是同一條行政命令鏈。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "oversight-court-organization",
+        "justice-prosecution-organization",
+        "oversight-police-law"
+      ]
+    },
+    {
+      "id": "presumption-of-innocence",
+      "title": "被移送、起訴，不等於有罪",
+      "text": "羈押也不是判刑。在有罪判決確定前，被告受無罪推定保障；實施刑事程序的公務員，對有利與不利的情形都要注意。看新聞時，先分清楚案件到了哪個階段。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "justice-prosecutor-ethics",
+        "justice-detention-law"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "courts",
+      "label": "法院與審判",
+      "title": "法院：依法審判",
+      "organizationPath": [
+        "司法院：司法制度與司法行政",
+        "各類法院：依案件與法定管轄分工",
+        "法官：依法獨立行使審判職權"
+      ],
+      "note": "這是職責與行政組織導覽。司法院或法院院長的行政監督，不是命令承審法官如何判案。",
+      "sourceIds": [
+        "constitution",
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro"
+      ]
+    },
+    {
+      "id": "prosecution",
+      "label": "檢察與偵查",
+      "title": "檢察：偵查與公訴",
+      "organizationPath": [
+        "行政院、法務部：檢察行政體系",
+        "最高、高等及地方檢察署等機關",
+        "檢察官：依法偵查、起訴與實行公訴"
+      ],
+      "note": "法務部長可監督一般檢察行政，但不得對個別檢察案件下具體命令。檢察體系內的指揮監督另有法律條件與程序。",
+      "sourceIds": [
+        "justice-prosecution-organization",
+        "oversight-court-organization",
+        "justice-judges-law"
+      ]
+    },
+    {
+      "id": "police",
+      "label": "警察與調查",
+      "title": "警察：治安與犯罪調查",
+      "organizationPath": [
+        "中央：內政部、警政署與署屬機關",
+        "地方：直轄市、縣市政府警察局",
+        "基層：分局、分駐（派出）所等單位"
+      ],
+      "note": "中央、地方警政依法分工。警察在刑事偵查中受檢察官依法指揮，不代表警察局行政上隸屬地檢署。",
+      "sourceIds": [
+        "oversight-police-law",
+        "justice-police-organization",
+        "justice-criminal-procedure"
+      ]
+    },
+    {
+      "id": "support",
+      "label": "協助與執行",
+      "title": "法律協助與裁判執行",
+      "organizationPath": ["律師與法律扶助等協助服務", "法務部矯正署與各矯正機關"],
+      "note": "這是閱讀分類，不是一條行政隸屬線。財團法人法律扶助基金會不是法院或檢察署；矯正機關也不決定有罪。",
+      "sourceIds": ["justice-laf-intro", "justice-corrections-law", "justice-detention-law"]
+    }
+  ],
+  "cooperation": {
+    "text": "合作也有界線：司法警察（官）發現犯罪嫌疑時依法立即調查、報告，並受檢察官依法指揮。偵查中是否羈押，則由檢察官依法聲請、法院審查裁定；刑事搜索原則上須有法官簽名的搜索票，法定例外另有要件。",
+    "sourceIds": ["justice-criminal-procedure", "oversight-police-law"]
+  },
+  "coverageNotes": [
+    "本頁以一般民眾常遇到的機關類型、職務與制度為主，不是所有法院、檢察署、警察署屬機關及內部科室的逐一名冊。每張卡片均標示它是機關、機關類型、職務與制度，或協助服務。",
+    "「地方」法院、地方檢察署不表示隸屬縣市政府；機關名稱中的地方，與地方自治的行政隸屬是兩件事。",
+    "組織行政監督、檢察體系內依法指揮、個案審判與上訴救濟，是不同關係，不能用同一種箭頭全部表示。"
+  ],
+  "entities": [
+    {
+      "id": "judicial-yuan",
+      "name": "司法院",
+      "group": "courts",
+      "kind": "機關",
+      "summary": "國家最高司法機關，掌理憲法審判相關職權及司法行政，讓各類法院具備依法審判的制度與工作條件。",
+      "position": "與行政院、立法院等憲政機關分工；司法院所屬法院依法獨立審判。",
+      "duties": [
+        "規劃司法制度及法定職掌內的法案、程序與行政事項。",
+        "依法辦理所屬司法機關的人事、預算及工作條件等司法行政。",
+        "由大法官組成憲法法庭，依法審理憲法訴訟事件。"
+      ],
+      "limits": [
+        "行政監督不等於可以要求法官在特定案件判誰勝訴、判多久。",
+        "寄司法信箱或向院長陳情，不能代替起訴、上訴、抗告或憲法訴訟的法定程序。"
+      ],
+      "example": "虛構例子：民眾可以詢問法院便民服務，對判決不服則須依適用的救濟程序提出。",
+      "sourceIds": [
+        "justice-courts-judicial-yuan-intro",
+        "oversight-court-organization",
+        "justice-courts-judicial-mailbox"
+      ],
+      "officialUrl": "https://www.judicial.gov.tw/tw/cp-209-210-b0504-1.html"
+    },
+    {
+      "id": "constitutional-court",
+      "name": "憲法法庭與大法官",
+      "group": "courts",
+      "kind": "職務與制度",
+      "summary": "處理憲法層次的爭議，包含法律規範與裁判是否違憲等法定事件。",
+      "position": "由司法院大法官組成；大法官由總統提名、立法院同意後任命。憲法法庭不是普通法院的第四審。",
+      "duties": [
+        "依法審理法規範與裁判憲法審查。",
+        "依法處理機關爭議、地方自治保障等憲法訴訟。",
+        "依法律審理總統副總統彈劾、政黨違憲解散等法定事件。"
+      ],
+      "limits": [
+        "人民聲請裁判憲法審查須符合用盡審級救濟等法定要件，不是所有不滿判決都會受理。",
+        "不等同於把一般法院的證人、證據與所有事實重新完整審一次。"
+      ],
+      "example": "虛構例子：一個人認為確定終局裁判侵害其憲法權利，須確認法定要件後提出憲法訴訟聲請。",
+      "sourceIds": [
+        "oversight-constitutional-court",
+        "justice-courts-constitutional-review-faq",
+        "justice-courts-constitutional-faq-list",
+        "amendments"
+      ],
+      "officialUrl": "https://cons.judicial.gov.tw/docdata.aspx?fid=10"
+    },
+    {
+      "id": "district-courts",
+      "name": "地方法院",
+      "group": "courts",
+      "kind": "機關類型",
+      "summary": "是民眾常接觸的法院，依法處理許多第一審民事、刑事及相關專業事件。",
+      "position": "屬司法體系，不是縣市政府的局處；另設各種法庭與行政單位分工。",
+      "duties": [
+        "依法審理一般第一審民事及刑事案件。",
+        "依法律辦理民事執行、非訟、保護令及其他相應事件。",
+        "依法審查羈押等強制處分，並由相應法庭辦理少年、家事等專業事務。"
+      ],
+      "limits": [
+        "不是所有第一審事件都由同一種法庭處理；專業法院與特殊程序另有規定。",
+        "一般刑事告訴、告發應向檢察官或司法警察官提出；法院另有法定自訴程序，不能混為同一入口。"
+      ],
+      "example": "虛構例子：返還借款的民事爭議，與檢察官起訴的詐欺刑案，可能都進地院，但走不同程序。",
+      "sourceIds": [
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro",
+        "justice-criminal-procedure",
+        "justice-courts-civil-proceedings"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053"
+    },
+    {
+      "id": "high-courts",
+      "name": "高等法院及分院",
+      "group": "courts",
+      "kind": "機關類型",
+      "summary": "依法審理相應上訴、抗告及其他法定案件，是普通法院體系的重要一環。",
+      "position": "包含臺灣高等法院及分院等依法設置的機關；不是地方行政首長的上級單位。",
+      "duties": [
+        "審理法律規定由其管轄的民事、刑事上訴案件。",
+        "依法處理相應抗告及其他法定事件。",
+        "在法定審理範圍內審查事實與法律，作成裁判。"
+      ],
+      "limits": [
+        "不是每一件地院案件的第二審都到高等法院；簡易、小額等有不同規則。",
+        "行政上的監督關係，不等於可以事前要求下級審法官作出特定判決。"
+      ],
+      "example": "虛構例子：一般刑事第一審判決後，依法有上訴權的一方須依期間與程序提出，不是直接找高院長官改判。",
+      "sourceIds": [
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro",
+        "justice-courts-civil-proceedings"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053"
+    },
+    {
+      "id": "supreme-court",
+      "name": "最高法院",
+      "group": "courts",
+      "kind": "機關",
+      "summary": "普通法院體系的最高法院，主要依法審查民事、刑事案件的法律問題。",
+      "position": "與最高行政法院、憲法法庭的職掌不同；一般第三審不是重新完整調查所有事實。",
+      "duties": [
+        "依法審理得上訴第三審的民事、刑事案件。",
+        "處理法律規定的相關抗告及非常救濟事件。",
+        "透過法定機制處理法律見解歧異等問題。"
+      ],
+      "limits": [
+        "不是所有案件都有第三審，也不是每案有三次上訴機會。",
+        "不代替最高行政法院審理一般行政訴訟，也不是憲法法庭。"
+      ],
+      "example": "虛構例子：當事人須確認案件與上訴理由是否符合法律規定，不能只因希望再問一次證人就保證能進第三審。",
+      "sourceIds": [
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro",
+        "justice-courts-civil-proceedings"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053"
+    },
+    {
+      "id": "administrative-courts",
+      "name": "行政法院",
+      "group": "courts",
+      "kind": "機關類型",
+      "summary": "審理符合行政訴訟要件的公法爭議，例如人民對某些政府處分依法尋求救濟。",
+      "position": "高等行政法院分地方行政訴訟庭與高等行政訴訟庭，另有最高行政法院；現行審級稱三級二審。",
+      "duties": [
+        "依法審理撤銷、課予義務、給付及確認等行政訴訟。",
+        "依事件類型分由相應訴訟庭審理簡易、交通裁決、通常等事件。",
+        "依法律規定審理對行政法院判決或裁定的上訴、抗告。"
+      ],
+      "limits": [
+        "不是所有和政府有關的爭議都必然是行政訴訟，仍要區分公法、私法與事件性質。",
+        "不是所有案件依序走完地方庭、高等庭、最高行政法院；訴願前置及上訴要件也有不同規則。"
+      ],
+      "example": "虛構例子：不服交通裁決，與不服刑事有罪判決，是不同的救濟路徑，應看文書上的程序說明。",
+      "sourceIds": [
+        "justice-courts-administrative-organization-act",
+        "justice-courts-administrative-appeals",
+        "justice-courts-administrative-reform",
+        "oversight-administrative-litigation"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010055"
+    },
+    {
+      "id": "ip-commercial-court",
+      "name": "智慧財產及商業法院",
+      "group": "courts",
+      "kind": "機關",
+      "summary": "專業法院，內分智慧財產法庭與商業法庭，依特別法律處理特定事件。",
+      "position": "是一個機關中的專業分庭；智慧財產、商業事件不完全採相同程序。",
+      "duties": [
+        "依法審理其管轄的智慧財產民事、刑事與行政事件。",
+        "依法審理法律指定的重大商業民事訴訟及非訟事件。",
+        "由專業程序處理證據、爭點與法定救濟事項。"
+      ],
+      "limits": [
+        "不是所有買賣、公司或著作權糾紛都一律由同一法庭、同一審級處理。",
+        "商業事件2026年10月1日起擴大管轄，既有案件仍須依繫屬時的新舊制規則判斷。"
+      ],
+      "example": "虛構例子：一般購物退款與符合法定條件的重大公司爭議，不應只因都和做生意有關就送到同一法院。",
+      "sourceIds": [
+        "justice-courts-ip-commercial-organization-act",
+        "justice-courts-commercial-appeals",
+        "justice-courts-commercial-2026-transition",
+        "justice-courts-judicial-yuan-intro"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010090"
+    },
+    {
+      "id": "disciplinary-court",
+      "name": "懲戒法院與職務法庭",
+      "group": "courts",
+      "kind": "機關",
+      "summary": "依法處理公務員懲戒，以及法官、檢察官懲戒與法官特定職務救濟等事件。",
+      "position": "懲戒法庭與職務法庭各有法定職掌，現制採一級二審。",
+      "duties": [
+        "由懲戒法庭依法審理公務員懲戒事件。",
+        "由職務法庭依法審理法官、檢察官懲戒事件。",
+        "依法律處理法官特定職務爭議、審判獨立受影響的救濟等事件。"
+      ],
+      "limits": [
+        "懲戒是職務責任的處理，不等於刑事法院判決有罪。",
+        "不因民眾不喜歡一個判決就直接取代該案的上訴程序。"
+      ],
+      "example": "虛構例子：公務員違法失職涉及懲戒與刑事責任，可能各依不同法律與機關處理。",
+      "sourceIds": [
+        "justice-courts-disciplinary-organization-act",
+        "justice-courts-duty-tribunal",
+        "justice-courts-judicial-yuan-intro"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010056"
+    },
+    {
+      "id": "juvenile-family-courts",
+      "name": "少年及家事法院、相關法庭",
+      "group": "courts",
+      "kind": "機關類型",
+      "summary": "用適合兒少與家庭關係的專業程序，處理少年及家事事件。",
+      "position": "依法由少年及家事法院或地院相應法庭分工，不是每個縣市都有一所獨立的少年及家事法院。",
+      "duties": [
+        "依少年事件處理法區分少年保護事件與少年刑事案件。",
+        "依法處理婚姻、親子、監護等家事事件。",
+        "依各程序運用調查、調解及保護、安置等適用措施，保障當事人與兒少權益。"
+      ],
+      "limits": [
+        "少年保護事件不應一律等同成人刑事犯罪審判。",
+        "家事不是只處理離婚，也不能只憑家庭背景或標籤推定某人違法。"
+      ],
+      "example": "虛構例子：監護安排與少年保護事件，都需要依法調查與適合當事人的程序，不是只決定要處罰誰。",
+      "sourceIds": [
+        "justice-courts-juvenile-family-organization-act",
+        "justice-courts-juvenile-act",
+        "justice-courts-family-act"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010100"
+    },
+    {
+      "id": "judges",
+      "name": "法官",
+      "group": "courts",
+      "kind": "職務與制度",
+      "summary": "在法院依法審理案件、認定事實、適用法律並作成裁判。",
+      "position": "依法獨立行使審判職權，與檢察官及律師的角色不同。",
+      "duties": [
+        "依法指揮訴訟程序，聽取當事人的主張及意見。",
+        "依法調查、評價證據，說明裁判理由。",
+        "依法律審查羈押等由法院決定的強制處分及救濟事項。"
+      ],
+      "limits": [
+        "不能因政治人物、行政首長、民意或院長的偏好而改變個案結果。",
+        "審判獨立仍受法律、上訴救濟與法定評鑑懲戒等制度約束，不等於可以任意裁判。"
+      ],
+      "example": "虛構例子：即使新聞呼聲很高，法官仍須依合法證據與法律判斷，並在裁判中說明理由。",
+      "sourceIds": [
+        "constitution",
+        "oversight-court-organization",
+        "justice-judges-law",
+        "justice-criminal-procedure"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000001"
+    },
+    {
+      "id": "citizen-judges",
+      "name": "國民法官法庭",
+      "group": "courts",
+      "kind": "職務與制度",
+      "summary": "由依法選任的國民法官與職業法官，共同審理特定第一審刑事公訴案件。",
+      "position": "6名國民法官與3名職業法官共同組成法庭，不是新增一級法院。",
+      "duties": [
+        "共同參與法庭審理與證據調查。",
+        "共同評議事實認定、法律適用與有罪無罪。",
+        "有罪時，依法律共同評議量刑。"
+      ],
+      "limits": [
+        "不是所有刑案都適用，也不是任何人可自行報名加入某一案件。",
+        "2026年起法定範圍包括最輕本刑10年以上及故意犯罪致死等類型；少年刑事案件及犯毒品危害防制條例之罪的案件除外，另有法院依法裁定不行國民參與審判的情形。最輕本刑不是實際判刑。"
+      ],
+      "example": "虛構例子：被依法選任參審的人，須根據法庭中的證據與法律共同判斷，而不是依網路投票決定。",
+      "sourceIds": ["justice-courts-citizen-judges-act", "justice-courts-citizen-judges-reform"],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030320"
+    },
+    {
+      "id": "ministry-justice",
+      "name": "法務部",
+      "group": "prosecution",
+      "kind": "機關",
+      "summary": "主管檢察行政、矯正、司法保護及其他法定法務事項的中央行政機關。",
+      "position": "屬行政院體系；不是司法院，也不是法院的主管部會。",
+      "duties": [
+        "規劃與監督一般檢察行政事務。",
+        "依法辦理矯正、司法保護、法律事務及相關政策。",
+        "依法督導調查、廉政及其他所屬機關的法定業務。"
+      ],
+      "limits": [
+        "部長不得對個別檢察案件下具體指揮命令。",
+        "不能命令法官如何審判，也不直接代替法院定罪量刑。"
+      ],
+      "example": "虛構例子：法務部可以推動檢察行政制度改善，但不能因新聞輿論就命令某個案件一定起訴。",
+      "sourceIds": [
+        "agency-central-moj-law",
+        "justice-judges-law",
+        "justice-prosecution-organization"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000001"
+    },
+    {
+      "id": "supreme-prosecutors",
+      "name": "最高檢察署",
+      "group": "prosecution",
+      "kind": "機關",
+      "summary": "依法辦理最高層級的檢察事務，與最高法院是不同機關。",
+      "position": "屬法務部檢察體系，檢察總長依法指揮監督各級檢察官；仍受法定程序限制。",
+      "duties": [
+        "在最高法院依法執行相應檢察職務。",
+        "由檢察總長對符合法定條件的違法確定刑事裁判，向最高法院提起非常上訴。",
+        "依法進行檢察事務的指揮監督及其他法定工作。"
+      ],
+      "limits": [
+        "非常上訴不是每案都有的一般上訴，也不保證人民提出聲請就會提起。",
+        "最高檢察署不能代替最高法院作出判決，檢察指揮仍須依法。"
+      ],
+      "example": "虛構例子：對確定刑事裁判提出非常上訴的聲請，仍須審核法定理由，不是直接重新完整審理所有事實。",
+      "sourceIds": [
+        "justice-extraordinary-appeal",
+        "justice-prosecution-organization",
+        "oversight-court-organization",
+        "justice-judges-law"
+      ],
+      "officialUrl": "https://www.tps.moj.gov.tw/16314/16352/16354/224229//post"
+    },
+    {
+      "id": "high-prosecutors",
+      "name": "高等檢察署及檢察分署",
+      "group": "prosecution",
+      "kind": "機關類型",
+      "summary": "辦理相應高等法院審級的檢察事務，以及法律規定的再議、監督等工作。",
+      "position": "屬法務部體系，與高等法院分設；對下級檢察機關的指揮監督有法定範圍。",
+      "duties": [
+        "依法辦理第二審相應檢察事務。",
+        "依法律審查其權責內的不服檢察處分再議等案件。",
+        "依法指揮監督相應檢察業務，辦理其他法定檢察工作。"
+      ],
+      "limits": [
+        "再議是檢察處分的法定救濟，不等於法院上訴。",
+        "不能要求法官依檢方主張判有罪；內部指揮也不代表檢察官須服從違法命令。"
+      ],
+      "example": "虛構例子：告訴人不服某些不起訴處分時，依法聲請再議，由相應上級檢察機關處理。",
+      "sourceIds": [
+        "justice-prosecution-organization",
+        "oversight-court-organization",
+        "justice-judges-law",
+        "justice-reconsideration-qa"
+      ],
+      "officialUrl": "https://www.tph.moj.gov.tw/4421/4423/4435/24583/post"
+    },
+    {
+      "id": "district-prosecutors",
+      "name": "地方檢察署",
+      "group": "prosecution",
+      "kind": "機關類型",
+      "summary": "常見刑事案件的偵查與公訴機關，受理告訴、告發等依法進行偵查。",
+      "position": "屬法務部檢察體系；不是地方法院或縣市政府的下屬單位。",
+      "duties": [
+        "受理書狀或言詞告訴、告發等，依法調查犯罪嫌疑。",
+        "依證據與法律決定起訴、不起訴、緩起訴或其他法定處理。",
+        "提起並實行公訴，依法辦理刑事裁判執行等工作。"
+      ],
+      "limits": [
+        "起訴是交由法院審判，不是已經判有罪。",
+        "按鈴申告不保證當場見到檢察官、立即查封財產或必定起訴。"
+      ],
+      "example": "虛構例子：民眾可以依法向地檢署提出犯罪事實與資料，檢察官仍須調查後作成適法處理。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "justice-report-bell",
+        "oversight-prosecution-intro",
+        "justice-prosecution-organization"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001"
+    },
+    {
+      "id": "prosecutors",
+      "name": "檢察官",
+      "group": "prosecution",
+      "kind": "職務與制度",
+      "summary": "依法偵查犯罪、提起及實行公訴，也有客觀義務注意對被告有利的情形。",
+      "position": "檢察官對法院依法獨立行使職權，檢察體系內另有檢察一體及法定指揮監督制度。",
+      "duties": [
+        "依法調查事實、指揮司法警察（官）及調查相關證據。",
+        "依證據及法律決定起訴、不起訴、緩起訴等法定處理。",
+        "在法院實行公訴、依法聲請強制處分及辦理刑事裁判執行。",
+        "對有利與不利的情形都要注意，不以定罪為唯一目標。"
+      ],
+      "limits": [
+        "不能自行裁定羈押或代替法院判刑。",
+        "檢察官不必服從違法命令；具體指揮與案件移轉有法律、書面及理由等規範。"
+      ],
+      "example": "虛構例子：查到被告不在場的可靠證據，也須依法調查與評價，不能只挑選支持起訴的材料。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "justice-judges-law",
+        "oversight-court-organization",
+        "justice-prosecutor-ethics"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001"
+    },
+    {
+      "id": "investigation-bureau",
+      "name": "法務部調查局",
+      "group": "prosecution",
+      "kind": "機關",
+      "summary": "依法辦理國家安全與特定犯罪調查，屬法務部行政體系。",
+      "position": "依法具有相應司法警察（官）身分的人員，在犯罪偵查中依法律分工；不是司法院所屬法院。",
+      "duties": [
+        "依法辦理國家安全及特定犯罪調查。",
+        "調查法定職掌內的貪瀆、賄選、重大經濟及相關犯罪。",
+        "依法進行鑑識、資料分析與偵查協助。"
+      ],
+      "limits": [
+        "不是所有民眾事件都只能向調查局提出。",
+        "調查局不判決有罪、不裁定羈押，強制處分須守法定要件。"
+      ],
+      "example": "虛構例子：重大經濟犯罪線索依法由相應偵查機關處理，最終有罪與否仍由法院審判。",
+      "sourceIds": ["oversight-investigation-law", "justice-criminal-procedure"],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000003"
+    },
+    {
+      "id": "integrity-agency",
+      "name": "法務部廉政署",
+      "group": "prosecution",
+      "kind": "機關",
+      "summary": "辦理廉政政策、預防與貪瀆及相關犯罪調查，與各機關政風處室的職掌不同。",
+      "position": "法務部所屬機關；法定人員執行犯罪調查時，具有相應司法警察（官）職權。",
+      "duties": [
+        "規劃廉政預防、宣導與相關政策。",
+        "依法調查貪瀆及相關犯罪。",
+        "依法協調、督導政風等相關廉政工作。"
+      ],
+      "limits": [
+        "不能因為在政風處室工作，就當然具有所有刑事強制偵查權。",
+        "廉政署不負責定罪、判刑或裁定羈押。"
+      ],
+      "example": "虛構例子：公務員疑涉收賄，檢舉線索可由適當機關依法調查，不能把機關內部查核直接視為定罪。",
+      "sourceIds": ["integrity-agency-law", "government-ethics-law", "justice-criminal-procedure"],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000032"
+    },
+    {
+      "id": "national-police-agency",
+      "name": "內政部警政署",
+      "group": "police",
+      "kind": "機關",
+      "summary": "辦理全國警察行政與警政業務的統一規劃、指揮及監督。",
+      "position": "內政部所屬機關，與地方政府警察局依法分工，另有刑事、國道、鐵路等署屬機關。",
+      "duties": [
+        "依法規劃與執行全國警政及警察行政業務。",
+        "依法指揮、督導全國警察任務及相關協調工作。",
+        "透過署屬機關與地方警察機關分工，辦理治安、交通與犯罪偵防等工作。"
+      ],
+      "limits": [
+        "不能命令法院如何判決或代替檢察官決定起訴。",
+        "警政業務指揮監督，不代表每件地方報案都直接由警政署承辦。"
+      ],
+      "example": "虛構例子：跨縣市治安工作可能需中央與地方協調，民眾仍可依單一窗口原則就近提出刑事報案。",
+      "sourceIds": [
+        "justice-police-organization",
+        "oversight-police-law",
+        "justice-report-single-window"
+      ],
+      "officialUrl": "https://www.npa.gov.tw/userfiles/chnpa/files/20240425100907986.pdf"
+    },
+    {
+      "id": "local-police",
+      "name": "直轄市、縣市政府警察局",
+      "group": "police",
+      "kind": "機關類型",
+      "summary": "負責地方治安、交通及犯罪調查等警察任務，與中央警政機關依法分工。",
+      "position": "設於相應地方政府體系；人事與業務監督另有法定規範，刑事偵查時接受檢察官依法指揮。",
+      "duties": [
+        "辦理轄區治安維護、犯罪預防與調查。",
+        "依法辦理交通秩序、事故處理及其他警察任務。",
+        "受理報案、處理急迫危險，並依管轄分工轉送或協同調查。"
+      ],
+      "limits": [
+        "市長、縣長不能代替法院裁定羈押或命令判決結果。",
+        "案件不在轄區，不能只因此拒絕刑事報案；但後續偵查仍由有管轄權單位依法辦理。"
+      ],
+      "example": "虛構例子：人在居住地附近報案，但事件發生於另一縣市，受理後可依法做初步處置再轉送。",
+      "sourceIds": [
+        "justice-police-organization",
+        "oversight-police-law",
+        "justice-criminal-procedure",
+        "justice-report-single-window"
+      ],
+      "officialUrl": "https://www.npa.gov.tw/userfiles/chnpa/files/20240425100907986.pdf"
+    },
+    {
+      "id": "criminal-investigation-bureau",
+      "name": "刑事警察局",
+      "group": "police",
+      "kind": "機關",
+      "summary": "中央刑事警察專業機關，辦理犯罪偵防、鑑識與跨區、跨境等偵查支援。",
+      "position": "內政部警政署所屬機關；與地方刑事警察依法分工合作。",
+      "duties": [
+        "依法調查或支援重大、特殊及跨境等刑事案件。",
+        "辦理刑事證物檢驗、鑑識與重大現場勘察支援。",
+        "蒐集分析犯罪情資，規劃刑事科技及犯罪偵防協作。"
+      ],
+      "limits": [
+        "鑑識意見與移送資料仍須依刑事程序審查，不直接等於法院認定有罪。",
+        "不是一般民眾報案的唯一入口，也不代替法院判刑。"
+      ],
+      "example": "虛構例子：跨地區詐欺案件可能由不同警察單位合作並使用鑑識支援，再交由檢察官依法偵辦。",
+      "sourceIds": [
+        "justice-cib-functions",
+        "justice-criminal-procedure",
+        "justice-police-organization"
+      ],
+      "officialUrl": "https://www.cib.npa.gov.tw/ch/app/artwebsite/view?id=1389&module=artwebsite&serno=49d63e23-3719-4e04-904e-bc5a6029dd2e"
+    },
+    {
+      "id": "police-stations",
+      "name": "分局、分駐所與派出所",
+      "group": "police",
+      "kind": "機關類型",
+      "summary": "最接近生活現場的警察單位，受理事件、執行勤務並依分工處理或移交。",
+      "position": "通常設於相應警察局、分局體系下；不是法院或檢察署。",
+      "duties": [
+        "受理報案，確認事件內容與需要的即時處置。",
+        "依法進行現場處理、蒐集資料與初步調查。",
+        "依勤務、專業與管轄分工交由適當單位，留下受理及轉送紀錄。"
+      ],
+      "limits": [
+        "不是凡有紛爭就能直接拘捕、搜索或保證幫忙追回所有財產。",
+        "受（處）理案件證明單是案件受理紀錄，不是犯罪成立的證明。"
+      ],
+      "example": "虛構例子：民眾提供遭竊的時間、地點及可取得資料，警方依法受理後調查，不需要民眾先自行證明某人有罪。",
+      "sourceIds": [
+        "justice-police-organization",
+        "justice-report-single-window",
+        "justice-report-receipt",
+        "justice-criminal-procedure"
+      ],
+      "officialUrl": "https://www.npa.gov.tw/userfiles/chnpa/files/20240425100907986.pdf"
+    },
+    {
+      "id": "judicial-police",
+      "name": "司法警察（官）",
+      "group": "police",
+      "kind": "職務與制度",
+      "summary": "這是刑事偵查中的法定身分與職權分工，不是另一個叫做司法警察局的法院機關。",
+      "position": "警察及其他法律規定的人員，在法定犯罪調查職務中可具有相應身分；具體職權以法律為準。",
+      "duties": [
+        "知道有犯罪嫌疑時，依法立即開始調查並報告。",
+        "在檢察官依法指揮下調查、蒐集與保全相關證據。",
+        "依法執行適用的拘提、逮捕、搜索等措施並遵守各自要件。"
+      ],
+      "limits": [
+        "不是必須先收到檢察官指示才可開始所有犯罪調查。",
+        "不能自行決定有罪、判刑或裁定羈押，也不能無條件採取強制處分。"
+      ],
+      "example": "虛構例子：員警發現犯罪嫌疑時依法先處理與調查，再依規定報告；這和行政隸屬改成地檢署是不同的事。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "oversight-police-law",
+        "oversight-police-powers"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001"
+    },
+    {
+      "id": "lawyers-legal-aid",
+      "name": "律師與法律扶助",
+      "group": "support",
+      "kind": "協助服務",
+      "summary": "協助人們理解權利、準備書狀、參與程序及獲得適當法律協助。",
+      "position": "律師依受委任的角色協助當事人；法律扶助基金會是財團法人，不是法院、檢察署或警察。",
+      "duties": [
+        "依委任或扶助內容提供法律諮詢及程序協助。",
+        "依法擔任被告的辯護人，或協助被害人、告訴人等處理其適用程序。",
+        "法律扶助基金會依法定及適用標準提供法律諮詢、扶助律師等服務。"
+      ],
+      "limits": [
+        "法律協助不保證勝訴、一定起訴或改判；申請扶助律師一般有資力、案情等審查。",
+        "替被告辯護不表示認同犯罪，仍須保障合法程序與各方權利。"
+      ],
+      "example": "虛構例子：收到不起訴處分但看不懂救濟說明，可盡快找適當法律諮詢，確認身分、程序及期間。",
+      "sourceIds": [
+        "justice-laf-intro",
+        "justice-laf-eligibility",
+        "justice-laf-apply",
+        "justice-criminal-procedure"
+      ],
+      "officialUrl": "https://www.laf.org.tw/service-app"
+    },
+    {
+      "id": "corrections",
+      "name": "法務部矯正署、監獄與看守所",
+      "group": "support",
+      "kind": "機關類型",
+      "summary": "依法辦理收容、戒護、教化、醫療與輔導等矯正工作，監獄與看守所的對象及法律依據不同。",
+      "position": "法務部矯正署及所屬矯正機關，屬行政體系；不負責判決有罪。",
+      "duties": [
+        "依法辦理收容、戒護與相應執行管理。",
+        "依職掌提供教化、輔導、醫療與技能訓練等處遇。",
+        "依法保障收容人的權益，執行所適用的監禁或羈押處遇。"
+      ],
+      "limits": [
+        "偵查中的羈押由法院依法裁定，不是看守所自己決定。",
+        "看守所內可能是尚未有罪確定的被告，不能把所有收容人都叫已定罪犯人。"
+      ],
+      "example": "虛構例子：羈押與服刑的法律基礎不同，即使都有收容管理，也不能據此把一個被羈押的人直接視為有罪。",
+      "sourceIds": [
+        "justice-corrections-law",
+        "justice-detention-law",
+        "justice-criminal-procedure"
+      ],
+      "officialUrl": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000024"
+    }
+  ],
+  "courtPaths": [
+    {
+      "id": "ordinary",
+      "title": "普通法院：一般民事、刑事",
+      "stages": ["常見路徑：地方法院 → 高等法院及分院 → 最高法院"],
+      "note": "原則三級三審，不是每案都能走滿，也不是三次上訴。簡易、小額民事第二審可由地方法院合議庭處理；第三審主要審查法律問題，仍有法定要件。",
+      "sourceIds": [
+        "oversight-court-organization",
+        "justice-courts-judicial-yuan-intro",
+        "justice-courts-civil-proceedings"
+      ]
+    },
+    {
+      "id": "administrative",
+      "title": "行政法院：依案件分流",
+      "stages": [
+        "簡易、交通裁決及部分通常程序事件：地方行政訴訟庭 → 高等行政訴訟庭",
+        "其餘依法由高等行政訴訟庭管轄的第一審事件：高等行政訴訟庭 → 最高行政法院"
+      ],
+      "note": "兩列是不同案件的主要上訴路徑，不是每案先後走完兩列。2023年8月15日新制後，高等行政法院內分地方、高等行政訴訟庭，現行仍稱三級二審；詳細管轄、訴願前置及救濟限制另依法規。",
+      "sourceIds": [
+        "justice-courts-administrative-organization-act",
+        "justice-courts-administrative-appeals",
+        "justice-courts-administrative-reform"
+      ]
+    },
+    {
+      "id": "constitutional",
+      "title": "憲法法庭：憲法層次的審查",
+      "stages": ["依法提出憲法訴訟聲請 → 法定受理要件審查 → 符合要件者依法審理"],
+      "note": "不符合要件可能不受理，不能當成普通法院的第四審。人民聲請裁判憲法審查須符合用盡審級救濟等法律條件。",
+      "sourceIds": [
+        "justice-courts-constitutional-review-faq",
+        "justice-courts-constitutional-faq-list"
+      ]
+    },
+    {
+      "id": "specialized",
+      "title": "專業法院與懲戒：各有程序",
+      "stages": [
+        "智慧財產、商業事件：依各專門法律決定管轄與救濟法院",
+        "公務員、法官、檢察官懲戒：由懲戒法院相應法庭依法審理"
+      ],
+      "note": "智慧財產及商業法院的各類事件不全走同一路徑；商業事件採二級二審，懲戒法院採一級二審。機關只有一級，不等於沒有上訴審。",
+      "sourceIds": [
+        "justice-courts-ip-commercial-organization-act",
+        "justice-courts-commercial-appeals",
+        "justice-courts-disciplinary-organization-act",
+        "justice-courts-duty-tribunal"
+      ]
+    }
+  ],
+  "criminalFlow": {
+    "title": "刑事案件不是「抓到就判有罪」。",
+    "intro": "以下以一般刑事公訴程序示意。可以先向警察或檢察機關提出，不是每案都必須從警察開始；有些案件在偵查階段就以不起訴等方式終結。",
+    "steps": [
+      {
+        "id": "report",
+        "title": "報案或提出告訴、告發",
+        "actor": "民眾、警察與檢察機關",
+        "text": "向偵查機關說明事件。告訴、告發可依法用書狀或言詞提出，不必先把刑事案件交給法院審判。",
+        "details": [
+          "警察受理刑事報案採單一窗口，非其轄區仍須依法受理、必要處置後轉送。",
+          "也可依法直接向檢察官提出；按鈴申告是便利言詞申告的入口之一。",
+          "是否具告訴權、是否屬告訴乃論及相關期間，仍須依實際內容與法律判斷。"
+        ],
+        "sourceIds": [
+          "justice-criminal-procedure",
+          "justice-report-bell",
+          "justice-report-single-window"
+        ]
+      },
+      {
+        "id": "investigate",
+        "title": "依法調查與偵查",
+        "actor": "檢察官、司法警察（官）等",
+        "text": "檢警依職掌調查犯罪嫌疑、蒐集證據，並注意有利與不利情形。懷疑一個人，不表示可以不受限制地搜索或關押。",
+        "details": [
+          "司法警察（官）發現犯罪嫌疑時可依法先調查、報告，並受檢察官依法指揮。",
+          "檢察官也可直接開始偵查，或依法交由檢察事務官、司法警察（官）調查。",
+          "偵查中羈押須檢察官依法聲請、法院審查裁定；搜索原則上須有法官簽名的搜索票，例外另有法律條件。",
+          "被告有保持緘默、選任辯護人、請求調查有利證據等法定權利；偵查不公開也不等於新聞說法就是定論。"
+        ],
+        "sourceIds": [
+          "justice-criminal-procedure",
+          "justice-judges-law",
+          "justice-prosecutor-ethics"
+        ]
+      },
+      {
+        "id": "decision",
+        "title": "檢察官依法決定處理",
+        "actor": "檢察官",
+        "text": "偵查後依證據及法律作成適用的處理，不是每個案件都會起訴，也不是檢察官自行判刑。",
+        "details": [
+          "起訴代表把公訴案件交由法院審判，有罪與否仍須法院依法判斷。",
+          "不起訴、緩起訴是檢察官的處分，不是法院無罪判決。"
+        ],
+        "outcomes": [
+          {
+            "label": "起訴",
+            "text": "符合起訴條件時，依法向法院提起公訴，進入相應審判程序。"
+          },
+          {
+            "label": "不起訴",
+            "text": "有法律所定應不起訴等事由時依法處理；合法救濟須看處分與當事人身分。"
+          },
+          {
+            "label": "緩起訴",
+            "text": "符合法定條件時，於一定期間暫緩起訴，可附法定負擔；不是已判無罪，違反條件等情形可能依法撤銷。"
+          },
+          {
+            "label": "聲請簡易判決處刑等",
+            "text": "符合法定條件時向法院聲請依法處理，仍由法院裁判；不是檢察官直接判刑。"
+          }
+        ],
+        "sourceIds": [
+          "justice-criminal-procedure",
+          "justice-reconsideration-qa",
+          "justice-private-prosecution-qa"
+        ]
+      },
+      {
+        "id": "trial",
+        "title": "法院依法審判",
+        "actor": "法院、檢察官、被告及辯護人等",
+        "text": "法院依適用程序審理，聽取主張與意見、審查證據，依法作出有罪、無罪或其他裁判。",
+        "details": [
+          "法官依法獨立審判，不能因檢方起訴就自動照單全收。",
+          "部分法定第一審刑事公訴案件由國民法官與職業法官共同審理。",
+          "原則上應依證據與法律判斷，而不是依新聞聲量或政治人物的要求決定結果。"
+        ],
+        "sourceIds": [
+          "constitution",
+          "justice-criminal-procedure",
+          "justice-courts-citizen-judges-act"
+        ]
+      },
+      {
+        "id": "remedy-execution",
+        "title": "依法救濟與執行",
+        "actor": "依法有權提出者、法院、檢察與執行機關",
+        "text": "不服檢察處分與不服法院裁判，是不同的救濟程序。符合要件者依期間提出，依法應執行的裁判再依職掌執行。",
+        "details": [
+          "告訴人不服某些不起訴、緩起訴處分，依法有再議等程序；再議被駁回後，符合法定要件者可委任律師聲請准許提起自訴。",
+          "法院判決的上訴依事件及法定要件處理，不是每案都能走滿三審。",
+          "一般刑罰執行依法由檢察官指揮，監獄等矯正機關按職掌執行；法院不是直接管理所有監獄的行政機關。"
+        ],
+        "sourceIds": [
+          "justice-criminal-procedure",
+          "justice-private-prosecution-qa",
+          "justice-corrections-law",
+          "justice-courts-judicial-yuan-intro"
+        ]
+      }
+    ],
+    "notes": [
+      "這是公訴程序的教學示意，另有依法提起自訴、少年事件、簡易及其他特殊程序。",
+      "不起訴、緩起訴等可能使案件不進入一般審判；流程中的下一步只是閱讀控制，不表示案件一定會走到最後。",
+      "拘提、逮捕、羈押、起訴與有罪判決各有不同要件；不能把新聞中的「被移送」「遭聲押」直接當作定罪。"
+    ]
+  },
+  "reporting": {
+    "intro": "兩種入口都可能讓刑事事件進入偵查；差別在受理機關及最先接觸的程序，不是「按鈴就保證比較快」或「警察說有罪就有罪」。",
+    "terms": [
+      {
+        "id": "reporting-term",
+        "title": "一般報案",
+        "text": "日常向警察等機關反映事件、請求處理的說法。是否具有刑事告訴或告發的法律效果，仍要看內容、意思與法定身分，不能只看用了哪個名稱。",
+        "sourceIds": ["justice-criminal-procedure", "justice-report-single-window"]
+      },
+      {
+        "id": "complaint-term",
+        "title": "告訴",
+        "text": "原則由犯罪被害人或其他法律規定有權告訴的人，向偵查機關陳述犯罪事實並表達追訴意思。部分犯罪以合法告訴為訴追條件，須留意資格、期間與其他要件。",
+        "sourceIds": ["justice-criminal-procedure"]
+      },
+      {
+        "id": "information-term",
+        "title": "告發",
+        "text": "知道有犯罪嫌疑的人，依法向偵查機關告知。告發人不一定是被害人，其程序權利與告訴人也不完全相同，不能把所有報案者都當成同一種身分。",
+        "sourceIds": ["justice-criminal-procedure", "justice-reconsideration-qa"]
+      }
+    ],
+    "channels": [
+      {
+        "id": "police-report",
+        "title": "向警察機關報案",
+        "where": "可就近向警察機關提出刑事報案；急迫危險可撥110。",
+        "steps": [
+          {
+            "title": "說明事件與急迫需要",
+            "text": "提供自己知道的事實、發生時間地點及可取得的資料，不需先自行完成犯罪認定。"
+          },
+          {
+            "title": "依法受理、製作紀錄",
+            "text": "由受理人員確認內容並依規定記錄；涉及告訴、告發時，依適用程序釐清意思與身分。"
+          },
+          {
+            "title": "必要處置與管轄分工",
+            "text": "警方依法調查、保全線索；非其管轄案件，受理與必要初步處置後依法轉送。"
+          },
+          {
+            "title": "保留受理資料並依法追蹤",
+            "text": "確認受（處）理案件證明單與案件資料，依承辦及官方查詢管道了解受理情形。"
+          }
+        ],
+        "notes": [
+          "單一窗口是受理與轉送機制，不表示可任意指定某一單位承辦所有偵查。",
+          "受理或移送不代表犯罪成立；警方不能自行作成有罪判決。",
+          "不要只認舊稱「報案三聯單」；現行有受（處）理案件證明單等正式紀錄。"
+        ],
+        "officialUrl": "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1083925",
+        "sourceIds": [
+          "justice-report-single-window",
+          "justice-report-receipt",
+          "justice-report-query",
+          "justice-criminal-procedure"
+        ]
+      },
+      {
+        "id": "prosecutor-report",
+        "title": "向地檢署申告、遞狀",
+        "where": "可依法用書狀或言詞提出；按鈴申告是便利言詞申告的一種方式。",
+        "steps": [
+          {
+            "title": "先確認官方窗口",
+            "text": "查看相應地檢署的申告、遞狀與服務時間說明。申告原則依辦公時間，急迫情形例外，仍以各署現行安排為準。"
+          },
+          {
+            "title": "提出書狀或言詞陳述",
+            "text": "選擇言詞申告，不必先寫好告訴狀；向受理人員說明自己知道的事件及相關線索。"
+          },
+          {
+            "title": "引導、詢問與製作筆錄",
+            "text": "依檢察機關申告鈴使用須知，由值勤法警引導，值日檢察事務官應立即詢問並製作筆錄，受理後依法處理。這不是法院審判，也不表示必由檢察官本人接見。"
+          },
+          {
+            "title": "依法偵查、作成處理",
+            "text": "檢察官依證據與法律偵查，決定起訴、不起訴、緩起訴等；符合起訴及相應程序時才交由法院審判。"
+          }
+        ],
+        "notes": [
+          "書狀、郵寄遞送與言詞申告，都是依規定可使用的方式；按鈴不是唯一入口。",
+          "按鈴後應依法受理、詢問與製作筆錄；不是法院審判，也不保證由檢察官本人接見、立即起訴、搜索或羈押。",
+          "向法院依法提起自訴是另一種法定程序，不等於到地檢署按鈴申告。"
+        ],
+        "officialUrl": "https://www.pcc.moj.gov.tw/293833/293890/293891/364549/post",
+        "sourceIds": [
+          "justice-report-bell",
+          "justice-criminal-procedure",
+          "justice-private-prosecution-qa"
+        ]
+      }
+    ],
+    "prepare": [
+      "整理何時、何地、發生什麼，以及哪些是親眼所見、哪些是他人轉述。",
+      "保留可合法取得的文件、對話紀錄、照片及其他線索；不要為蒐證而自行違法。",
+      "不確定的地方就說不確定，不必猜測嫌疑人的完整姓名或自行保證某罪成立。",
+      "確認筆錄是否符合自己的陳述，保留受理、寄送與回覆紀錄。"
+    ],
+    "notice": "收到處分書或法院文書，請查看身分、管轄、救濟方式與期間；有疑問可盡快向承辦窗口或法律扶助詢問。本網站不受理報案，也不收集姓名、證號、個案證據或案件編號。",
+    "sourceIds": [
+      "justice-criminal-procedure",
+      "justice-report-bell",
+      "justice-report-receipt",
+      "justice-laf-apply"
+    ]
+  },
+  "faq": [
+    {
+      "id": "independence-and-accountability",
+      "title": "司法獨立，就是完全不用被監督嗎？",
+      "text": "不是。法官依法獨立審判，不表示可以任意違法。裁判有法定救濟，職務行為也有評鑑、懲戒及其他適用制度；但不能用政治、行政或陳情壓力取代法定程序，要求某案必須判誰輸贏。",
+      "sourceIds": [
+        "constitution",
+        "oversight-court-organization",
+        "justice-judges-law",
+        "justice-courts-duty-tribunal"
+      ]
+    },
+    {
+      "id": "prosecutors-not-judges",
+      "title": "檢察官也是司法工作者，所以隸屬司法院嗎？",
+      "text": "法院與檢察署是分設機關。檢察官屬法務部檢察體系，依法偵查、起訴及實行公訴；法官在法院依法審判。部長的一般檢察行政監督、檢察體系內的法定指揮，以及法官的審判獨立，也不能混成同一種關係。",
+      "sourceIds": [
+        "justice-prosecution-organization",
+        "oversight-court-organization",
+        "justice-judges-law"
+      ]
+    },
+    {
+      "id": "detention-is-not-conviction",
+      "title": "被羈押，是否表示已經證明有罪？",
+      "text": "羈押是法院依法律審查必要性後作成的人身自由限制，不是有罪判決。被移送、起訴、聲請羈押、法院裁定羈押、判決有罪與判決確定，是不同階段；同樣地，沒有羈押也不代表已判無罪。",
+      "sourceIds": ["justice-criminal-procedure", "justice-detention-law"]
+    },
+    {
+      "id": "non-prosecution-not-acquittal",
+      "title": "不起訴，和法院判無罪一樣嗎？",
+      "text": "不起訴是檢察官的偵查處分，無罪是法院依審判程序作成的判決，不能混稱。告訴人對某些不起訴或緩起訴處分依法有再議等救濟；再議駁回後，符合法定要件者可委任律師向法院聲請准許提起自訴。收到文書應即確認救濟教示與期間，不是所有告發人都具有同樣權利。",
+      "sourceIds": [
+        "justice-criminal-procedure",
+        "justice-reconsideration-qa",
+        "justice-private-prosecution-qa"
+      ]
+    },
+    {
+      "id": "bell-not-fast-track",
+      "title": "按鈴申告，一定馬上見到檢察官、比較快起訴嗎？",
+      "text": "按鈴是便利言詞告訴、告發等申告的受理方式。依須知，由值勤法警引導，值日檢察事務官應立即詢問並製作筆錄；這不是法院審判，也不保證由檢察官本人接見、立即起訴、搜索或羈押。一般申告以辦公時間為原則，急迫情形例外；請確認各署窗口說明，不必先寫好訴狀，仍須如實說明事實。",
+      "sourceIds": ["justice-report-bell", "justice-criminal-procedure"]
+    },
+    {
+      "id": "appeals-have-conditions",
+      "title": "不服判決，可以一直告到最高法院或憲法法庭嗎？",
+      "text": "能否上訴及救濟法院，依案件與法定要件判斷，並非每案三審。簡易、小額等有不同路徑，行政訴訟也有自己的分流。憲法法庭不是第四審；人民聲請裁判憲法審查仍須符合憲法權利及用盡審級救濟等條件。",
+      "sourceIds": [
+        "justice-courts-civil-proceedings",
+        "justice-courts-administrative-appeals",
+        "justice-courts-constitutional-review-faq"
+      ]
+    },
+    {
+      "id": "citizen-judges-not-extra-tier",
+      "title": "國民法官，是新增一級法院或網路投票決定嗎？",
+      "text": "都不是。是法定案件中，由選任的國民法官與職業法官一起組成法庭、審理與評議，不是外加的一級法院。案件範圍、資格、選任與迴避都有法律規定，不能由政治人物或網路聲量指定某案要怎麼判。",
+      "sourceIds": ["justice-courts-citizen-judges-act"]
+    },
+    {
+      "id": "different-disputes",
+      "title": "借錢不還、罰單、遭詐騙，都走同一條刑事流程嗎？",
+      "text": "不是。返還借款可能涉及民事權利；不服政府處分可能有訴願或行政訴訟等救濟；是否涉及詐欺等犯罪仍須按具體事實及法律判斷，不能只因欠款就自動當成詐欺。可先找法律諮詢，確認爭議性質與適用程序。",
+      "sourceIds": [
+        "justice-courts-civil-proceedings",
+        "oversight-administrative-litigation",
+        "justice-criminal-procedure",
+        "justice-laf-apply"
+      ]
+    }
+  ]
+}

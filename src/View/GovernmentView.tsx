@@ -1,5 +1,6 @@
 'use client';
 import { useCallback, useRef, useState } from 'react';
+import Link from 'next/link';
 import { ArrowRight, ArrowLeft, RotateCcw, Landmark, Network, Users } from 'lucide-react';
 import { CivicService } from '@/Service/CivicService';
 import { AnalyticsService } from '@/Service/AnalyticsService';
@@ -157,6 +158,7 @@ export function GovernmentView({ data, agencies }: GovernmentProps) {
             >
               地方政府
             </button>
+            <Link href="/justice/">司法與警檢</Link>
           </div>
           <div className="role-selection-area" id="government-agency-picker" ref={roleAreaRef}>
             <div className="board-caption">

@@ -8,7 +8,7 @@
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000001",
       "publishedAt": "1947-01-01",
       "checkedAt": "2026-11-11",
-      "scope": "基本權利與憲政機關職權；參考第 7、16 至 23、35 至 49、53、56、58 至 63、67、70、77、80、90 至 105 條，與增修條文及有效判決併讀。",
+      "scope": "基本權利與憲政機關職權；參考第 7、16 至 23、35 至 49、53、56、58 至 63、67、70、77、80、90 至 105 條，與增修條文及有效判決併讀。 本次司法補充：第80條：法官依法獨立審判，不受干涉。",
       "note": "憲法本文須與增修條文一併閱讀；本文中已停止適用的程序，不作為現行制度說明。"
     },
     {
@@ -1078,7 +1078,7 @@
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010053",
       "publishedAt": null,
       "checkedAt": "2026-11-11",
-      "scope": "普通法院及相關檢察機關的組織與法定職掌，包含檢察官實施偵查、實行公訴及指揮執行等。",
+      "scope": "普通法院及相關檢察機關的組織與法定職掌，包含檢察官實施偵查、實行公訴及指揮執行等。 本次司法補充：第1、2條普通法院種類及職掌；第110條行政監督；第114條不影響審判權。",
       "note": "法院與檢察署具有不同職權與所屬；名稱有對應層級不等於檢察署隸屬法院院長。"
     },
     {
@@ -1160,9 +1160,375 @@
       "checkedAt": "2026-11-11",
       "scope": "企業、消費者服務中心、地方消保官、消費爭議調解委員會與法院的程序分工。",
       "note": "申訴協調與調解不等於刑事定罪；消費者依法提起訴訟不以先走完申訴、調解為必要。"
+    },
+    {
+      "id": "justice-courts-judicial-yuan-intro",
+      "title": "司法院簡介",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-209-210-b0504-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "司法行政、各類法院、普通法院審級、智慧財產及商業法院、懲戒法院及憲法法庭概要。",
+      "note": "組織圖是司法行政監督圖，不是法官對個案裁判的命令鏈；各專業制度仍以專法及專門說明為準。"
+    },
+    {
+      "id": "justice-courts-judicial-mailbox",
+      "title": "司法信箱說明",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1327-84701-eab68-1.html",
+      "publishedAt": "2019-11-18",
+      "checkedAt": "2026-11-11",
+      "scope": "程序與行政諮詢、實體個案界線、依法遞狀與憲法訴訟聲請管道。",
+      "note": "頁面更新2024-07-02；寄信不代替依法提出書狀。"
+    },
+    {
+      "id": "justice-courts-civil-proceedings",
+      "title": "民事訴訟：審級",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1447-58182-7cb42-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "通常民事審級、第三審法律審、簡易與小額第二審由地方法院合議庭審理。",
+      "note": "入門頁不固定寫入金額門檻；上訴要件及例外應另看現行民事訴訟法。"
+    },
+    {
+      "id": "justice-courts-administrative-organization-act",
+      "title": "行政法院組織法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010055",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、7、9條：高等／最高行政法院及高等法院內地方、高等行政訴訟庭分工。",
+      "note": "2022-06-22修正、2023-08-15新制施行；組織種類與訴訟審級用語不同。"
+    },
+    {
+      "id": "justice-courts-administrative-appeals",
+      "title": "不服行政法院的裁判，應向哪個法院上訴或抗告？其上訴或抗告有無限制？",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1303-902070-1b03c-1.html",
+      "publishedAt": "2023-07-12",
+      "checkedAt": "2026-11-11",
+      "scope": "三級二審及行政訴訟法第238、263之1條的兩條主要上訴路徑。",
+      "note": "頁面更新2026-03-25；明確維持『三級二審』說法，不可簡化成三級三審。"
+    },
+    {
+      "id": "justice-courts-administrative-reform",
+      "title": "行政訴訟堅實第一審新制相關說明",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1887-666109-53cc3-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2023-08-15施行之新制與地方法院行政訴訟庭業務改由高等行政法院地方行政訴訟庭承接。",
+      "note": "歷史改革說明須搭配2026更新之行政上訴FAQ，不沿用改革前架構。"
+    },
+    {
+      "id": "justice-courts-constitutional-review-faq",
+      "title": "何謂裁判憲法審查？",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1654-57451-d04de-1.html",
+      "publishedAt": "2019-10-23",
+      "checkedAt": "2026-11-11",
+      "scope": "人民裁判憲法審查之憲法權利、不利確定終局裁判及用盡審級救濟概念。",
+      "note": "頁面更新2026-04-07；受理與程序要件仍依現行憲法訴訟法。"
+    },
+    {
+      "id": "justice-courts-constitutional-faq-list",
+      "title": "憲法法庭常見問答",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=35",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "憲法訴訟目的、程序與裁判憲法審查不是第四審之說明。",
+      "note": "區分憲法爭議與單純指摘普通法院違法；不將憲法法庭畫成一般上訴線末端。"
+    },
+    {
+      "id": "justice-courts-ip-commercial-organization-act",
+      "title": "智慧財產及商業法院組織法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010090",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、3、9條：智慧財產、商業事件管轄與法庭設置。",
+      "note": "同一機關分智慧財產法庭與商業法庭；詳細程序須配合各事件審理法。"
+    },
+    {
+      "id": "justice-courts-commercial-appeals",
+      "title": "商業法院的審級制度為何？",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1654-707093-d3265-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "商業事件二級二審及向最高法院上訴、抗告之概要。",
+      "note": "商業事件審理法第71條；不適用於所有一般買賣糾紛。"
+    },
+    {
+      "id": "justice-courts-commercial-2026-transition",
+      "title": "商業法院管轄範圍自115年10月1日擴大之新舊制適用",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1654-1639158-68c73-1.html",
+      "publishedAt": "2026-10-28",
+      "checkedAt": "2026-11-11",
+      "scope": "2026-10-01擴大管轄及以繫屬時規則判斷的新舊程序適用。",
+      "note": "2026-07-28修正發布調整數額及指定商業事件命令；不要套用舊門檻或聲稱全部既有案都移送。"
+    },
+    {
+      "id": "justice-courts-disciplinary-organization-act",
+      "title": "懲戒法院組織法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010056",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "懲戒法院組織、第一審與第二審法庭之設置。",
+      "note": "搭配公務員懲戒法及法官法理解事件分工；一級二審不等於一審終結。"
+    },
+    {
+      "id": "justice-courts-duty-tribunal",
+      "title": "職務法庭制度",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-239-57410-c9c1e-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "法官法第47、48、48之2、89條：職務法庭、法官檢察官懲戒及法官職務救濟。",
+      "note": "頁面先敘歷史一級一審，後說明2020-07-17改為一級二審；不可只截取歷史段落。"
+    },
+    {
+      "id": "justice-courts-juvenile-family-organization-act",
+      "title": "少年及家事法院組織法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010100",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第2、3、8條：少年及家事法院、未設獨立法院地區與少年／家事法庭分工。",
+      "note": "不能以獨立法院名稱推論每縣市均有同樣機關。"
+    },
+    {
+      "id": "justice-courts-juvenile-act",
+      "title": "少年事件處理法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010011",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "第1、1之1、2條之少年保護目的及年齡；少年保護與刑事程序區分。",
+      "note": "優先使用現行法，不複製舊兒童介紹頁的舊制度年齡或標籤化敘述。"
+    },
+    {
+      "id": "justice-courts-family-act",
+      "title": "家事事件法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=B0010048",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "家事事件範圍、專業程序與家庭關係事件之處理。",
+      "note": "婚姻、親子、監護等僅為例示，具體程序及管轄依事件判斷。"
+    },
+    {
+      "id": "justice-courts-citizen-judges-act",
+      "title": "國民法官法",
+      "publisher": "全國法規資料庫",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030320",
+      "publishedAt": "2020-08-12",
+      "checkedAt": "2026-11-11",
+      "scope": "第2、3、5、6、112、113條：法庭組成、案件範圍、法定除外、過渡規定及2026第二階段施行。",
+      "note": "第5條第1項第1款自2026-01-01施行；最輕本刑不是實際宣告刑。"
+    },
+    {
+      "id": "justice-courts-citizen-judges-reform",
+      "title": "國民參與刑事審判制度／改革成果",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/lp-199-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "2023、2026兩階段施行範圍及國民法官制度背景。",
+      "note": "以最終制定法的十年以上為準，不沿用研議草案七年以上版本。"
+    },
+    {
+      "id": "justice-criminal-procedure",
+      "title": "刑事訴訟法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0010001",
+      "publishedAt": "2026-05-13",
+      "checkedAt": "2026-11-11",
+      "scope": "客觀義務、檢警調查、無罪推定、強制處分、告訴告發及言詞申告、偵查終結、再議及准許提起自訴。",
+      "note": "整部法規修正日期 2026-05-13；重點逐條核對第 2、93、95、101、128、131、131-1、154、228、230、231、232、240、242、251 至 253-3、256、258-1、260、301、319 條。"
+    },
+    {
+      "id": "justice-judges-law",
+      "title": "法官法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030243",
+      "publishedAt": "2023-12-15",
+      "checkedAt": "2026-11-11",
+      "scope": "法官職務保障、評鑑及懲戒；第 92、93、94 條：檢察指揮命令、書面程序、案件移轉及檢察行政監督。",
+      "note": "法務部長不得對個別檢察案件為具體指揮命令。"
+    },
+    {
+      "id": "justice-prosecution-organization",
+      "title": "機關組織簡介",
+      "publisher": "臺灣高等檢察署",
+      "url": "https://www.tph.moj.gov.tw/4421/4423/4435/24583/post",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "法務部體系、各級檢察機關及審檢分設。",
+      "note": "正文經官方搜尋索引確認；頁面個別日期未確認，故保留 null。法律界線另以法院組織法及法官法為準。"
+    },
+    {
+      "id": "justice-prosecutor-ethics",
+      "title": "檢察官倫理規範",
+      "publisher": "法務部主管法規查詢系統",
+      "url": "https://mojlaw.moj.gov.tw/LawContent.aspx?LSID=FL063886&TypeSort=2&lawNumber=8",
+      "publishedAt": "2021-01-13",
+      "checkedAt": "2026-11-11",
+      "scope": "第 8 至 10 條：真實發現、客觀義務、無罪推定與比例原則。",
+      "note": "日期為修正日期。"
+    },
+    {
+      "id": "justice-report-bell",
+      "title": "檢察機關申告鈴使用須知",
+      "publisher": "臺灣新北地方檢察署",
+      "url": "https://www.pcc.moj.gov.tw/293833/293890/293891/364549/post",
+      "publishedAt": "2021-01-04",
+      "checkedAt": "2026-11-11",
+      "scope": "言詞告訴、告發及自首，值勤法警引導、值日檢察事務官詢問製作筆錄及申告時間。",
+      "note": "官方頁最後更新 2026-01-23；第 8 點以辦公時間為原則，急迫情形例外。"
+    },
+    {
+      "id": "justice-report-single-window",
+      "title": "刑事報案單一窗口常見問答",
+      "publisher": "內政部警政署花蓮港務警察總隊",
+      "url": "https://www.hlhpd.npa.gov.tw/ch/app/faq/doc?detailNo=1280693537586810880&module=faq&type=s",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "不分轄區受理、必要初步處置、轉送管轄單位及追蹤。",
+      "note": "官方 FAQ 附件；發布日期未確認。另可比對保安警察第七總隊官方 FAQ：https://www.7spc.npa.gov.tw/ch/app/faq/view?id=2775&module=faq&serno=3730cb51-bf05-4f7d-9bac-1709019f9e2a 。"
+    },
+    {
+      "id": "justice-report-receipt",
+      "title": "簡化報案流程 保障民眾權益 揪甘心",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?id=1887&module=news&serno=b7e05e5d-e03d-4a80-b387-8e670e7dc76f",
+      "publishedAt": "2021-02-23",
+      "checkedAt": "2026-11-11",
+      "scope": "舊表單整併為受（處）理案件證明單及官方查詢用途。",
+      "note": "2021-03-01 正式實施整併；勿要求舊稱三聯單。"
+    },
+    {
+      "id": "justice-report-query",
+      "title": "報案取得受（處）理案件證明單後，如何上網查詢受理情形？",
+      "publisher": "內政部警政署",
+      "url": "https://www.npa.gov.tw/ch/app/faq/view?id=2144&module=faq&serno=A1083925",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "警政署官方受理案件查詢路徑。",
+      "note": "查詢涉及姓名、證號及案件資料；本站應只連結官方入口，不代收個資。"
+    },
+    {
+      "id": "justice-reconsideration-qa",
+      "title": "告訴人對檢察官之不起訴處分或緩起訴處分，如有不服時應如何救濟？",
+      "publisher": "司法院刑事廳",
+      "url": "https://www.judicial.gov.tw/tw/cp-1358-2655-d7280-1.html",
+      "publishedAt": "2019-09-24",
+      "checkedAt": "2026-11-11",
+      "scope": "告訴人聲請再議程序。",
+      "note": "更新日期 2021-01-07；例外及現行要件另核對刑事訴訟法第 256 條。"
+    },
+    {
+      "id": "justice-private-prosecution-qa",
+      "title": "如何聲請准許提起自訴？",
+      "publisher": "司法院刑事廳",
+      "url": "https://www.judicial.gov.tw/tw/cp-1654-2656-6f346-1.html",
+      "publishedAt": "2019-09-05",
+      "checkedAt": "2026-11-11",
+      "scope": "再議駁回後，委任律師向法院聲請准許提起自訴及法院准許後的程序。",
+      "note": "更新日期 2023-06-28，內容已採現行准許提起自訴制度。"
+    },
+    {
+      "id": "justice-laf-intro",
+      "title": "法律扶助簡介",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-181-57187-ceece-1.html",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "法扶的目的、司法院捐助設立的財團法人性質與服務。",
+      "note": "不將財團法人誤列為法院或檢察機關；不使用逐年預算或案件統計做固定文案。"
+    },
+    {
+      "id": "justice-laf-eligibility",
+      "title": "扶助資格說明",
+      "publisher": "財團法人法律扶助基金會",
+      "url": "https://www.laf.org.tw/service-assistance-des",
+      "publishedAt": "2023-10-25",
+      "checkedAt": "2026-11-11",
+      "scope": "一般資力及案情審查、特殊專案另有規定。",
+      "note": "更新日期 2024-11-15；服務提供者官方說明，不是政府機關頁面。"
+    },
+    {
+      "id": "justice-laf-apply",
+      "title": "申請方式",
+      "publisher": "財團法人法律扶助基金會",
+      "url": "https://www.laf.org.tw/service-app",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "預約申請扶助律師及官方服務入口。",
+      "note": "服務提供者官方說明；不保證所有申請均可獲准。"
+    },
+    {
+      "id": "justice-corrections-law",
+      "title": "法務部矯正署組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0000024",
+      "publishedAt": "2010-09-01",
+      "checkedAt": "2026-11-11",
+      "scope": "矯正政策及全國矯正機關監督、收容人教化輔導與戒護等法定業務。",
+      "note": "日期為公布日期。"
+    },
+    {
+      "id": "justice-detention-law",
+      "title": "羈押法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0040005",
+      "publishedAt": "2020-01-15",
+      "checkedAt": "2026-11-11",
+      "scope": "第 1 至 4 條：被告權利、看守所及矯正署監督、羈押目的與必要限度。",
+      "note": "受羈押被告不能直接當作有罪確定者。"
+    },
+    {
+      "id": "justice-police-organization",
+      "title": "警察體系說明及組織體制、指揮監督系統",
+      "publisher": "內政部警政署",
+      "url": "https://www.npa.gov.tw/userfiles/chnpa/files/20240425100907986.pdf",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "中央警政與地方警察局、分局、分駐派出所的行政組織及業務監督關係。",
+      "note": "組織與業務監督不等於法院審判指揮；刑事偵查另依刑事訴訟法。"
+    },
+    {
+      "id": "justice-cib-functions",
+      "title": "刑事警察局組織職掌",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/artwebsite/view?id=1389&module=artwebsite&serno=49d63e23-3719-4e04-904e-bc5a6029dd2e",
+      "publishedAt": null,
+      "checkedAt": "2026-11-11",
+      "scope": "犯罪偵防、刑事鑑識、跨境及重大特殊刑事案件支援等業務。",
+      "note": "頁面更新2023-08-16；辦案仍須遵守刑事訴訟法及法定強制處分程序。"
+    },
+    {
+      "id": "justice-extraordinary-appeal",
+      "title": "審慎辦理非常上訴案件",
+      "publisher": "最高檢察署",
+      "url": "https://www.tps.moj.gov.tw/16314/16352/16354/224229//post",
+      "publishedAt": "2023-03-10",
+      "checkedAt": "2026-11-11",
+      "scope": "刑事訴訟法第441條：檢察總長對確定刑事裁判審判違背法令依法提起非常上訴。",
+      "note": "官方頁更新2026-01-26；非常上訴不等同一般上訴，不能保證人民聲請後必定提起。"
     }
   ],
   "corrections": [
+    {
+      "date": "2026-11-11",
+      "previous": "法院、警察與檢察機關僅分散在一般機關總覽，缺乏可連貫閱讀的司法入門內容。",
+      "correction": "新增司法與警檢專頁，區分審判獨立、司法行政、檢察行政與偵查指揮；補充機關角色、法院分流、公訴流程、報案與言詞申告、救濟及法律協助。",
+      "scope": "司法與警檢專頁／justice/"
+    },
     {
       "date": "2026-11-10",
       "previous": "需求草稿將縣下鄉鎮市合計寫為 195，鎮寫為 35。",

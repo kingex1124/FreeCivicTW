@@ -6,12 +6,29 @@ import { ElectionService } from '@/Service/ElectionService';
 import { MediaLiteracyService } from '@/Service/MediaLiteracyService';
 import { SourceService } from '@/Service/SourceService';
 import { getAgencyDirectory } from '@/Service/AgencyService';
+import { JusticeService } from '@/Service/JusticeService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
 const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
+const justice = JusticeService.get();
+unique(justice.groups.map((group) => group.id));
+unique(justice.entities.map((entity) => entity.id));
+unique(justice.criminalFlow.steps.map((step) => step.id));
+unique(justice.courtPaths.map((path) => path.id));
+unique(justice.reporting.channels.map((channel) => channel.id));
+unique(justice.faq.map((item) => item.id));
+for (const id of JusticeService.sourceIds(justice))
+  assert(sourceIds.has(id), `司法與警檢來源不存在：${id}`);
+for (const entity of justice.entities) {
+  assert(
+    justice.groups.some((group) => group.id === entity.group),
+    `司法分類不存在：${entity.id}`,
+  );
+  assert.equal(new URL(entity.officialUrl).protocol, 'https:');
+}
 const agencies = getAgencyDirectory();
 unique(agencies.entries.map((entry) => entry.id));
 unique(agencies.groups.map((group) => group.id));
@@ -113,5 +130,5 @@ for (const p of LearningService.getPaths()) {
   for (const id of p.scenarioIds ?? []) assert(scenarioIds.has(id));
 }
 console.log(
-  `資料驗證通過：${regions.counties.length} 縣市／${towns.length} 鄉鎮市區、${articles.length} 篇文章、${civic.roles.length} 角色、${media.scenarios.length} 題練習。`,
+  `資料驗證通過：${regions.counties.length} 縣市／${towns.length} 鄉鎮市區、${articles.length} 篇文章、${civic.roles.length} 角色、${justice.entities.length} 項司法與警檢說明、${media.scenarios.length} 題練習。`,
 );
