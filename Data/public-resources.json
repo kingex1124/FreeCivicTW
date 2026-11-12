@@ -1,0 +1,3755 @@
+{
+  "schemaVersion": 1,
+  "title": "便民查詢",
+  "description": "從食安、判決、民代到生活服務，整理中央、司法與地方官方工具，以及22縣市政府、議會與中央機關入口，說明能查什麼、怎麼使用。",
+  "checkedAt": "2026-11-12",
+  "categories": [
+    {
+      "id": "health",
+      "label": "食安與健康"
+    },
+    {
+      "id": "justice",
+      "label": "司法與法律"
+    },
+    {
+      "id": "politics",
+      "label": "民代與選舉"
+    },
+    {
+      "id": "money",
+      "label": "公帑與經濟"
+    },
+    {
+      "id": "housing",
+      "label": "居住與土地"
+    },
+    {
+      "id": "transport",
+      "label": "交通與道路"
+    },
+    {
+      "id": "environment",
+      "label": "環境與防災"
+    },
+    {
+      "id": "services",
+      "label": "申辦與生活"
+    }
+  ],
+  "entries": [
+    {
+      "id": "pork-dashboard",
+      "title": "豬肉儀表板",
+      "agency": "衛生福利部食品藥物管理署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "看國產與進口豬肉、可食部位的數量及檢驗資訊。",
+      "canFind": [
+        "依日期看國產、進口豬肉與可食部位重量及占比。",
+        "查看各進口國別、批數與萊克多巴胺檢驗資訊。"
+      ],
+      "howToUse": [
+        "選擇要比較的日期或歷史資料。",
+        "先看統計範圍與單位，再比較來源國與檢驗欄位。"
+      ],
+      "limitations": [
+        "進口量以通關放行日期統計；進口自某國不等於含有萊克多巴胺，也不能由總量判斷手中這塊肉的產地或安全。"
+      ],
+      "url": "https://ifi.fda.gov.tw/ifi/pfp/cp/pfpcp0706q.jsp",
+      "verificationUrl": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?cid=42419&id=f638097322104370524&type=2",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "豬肉",
+        "美豬",
+        "進口",
+        "萊克多巴胺",
+        "食安"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "food-consumer",
+      "title": "食品藥物消費者專區",
+      "agency": "衛生福利部食品藥物管理署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "買食品、保健產品或看到療效廣告時，先找官方查詢入口。",
+      "canFind": [
+        "食品核可資料、藥品回收及食品藥物安全訊息。",
+        "以關鍵字查找違規食品、藥物及化粧品廣告。"
+      ],
+      "howToUse": [
+        "依問題選「整合查詢服務」或「違規廣告查詢」。",
+        "輸入產品、業者或廣告關鍵字，核對產品與公告日期。"
+      ],
+      "limitations": [
+        "查無違規紀錄不代表產品經官方保證；保健食品不能直接當成治療疾病的藥物。"
+      ],
+      "url": "https://consumer.fda.gov.tw/#content",
+      "verificationUrl": "https://www.fda.gov.tw/tc/newsContent.aspx?cid=4&id=t622737",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "食安",
+        "保健食品",
+        "回收",
+        "廣告",
+        "查證"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "drug-license",
+      "title": "西藥許可證查詢",
+      "agency": "衛生福利部食品藥物管理署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "核對藥品的正式名稱、成分與許可資料。",
+      "canFind": [
+        "以品名、許可證字號等條件查找藥品資料。",
+        "核對許可證相關資料與藥品成分。"
+      ],
+      "howToUse": [
+        "從藥袋或包裝找出品名及許可證字號。",
+        "在官方系統搜尋，核對產品及許可資料。"
+      ],
+      "limitations": [
+        "同名近似品不一定是同一產品；用藥適用與劑量仍應由醫師或藥師確認。"
+      ],
+      "url": "https://lmspiq.fda.gov.tw/web/DRPIQ/license-search",
+      "verificationUrl": "https://www.fda.gov.tw/Tc/faqContent.aspx?id=55",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "藥品",
+        "藥證",
+        "成分",
+        "西藥"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "medical-register",
+      "title": "醫事人員與醫事機構查詢",
+      "agency": "衛生福利部",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "就醫前，查醫師或機構的公開執業資料。",
+      "canFind": [
+        "醫事人員及醫事機構基本資料。",
+        "美容醫學、醫事人員懲戒決議等專區入口。"
+      ],
+      "howToUse": [
+        "選擇人員或機構查詢，輸入姓名、名稱或所在地等條件。",
+        "核對執業機構與資料範圍，必要時向所在地衛生局確認。"
+      ],
+      "limitations": [
+        "執業登記不等於特定療程療效保證；同名者須比對機構等資訊。"
+      ],
+      "url": "https://ma.mohw.gov.tw/Accessibility",
+      "verificationUrl": "https://www.mohw.gov.tw/cp-88-207-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "醫師",
+        "診所",
+        "醫事",
+        "執業",
+        "懲戒"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "nhi-provider",
+      "title": "健保院所與服務時段查詢",
+      "agency": "衛生福利部中央健康保險署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "找附近的健保特約醫院、診所或藥局。",
+      "canFind": [
+        "健保特約醫事機構、所在地及相關服務。",
+        "院所服務時段、假期開診與各類照護計畫入口。"
+      ],
+      "howToUse": [
+        "在院所查詢頁選擇特約機構或服務時段查詢。",
+        "依縣市、鄉鎮及機構條件找院所，就診前再向院所確認。"
+      ],
+      "limitations": [
+        "網路時段可能與臨時休診不同；急症不應只依查詢結果延誤就醫。"
+      ],
+      "url": "https://www.nhi.gov.tw/ch/np-2926-1.html",
+      "verificationUrl": "https://www.nhi.gov.tw/ch/np-2926-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "健保",
+        "醫院",
+        "診所",
+        "藥局",
+        "假日"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "health-bank",
+      "title": "健康存摺與個人健保紀錄",
+      "agency": "衛生福利部中央健康保險署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "經身分驗證後查自己的就醫與健康資料。",
+      "canFind": [
+        "健康存摺及健保與就醫紀錄相關服務入口。",
+        "健保卡網路服務註冊、行動快易通等使用方式。"
+      ],
+      "howToUse": [
+        "從健保與就醫紀錄頁進入健康存摺或行動快易通。",
+        "依官方指引完成本人身分驗證，再查閱自己的資料。"
+      ],
+      "limitations": [
+        "個人資料需本人驗證；資料涵蓋與更新時間依健保署及醫療院所上傳內容，不等於完整病歷。"
+      ],
+      "url": "https://www.nhi.gov.tw/ch/np-2701-1.html",
+      "verificationUrl": "https://www.nhi.gov.tw/ch/np-2701-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "健康存摺",
+        "就醫紀錄",
+        "健保卡",
+        "醫療"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "school-lunch",
+      "title": "校園食材登錄平臺",
+      "agency": "教育部國民及學前教育署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "了解孩子學校今天吃什麼、食材從哪裡來。",
+      "canFind": [
+        "學校每日午餐菜單與公開食材來源。",
+        "校園食安公告及飲食教育資源。"
+      ],
+      "howToUse": [
+        "選擇學校與供餐日期。",
+        "閱讀菜單及食材資訊，疑問可再向學校午餐承辦人確認。"
+      ],
+      "limitations": [
+        "內容依學校登錄與更新情形；看到供應商名稱不代表每一批食材都已公開完整檢驗報告。"
+      ],
+      "url": "https://fatraceschool.k12ea.gov.tw/frontend/index.html",
+      "verificationUrl": "https://www.k12ea.gov.tw/Tw/News/K12eaNewsDetail?filter=9F92BBB7-0251-4CB7-BF06-82385FD996A0&id=949d3c5a-37d1-4f1b-8aad-d3fd88ca97bd",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "午餐",
+        "食材",
+        "學校",
+        "孩子",
+        "食安"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "travel-epidemic",
+      "title": "國際旅遊疫情建議等級",
+      "agency": "衛生福利部疾病管制署",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "summary": "出國前，用國家或疾病名稱查疫情提醒。",
+      "canFind": [
+        "各國家地區與疾病的旅遊疫情建議。",
+        "建議等級、發布日期及相關防護資訊。"
+      ],
+      "howToUse": [
+        "輸入目的地國家或疾病名稱。",
+        "核對發布日期、適用地區與官方建議，出發前再次確認。"
+      ],
+      "limitations": [
+        "疫情建議不是入境簽證或旅行禁令；個人接種與健康需求可諮詢旅遊醫學門診。"
+      ],
+      "url": "https://www.cdc.gov.tw/InternationalEpidemicLevel/",
+      "verificationUrl": "https://www.cdc.gov.tw/InternationalEpidemicLevel/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "出國",
+        "疫情",
+        "疾病",
+        "旅遊"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "real-price",
+      "title": "不動產交易實價查詢",
+      "agency": "內政部地政司",
+      "category": "housing",
+      "level": "central",
+      "region": "",
+      "summary": "買屋、租屋前，比較已公開的實際成交資訊。",
+      "canFind": [
+        "不動產買賣、租賃與預售屋公開交易資料。",
+        "依地區、時間及物件條件查詢並比較。"
+      ],
+      "howToUse": [
+        "選擇交易類型、地區與時間範圍。",
+        "核對面積、車位、屋齡與備註，再比較條件相近的案件。"
+      ],
+      "limitations": [
+        "揭露有時間落差，且只包含已公開交易；不能把單一成交價當成整區所有房屋行情。"
+      ],
+      "url": "https://lvr.land.moi.gov.tw/jsp/index.jsp",
+      "verificationUrl": "https://lvr.land.moi.gov.tw/R11/jsp/qa.jsp",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "實價登錄",
+        "房價",
+        "租屋",
+        "預售屋",
+        "成交"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "land-maps",
+      "title": "國土測繪圖資服務雲",
+      "agency": "內政部國土測繪中心",
+      "category": "housing",
+      "level": "central",
+      "region": "",
+      "summary": "用地圖認識土地位置、地籍與周遭環境。",
+      "canFind": [
+        "地籍、行政區界、通用電子地圖與正射影像等圖層。",
+        "位置查找、土地資訊與多圖層套疊。"
+      ],
+      "howToUse": [
+        "利用地址、地名或地圖縮放找到位置。",
+        "開啟所需圖層，閱讀圖層說明及更新時間。"
+      ],
+      "limitations": [
+        "地籍套疊僅供空間參考；土地權利界址應以地政機關鑑界結果為準。"
+      ],
+      "url": "https://maps.nlsc.gov.tw/",
+      "verificationUrl": "https://www.nlsc.gov.tw/cp.aspx?n=16734",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "地籍",
+        "土地",
+        "地圖",
+        "航照",
+        "地號"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "rent-subsidy",
+      "title": "租金補貼與住宅資訊",
+      "agency": "內政部國土管理署／不動產資訊平台",
+      "category": "housing",
+      "level": "central",
+      "region": "",
+      "summary": "先看租屋補助資格，再找申請與進度入口。",
+      "canFind": [
+        "租金補貼申請條件、文件與常見問答。",
+        "資格檢核、試算、線上申請及進度查詢入口。"
+      ],
+      "howToUse": [
+        "先選正確年度，閱讀當年度申請條件。",
+        "如需申請或查進度，依官方入口驗證身分並操作。"
+      ],
+      "limitations": [
+        "試算不等於核定；年度、家庭及住宅條件影響資格，個案以受理單位審查為準。"
+      ],
+      "url": "https://pip.moi.gov.tw/V3/G/SCRG0401.aspx",
+      "verificationUrl": "https://pip.moi.gov.tw/Publicize/Info/B1020?n=%E5%95%8F%E8%88%87%E7%AD%94&y=115",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "租金補貼",
+        "租屋",
+        "住宅",
+        "補助"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "procurement",
+      "title": "政府電子採購網",
+      "agency": "行政院公共工程委員會",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "看政府招標什麼、哪家廠商得標。",
+      "canFind": [
+        "招標、決標、機關名稱、標案名稱及公告資料。",
+        "採購預告與部分招標文件公開閱覽資訊。"
+      ],
+      "howToUse": [
+        "選招標或決標查詢，輸入機關、案名或日期。",
+        "閱讀公告、得標廠商及金額，核對標案範圍與後續更正。"
+      ],
+      "limitations": [
+        "決標金額不一定等於最終實際支出；不能只憑得標或金額推定違法。"
+      ],
+      "url": "https://web.pcc.gov.tw/prkms/tender/common/noticeDate/indexNoticeDate",
+      "verificationUrl": "https://web.pcc.gov.tw/prkms/tender/common/noticeDate/indexNoticeDate",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "標案",
+        "採購",
+        "工程",
+        "得標",
+        "預算"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "central-budget",
+      "title": "中央政府總預算查詢服務",
+      "agency": "行政院主計總處",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "看中央政府預計把錢用在哪些機關與工作。",
+      "canFind": [
+        "中央政府總預算書與單位預算書。",
+        "總預算、單位預算資料及預算說明查詢。"
+      ],
+      "howToUse": [
+        "先選年度及預算書類型。",
+        "依機關或科目查找，閱讀金額、用途與說明。"
+      ],
+      "limitations": [
+        "預算是規劃及法定授權，不等於已花掉的金額；應與同年度決算及審核報告對照。"
+      ],
+      "url": "https://dq.dgbas.gov.tw/SBA_BS/",
+      "verificationUrl": "https://dq.dgbas.gov.tw/SBA_BS/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "預算",
+        "中央政府",
+        "經費",
+        "主計"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "audit-report",
+      "title": "總決算審核報告查詢平臺",
+      "agency": "審計部",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "看政府錢實際怎麼花，以及審計提出什麼問題。",
+      "canFind": [
+        "中央與地方政府總決算審核報告。",
+        "特別決算審核報告、全文檢索與審定數額表。"
+      ],
+      "howToUse": [
+        "選年度及中央或地方政府報告。",
+        "用關鍵字找機關、計畫或問題，連同改善情形閱讀。"
+      ],
+      "limitations": [
+        "審核意見不等於刑事有罪判決；決算年度與發布年度可能不同。"
+      ],
+      "url": "https://auditreport.audit.gov.tw/",
+      "verificationUrl": "https://auditreport.audit.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "決算",
+        "審計",
+        "政府支出",
+        "監督"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "statistics",
+      "title": "中華民國統計資訊網",
+      "agency": "行政院主計總處",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "查新聞中的物價、薪資、失業與人口數據。",
+      "canFind": [
+        "物價、就業失業、薪資、家庭收支與經濟成長統計。",
+        "統計資料查詢、定義說明及中央與地方統計入口。"
+      ],
+      "howToUse": [
+        "依統計主題或關鍵字找資料。",
+        "比對期間、單位、定義及是否經季節調整，再作比較。"
+      ],
+      "limitations": [
+        "平均數不等於中位數，也不代表每個人的感受；不同統計定義不可直接混比。"
+      ],
+      "url": "https://www.stat.gov.tw/",
+      "verificationUrl": "https://www.stat.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "統計",
+        "薪資",
+        "物價",
+        "失業",
+        "人口",
+        "GDP"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "business-register",
+      "title": "商工登記公示資料查詢",
+      "agency": "經濟部商業發展署",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "交易或求職前，核對公司與商號的登記資訊。",
+      "canFind": [
+        "公司、商業、工廠與有限合夥等登記資料。",
+        "以名稱、統一編號、地址或代表人等條件搜尋。"
+      ],
+      "howToUse": [
+        "先選名稱或統一編號等查詢方式。",
+        "打開符合項目，核對公司狀態、地址與代表人。"
+      ],
+      "limitations": [
+        "完成登記不代表政府保證履約、產品安全或投資獲利；近似名稱須以統一編號分辨。"
+      ],
+      "url": "https://findbiz.nat.gov.tw/",
+      "verificationUrl": "https://findbiz.nat.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "公司",
+        "商號",
+        "統編",
+        "工廠",
+        "商工"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "tax-register",
+      "title": "稅籍登記與發票公示資訊",
+      "agency": "財政部財政資訊中心",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "summary": "核對店家稅籍及發票相關公示資料。",
+      "canFind": [
+        "營業人稅籍登記資料。",
+        "統一發票開立行號與是否使用統一發票的查詢入口。"
+      ],
+      "howToUse": [
+        "選稅籍登記或發票公示查詢。",
+        "輸入統一編號、名稱或地址，核對營業人資料。"
+      ],
+      "limitations": [
+        "稅籍資料不等於商品品質或交易信用認證；個人稅務資料另需依身分驗證規定查詢。"
+      ],
+      "url": "https://www.etax.nat.gov.tw/etwmain/tax-info/my-tax/publicity",
+      "verificationUrl": "https://www.etax.nat.gov.tw/etwmain/tax-info/my-tax/publicity",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "稅籍",
+        "發票",
+        "店家",
+        "統編",
+        "營業人"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "air-quality",
+      "title": "空氣品質監測網",
+      "agency": "環境部",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "出門、運動或安排活動前，查空品與污染物濃度。",
+      "canFind": [
+        "各測站即時 AQI、PM2.5 等監測資料。",
+        "空氣品質預報、指標說明與防護建議。"
+      ],
+      "howToUse": [
+        "選所在地附近測站，查看資料時間。",
+        "區分即時監測與未來預報，依自身狀況閱讀活動建議。"
+      ],
+      "limitations": [
+        "測站數值不代表每個街角的暴露程度；預報會隨氣象條件改變。"
+      ],
+      "url": "https://airtw.moenv.gov.tw/",
+      "verificationUrl": "https://airtw.moenv.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "空氣",
+        "AQI",
+        "PM2.5",
+        "空污",
+        "運動"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "water-quality",
+      "title": "全國環境水質監測資訊網",
+      "agency": "環境部",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "了解河川、水庫與地下水的監測狀況。",
+      "canFind": [
+        "河川、水庫及地下水監測資料與歷史數據。",
+        "水質地理資訊平台、指標解說與資料下載。"
+      ],
+      "howToUse": [
+        "選水體類型、測站與採樣期間。",
+        "搭配水質指標定義，比較同站及相近期間的變化。"
+      ],
+      "limitations": [
+        "環境水體監測不等於家中水龍頭飲用水檢驗，應留意採樣月份與測項。"
+      ],
+      "url": "https://wq.moenv.gov.tw/",
+      "verificationUrl": "https://www.moenv.gov.tw/information-service/thematic-website/28804.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "河川",
+        "水庫",
+        "地下水",
+        "水質",
+        "污染"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "pollution-register",
+      "title": "列管污染源與裁處資訊查詢",
+      "agency": "環境部",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "查附近事業的公開環保申報與裁處紀錄。",
+      "canFind": [
+        "以事業名稱、統一編號或地區找列管污染源。",
+        "裁處日期、環保法令裁處資訊及資料下載。"
+      ],
+      "howToUse": [
+        "先以名稱、統一編號或地圖找到事業。",
+        "分別閱讀申報與裁處資料，核對處分日期及內容。"
+      ],
+      "limitations": [
+        "申報資料有審查與更新時差；有無裁處都不能單獨證明目前現場是否污染。"
+      ],
+      "url": "https://prtr.moenv.gov.tw/",
+      "verificationUrl": "https://prtr.moenv.gov.tw/deal.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "污染源",
+        "工廠",
+        "裁罰",
+        "環保",
+        "排放"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "eia-documents",
+      "title": "環評書件查詢系統",
+      "agency": "環境部",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "想了解開發案的環境影響，先閱讀環評原始資料。",
+      "canFind": [
+        "環評書件、環評會議資料及紀錄。",
+        "審查結論與開發案相關公開資訊。"
+      ],
+      "howToUse": [
+        "用開發案名稱或地區等條件找案件。",
+        "依時間讀書件、會議紀錄與審查結論，留意附帶條件。"
+      ],
+      "limitations": [
+        "通過環評不等於所有開發許可都已取得；資料公開範圍及更新由主管機關決定。"
+      ],
+      "url": "https://eiadoc.moenv.gov.tw/EIAWEB",
+      "verificationUrl": "https://www.moenv.gov.tw/information-service/thematic-website/26856.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "環評",
+        "開發案",
+        "會議紀錄",
+        "土地開發"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "weather",
+      "title": "中央氣象署天氣與警特報",
+      "agency": "交通部中央氣象署",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "查所在地天氣、雨量與災害性天氣提醒。",
+      "canFind": [
+        "縣市、鄉鎮及一週天氣預報。",
+        "雷達、衛星、雨量、天氣觀測及警特報相關入口。"
+      ],
+      "howToUse": [
+        "選縣市或鄉鎮，查看發布及有效時間。",
+        "遇劇烈天氣時，配合最新警特報及地方政府通知。"
+      ],
+      "limitations": [
+        "天氣預報含不確定性；不同預報時間尺度不宜直接混比。"
+      ],
+      "url": "https://www.cwa.gov.tw/V8/C/",
+      "verificationUrl": "https://www.cwa.gov.tw/V8/C/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "天氣",
+        "颱風",
+        "豪雨",
+        "雨量",
+        "氣象"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "disaster-map",
+      "title": "3D災害潛勢地圖",
+      "agency": "國家災害防救科技中心",
+      "category": "environment",
+      "level": "central",
+      "region": "",
+      "summary": "查住家周邊可能面臨哪些天然災害風險。",
+      "canFind": [
+        "地址周邊災害潛勢分析。",
+        "淹水、坡地等各類潛勢圖層與圖資說明。"
+      ],
+      "howToUse": [
+        "輸入地址或在地圖定位。",
+        "切換災害圖層，先讀模擬條件與圖資說明。"
+      ],
+      "limitations": [
+        "潛勢圖是特定條件下的風險參考，不是當下即時災情，也不保證未標示處絕不受災。"
+      ],
+      "url": "https://dmap.ncdr.nat.gov.tw/",
+      "verificationUrl": "https://www.ncdr.nat.gov.tw/Page?itemid=25&mid=22",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "防災",
+        "淹水",
+        "土石流",
+        "災害潛勢",
+        "住家"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "highway-1968",
+      "title": "高速公路1968即時路況",
+      "agency": "交通部高速公路局",
+      "category": "transport",
+      "level": "central",
+      "region": "",
+      "summary": "開車上國道前，查壅塞、路況與旅行時間。",
+      "canFind": [
+        "國道即時交通、旅行時間及行程規劃。",
+        "路況、疏導措施及相關行車資訊。"
+      ],
+      "howToUse": [
+        "選要行駛的國道及方向，查行程或路況。",
+        "出發前核對時間與管制公告，行車中請由乘客操作。"
+      ],
+      "limitations": [
+        "旅行時間是估計值，事故與天候可能使狀況快速改變；應遵循現場標誌與管制。"
+      ],
+      "url": "https://1968.freeway.gov.tw/",
+      "verificationUrl": "https://www.freeway.gov.tw/UserFiles/File/TIMCCC/Travel%20time%20information_revise.pdf",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "國道",
+        "高速公路",
+        "1968",
+        "塞車",
+        "路況"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "provincial-road",
+      "title": "智慧化省道即時資訊服務網",
+      "agency": "交通部公路局",
+      "category": "transport",
+      "level": "central",
+      "region": "",
+      "summary": "上山、返鄉前，查省道施工與道路管制。",
+      "canFind": [
+        "省道路況、防災與施工資訊。",
+        "路況影像、旅行時間及國道替代路徑等服務。"
+      ],
+      "howToUse": [
+        "選省道、地區或旅行時間查詢。",
+        "閱讀路段、方向及管制時間，出發前再次確認。"
+      ],
+      "limitations": [
+        "資訊可能有傳輸時間差；山區道路仍須遵守現場封閉、放行與警示。"
+      ],
+      "url": "https://168.thb.gov.tw/",
+      "verificationUrl": "https://www.thb.gov.tw/News_App.aspx?n=341&sms=13690",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "省道",
+        "公路",
+        "路況",
+        "施工",
+        "山路"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "motor-vehicle",
+      "title": "監理服務網",
+      "agency": "交通部公路局",
+      "category": "transport",
+      "level": "central",
+      "region": "",
+      "summary": "自行查自己的交通違規、汽燃費與監理業務。",
+      "canFind": [
+        "交通違規、汽燃費查詢與繳納入口。",
+        "駕照考試、車輛及其他監理服務資訊。"
+      ],
+      "howToUse": [
+        "從官方首頁選「交通違規」或「汽機車／燃料費」等服務。",
+        "依服務要求驗證身分並核對車號、案件與費用。"
+      ],
+      "limitations": [
+        "個人查詢依服務需輸入身分資料或登入；請自行開啟官方網址，不從不明催繳連結付款。"
+      ],
+      "url": "https://www.mvdis.gov.tw/",
+      "verificationUrl": "https://www.thb.gov.tw/News_Content_Table.aspx?n=7839&s=287154&sms=13275",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "監理",
+        "罰單",
+        "燃料費",
+        "駕照",
+        "汽機車"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "labor-disclosure",
+      "title": "違反勞動法令雇主查詢",
+      "agency": "勞動部",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "summary": "求職或了解勞權時，查雇主公開裁罰紀錄。",
+      "canFind": [
+        "事業單位或負責人的勞動法令裁罰公告。",
+        "依縣市、處分日期及法規等條件查詢。"
+      ],
+      "howToUse": [
+        "輸入公司名稱、負責人或選擇縣市及期間。",
+        "核對處分機關、違反條文、日期與裁罰內容。"
+      ],
+      "limitations": [
+        "資料由各主管機關提供；查無紀錄不代表從未違法，疑義可洽公告機關。"
+      ],
+      "url": "https://announcement.mol.gov.tw/",
+      "verificationUrl": "https://announcement.mol.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "勞權",
+        "雇主",
+        "違法",
+        "裁罰",
+        "求職"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "taiwanjobs",
+      "title": "台灣就業通找工作",
+      "agency": "勞動部勞動力發展署",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "summary": "用工作內容、地區與薪資條件找職缺。",
+      "canFind": [
+        "職缺、徵才活動及工作地點搜尋。",
+        "就業服務據點與相關就業資源。"
+      ],
+      "howToUse": [
+        "輸入職稱或工作內容，再篩選地點與薪資。",
+        "看清工作條件與聯絡方式；線上應徵依系統流程操作。"
+      ],
+      "limitations": [
+        "職缺內容與招募進度可能變動；平台登載不等於政府保證所有僱用條件。"
+      ],
+      "url": "https://job.taiwanjobs.gov.tw/Internet/index/index.aspx",
+      "verificationUrl": "https://www.mol.gov.tw/1607/28690/82583/82589/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "工作",
+        "職缺",
+        "求職",
+        "徵才",
+        "就業"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "labor-insurance",
+      "title": "勞保與勞退個人資料查詢",
+      "agency": "勞動部勞工保險局",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "summary": "經本人驗證，確認投保年資與勞退專戶。",
+      "canFind": [
+        "個人投保年資、保險異動與給付相關資料。",
+        "勞工退休金個人專戶及相關試算入口。"
+      ],
+      "howToUse": [
+        "依官方教學連結勞保局e化服務系統，選可使用的認證方式。",
+        "登入後選所需查詢，核對日期與資料期間。"
+      ],
+      "limitations": [
+        "個人資料僅能依權限查詢，需身分驗證；試算不等於最後核定給付。",
+        "本卡連至勞退個人網路查詢教學；國民年金保費請使用本站另列的國民年金繳費或補單入口。"
+      ],
+      "url": "https://www.bli.gov.tw/0012986.htm",
+      "verificationUrl": "https://www.bli.gov.tw/0012986.htm",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "勞保",
+        "勞退",
+        "年資",
+        "退休金",
+        "投保"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "egov",
+      "title": "我的E政府申辦服務",
+      "agency": "數位發展部",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "summary": "不知道該找哪個機關時，先從生活事件找服務。",
+      "canFind": [
+        "依出生、就學、就業、就養等人生階段找申辦。",
+        "查申辦步驟、應備文件、辦理地點及聯絡窗口。"
+      ],
+      "howToUse": [
+        "輸入想辦的事項，或選人生階段與生活主題。",
+        "先閱讀資格及文件，再到承辦機關的正式服務操作。"
+      ],
+      "limitations": [
+        "入口網整理各機關服務；身分驗證、費用及辦理時間由各個服務的規定決定。"
+      ],
+      "url": "https://www.gov.tw/",
+      "verificationUrl": "https://moda.gov.tw/digital-affairs/digital-service/operations/230",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "申辦",
+        "補助",
+        "戶籍",
+        "福利",
+        "政府服務"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "open-data",
+      "title": "政府資料開放平臺",
+      "agency": "數位發展部／各資料提供機關",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "summary": "下載官方資料，做比較、研究或進一步查證。",
+      "canFind": [
+        "依關鍵字、主題或機關找政府開放資料集。",
+        "查看資料提供者、欄位說明、更新頻率與授權等資訊。"
+      ],
+      "howToUse": [
+        "以關鍵字找到資料集並先讀詮釋資料。",
+        "核對更新時間與欄位定義，再下載或依說明使用介接。"
+      ],
+      "limitations": [
+        "資料更新頻率與品質因機關而異；下載前先確認日期、單位及授權，不把開放資料當成個案證明。"
+      ],
+      "url": "https://data.gov.tw/",
+      "verificationUrl": "https://web.moda.gov.tw/digital-affairs/plural-innovation/operations/244",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "開放資料",
+        "資料集",
+        "CSV",
+        "JSON",
+        "API"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "judgments",
+      "title": "裁判書查詢",
+      "agency": "司法院",
+      "category": "justice",
+      "level": "judicial",
+      "region": "",
+      "kind": "tool",
+      "summary": "想知道法院為什麼這樣判？用關鍵字、案號或公開姓名找原始裁判。",
+      "canFind": [
+        "公開的民事、刑事、行政等裁判全文",
+        "法院、裁判日期、案號與裁判理由"
+      ],
+      "howToUse": [
+        "輸入案件關鍵字；也可嘗試案號、法院名稱或已公開的姓名。",
+        "用更多條件縮小法院、日期或案件類型，閱讀主文、理由及後續審級。"
+      ],
+      "limitations": [
+        "姓名可能依法遮蔽或以代號呈現；同名不代表同一人，查不到也不代表沒有案件。",
+        "查到一份裁判不代表已經確定，亦不是完整前科紀錄；公開與更新有範圍限制。"
+      ],
+      "url": "https://judgment.judicial.gov.tw/FJUD/default.aspx",
+      "verificationUrl": "https://judgment.judicial.gov.tw/readme.aspx?ot=in",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "名字",
+        "姓名",
+        "判決書",
+        "法院",
+        "判刑",
+        "關鍵字"
+      ]
+    },
+    {
+      "id": "law-database",
+      "title": "全國法規資料庫",
+      "agency": "法務部",
+      "category": "justice",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "查法律原文、修法沿革與條文，核對新聞說的法律依據。",
+      "canFind": [
+        "中央法規條文與沿革",
+        "法規生效、修正資訊及司法解釋入口"
+      ],
+      "howToUse": [
+        "輸入法規名稱或關鍵字，例如勞動基準法。",
+        "核對條號、修正及施行日期，再比對事件發生時適用版本。"
+      ],
+      "limitations": [
+        "查到現行條文不代表能直接套用舊事件；個案仍須考量施行日期與相關裁判。"
+      ],
+      "url": "https://law.moj.gov.tw/",
+      "verificationUrl": "https://law.moj.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "法律",
+        "法條",
+        "修法"
+      ]
+    },
+    {
+      "id": "constitutional-decisions",
+      "title": "憲法法庭裁判與解釋",
+      "agency": "司法院憲法法庭",
+      "category": "justice",
+      "level": "judicial",
+      "region": "",
+      "kind": "tool",
+      "summary": "追查憲法爭議，閱讀判決、裁定、解釋與相關意見書。",
+      "canFind": [
+        "憲法法庭公開裁判及大法官解釋",
+        "公開案件資訊與相關書狀、言詞辯論等資料入口"
+      ],
+      "howToUse": [
+        "從裁判或解釋欄位，以字號或爭點查詢。",
+        "一併閱讀主文、理由、效力及公布日期，必要時比對意見書。"
+      ],
+      "limitations": [
+        "意見書與法院多數意見應分開閱讀；公開案件資料不等於每件聲請都已受理或判決。"
+      ],
+      "url": "https://cons.judicial.gov.tw/",
+      "verificationUrl": "https://cons.judicial.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "大法官",
+        "釋憲",
+        "違憲",
+        "意見書"
+      ]
+    },
+    {
+      "id": "court-services",
+      "title": "法院案件進度、庭期與便民系統",
+      "agency": "司法院",
+      "category": "justice",
+      "level": "judicial",
+      "region": "",
+      "kind": "tool",
+      "summary": "依需要選擇案件進度、開庭進度或庭期查詢，不必把不同用途的系統混在一起。",
+      "canFind": [
+        "法院案件進度與庭期查詢入口",
+        "線上起訴、裁判主文及其他便民系統入口"
+      ],
+      "howToUse": [
+        "先選案件進度、開庭進度或庭期表等對應系統。",
+        "依系統要求準備案號、查詢資格或認證資料，再核對法院通知。"
+      ],
+      "limitations": [
+        "案件進度查詢有資格及個資保護限制，不是輸入別人姓名就能看全部案件；庭期仍以法院正式通知及實際辦理為準。"
+      ],
+      "url": "https://www.judicial.gov.tw/tw/cp-1491-57058-2267b-1.html",
+      "verificationUrl": "https://www.judicial.gov.tw/tw/cp-248-58078-29883-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "開庭",
+        "傳票",
+        "庭期",
+        "案件進度",
+        "法拍"
+      ]
+    },
+    {
+      "id": "moj-services",
+      "title": "法務部便民服務線上申辦",
+      "agency": "法務部",
+      "category": "justice",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "找檢察、矯正與行政執行的申請表及線上服務。",
+      "canFind": [
+        "各項申辦表單與程序說明",
+        "矯正、行政執行案件查詢與檢察機關案件查詢導引"
+      ],
+      "howToUse": [
+        "先選機關別與要申辦的業務。",
+        "閱讀資格與填表說明，依要求備妥資料；檢察案件使用頁面指示的對應入口。"
+      ],
+      "limitations": [
+        "不是每個項目都能直接線上辦理；查詢本人案件可能需要身分驗證、案號或資格。"
+      ],
+      "url": "https://eservice.moj.gov.tw/",
+      "verificationUrl": "https://eservice.moj.gov.tw/1131/1762/caseSearch",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "檢察官",
+        "地檢署",
+        "監獄",
+        "行政執行",
+        "案件進度"
+      ]
+    },
+    {
+      "id": "legislative-records",
+      "title": "立法院議事暨公報資訊網",
+      "agency": "立法院",
+      "category": "politics",
+      "level": "representative",
+      "region": "",
+      "kind": "tool",
+      "summary": "想核對立委提案、法案進度或會議紀錄？回到原始議事資料。",
+      "canFind": [
+        "議案、提案人、連署人與審議進度",
+        "公報、議事錄、院會表決及會議相關文書"
+      ],
+      "howToUse": [
+        "輸入法案或議題關鍵字，也可限定會議日期與屆別。",
+        "打開議案或會議資料，對照文件、審議階段與相關影音。"
+      ],
+      "limitations": [
+        "提案、連署、委員會審查與三讀通過是不同階段；不能只看到提案就當成已施行法律。"
+      ],
+      "url": "https://ppg.ly.gov.tw/ppg/",
+      "verificationUrl": "https://ppg.ly.gov.tw/ppg/RootPath/download/resources/upload/PPGOperationManual.pdf",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "立委",
+        "立法委員",
+        "法案",
+        "投票",
+        "表決",
+        "質詢",
+        "連署"
+      ]
+    },
+    {
+      "id": "legislative-video",
+      "title": "立法院議事轉播 IVOD",
+      "agency": "立法院",
+      "category": "politics",
+      "level": "representative",
+      "region": "",
+      "kind": "tool",
+      "summary": "回看院會與委員會影音，把短片前後文接起來。",
+      "canFind": [
+        "院會及委員會直播、會議隨選影片",
+        "依委員、會議與日期等條件查詢發言片段"
+      ],
+      "howToUse": [
+        "選擇直播，或從會議隨選以委員、日期與會議查詢。",
+        "先看發言片段，再對照完整會議及公報。"
+      ],
+      "limitations": [
+        "片段依現場發言剪輯；單一片段未必涵蓋前因後果，歷史影音亦有收錄範圍。"
+      ],
+      "url": "https://ivod.ly.gov.tw/",
+      "verificationUrl": "https://ivod.ly.gov.tw/index.php/Manual",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "立委",
+        "立法委員",
+        "質詢",
+        "直播",
+        "影片"
+      ]
+    },
+    {
+      "id": "political-donations",
+      "title": "政治獻金公開查閱平臺",
+      "agency": "監察院",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "了解公開申報的政治獻金收入與支出，追查金流來源及用途。",
+      "canFind": [
+        "政黨、政治團體或擬參選人的公開會計報告",
+        "政治獻金收入來源與支出對象等申報資料"
+      ],
+      "howToUse": [
+        "依對象、選舉或申報期間尋找會計報告。",
+        "比較收入、支出及更正資訊，核對資料涵蓋期間。"
+      ],
+      "limitations": [
+        "公開申報不代表每筆已完成實質審核，也不能只靠一筆捐款認定利益交換；舊制資料查閱方式可能不同。"
+      ],
+      "url": "https://ardata.cy.gov.tw/",
+      "verificationUrl": "https://www.cy.gov.tw/public/Data/993917571.pdf",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "政治獻金",
+        "捐款",
+        "金流",
+        "候選人"
+      ]
+    },
+    {
+      "id": "sunshine",
+      "title": "財產申報與利益衝突公開資訊",
+      "agency": "監察院陽光法令主題網",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "找公職人員財產申報公告及利益衝突補助交易公開入口。",
+      "canFind": [
+        "依法公告的財產申報與廉政專刊入口",
+        "利益衝突相關補助、交易公開查詢入口"
+      ],
+      "howToUse": [
+        "從公告園地或各項法令業務連結選擇資料類別。",
+        "核對申報人、申報期間及資料是否須申請查閱。"
+      ],
+      "limitations": [
+        "並非所有公職人員的完整財產都可直接上網下載；部分須依法申請查閱且個資會遮蔽。"
+      ],
+      "url": "https://sunshine.cy.gov.tw/",
+      "verificationUrl": "https://sunshine.cy.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "財產",
+        "公職",
+        "利益衝突",
+        "補助",
+        "廉政"
+      ]
+    },
+    {
+      "id": "election-results",
+      "title": "選舉與公民投票資料庫",
+      "agency": "中央選舉委員會",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "核對歷屆選舉結果、候選人得票與投票統計。",
+      "canFind": [
+        "歷屆候選人及政黨得票資料",
+        "依選舉、地區查詢的投開票統計"
+      ],
+      "howToUse": [
+        "選擇選舉種類、年份與選區。",
+        "核對票數、得票率、投票率的定義與分母後再比較。"
+      ],
+      "limitations": [
+        "歷屆結果不代表下次選舉候選人或個人可領選票；資料更新依中選會公告。"
+      ],
+      "url": "https://db.cec.gov.tw/",
+      "verificationUrl": "https://web.cec.gov.tw/central/article/20314",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "選舉",
+        "得票",
+        "投票率",
+        "立委",
+        "公投"
+      ]
+    },
+    {
+      "id": "cec-notices",
+      "title": "當次選舉公告與選舉公報入口",
+      "agency": "中央選舉委員會",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "找正式選務公告，再依地區進入選委會查看候選人及公報。",
+      "canFind": [
+        "中選會選務公告與地方選委會入口",
+        "各地選舉公報、候選人及投開票所等公告導引"
+      ],
+      "howToUse": [
+        "先確認選舉年份、種類與戶籍地。",
+        "從地方選委會進入該次選舉專區，查看正式公告與公報。"
+      ],
+      "limitations": [
+        "發布時程因選舉而異；公報內政見是候選人提出，不等於政府背書或可執行權限。"
+      ],
+      "url": "https://web.cec.gov.tw/central/",
+      "verificationUrl": "https://web.cec.gov.tw/tpcec/menu/11432",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "候選人",
+        "政見",
+        "公報",
+        "投票所",
+        "選票"
+      ]
+    },
+    {
+      "id": "taipei-petition",
+      "title": "HELLO TAIPEI 臺北市陳情系統",
+      "agency": "臺北市政府",
+      "category": "services",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "反映臺北市市政問題，並追蹤自己提出案件的處理情形。",
+      "canFind": [
+        "自己陳情案件的辦理進度及回覆",
+        "線上陳情流程、案件查詢及使用說明"
+      ],
+      "howToUse": [
+        "從登錄案件填寫具體地點、發生時間及問題，依指示完成電子郵件確認。",
+        "保存受理案件編號與密碼，從案件查詢追蹤；也可依系統提供的台北通登入流程查詢自己的案件。"
+      ],
+      "limitations": [
+        "案件查詢是查自己的陳情，不是公開檢索他人個資或全部陳情內容；請保存案件查詢資料。",
+        "線上陳情不適合需要立即處置的緊急危險。"
+      ],
+      "url": "https://hello.gov.taipei/front/Accept/CasSearch",
+      "verificationUrl": "https://hello.gov.taipei/front/Help/HelpDoc",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "台北",
+        "臺北",
+        "1999",
+        "陳情",
+        "市政",
+        "進度",
+        "路燈",
+        "環境"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "new-taipei-case-status",
+      "title": "新北市民公文、市長信箱及申辦案件查詢",
+      "agency": "新北市政府",
+      "category": "services",
+      "level": "local",
+      "region": "新北市",
+      "summary": "查送到新北市政府所屬機關或公所的申請、陳情等案件辦理狀況。",
+      "canFind": [
+        "人民申請案與訴願案件等辦理進度",
+        "1999、市長信箱、雲端櫃檯等收辦案件的相關資訊"
+      ],
+      "howToUse": [
+        "準備承辦機關提供的申請或陳情案號，依頁面選擇案件類別。",
+        "填入系統要求的查詢資料，核對承辦機關、進度及後續通知。"
+      ],
+      "limitations": [
+        "系統明示不包含密件公文；可查範圍與必要驗證資訊以當下頁面為準。",
+        "查詢結果不是申請核准，也不能用來查看沒有查詢權限的他人案件。"
+      ],
+      "url": "https://doc2-exthird.ntpc.gov.tw/ODQuery/ODQuery/ODQuery.ASPX",
+      "verificationUrl": "https://doc2-exthird.ntpc.gov.tw/ODQuery/ODQuery/ODQuery.ASPX",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新北",
+        "市長信箱",
+        "1999",
+        "公文",
+        "陳情",
+        "訴願",
+        "申辦",
+        "進度"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "taipei-urban-plan",
+      "title": "臺北市都市計畫整合查詢系統",
+      "agency": "臺北市政府都市發展局",
+      "category": "housing",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "以門牌、地段地號或道路定位，了解周邊都市計畫與土地使用分區。",
+      "canFind": [
+        "都市計畫使用分區及相關圖層",
+        "門牌、地號、道路與都市計畫案件的定位資訊"
+      ],
+      "howToUse": [
+        "選擇門牌或地段地號等查詢方式，定位想了解的位置。",
+        "開啟使用分區等圖層，比對計畫案件及圖層說明；需要正式文件時另循申請程序。"
+      ],
+      "limitations": [
+        "網路地圖定位與圖資供參考，不能直接取代正式土地使用分區證明、地籍謄本或建築許可。",
+        "本工具的主要適用範圍是臺北市；其他縣市請找當地都市計畫或地政入口。"
+      ],
+      "url": "https://webgis.udd.gov.taipei/",
+      "verificationUrl": "https://udd.gov.taipei/article/aasvm2e",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北",
+        "台北",
+        "都市計畫",
+        "土地",
+        "地號",
+        "門牌",
+        "使用分區",
+        "都市更新"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "taipei-road-digging",
+      "title": "臺北市道路挖掘管理系統",
+      "agency": "臺北市政府工務局道路挖掘管理中心",
+      "category": "transport",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "查看臺北市道路挖掘與即時施工資訊，了解附近道路為什麼施工。",
+      "canFind": [
+        "地圖上的道路施工與挖掘資訊",
+        "道路即時施工資訊及地圖圖例"
+      ],
+      "howToUse": [
+        "在地圖定位附近道路，查看施工圖示或即時施工資訊。",
+        "點選施工位置閱讀顯示資訊；必要時依圖資說明聯絡權管機關確認。"
+      ],
+      "limitations": [
+        "系統明示圖資僅供參考，確切資料應洽相關權管機關。",
+        "畫面可能有更新時間差，不能取代現場交通指揮或道路管制公告。"
+      ],
+      "url": "https://dig.taipei/Tpdig/Map2/ShowPublic.aspx",
+      "verificationUrl": "https://dig.taipei/Tpdig/Map2/ShowPublic.aspx",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北",
+        "台北",
+        "道路",
+        "挖掘",
+        "施工",
+        "交通",
+        "工程",
+        "管線"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "taipei-open-data",
+      "title": "臺北市資料大平臺",
+      "agency": "臺北市政府資訊局",
+      "category": "services",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "以關鍵字或主題找臺北市開放資料，查看、下載或進一步分析。",
+      "canFind": [
+        "交通、醫療、社福、環保、統計等主題資料集",
+        "資料集預覽、檔案與 API 相關資訊"
+      ],
+      "howToUse": [
+        "輸入事項關鍵字，或從主題分類找資料集。",
+        "先讀欄位定義、更新日期與提供機關，再預覽或下載適合的格式。"
+      ],
+      "limitations": [
+        "每份資料的年份、範圍與更新頻率不同，公開資料不一定即時或涵蓋所有個案。",
+        "使用資料前請閱讀授權條款，不應從統計數字自行推定個人身分。"
+      ],
+      "url": "https://data.taipei/",
+      "verificationUrl": "https://data.taipei/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北",
+        "台北",
+        "開放資料",
+        "CSV",
+        "API",
+        "統計",
+        "下載"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "new-taipei-open-data",
+      "title": "新北市資料開放平臺",
+      "agency": "新北市政府",
+      "category": "services",
+      "level": "local",
+      "region": "新北市",
+      "summary": "找新北市政府公開的資料集、資料說明與開發應用入口。",
+      "canFind": [
+        "依主題或關鍵字查找的地方資料集",
+        "資料清單、OpenAPI 與開發指引"
+      ],
+      "howToUse": [
+        "從資料查詢或資料清單輸入想了解的議題。",
+        "進入資料集閱讀範圍、欄位、更新資訊及使用方式，再使用檔案或 API。"
+      ],
+      "limitations": [
+        "是否提供下載、API 及即時更新，應逐份資料確認；不能把未出現的資料當成事件不存在。",
+        "平台互動功能可能需要啟用 JavaScript。"
+      ],
+      "url": "https://data.ntpc.gov.tw/",
+      "verificationUrl": "https://data.ntpc.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新北",
+        "開放資料",
+        "API",
+        "統計",
+        "資料集",
+        "下載"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "kaohsiung-council-dashboard",
+      "title": "高雄市議會議事質詢主題分類儀表板",
+      "agency": "高雄市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "高雄市",
+      "summary": "從議題切入高雄市議會質詢，回到議程影音或譯文稿閱讀原始脈絡。",
+      "canFind": [
+        "依屆次、會期及主題整理的質詢資訊",
+        "議事時序圖連結的議程影音與譯文稿"
+      ],
+      "howToUse": [
+        "先選擇屆次、會期，或使用智慧檢索輸入議題。",
+        "從主題或時序圖點進相關紀錄，再核對影音、譯文稿及日期。"
+      ],
+      "limitations": [
+        "主題分類、摘要或 AI 輔助結果是找資料的工具，仍應以原始影音與正式紀錄確認。",
+        "不宜只用質詢次數推定議員表現，也不代表行政機關已完成問題改善。"
+      ],
+      "url": "https://vcs.kcc.gov.tw/",
+      "verificationUrl": "https://vcs.kcc.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "高雄",
+        "議會",
+        "議員",
+        "質詢",
+        "議題",
+        "影音",
+        "譯文稿",
+        "儀表板"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "local-council-historical-records",
+      "title": "中華民國地方議會議事錄總庫",
+      "agency": "國史館臺灣文獻館",
+      "category": "politics",
+      "level": "representative",
+      "region": "",
+      "summary": "閱讀地方議會歷史議事錄，追查地方政策、民意與政府互動的發展。",
+      "canFind": [
+        "參與數位典藏計畫之地方議會議事錄",
+        "歷史議事錄與掃描影像的查找入口"
+      ],
+      "howToUse": [
+        "選擇要研究的地方議會及年代，依系統提供的目錄或檢索功能找議題。",
+        "核對議會名稱、時間與原始影像；要追蹤現任議員，另到各議會現行官網查最新紀錄。"
+      ],
+      "limitations": [
+        "這是歷史典藏，不是全臺所有議會最新資料的即時彙整；各議會收錄年代及完整度不同。",
+        "數位圖檔閱覽不等於取得重製或商業使用授權，需要授權時應洽原件典藏單位。"
+      ],
+      "url": "https://journal.th.gov.tw/",
+      "verificationUrl": "https://journal.th.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "地方議會",
+        "議事錄",
+        "歷史",
+        "地方自治",
+        "典藏",
+        "會議紀錄"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "taipei-city-dashboard",
+      "title": "臺北市城市儀表板",
+      "agency": "臺北市政府資訊局",
+      "category": "services",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "以圖表和地圖了解臺北市的交通、建設與其他生活相關數據。",
+      "canFind": [
+        "捷運人流趨勢、道路施工等城市資訊視覺化",
+        "社會住宅建設進度、屋齡分布等主題圖表入口"
+      ],
+      "howToUse": [
+        "從主題找到與生活問題有關的儀表板。",
+        "先讀圖表說明、資料來源、統計期間與更新時間，再比較不同地區或時間。"
+      ],
+      "limitations": [
+        "不同圖表的資料來源與更新頻率不同，不能把模擬資料、示範圖表當成即時現況。",
+        "圖表呈現的是特定指標，不能單靠一張圖判定政策成效或個案責任。"
+      ],
+      "url": "https://citydashboard.taipei/",
+      "verificationUrl": "https://data.taipei/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北",
+        "台北",
+        "城市",
+        "儀表板",
+        "捷運",
+        "人流",
+        "社會住宅",
+        "施工",
+        "數據"
+      ],
+      "kind": "tool"
+    },
+    {
+      "id": "join",
+      "title": "公共政策網路參與平臺 JOIN",
+      "agency": "國家發展委員會",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "看政策提議與機關回應，也能找政策諮詢、重大計畫及參與式預算。",
+      "canFind": [
+        "政策提議、附議及主管機關回應",
+        "眾開講、來監督、找首長等公共參與入口"
+      ],
+      "howToUse": [
+        "先以關鍵字找既有提議或相關政策諮詢，閱讀機關回應。",
+        "要參與提議或附議時，依現行規則登入並確認資格、期限及流程。"
+      ],
+      "limitations": [
+        "提議成案不等於政府必須照案執行；附議也不是具法律拘束力的公民投票。"
+      ],
+      "url": "https://join.gov.tw/",
+      "verificationUrl": "https://www.ndc.gov.tw/Content_List.aspx?n=70C16EE6C4E9C1C5",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "公民參與",
+        "提議",
+        "連署",
+        "附議",
+        "政策",
+        "參與式預算"
+      ]
+    },
+    {
+      "id": "executive-gazette",
+      "title": "行政院公報資訊網",
+      "agency": "行政院",
+      "category": "justice",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "回到行政公告原文，了解法規命令、草案預告與機關公告內容。",
+      "canFind": [
+        "刊登的法規命令及行政公告",
+        "法規草案預告與相關原始文件"
+      ],
+      "howToUse": [
+        "用關鍵字、機關或刊登日期尋找公報資料。",
+        "閱讀全文與附件，核對發布、預告及施行日期。"
+      ],
+      "limitations": [
+        "草案預告不等於已經生效；現行條文與沿革可再到全國法規資料庫比對。"
+      ],
+      "url": "https://gazette.nat.gov.tw/egFront/",
+      "verificationUrl": "https://law.moj.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "公報",
+        "法規命令",
+        "預告",
+        "公告",
+        "草案"
+      ]
+    },
+    {
+      "id": "egg-print-trace",
+      "title": "雞蛋噴印溯源查詢",
+      "agency": "農業部輔導／中華民國養雞協會執行",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "看到蛋殼上的兩行噴印碼，可以查原料蛋來源與洗選相關資訊。",
+      "canFind": [
+        "雞蛋噴印編碼對應的洗選廠場資訊",
+        "原料蛋來源畜牧場等溯源資料"
+      ],
+      "howToUse": [
+        "找到蛋殼上的溯源編碼及包裝日期加生產方式代碼。",
+        "依查詢欄位輸入兩部分資料，留意首碼英文字母；核對結果與購買品項。"
+      ],
+      "limitations": [
+        "溯源資料不等於逐顆雞蛋的檢驗證明，也不能單憑生產方式判定安全。",
+        "包裝日期不是有效日期；散裝蛋包裝上的牧場溯源標籤，請用另列的標籤與牧場查詢。"
+      ],
+      "url": "https://www.tafte-poultry.org.tw/search2.html",
+      "verificationUrl": "https://www.tafte-poultry.org.tw/search2.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "雞蛋",
+        "蛋品",
+        "溯源",
+        "噴印",
+        "洗選",
+        "蛋殼",
+        "食安"
+      ]
+    },
+    {
+      "id": "egg-label-trace",
+      "title": "雞蛋標籤與牧場溯源",
+      "agency": "農業部輔導／中華民國養雞協會執行",
+      "category": "health",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "從包裝上的雞蛋溯源標籤，核對生產者與來源牧場。",
+      "canFind": [
+        "牧場溯源編號及生產者或單位資訊",
+        "依縣市查找的生產者、產品名稱與聯絡地址"
+      ],
+      "howToUse": [
+        "掃描包裝溯源標籤的 QR Code，或以追溯編號、生產者及縣市查詢。",
+        "核對標籤與結果是否一致；有蛋殼噴印的洗選鮮蛋，改用噴印溯源查詢。"
+      ],
+      "limitations": [
+        "本系統有收錄範圍；查無資料不直接代表產品違法，也不能當成農藥或動物用藥檢驗結果。"
+      ],
+      "url": "https://www.tafte-poultry.org.tw/search.html",
+      "verificationUrl": "https://www.moa.gov.tw/theme_data.php?id=5309&sub_theme=agri&theme=news",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "雞蛋",
+        "溯源",
+        "牧場",
+        "標籤",
+        "QR Code",
+        "食安"
+      ]
+    },
+    {
+      "id": "tax-filing",
+      "title": "線上報稅",
+      "agency": "財政部財政資訊中心",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "從官方申報入口辦理綜合所得稅等國稅，查找當年度報稅與認證說明。",
+      "canFind": [
+        "綜合所得稅電子申報、稅額試算與查詢碼等服務入口",
+        "房地合一、營利事業所得稅、營業稅等各稅申報專區"
+      ],
+      "howToUse": [
+        "選擇個人稅或非個人稅，再選要申報的稅別及年度。",
+        "閱讀開放期間與身分驗證說明，完成申報後保留收執資料；有應繳稅額時另確認付款。"
+      ],
+      "limitations": [
+        "不同稅別的服務期間、認證及適用方式不同，請依當年度官方公告操作。",
+        "下載所得資料或完成繳稅，不等於已完成所有申報程序，應核對申報收執與繳納結果。"
+      ],
+      "url": "https://tax.nat.gov.tw/",
+      "verificationUrl": "https://tax.nat.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "國稅局",
+        "報稅",
+        "所得稅",
+        "綜所稅",
+        "申報",
+        "手機報稅",
+        "繳稅"
+      ]
+    },
+    {
+      "id": "tax-payment",
+      "title": "網路繳稅",
+      "agency": "財政部／財金資訊股份有限公司維運",
+      "category": "money",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "已收到繳款書或算好應繳稅款時，從官方入口確認線上付款方式。",
+      "canFind": [
+        "各稅別可使用的網路繳稅服務",
+        "配合金融機構、繳納方式及操作說明"
+      ],
+      "howToUse": [
+        "依繳款書或申報結果選擇稅別，核對年度、金額及繳納期限。",
+        "依網站指示完成認證與付款，保留繳納結果；需要報稅時仍須回申報系統確認。"
+      ],
+      "limitations": [
+        "申報與繳稅是不同程序；付款方式、適用稅別與費用以官方及金融機構規定為準。"
+      ],
+      "url": "https://paytax.nat.gov.tw/",
+      "verificationUrl": "https://paytax.nat.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "國稅局",
+        "繳稅",
+        "稅款",
+        "繳款書",
+        "付款",
+        "房屋稅",
+        "地價稅"
+      ]
+    },
+    {
+      "id": "national-pension-payment",
+      "title": "國民年金繳費",
+      "agency": "勞動部勞工保險局",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "已拿到國保繳款單時，從勞保局官方說明選擇網路繳費管道。",
+      "canFind": [
+        "國民年金網路銀行、行動銀行或網路 ATM 繳費導引",
+        "全國繳費網等繳納方式及操作說明"
+      ],
+      "howToUse": [
+        "備妥國民年金保費繳款單，依官方頁面選擇可使用的繳費管道。",
+        "核對銷帳編號、期別與金額後付款，保留繳費結果；沒有繳款單先使用補單入口。"
+      ],
+      "limitations": [
+        "這是國民年金保險費，與勞保保費或勞退提繳不同；不要選錯繳費項目。",
+        "不同繳費管道的身分驗證、可代繳對象、設備與費用不同，應閱讀各管道現行說明。"
+      ],
+      "url": "https://www.bli.gov.tw/0016056.html",
+      "verificationUrl": "https://www.bli.gov.tw/0016056.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "國民年金",
+        "國保",
+        "繳費",
+        "保費",
+        "全國繳費網",
+        "繳款單"
+      ]
+    },
+    {
+      "id": "national-pension-bill",
+      "title": "國民年金補單",
+      "agency": "勞動部勞工保險局",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "kind": "tool",
+      "summary": "繳款單遺失或沒收到時，可查補發方式及本人線上產製繳款單的步驟。",
+      "canFind": [
+        "國民年金保費繳款單補發方式",
+        "透過勞保局 e 化服務列印或產製行動繳款單的說明"
+      ],
+      "howToUse": [
+        "依官方補單說明，以可使用的認證方式登入勞保局 e 化服務系統個人專區。",
+        "在「繳款單／繳費證明」選國民年金保費繳款單，依畫面選期別並列印，或產製行動繳款單後連到繳費管道。"
+      ],
+      "limitations": [
+        "補繳款單與申請年度繳費證明是不同功能；產製或下載繳款單不等於已付款。",
+        "無法線上認證時，請依官方頁面提供的其他補單方式申請。"
+      ],
+      "url": "https://www.bli.gov.tw/0014978.htm",
+      "verificationUrl": "https://www.bli.gov.tw/0014978.htm",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "國民年金",
+        "國保",
+        "補單",
+        "繳款單",
+        "行動繳款單",
+        "繳費",
+        "遺失"
+      ]
+    },
+    {
+      "id": "court-directory",
+      "title": "全國各法院官方網站目錄",
+      "agency": "司法院",
+      "category": "justice",
+      "level": "judicial",
+      "region": "",
+      "kind": "agency",
+      "summary": "一次找到最高法院、行政法院、各高分院、地方法院及專業法院。",
+      "canFind": [
+        "各法院官網、地址與聯絡資訊",
+        "由法院官網找服務中心、書狀及公告"
+      ],
+      "howToUse": [
+        "依承辦法院名稱或所在地找到法院連結。",
+        "進入該院後，從便民服務或公告查需要的資料。"
+      ],
+      "limitations": [
+        "一般法院、行政法院與專業法院權限不同；所在地相同不代表管轄法院一定相同。"
+      ],
+      "url": "https://www.judicial.gov.tw/tw/cp-1889-119101-8a7a0-1.html",
+      "verificationUrl": "https://www.judicial.gov.tw/tw/cp-1889-119101-8a7a0-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "地方法院",
+        "高等法院",
+        "最高法院",
+        "行政法院",
+        "智財法院",
+        "法院電話"
+      ]
+    },
+    {
+      "id": "moj-directory",
+      "title": "檢察、調查、廉政與矯正機關目錄",
+      "agency": "法務部",
+      "category": "justice",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "從法務部暨所屬機關清單，找最高檢、高檢、各地檢署及相關機關。",
+      "canFind": [
+        "最高檢察署、高等檢察署與各地方檢察署入口",
+        "調查、廉政、矯正及行政執行等所屬機關入口"
+      ],
+      "howToUse": [
+        "展開首頁「法務部暨所屬機關網站」清單。",
+        "選擇對應機關，再找為民服務、書狀或查詢說明。"
+      ],
+      "limitations": [
+        "檢察機關屬法務部體系，與司法院的法院不同；偵查資料不會全部公開。"
+      ],
+      "url": "https://www.moj.gov.tw/",
+      "verificationUrl": "https://www.moj.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "檢察署",
+        "檢察官",
+        "地檢署",
+        "廉政署",
+        "調查局",
+        "監所"
+      ]
+    },
+    {
+      "id": "legislators",
+      "title": "立法院與立委名單",
+      "agency": "立法院",
+      "category": "politics",
+      "level": "representative",
+      "region": "",
+      "kind": "agency",
+      "summary": "確認立委身分與聯絡資訊，再找對應議事、法案或服務窗口。",
+      "canFind": [
+        "立法委員介紹及聯絡資訊入口",
+        "委員會與立法院各項議事服務導覽"
+      ],
+      "howToUse": [
+        "從立法委員或委員介紹選擇屆別與委員。",
+        "核對選區或身分，再查詢委員會與議事資料。"
+      ],
+      "limitations": [
+        "立委介紹或個人政績敘述應再與議案、公報及表決原始紀錄比對。"
+      ],
+      "url": "https://www.ly.gov.tw/",
+      "verificationUrl": "https://www.ly.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "立委",
+        "名單",
+        "選區",
+        "選民服務"
+      ]
+    },
+    {
+      "id": "local-taipei-government",
+      "title": "臺北市政府",
+      "agency": "臺北市政府",
+      "category": "services",
+      "level": "local",
+      "region": "臺北市",
+      "summary": "不知道臺北市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在臺北市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.gov.taipei/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taipei-council",
+      "title": "臺北市議會",
+      "agency": "臺北市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "臺北市",
+      "summary": "想知道臺北市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.tcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺北市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-new-taipei-government",
+      "title": "新北市政府",
+      "agency": "新北市政府",
+      "category": "services",
+      "level": "local",
+      "region": "新北市",
+      "summary": "不知道新北市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在新北市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.ntpc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新北市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-new-taipei-council",
+      "title": "新北市議會",
+      "agency": "新北市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "新北市",
+      "summary": "想知道新北市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.ntp.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新北市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taoyuan-government",
+      "title": "桃園市政府",
+      "agency": "桃園市政府",
+      "category": "services",
+      "level": "local",
+      "region": "桃園市",
+      "summary": "不知道桃園市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在桃園市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.tycg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "桃園市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taoyuan-council",
+      "title": "桃園市議會",
+      "agency": "桃園市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "桃園市",
+      "summary": "想知道桃園市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.tycc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "桃園市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taichung-government",
+      "title": "臺中市政府",
+      "agency": "臺中市政府",
+      "category": "services",
+      "level": "local",
+      "region": "臺中市",
+      "summary": "不知道臺中市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在臺中市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.taichung.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺中市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taichung-council",
+      "title": "臺中市議會",
+      "agency": "臺中市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "臺中市",
+      "summary": "想知道臺中市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.tccc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺中市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-tainan-government",
+      "title": "臺南市政府",
+      "agency": "臺南市政府",
+      "category": "services",
+      "level": "local",
+      "region": "臺南市",
+      "summary": "不知道臺南市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在臺南市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.tainan.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺南市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-tainan-council",
+      "title": "臺南市議會",
+      "agency": "臺南市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "臺南市",
+      "summary": "想知道臺南市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.tncc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺南市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-kaohsiung-government",
+      "title": "高雄市政府",
+      "agency": "高雄市政府",
+      "category": "services",
+      "level": "local",
+      "region": "高雄市",
+      "summary": "不知道高雄市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在高雄市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.kcg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "高雄市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-kaohsiung-council",
+      "title": "高雄市議會",
+      "agency": "高雄市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "高雄市",
+      "summary": "想知道高雄市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.kcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "高雄市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-keelung-government",
+      "title": "基隆市政府",
+      "agency": "基隆市政府",
+      "category": "services",
+      "level": "local",
+      "region": "基隆市",
+      "summary": "不知道基隆市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在基隆市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.klcg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "基隆市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-keelung-council",
+      "title": "基隆市議會",
+      "agency": "基隆市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "基隆市",
+      "summary": "想知道基隆市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.kmc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "基隆市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hsinchu-city-government",
+      "title": "新竹市政府",
+      "agency": "新竹市政府",
+      "category": "services",
+      "level": "local",
+      "region": "新竹市",
+      "summary": "不知道新竹市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在新竹市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.hccg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新竹市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hsinchu-city-council",
+      "title": "新竹市議會",
+      "agency": "新竹市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "新竹市",
+      "summary": "想知道新竹市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.hsinchu-cc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新竹市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hsinchu-county-government",
+      "title": "新竹縣政府",
+      "agency": "新竹縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "新竹縣",
+      "summary": "不知道新竹縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在新竹縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.hsinchu.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新竹縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hsinchu-county-council",
+      "title": "新竹縣議會",
+      "agency": "新竹縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "新竹縣",
+      "summary": "想知道新竹縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.hcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "新竹縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-miaoli-government",
+      "title": "苗栗縣政府",
+      "agency": "苗栗縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "苗栗縣",
+      "summary": "不知道苗栗縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在苗栗縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.miaoli.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "苗栗縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-miaoli-council",
+      "title": "苗栗縣議會",
+      "agency": "苗栗縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "苗栗縣",
+      "summary": "想知道苗栗縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.mcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "苗栗縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-changhua-government",
+      "title": "彰化縣政府",
+      "agency": "彰化縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "彰化縣",
+      "summary": "不知道彰化縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在彰化縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.chcg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "彰化縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-changhua-council",
+      "title": "彰化縣議會",
+      "agency": "彰化縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "彰化縣",
+      "summary": "想知道彰化縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.chcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "彰化縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-nantou-government",
+      "title": "南投縣政府",
+      "agency": "南投縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "南投縣",
+      "summary": "不知道南投縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在南投縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.nantou.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "南投縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-nantou-council",
+      "title": "南投縣議會",
+      "agency": "南投縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "南投縣",
+      "summary": "想知道南投縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.ntcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "南投縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-yunlin-government",
+      "title": "雲林縣政府",
+      "agency": "雲林縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "雲林縣",
+      "summary": "不知道雲林縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在雲林縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.yunlin.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "雲林縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-yunlin-council",
+      "title": "雲林縣議會",
+      "agency": "雲林縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "雲林縣",
+      "summary": "想知道雲林縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.ylcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "雲林縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-chiayi-city-government",
+      "title": "嘉義市政府",
+      "agency": "嘉義市政府",
+      "category": "services",
+      "level": "local",
+      "region": "嘉義市",
+      "summary": "不知道嘉義市的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在嘉義市，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.chiayi.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "嘉義市",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-chiayi-city-council",
+      "title": "嘉義市議會",
+      "agency": "嘉義市議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "嘉義市",
+      "summary": "想知道嘉義市議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.cycc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "嘉義市",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-chiayi-county-government",
+      "title": "嘉義縣政府",
+      "agency": "嘉義縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "嘉義縣",
+      "summary": "不知道嘉義縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在嘉義縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.cyhg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "嘉義縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-chiayi-county-council",
+      "title": "嘉義縣議會",
+      "agency": "嘉義縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "嘉義縣",
+      "summary": "想知道嘉義縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.cyscc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "嘉義縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-pingtung-government",
+      "title": "屏東縣政府",
+      "agency": "屏東縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "屏東縣",
+      "summary": "不知道屏東縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在屏東縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.pthg.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "屏東縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-pingtung-council",
+      "title": "屏東縣議會",
+      "agency": "屏東縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "屏東縣",
+      "summary": "想知道屏東縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.ptcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "屏東縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-yilan-government",
+      "title": "宜蘭縣政府",
+      "agency": "宜蘭縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "宜蘭縣",
+      "summary": "不知道宜蘭縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在宜蘭縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.e-land.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "宜蘭縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-yilan-council",
+      "title": "宜蘭縣議會",
+      "agency": "宜蘭縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "宜蘭縣",
+      "summary": "想知道宜蘭縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.ilcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "宜蘭縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hualien-government",
+      "title": "花蓮縣政府",
+      "agency": "花蓮縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "花蓮縣",
+      "summary": "不知道花蓮縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在花蓮縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.hl.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "花蓮縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-hualien-council",
+      "title": "花蓮縣議會",
+      "agency": "花蓮縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "花蓮縣",
+      "summary": "想知道花蓮縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.hlcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "花蓮縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taitung-government",
+      "title": "臺東縣政府",
+      "agency": "臺東縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "臺東縣",
+      "summary": "不知道臺東縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在臺東縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.taitung.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺東縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-taitung-council",
+      "title": "臺東縣議會",
+      "agency": "臺東縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "臺東縣",
+      "summary": "想知道臺東縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.taitungcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "臺東縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-penghu-government",
+      "title": "澎湖縣政府",
+      "agency": "澎湖縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "澎湖縣",
+      "summary": "不知道澎湖縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在澎湖縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.penghu.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "澎湖縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-penghu-council",
+      "title": "澎湖縣議會",
+      "agency": "澎湖縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "澎湖縣",
+      "summary": "想知道澎湖縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.phcouncil.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "澎湖縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-kinmen-government",
+      "title": "金門縣政府",
+      "agency": "金門縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "金門縣",
+      "summary": "不知道金門縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在金門縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.kinmen.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "金門縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-kinmen-council",
+      "title": "金門縣議會",
+      "agency": "金門縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "金門縣",
+      "summary": "想知道金門縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://www.kmcc.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=13787",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "金門縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-lienchiang-government",
+      "title": "連江縣政府",
+      "agency": "連江縣政府",
+      "category": "services",
+      "level": "local",
+      "region": "連江縣",
+      "summary": "不知道連江縣的事情歸誰管？從縣市政府總入口找局處、公所、服務與公開資料。",
+      "canFind": [
+        "所屬局處、公所及聯絡資訊的查找入口",
+        "施政公告、便民服務與政府資訊公開資料的查找入口"
+      ],
+      "howToUse": [
+        "先確認事情發生地是否在連江縣，再進入網站找「機關介紹」「便民服務」或站內搜尋。",
+        "用事項或機關名稱搜尋，例如社會福利、道路、環保；實際申辦時，再依承辦機關說明準備資料。"
+      ],
+      "limitations": [
+        "這是縣市政府總入口，不是所有服務的單一查詢表；分類名稱、公開資料與更新頻率以各所屬機關為準。",
+        "部分申辦或個人案件查詢可能需要身分驗證，入口網站本身不代表已完成申請。"
+      ],
+      "url": "https://www.matsu.gov.tw/",
+      "verificationUrl": "https://www.moi.gov.tw/cl.aspx?n=11208",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "連江縣",
+        "地方政府",
+        "縣市政府",
+        "局處",
+        "公所",
+        "陳情",
+        "申辦",
+        "資訊公開"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "local-lienchiang-council",
+      "title": "連江縣議會",
+      "agency": "連江縣議會",
+      "category": "politics",
+      "level": "representative",
+      "region": "連江縣",
+      "summary": "想知道連江縣議員在問什麼、議會在審什麼？從議會官網找議員與議事資料。",
+      "canFind": [
+        "議員介紹及服務聯繫資訊的查找入口",
+        "議事日程、會議紀錄與議會公開資訊的查找入口"
+      ],
+      "howToUse": [
+        "先找「議員介紹」確認選區與議員，再找議事資訊、議程或會議紀錄。",
+        "閱讀時記下屆次、會期和日期；如有影音服務，再用相同日期比對原始會議內容。"
+      ],
+      "limitations": [
+        "各議會的資料年份、影音與議案搜尋方式不同；不能假設每個站都有逐字全文或完整歷屆影音。",
+        "議員發言、提案、審議決議及行政機關實際執行是不同階段，應搭配紀錄及後續辦理資料閱讀。"
+      ],
+      "url": "https://mtcc.gov.tw/",
+      "verificationUrl": "https://mtcc.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "連江縣",
+        "議員",
+        "議會",
+        "民代",
+        "質詢",
+        "議案",
+        "議事錄",
+        "會議紀錄",
+        "議事影音"
+      ],
+      "kind": "agency"
+    },
+    {
+      "id": "presidency",
+      "title": "總統府公報、總統令與公開行程",
+      "agency": "總統府",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "核對總統令、正式公報、重要談話及公開活動資料。",
+      "canFind": [
+        "總統令與總統府公報入口",
+        "重要談話、新聞與每日活動行程"
+      ],
+      "howToUse": [
+        "依問題選總統令、公報或每日活動行程。",
+        "以日期或關鍵字找原文，區分正式命令與談話、新聞說明。"
+      ],
+      "limitations": [
+        "談話、政策願景與已公布施行的法規是不同層次；涉及法律應再核對公布及施行資訊。"
+      ],
+      "url": "https://www.president.gov.tw/",
+      "verificationUrl": "https://www.president.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "總統",
+        "副總統",
+        "任命",
+        "總統令",
+        "公報"
+      ]
+    },
+    {
+      "id": "executive-yuan",
+      "title": "行政院政策與院會決議",
+      "agency": "行政院",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "看行政團隊正式說明與院會決議，追查政策是如何提出的。",
+      "canFind": [
+        "行政院政策及施政相關公開資訊",
+        "院會決議及所屬部會導引"
+      ],
+      "howToUse": [
+        "以政策名稱搜尋，或進入院會決議查日期。",
+        "閱讀決議內容，再對照主管部會後續公告與法案進度。"
+      ],
+      "limitations": [
+        "院會通過法案草案不等於立法院已三讀，也不等於政策所有措施都已上路。"
+      ],
+      "url": "https://www.ey.gov.tw/",
+      "verificationUrl": "https://www.ey.gov.tw/Page/AE4885326ADF43DD",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "行政院",
+        "內閣",
+        "院會",
+        "政策",
+        "草案"
+      ]
+    },
+    {
+      "id": "examination-yuan",
+      "title": "考試院與國家考試服務入口",
+      "agency": "考試院",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "找考試院公報、考銓資料，以及國家考試榜單和證書服務的官方入口。",
+      "canFind": [
+        "考試院公報、考銓統計及院會資訊",
+        "國家考試榜單、證書及所屬機關服務入口"
+      ],
+      "howToUse": [
+        "依需求選業務資訊或便民服務。",
+        "考試報名、榜單等細節依頁面連結到考選部等主管機關核對。"
+      ],
+      "limitations": [
+        "不同考試的報名、資格、錄取與證書規定不同，應閱讀當次正式公告。"
+      ],
+      "url": "https://www.exam.gov.tw/",
+      "verificationUrl": "https://www.exam.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "考試院",
+        "考選部",
+        "公務員",
+        "國考",
+        "榜單"
+      ]
+    },
+    {
+      "id": "control-yuan",
+      "title": "監察成果、調查報告與陳情入口",
+      "agency": "監察院",
+      "category": "politics",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "追查公開調查、糾正與彈劾案文，了解監察機關提出的問題及改善追蹤。",
+      "canFind": [
+        "調查報告、糾正案文、彈劾及糾舉公開資訊",
+        "重大案件改善與處理結果及陳情服務導引"
+      ],
+      "howToUse": [
+        "從監察成果查詢以事件關鍵字或案類尋找。",
+        "核對調查對象、日期、後續改善資料；需要反映問題時另看陳情程序。"
+      ],
+      "limitations": [
+        "調查報告、彈劾案與法院判決不同；並非所有陳情或調查內容都可公開。"
+      ],
+      "url": "https://www.cy.gov.tw/",
+      "verificationUrl": "https://www.cy.gov.tw/",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "監察院",
+        "監委",
+        "調查",
+        "糾正",
+        "彈劾",
+        "陳情"
+      ]
+    },
+    {
+      "id": "judicial-yuan-home",
+      "title": "司法院便民服務與司法資訊",
+      "agency": "司法院",
+      "category": "justice",
+      "level": "judicial",
+      "region": "",
+      "kind": "agency",
+      "summary": "從最高司法機關的總入口，找司法制度、查詢系統與所屬法院。",
+      "canFind": [
+        "便民服務、書狀及司法相關查詢導引",
+        "司法資訊與各法院連結"
+      ],
+      "howToUse": [
+        "先從便民服務或查詢服務挑選需求。",
+        "涉及具體案件時，依承辦法院及該系統使用條件操作。"
+      ],
+      "limitations": [
+        "機關新聞或一般說明不取代正式裁判與個案通知；個人案件查詢有資格限制。"
+      ],
+      "url": "https://www.judicial.gov.tw/",
+      "verificationUrl": "https://www.judicial.gov.tw/tw/cp-1491-57058-2267b-1.html",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "司法院",
+        "法院",
+        "法官",
+        "書狀"
+      ]
+    },
+    {
+      "id": "police-directory",
+      "title": "警察機關與警政便民入口",
+      "agency": "內政部警政署",
+      "category": "services",
+      "level": "central",
+      "region": "",
+      "kind": "agency",
+      "summary": "找到對應警察機關、地址與電話，以及警政相關官方服務。",
+      "canFind": [
+        "警察機關地址電話一覽",
+        "警政統計、常見問答與便民服務導引"
+      ],
+      "howToUse": [
+        "先查警察機關地址電話，確認所在地或承辦單位。",
+        "再從便民服務或主題入口尋找需要的查詢與申辦說明。"
+      ],
+      "limitations": [
+        "網站資訊查詢不能取代緊急報案；各項申辦資格與文件以對應服務說明為準。"
+      ],
+      "url": "https://www.npa.gov.tw/",
+      "verificationUrl": "https://www.npa.gov.tw/ch/index",
+      "checkedAt": "2026-11-12",
+      "keywords": [
+        "警察",
+        "警政署",
+        "派出所",
+        "分局",
+        "報案"
+      ]
+    }
+  ]
+}

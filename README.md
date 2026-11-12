@@ -74,6 +74,7 @@ npm run preview
 - 首頁三條學習入口、四步快速摘要與八篇完整入門文章。
 - 可切換中央／地方的政府角色圖、關係篩選、三組程序導覽及三個生活情境。
 - 「民間監督」專頁 `/oversight/`：整理全國性與地方性的公民監督、司法／人權、廉政、資訊及環境團體，提供主題／範圍／關鍵字篩選、原生展開說明、公開成果、參與方式與來源。公督盟內容移至此頁；資料維護於 `Data/civil-oversight.json`，各層集中於 `OversightModel`、`OversightRepository`、`OversightService`、`OversightView`。
+- 「便民查詢」專頁 `/resources/`：依生活主題搜尋官方工具、22 縣市政府與議會、司法及中央機關入口。提供用途、可查內容、操作步驟、限制、官方依據與核對日期；進階篩選預設展開，支援主題／單位／縣市／工具或機關首頁的交集。資料維護於 `Data/public-resources.json`，中央部會首頁沿用機關總覽資料與原查核日期，採 `PublicResourceModel`／`PublicResourceRepository`／`PublicResourceService`／`PublicResourcesView` 分層。無 JavaScript 時仍能閱讀全部卡片與原生展開說明，支援 SSG、JSON-LD 及 GitHub Pages 子路徑。
 - 政府頁中央／地方切換區只切換政府範圍，司法與民間監督由主要導覽進入。中央／地方機關選擇視窗支援輕量彈跳，並遵循裝置減少動態偏好。
 - 民間監督包含經民連的國會觀察、政策研究與公開工作報告，並標明其倡議及資料適用範圍。主導覽採圓角分頁列、目前頁面提示與手機文字導覽鍵。
 - 全站共用右下角「Top／回到頂端」入口，捲動超過 300px 後顯示，支援鍵盤與原生頁內跳轉；停用 JavaScript 時保留可使用的連結。平滑捲動遵循裝置減少動態偏好。

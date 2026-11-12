@@ -5,6 +5,7 @@ import { MediaLiteracyService } from '@/Service/MediaLiteracyService';
 import { JusticeService } from '@/Service/JusticeService';
 import { CivicService } from '@/Service/CivicService';
 import { OversightService } from '@/Service/OversightService';
+import { PublicResourceService } from '@/Service/PublicResourceService';
 export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/government/',
     '/justice/',
     '/oversight/',
+    '/resources/',
     '/my-ballots/',
     '/media-literacy/',
     '/about/',
@@ -23,13 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pages.map((path) => ({
       url: SiteService.absolute(path),
       lastModified:
-        path === '/justice/'
-          ? JusticeService.get().checkedAt
-          : path === '/oversight/'
-            ? OversightService.get().checkedAt
-            : path === '/government/'
-              ? CivicService.get().checkedAt
-              : SiteService.get().updatedAt,
+        path === '/resources/'
+          ? PublicResourceService.get().checkedAt
+          : path === '/justice/'
+            ? JusticeService.get().checkedAt
+            : path === '/oversight/'
+              ? OversightService.get().checkedAt
+              : path === '/government/'
+                ? CivicService.get().checkedAt
+                : SiteService.get().updatedAt,
     })),
     ...LearningService.getArticles().map((a) => ({
       url: SiteService.absolute(`/learn/${a.slug}/`),

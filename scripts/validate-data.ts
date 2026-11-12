@@ -8,12 +8,36 @@ import { SourceService } from '@/Service/SourceService';
 import { getAgencyDirectory } from '@/Service/AgencyService';
 import { JusticeService } from '@/Service/JusticeService';
 import { OversightService } from '@/Service/OversightService';
+import { PublicResourceService } from '@/Service/PublicResourceService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
 const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
+const resources = PublicResourceService.get();
+unique(resources.entries.map((item) => item.id));
+unique(resources.categories.map((item) => item.id));
+for (const item of resources.entries) {
+  assert(
+    resources.categories.some((category) => category.id === item.category),
+    `查詢工具分類不存在：${item.id}`,
+  );
+  assert.equal(new URL(item.url).protocol, 'https:');
+  assert.equal(new URL(item.verificationUrl).protocol, 'https:');
+}
+for (const county of RegionService.get().counties) {
+  assert(
+    resources.entries.some((item) => item.region === county.name && item.level === 'local'),
+    `缺少地方政府入口：${county.name}`,
+  );
+  assert(
+    resources.entries.some(
+      (item) => item.region === county.name && item.level === 'representative',
+    ),
+    `缺少地方議會入口：${county.name}`,
+  );
+}
 const oversight = OversightService.get();
 unique(oversight.organizations.map((organization) => organization.id));
 unique(oversight.groups.map((group) => group.id));
