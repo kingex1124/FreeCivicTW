@@ -28,6 +28,33 @@ test('官方工具可從主選單進入，搜尋與篩選交集保留輸入，�
   await pork.getByText('使用方法與注意事項', { exact: true }).click();
   await expect(pork.locator('details')).toHaveAttribute('open', '');
   const query = page.getByLabel('你想查什麼？');
+  await query.fill('候選人財產');
+  const assets = page.locator('#resource-candidate-assets');
+  await expect(assets).toBeVisible();
+  await expect(assets.locator('.resource-link')).toHaveAttribute(
+    'href',
+    'https://pdps-dec.cec.gov.tw/release/formal/HomePage.html',
+  );
+  await assets.locator('summary').click();
+  await expect(assets).toContainText('公告一年');
+  await query.fill('政治人物持股');
+  const holdings = page.locator('#resource-politician-stock-holdings');
+  await expect(holdings).toBeVisible();
+  await expect(holdings.locator('.resource-tags > span')).toHaveText(['民間工具', '民代與選舉']);
+  await expect(holdings.locator('.resource-link')).toHaveAttribute(
+    'href',
+    'https://legislator-wealth.tw/',
+  );
+  await expect(holdings.locator('.resource-link')).toContainText('前往民間網站');
+  await page.getByLabel('單位類型', { exact: true }).selectOption('civic');
+  await expect(page.locator('.resource-card')).toHaveCount(1);
+  await holdings.locator('summary').click();
+  await expect(holdings).toContainText('不等於完整財產或淨資產');
+  await expect(holdings.locator('.resource-verification a')).toHaveAttribute(
+    'href',
+    'https://priso.cy.gov.tw/layout/baselist',
+  );
+  await page.getByLabel('單位類型', { exact: true }).selectOption('all');
   await query.fill('判決');
   await query.press('Enter');
   await expect(query).toHaveValue('判決');

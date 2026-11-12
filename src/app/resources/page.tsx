@@ -41,7 +41,7 @@ export default function ResourcesPage() {
       />
       <PageIntro
         eyebrow="便民查詢 / FIND THE SOURCE"
-        title="生活裡的疑問，找到官方答案。"
+        title="生活裡的疑問，從資料來源開始查。"
         description={data.description}
       />
       <PublicResourcesView data={data} regions={PublicResourceService.regions(data)} />

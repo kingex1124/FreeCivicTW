@@ -17,7 +17,7 @@ export const PublicResourceSchema = z.object({
   title: text,
   agency: text,
   category: ResourceCategorySchema,
-  level: z.enum(['central', 'local', 'judicial', 'representative']),
+  level: z.enum(['central', 'local', 'judicial', 'representative', 'civic']),
   region: z.string(),
   kind: z.enum(['tool', 'agency']).default('tool'),
   summary: text,

@@ -2,7 +2,11 @@
 import { useState } from 'react';
 import { ArrowUpRight, Search, SlidersHorizontal, BookOpenCheck } from 'lucide-react';
 import { PublicResourceService } from '@/Service/PublicResourceService';
-import type { PublicResourcesViewProps, ResourceFilter } from '@/Model/PublicResourceModel';
+import type {
+  PublicResource,
+  PublicResourcesViewProps,
+  ResourceFilter,
+} from '@/Model/PublicResourceModel';
 
 const initial: ResourceFilter = {
   query: '',
@@ -16,7 +20,8 @@ const levels = {
   local: '地方政府',
   judicial: '司法與警檢',
   representative: '民代與議會',
-};
+  civic: '民間工具',
+} satisfies Record<PublicResource['level'], string>;
 
 export function PublicResourcesView({ data, regions }: PublicResourcesViewProps) {
   const [filter, setFilter] = useState<ResourceFilter>(initial);
@@ -28,7 +33,9 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
     <div className="container section-bottom resource-page">
       <div className="resource-intro">
         <BookOpenCheck size={26} aria-hidden="true" />
-        <p>先搜尋問題，再看用途與限制，最後前往官方查詢。每個入口都有使用說明與查核來源。</p>
+        <p>
+          先搜尋問題，再看用途與限制。這裡包含官方入口和標示為民間的整理工具，每個入口都有使用說明與查核來源。
+        </p>
       </div>
       <noscript>
         <style>{'.resource-controls { display: none; }'}</style>
@@ -138,7 +145,7 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
         </details>
         <div className="resource-toolbar">
           <p role="status" aria-live="polite">
-            找到 {results.length}／{data.entries.length} 個官方入口
+            找到 {results.length}／{data.entries.length} 個查詢入口
           </p>
           <button className="quiet-button" type="button" onClick={() => setFilter(initial)}>
             清除全部篩選
@@ -147,7 +154,7 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
       </form>
       <section aria-labelledby="resource-results-heading">
         <h2 id="resource-results-heading" className="resource-results-heading">
-          官方網站與查詢工具
+          官方網站與民間查詢工具
         </h2>
         {results.length === 0 && (
           <div className="resource-empty">
@@ -162,10 +169,12 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
           {results.map((item) => (
             <article className="resource-card" id={`resource-${item.id}`} key={item.id}>
               <div className="resource-tags">
-                <span>
-                  {levels[item.level]}
-                  {item.region && ` · ${item.region}`}
-                </span>
+                {levels[item.level] && (
+                  <span>
+                    {levels[item.level]}
+                    {item.region && ` · ${item.region}`}
+                  </span>
+                )}
                 <span>
                   {item.kind === 'tool'
                     ? data.categories.find((category) => category.id === item.category)?.label
@@ -187,7 +196,8 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                前往官方網站 <ArrowUpRight size={19} aria-hidden="true" />
+                {item.level === 'civic' ? '前往民間網站' : '前往官方網站'}{' '}
+                <ArrowUpRight size={19} aria-hidden="true" />
                 <span className="sr-only">：{item.title}（另開分頁）</span>
               </a>
               <details className="resource-guide">
@@ -221,15 +231,15 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
       <aside className="resource-note">
         <h2>這裡收錄哪些入口？</h2>
         <p>
-          本頁整理常用功能型網站、22
-          縣市政府與議會，以及中央部會首頁。並非列盡每個所屬機關的所有子網站；各級法院、檢察及其他單位可由卡片中的官方完整目錄繼續找。
+          本頁整理官方功能型網站、22
+          縣市政府與議會、中央部會首頁，以及標示為民間的資料整理工具。並非列盡每個所屬機關的所有子網站；各級法院、檢察及其他單位可由卡片中的官方完整目錄繼續找。
         </p>
         <h2>找到資料後，再多看一步</h2>
         <p>
           先核對發布單位、資料期間、更新日期與統計定義。查不到不代表不存在；公開資料也可能經過遮蔽或有收錄範圍。截圖或單一數字，應搭配原始說明一起看。
         </p>
         <p>
-          查詢與申辦在官方網站進行；本站不代查個人案件，也不取得你在外站輸入的資料。若入口改版失效，請由主管機關首頁尋找，或透過頁尾信箱告訴我們。
+          查詢與申辦請依各外部網站說明進行，正式申辦請確認主管機關的官方入口；本站不代查個人案件，也不取得你在外站輸入的資料。若入口改版失效，請透過頁尾信箱告訴我們。
         </p>
       </aside>
     </div>
