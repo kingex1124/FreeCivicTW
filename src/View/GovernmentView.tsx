@@ -1,7 +1,16 @@
 'use client';
 import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft, RotateCcw, Landmark, Network, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowLeft,
+  RotateCcw,
+  Landmark,
+  Network,
+  Users,
+  ArrowDown,
+  ScrollText,
+} from 'lucide-react';
 import { CivicService } from '@/Service/CivicService';
 import { AnalyticsService } from '@/Service/AnalyticsService';
 import { SourceList } from './SourceView';
@@ -96,7 +105,7 @@ export function RoleDetails({ role }: RoleDetailsProps) {
     </div>
   );
 }
-export function GovernmentView({ data, agencies }: GovernmentProps) {
+export function GovernmentView({ data, agencies, legislation }: GovernmentProps) {
   const [scope, setScope] = useState<'central' | 'local'>('central');
   const [selected, setSelected] = useState('premier');
   const [selectedAgencyId, setSelectedAgencyId] = useState<string | null>(null);
@@ -351,280 +360,361 @@ export function GovernmentView({ data, agencies }: GovernmentProps) {
           )}
         </section>
       </div>
-      <AgencyDirectoryView data={agencies} />
-      <section className="section-space">
-        <div className="section-heading">
+      <div className="government-reading-layout">
+        <nav
+          className="more-topic-nav government-topic-nav"
+          id="government-topics"
+          aria-label="政府內容導覽"
+        >
+          <h2>想了解哪一段？</h2>
+          <p>從機關職責開始，選一段慢慢看。</p>
           <div>
-            <div className="eyebrow">一步一步看懂程序</div>
-            <h2>權力不是一條直線。</h2>
-            <p>先看一般的教學路徑，再留意條件與例外。</p>
-          </div>
-        </div>
-        <div className="flow-tabs">
-          {data.flows.map((f) => (
-            <button
-              key={f.id}
-              aria-pressed={flowId === f.id}
-              onClick={() => {
-                setFlowId(f.id);
-                setStep(0);
-              }}
-            >
-              {f.title}
-            </button>
-          ))}
-        </div>
-        <div className="flow-box">
-          <div className="flow-progress" aria-label="流程進度">
-            {flow.steps.map((s, i) => (
-              <button
-                key={i}
-                aria-current={i === step ? 'step' : undefined}
-                onClick={() => setStep(i)}
-              >
-                <span>{i + 1}</span>
-                <strong>{s.title}</strong>
-              </button>
+            {[
+              ['agency-directory', '機關職責', '中央與地方的單位在做什麼'],
+              ['government-procedures', '制度流程', '任命、法律與預算的簡圖'],
+              ['national-legislation', '立法院立法', '中央提案、三讀、覆議與公布'],
+              ['local-legislation', '議會立法', '地方三讀、覆議、核定與施行'],
+              ['appointments', '人事任命', '誰任命部長、局處長'],
+              ['questioning', '質詢與備詢', '誰在問、誰來回答'],
+              ['integrity', '政風與監督', '廉政、調查與監督的分工'],
+              ['government-situations', '生活情境', '遇到問題，先找哪些線索'],
+              ['government-all-roles', '所有角色', '逐項閱讀職掌與權力界線'],
+            ].map(([id, title, description]) => (
+              <a key={id} href={`#${id}`}>
+                <span>
+                  <strong>{title}</strong>
+                  <span>{description}</span>
+                </span>
+                <ArrowDown size={18} aria-hidden="true" />
+              </a>
             ))}
           </div>
-          <div className="flow-current" aria-live="polite">
-            <span className="pill">{flow.steps[step].actor}</span>
-            <h3>{flow.steps[step].title}</h3>
-            <p>{flow.steps[step].text}</p>
-          </div>
-          <div className="flow-controls">
-            <button
-              className="button-secondary"
-              disabled={step === 0}
-              onClick={() => setStep(step - 1)}
-            >
-              <ArrowLeft size={16} />
-              上一步
-            </button>
-            <button className="quiet-button" onClick={() => setStep(0)}>
-              <RotateCcw size={15} />
-              重來
-            </button>
-            <button
-              className="button-primary"
-              disabled={step === flow.steps.length - 1}
-              onClick={() => setStep(step + 1)}
-            >
-              下一步
-              <ArrowRight size={16} />
-            </button>
-          </div>
-          <p className="board-note">{flow.notice}</p>
-          <button
-            className="text-link"
-            aria-expanded={allSteps}
-            onClick={() => setAllSteps(!allSteps)}
+        </nav>
+        <div className="government-reading-content">
+          <AgencyDirectoryView data={agencies} />
+          <section
+            className="section-space"
+            id="government-procedures"
+            aria-labelledby="government-procedures-title"
           >
-            {allSteps ? '收起全部步驟' : '直接閱讀全部步驟'}
-          </button>
-          {allSteps && (
-            <ol className="full-flow">
-              {flow.steps.map((s, i) => (
-                <li key={i}>
-                  <h4>
-                    {s.title} · {s.actor}
-                  </h4>
-                  <p>{s.text}</p>
-                </li>
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">一步一步看懂程序</div>
+                <h2 id="government-procedures-title">權力不是一條直線。</h2>
+                <p>先看一般的教學路徑，再留意條件與例外。</p>
+              </div>
+            </div>
+            <div className="flow-tabs">
+              {data.flows.map((f) => (
+                <button
+                  key={f.id}
+                  aria-pressed={flowId === f.id}
+                  onClick={() => {
+                    setFlowId(f.id);
+                    setStep(0);
+                  }}
+                >
+                  {f.title}
+                </button>
               ))}
-            </ol>
-          )}
-          <noscript>
-            <ol>
-              {data.flows.flatMap((f) =>
-                f.steps.map((s, i) => (
-                  <li key={`${f.id}-${i}`}>
-                    {f.title}／{s.title}：{s.text}
-                  </li>
-                )),
-              )}
-            </ol>
-          </noscript>
-        </div>
-      </section>
-      <section className="section-space" id="appointments" aria-labelledby="appointments-title">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">把任命程序拆開看</div>
-            <h2 id="appointments-title">部長、局處長，是誰任命的？</h2>
-            <p>先看職務，再看提請、任命與任用資格。以下列出職稱，幫你讀懂人事新聞。</p>
-          </div>
-        </div>
-        <div className="appointment-catalogs">
-          {data.appointmentCatalogs.map((catalog) => (
-            <article className="appointment-catalog" key={catalog.id} id={catalog.id}>
-              <h3>{catalog.title}</h3>
-              <p className="appointment-procedure">{catalog.procedure}</p>
-              <p className="muted">{catalog.coverage}</p>
-              <details open={catalog.id === 'central-ministers'}>
-                <summary>查看 {catalog.offices.length} 項職務</summary>
-                <ul className="office-list">
-                  {catalog.offices.map((office) => (
-                    <li key={office.id}>{office.title}</li>
-                  ))}
-                </ul>
-              </details>
-              <ul className="appointment-notes">
-                {catalog.notes.map((note) => (
-                  <li key={note}>{note}</li>
+            </div>
+            <div className="flow-box">
+              <div className="flow-progress" aria-label="流程進度">
+                {flow.steps.map((s, i) => (
+                  <button
+                    key={i}
+                    aria-current={i === step ? 'step' : undefined}
+                    onClick={() => setStep(i)}
+                  >
+                    <span>{i + 1}</span>
+                    <strong>{s.title}</strong>
+                  </button>
                 ))}
-              </ul>
-              <SourceList sourceIds={catalog.sourceIds} compact />
-            </article>
-          ))}
-        </div>
-        <p className="board-note">
-          本次任命與質詢資料查核：{data.checkedAt}
-          。地方職務以各縣市組織自治條例、編制表及適用人事法規為準。
-        </p>
-      </section>
-      <section className="section-space" id="questioning" aria-labelledby="questioning-title">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">看懂新聞裡的質詢畫面</div>
-            <h2 id="questioning-title">誰在問？誰來回答？</h2>
-            <p>{data.questioning.intro}</p>
-          </div>
-        </div>
-        <div className="questioning-table-wrap">
-          <table className="questioning-table" role="table">
-            <caption>各層級質詢與備詢對照</caption>
-            <thead>
-              <tr>
-                <th scope="col">在哪裡</th>
-                <th scope="col">質詢的人</th>
-                <th scope="col">備詢的人與業務</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.questioning.venues.map((venue) => (
-                <tr key={venue.id}>
-                  <th scope="row">{venue.title}</th>
-                  <td>
-                    <span className="mobile-cell-label" aria-hidden="true">
-                      質詢的人
-                    </span>
-                    {venue.questioner}
-                  </td>
-                  <td>
-                    <span className="mobile-cell-label" aria-hidden="true">
-                      備詢的人與業務
-                    </span>
-                    <strong>{venue.respondents}</strong>
-                    <p>{venue.scope}</p>
-                    <p className="questioning-example">虛構例子：{venue.example}</p>
-                    <SourceList sourceIds={venue.sourceIds} compact />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="questioning-notes">
-          {data.questioning.notes.map((note) => (
-            <article key={note.title}>
-              <h3>{note.title}</h3>
-              <p>{note.text}</p>
-              <SourceList sourceIds={note.sourceIds} compact />
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="section-space" id="integrity" aria-labelledby="integrity-title">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">把廉政與監督分工看清楚</div>
-            <h2 id="integrity-title">{data.integrityGuide.title}</h2>
-            <p>{data.integrityGuide.intro}</p>
-          </div>
-        </div>
-        <details className="integrity-explainer">
-          <summary>展開政風與監督制度補充說明</summary>
-          <div className="integrity-points">
-            {data.integrityGuide.points.map((point) => (
-              <article key={point.title}>
-                <h3>{point.title}</h3>
-                <p>{point.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="oversight-comparison">
-            {data.integrityGuide.comparisons.map((unit) => (
-              <article key={unit.name}>
-                <h3>{unit.name}</h3>
-                <dl>
-                  <div>
-                    <dt>主要工作</dt>
-                    <dd>{unit.work}</dd>
-                  </div>
-                  <div>
-                    <dt>權限界線</dt>
-                    <dd>{unit.boundary}</dd>
-                  </div>
-                </dl>
-              </article>
-            ))}
-          </div>
-          <article className="integrity-reporting">
-            <h3>{data.integrityGuide.reporting.title}</h3>
-            <ol>
-              {data.integrityGuide.reporting.steps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-            <a
-              className="text-link"
-              href={data.integrityGuide.reporting.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {data.integrityGuide.reporting.label}
-              <ArrowRight size={16} />
-            </a>
-          </article>
-          <SourceList sourceIds={data.integrityGuide.sourceIds} compact />
-        </details>
-      </section>
-      <section className="section-space">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">連回你的日常</div>
-            <h2>碰到生活問題，可以先問什麼？</h2>
-          </div>
-        </div>
-        <div className="situation-grid">
-          {data.situations.map((s, i) => (
-            <article key={s.id}>
-              <span className="eyebrow">虛構情境 0{i + 1}</span>
-              <h3>{s.title}</h3>
-              <p>{s.question}</p>
-              <details>
-                <summary>一起找線索</summary>
-                <p>{s.answer}</p>
-                <ol>
-                  {s.steps.map((step, j) => (
-                    <li key={j}>{step}</li>
+              </div>
+              <div className="flow-current" aria-live="polite">
+                <span className="pill">{flow.steps[step].actor}</span>
+                <h3>{flow.steps[step].title}</h3>
+                <p>{flow.steps[step].text}</p>
+              </div>
+              <div className="flow-controls">
+                <button
+                  className="button-secondary"
+                  disabled={step === 0}
+                  onClick={() => setStep(step - 1)}
+                >
+                  <ArrowLeft size={16} />
+                  上一步
+                </button>
+                <button className="quiet-button" onClick={() => setStep(0)}>
+                  <RotateCcw size={15} />
+                  重來
+                </button>
+                <button
+                  className="button-primary"
+                  disabled={step === flow.steps.length - 1}
+                  onClick={() => setStep(step + 1)}
+                >
+                  下一步
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+              <p className="board-note">{flow.notice}</p>
+              {flowId === 'law' && (
+                <a className="text-link" href="#national-legislation">
+                  閱讀完整立法、覆議、公布生效與憲法審查程序{' '}
+                  <ArrowRight size={18} aria-hidden="true" />
+                </a>
+              )}
+              <button
+                className="text-link"
+                aria-expanded={allSteps}
+                onClick={() => setAllSteps(!allSteps)}
+              >
+                {allSteps ? '收起全部步驟' : '直接閱讀全部步驟'}
+              </button>
+              {allSteps && (
+                <ol className="full-flow">
+                  {flow.steps.map((s, i) => (
+                    <li key={i}>
+                      <h4>
+                        {s.title} · {s.actor}
+                      </h4>
+                      <p>{s.text}</p>
+                    </li>
                   ))}
                 </ol>
-              </details>
-            </article>
-          ))}
-        </div>
-      </section>
-      <details className="all-roles">
-        <summary>閱讀所有角色的文字說明</summary>
-        {data.roles.map((r) => (
-          <section key={r.id}>
-            <h3>{r.name}</h3>
-            <RoleDetails role={r} />
+              )}
+              <noscript>
+                <ol>
+                  {data.flows.flatMap((f) =>
+                    f.steps.map((s, i) => (
+                      <li key={`${f.id}-${i}`}>
+                        {f.title}／{s.title}：{s.text}
+                      </li>
+                    )),
+                  )}
+                </ol>
+              </noscript>
+            </div>
           </section>
-        ))}
-      </details>
+          <section
+            className="section-space"
+            id="government-legislation"
+            aria-labelledby="government-legislation-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">從草案到正式實施</div>
+                <h2 id="government-legislation-title">法律與自治條例，是怎麼制定的？</h2>
+                <p>
+                  往下選擇中央或地方，直接在本頁閱讀議事角色、三讀、復議與覆議、公布、生效，以及憲法審查。
+                </p>
+              </div>
+            </div>
+            <div className="government-legislation-links">
+              <a href="#national-legislation">
+                <ScrollText size={24} aria-hidden="true" />
+                <span>
+                  <strong>立法院立法</strong>
+                  <span>程序委員會、召委、院長，到行政院覆議與總統公布。</span>
+                </span>
+                <ArrowRight size={20} aria-hidden="true" />
+              </a>
+              <a href="#local-legislation">
+                <Landmark size={24} aria-hidden="true" />
+                <span>
+                  <strong>地方議會立法</strong>
+                  <span>議長、委員會、地方覆議，到核定、公布及實施。</span>
+                </span>
+                <ArrowRight size={20} aria-hidden="true" />
+              </a>
+            </div>
+            {legislation}
+          </section>
+          <section className="section-space" id="appointments" aria-labelledby="appointments-title">
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">把任命程序拆開看</div>
+                <h2 id="appointments-title">部長、局處長，是誰任命的？</h2>
+                <p>先看職務，再看提請、任命與任用資格。以下列出職稱，幫你讀懂人事新聞。</p>
+              </div>
+            </div>
+            <div className="appointment-catalogs">
+              {data.appointmentCatalogs.map((catalog) => (
+                <article className="appointment-catalog" key={catalog.id} id={catalog.id}>
+                  <h3>{catalog.title}</h3>
+                  <p className="appointment-procedure">{catalog.procedure}</p>
+                  <p className="muted">{catalog.coverage}</p>
+                  <details open={catalog.id === 'central-ministers'}>
+                    <summary>查看 {catalog.offices.length} 項職務</summary>
+                    <ul className="office-list">
+                      {catalog.offices.map((office) => (
+                        <li key={office.id}>{office.title}</li>
+                      ))}
+                    </ul>
+                  </details>
+                  <ul className="appointment-notes">
+                    {catalog.notes.map((note) => (
+                      <li key={note}>{note}</li>
+                    ))}
+                  </ul>
+                  <SourceList sourceIds={catalog.sourceIds} compact />
+                </article>
+              ))}
+            </div>
+            <p className="board-note">
+              本次任命與質詢資料查核：{data.checkedAt}
+              。地方職務以各縣市組織自治條例、編制表及適用人事法規為準。
+            </p>
+          </section>
+          <section className="section-space" id="questioning" aria-labelledby="questioning-title">
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">看懂新聞裡的質詢畫面</div>
+                <h2 id="questioning-title">誰在問？誰來回答？</h2>
+                <p>{data.questioning.intro}</p>
+              </div>
+            </div>
+            <div className="questioning-table-wrap">
+              <table className="questioning-table" role="table">
+                <caption>各層級質詢與備詢對照</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">在哪裡</th>
+                    <th scope="col">質詢的人</th>
+                    <th scope="col">備詢的人與業務</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.questioning.venues.map((venue) => (
+                    <tr key={venue.id}>
+                      <th scope="row">{venue.title}</th>
+                      <td>
+                        <span className="mobile-cell-label" aria-hidden="true">
+                          質詢的人
+                        </span>
+                        {venue.questioner}
+                      </td>
+                      <td>
+                        <span className="mobile-cell-label" aria-hidden="true">
+                          備詢的人與業務
+                        </span>
+                        <strong>{venue.respondents}</strong>
+                        <p>{venue.scope}</p>
+                        <p className="questioning-example">虛構例子：{venue.example}</p>
+                        <SourceList sourceIds={venue.sourceIds} compact />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="questioning-notes">
+              {data.questioning.notes.map((note) => (
+                <article key={note.title}>
+                  <h3>{note.title}</h3>
+                  <p>{note.text}</p>
+                  <SourceList sourceIds={note.sourceIds} compact />
+                </article>
+              ))}
+            </div>
+          </section>
+          <section className="section-space" id="integrity" aria-labelledby="integrity-title">
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">把廉政與監督分工看清楚</div>
+                <h2 id="integrity-title">{data.integrityGuide.title}</h2>
+                <p>{data.integrityGuide.intro}</p>
+              </div>
+            </div>
+            <details className="integrity-explainer">
+              <summary>展開政風與監督制度補充說明</summary>
+              <div className="integrity-points">
+                {data.integrityGuide.points.map((point) => (
+                  <article key={point.title}>
+                    <h3>{point.title}</h3>
+                    <p>{point.text}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="oversight-comparison">
+                {data.integrityGuide.comparisons.map((unit) => (
+                  <article key={unit.name}>
+                    <h3>{unit.name}</h3>
+                    <dl>
+                      <div>
+                        <dt>主要工作</dt>
+                        <dd>{unit.work}</dd>
+                      </div>
+                      <div>
+                        <dt>權限界線</dt>
+                        <dd>{unit.boundary}</dd>
+                      </div>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+              <article className="integrity-reporting">
+                <h3>{data.integrityGuide.reporting.title}</h3>
+                <ol>
+                  {data.integrityGuide.reporting.steps.map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ol>
+                <a
+                  className="text-link"
+                  href={data.integrityGuide.reporting.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {data.integrityGuide.reporting.label}
+                  <ArrowRight size={16} />
+                </a>
+              </article>
+              <SourceList sourceIds={data.integrityGuide.sourceIds} compact />
+            </details>
+          </section>
+          <section
+            className="section-space"
+            id="government-situations"
+            aria-labelledby="government-situations-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">連回你的日常</div>
+                <h2 id="government-situations-title">碰到生活問題，可以先問什麼？</h2>
+              </div>
+            </div>
+            <div className="situation-grid">
+              {data.situations.map((s, i) => (
+                <article key={s.id}>
+                  <span className="eyebrow">虛構情境 0{i + 1}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.question}</p>
+                  <details>
+                    <summary>一起找線索</summary>
+                    <p>{s.answer}</p>
+                    <ol>
+                      {s.steps.map((step, j) => (
+                        <li key={j}>{step}</li>
+                      ))}
+                    </ol>
+                  </details>
+                </article>
+              ))}
+            </div>
+          </section>
+          <details className="all-roles" id="government-all-roles">
+            <summary>閱讀所有角色的文字說明</summary>
+            {data.roles.map((r) => (
+              <section key={r.id}>
+                <h3>{r.name}</h3>
+                <RoleDetails role={r} />
+              </section>
+            ))}
+          </details>
+        </div>
+      </div>
     </div>
   );
 }

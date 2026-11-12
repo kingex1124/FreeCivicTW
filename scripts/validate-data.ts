@@ -10,6 +10,7 @@ import { JusticeService } from '@/Service/JusticeService';
 import { OversightService } from '@/Service/OversightService';
 import { PublicResourceService } from '@/Service/PublicResourceService';
 import { SupplementService } from '@/Service/SupplementService';
+import { LegislationService } from '@/Service/LegislationService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
@@ -17,15 +18,28 @@ const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
 const supplement = SupplementService.get();
-unique(supplement.topics.map((topic) => topic.id));
-unique(supplement.topics.flatMap((topic) => topic.chapters.map((chapter) => chapter.id)));
+const topics = [...supplement.topics, ...LegislationService.get().topics];
+unique(topics.map((topic) => topic.id));
+unique(topics.flatMap((topic) => topic.chapters.map((chapter) => chapter.id)));
+for (const topic of topics) {
+  if (topic.flowOverview) {
+    unique(topic.flowOverview.map((step) => step.target));
+    for (const step of topic.flowOverview)
+      assert(
+        topic.chapters.some((chapter) => chapter.id === step.target),
+        `立法流程目標不存在：${step.target}`,
+      );
+  }
+}
 unique(
-  supplement.topics.flatMap((topic) =>
+  topics.flatMap((topic) =>
     topic.chapters.flatMap((chapter) => chapter.tactics?.map((tactic) => tactic.id) ?? []),
   ),
 );
 for (const id of SupplementService.sourceIds())
   assert(sourceIds.has(id), `看更多來源不存在：${id}`);
+for (const id of LegislationService.sourceIds())
+  assert(sourceIds.has(id), `立法程序來源不存在：${id}`);
 const electionRules = ElectionService.getRules();
 const indigenousGuide = electionRules.indigenousGuide;
 unique(indigenousGuide.comparisons.map((item) => item.id));

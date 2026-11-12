@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "checkedAt": "2026-11-12",
   "title": "看更多",
-  "description": "原住民選舉為什麼不同？政治攻防在做什麼？憲法法庭無法正常審判會影響誰？用白話、例子與官方依據，一個主題慢慢看。",
+  "description": "原住民選舉、政治攻防與憲法法庭，用白話、例子和官方依據，認識選舉差異、辨識誤導話術，也看懂人民的憲法救濟。",
   "topics": [
     {
       "id": "political-debate",
@@ -63,7 +63,10 @@
             "title": "像一場社區會議",
             "text": "有人想把空地做停車場，有人希望做公園。大家提出使用人數、費用與噪音資料，互相追問、協商，再依程序決定。政治攻防的規模更大、權責也更複雜，但同樣可以先問：在爭什麼決定？理由和證據是什麼？"
           },
-          "sourceIds": ["constitution", "amendments"]
+          "sourceIds": [
+            "constitution",
+            "amendments"
+          ]
         },
         {
           "id": "debate-examples",
@@ -99,6 +102,56 @@
             "local-government",
             "constitutional-judgment-113-9",
             "supplement-cc-norms"
+          ]
+        },
+        {
+          "id": "debate-boycott",
+          "title": "「杯葛」是什麼？反對、拖延與阻止議事要分開看",
+          "summary": "不是一個單獨的法定程序；要看用了什麼方法、是否符合規則，而非只看標籤。",
+          "paragraphs": [
+            "「杯葛」在政治新聞裡，通常指試圖阻止或延後某項會議、議案或政策的處理。可能是爭取重新討論，也可能讓議事難以前進；這個詞本身不會告訴你行為一定合法、違法、合理或不合理。",
+            "反對政策、要求修正、投反對票，不必然就是杯葛。要分開問：他反對什麼？用了什麼手段？是否依法提出、符合表決條件？造成什麼影響？同樣標準應適用於不同政黨。"
+          ],
+          "points": [
+            {
+              "title": "程序上的阻擋或拖延",
+              "text": "例如依規定提出變更議程、散會、復議或重付審查等動議，或對排案、協商內容表示異議。每種方法都有提出資格、連署、期限與表決要求；不是喊一句反對，議案就自動停止。"
+            },
+            {
+              "title": "缺席、離席與清點人數",
+              "text": "若人數不足法定門檻，可能影響開會或使議事中不能表決。但少數人不出席，不一定就能阻止其他人開會；提出清點，也不等於當場自動流會。院會未能按規定開會、延會、議事中暫不能表決，是不同情況，應看實際紀錄。"
+            },
+            {
+              "title": "協商不是無限期否決權",
+              "text": "立法院議案交黨團協商，逾一個月仍無共識，依法由院會定期處理。不是滿一個月自動通過，也不是任何一個黨團只要一直不同意，就能永遠封住所有議案。"
+            },
+            {
+              "title": "物理阻擋與暴力不能直接當成合法程序",
+              "text": "占據主席台、破壞公物、以暴力或脅迫阻撓議事，涉及立法委員行為法所定禁止行為及其他可能責任。政治訴求不會自動讓這些手段合法；判斷責任仍須看具體事證與適用法律。"
+            },
+            {
+              "title": "用同一個假設，看兩面理由",
+              "text": "假設托育法案要表決，有人認為草案剛大幅修改、還沒公開充分討論，要求延後審查；支持者則認為已討論很久，繼續拖延會讓家庭等不到協助。民眾可查版本何時公開、審查紀錄、延後理由、替代方案及時程，判斷這次阻擋是否有必要，而不是只相信「護民主」或「擋改革」的標語。"
+            }
+          ],
+          "sourceIds": [
+            "legislature-functions",
+            "legislation-ly-rules",
+            "legislator-conduct"
+          ],
+          "terms": [
+            {
+              "term": "法定人數",
+              "meaning": "依法能開會或處理特定議事，至少需要的人數。中央與地方、不同程序的門檻可能不同，不能一律套過半。"
+            },
+            {
+              "term": "動議",
+              "meaning": "在會議中依規則提出一個要大家處理的主張，例如是否變更議程或重新處理某個決議。能提出，不代表已通過。"
+            },
+            {
+              "term": "復議與覆議",
+              "meaning": "復議通常是民意機關依議事規則重議自己的決議；覆議是行政機關依法請民意機關重新考慮特定議決。兩者不是同一個程序，完整流程見下方立法主題。"
+            }
           ]
         },
         {
@@ -192,7 +245,10 @@
               "check": "找最早發布紀錄，核對日期、地標、天氣與官方事件資訊，必要時做反向圖片搜尋。把多篇轉貼追到共同源頭；有AI生成或剪接疑慮時，也別只靠肉眼怪不怪就定案。"
             }
           ],
-          "sourceIds": ["supplement-information-manipulation", "media-education"]
+          "sourceIds": [
+            "supplement-information-manipulation",
+            "media-education"
+          ]
         },
         {
           "id": "debate-boundaries",
@@ -216,7 +272,10 @@
               "text": "疑似暴力、威脅、賄賂或違法洩漏資料，應依具體事證與法律處理；政治目的不能自動讓行為合法，也不能光靠指控就當作已犯罪。"
             }
           ],
-          "sourceIds": ["constitution", "constitutional-judgment-113-9"]
+          "sourceIds": [
+            "constitution",
+            "constitutional-judgment-113-9"
+          ]
         },
         {
           "id": "debate-reading",
@@ -247,7 +306,22 @@
             "title": "一句話練習",
             "text": "看到「某人故意砍福利買選票」，先分別查：究竟哪筆經費改了？誰提案、誰表決？福利效果如何？「故意」及「買選票」是否有具體證據？這幾個問題不能用同一張圖片一次回答。"
           },
-          "sourceIds": ["constitution", "amendments", "supplement-information-manipulation"]
+          "sourceIds": [
+            "constitution",
+            "amendments",
+            "supplement-information-manipulation"
+          ]
+        }
+      ],
+      "navDescription": "看懂政治分歧、杯葛與誤導話術",
+      "relatedLinks": [
+        {
+          "href": "/media-literacy/",
+          "label": "試試媒體識讀練習"
+        },
+        {
+          "href": "/government/#national-legislation",
+          "label": "接著看立法院完整立法程序"
         }
       ]
     },
@@ -276,7 +350,10 @@
           "查核日期為2026年11月12日。2025年12月19日的114年憲判字第1號，已宣告當年修法新增的部分規定失效，包括至少10人參與評議、至少9人同意違憲的規定。不能只看到法規頁仍顯示這段修正文字，就當成現行有效門檻。",
           "官方網站也已公布2026年的憲法判決，例如115年憲判字第2號。以下討論的是「如果因人數、程序或其他障礙，無法正常作成憲法判決」的制度後果；不是即時開庭狀態或個案進度公告。"
         ],
-        "sourceIds": ["supplement-cc-114-1", "supplement-cc-judgments"]
+        "sourceIds": [
+          "supplement-cc-114-1",
+          "supplement-cc-judgments"
+        ]
       },
       "chapters": [
         {
@@ -360,7 +437,11 @@
             "title": "假設例子：一律重罰的規定",
             "text": "假設法律不分情節，一律對小失誤處很高的罰款。有人打完行政訴訟後，主張處罰過重，聲請憲法審查。法庭若無法處理，是否違憲就難以及時釐清；但當事人不能因此自行認定罰款不用繳。"
           },
-          "sourceIds": ["supplement-cc-people", "supplement-cc-act", "supplement-cc-114-1"]
+          "sourceIds": [
+            "supplement-cc-people",
+            "supplement-cc-act",
+            "supplement-cc-114-1"
+          ]
         },
         {
           "id": "court-survivors",
@@ -428,7 +509,11 @@
             "title": "假設例子：資料一旦公開就收不回",
             "text": "假設有人質疑某規則要求公開高度私密資料。若符合憲法訴訟及暫時處分條件，可能需要先防止不可逆的公開。即使日後認定違憲，已被複製與傳播的資料也未必能完全收回。這只是示意，不代表任何資料公開案都會獲准暫停。"
           },
-          "sourceIds": ["supplement-cc-act", "supplement-cc-interim", "supplement-cc-114-1"]
+          "sourceIds": [
+            "supplement-cc-act",
+            "supplement-cc-interim",
+            "supplement-cc-114-1"
+          ]
         },
         {
           "id": "court-legislature",
@@ -456,7 +541,11 @@
             "title": "假設例子：立法調查能問到哪裡？",
             "text": "假設立法院通過要求交付資料的新規定，支持者認為有助監督，反對者認為過度侵入隱私或其他機關權限。法院能否審查，要看聲請種類與條件；若一直無法判斷，各方對界線的爭執就可能持續，而不是哪一方的說法自動成為法律答案。"
           },
-          "sourceIds": ["constitution", "supplement-cc-norms", "constitutional-judgment-113-9"]
+          "sourceIds": [
+            "constitution",
+            "supplement-cc-norms",
+            "constitutional-judgment-113-9"
+          ]
         },
         {
           "id": "court-institutions",
@@ -480,7 +569,11 @@
               "text": "聲請憲法審查及是否停止原訴訟，依相關規定處理。不能說所有案件都會一起停，也不能要求普通法院一概代替大法官作成普遍失效的違憲判決。"
             }
           ],
-          "sourceIds": ["supplement-cc-institutions", "supplement-cc-local", "supplement-cc-norms"]
+          "sourceIds": [
+            "supplement-cc-institutions",
+            "supplement-cc-local",
+            "supplement-cc-norms"
+          ]
         },
         {
           "id": "court-other-cases",
@@ -503,7 +596,11 @@
               "text": "符合法定條件時，處理不同最高審判機關對同一法規見解歧異等問題；並非任何兩位法官看法不同，都能要求大法官介入。"
             }
           ],
-          "sourceIds": ["amendments", "oversight-constitutional-court", "supplement-cc-act"]
+          "sourceIds": [
+            "amendments",
+            "oversight-constitutional-court",
+            "supplement-cc-act"
+          ]
         },
         {
           "id": "court-still-running",
@@ -546,7 +643,9 @@
             "這能幫助理解：如果憲法問題一直無法被處理，受影響的不一定是政治人物，也可能是面對罰款的個人或業者。但這個判決不是宣告所有健保罰款都不用繳；具體案件仍須依判決意旨及程序處理。"
           ],
           "points": [],
-          "sourceIds": ["supplement-cc-115-2"]
+          "sourceIds": [
+            "supplement-cc-115-2"
+          ]
         },
         {
           "id": "court-access-boundaries",
@@ -615,6 +714,13 @@
             "supplement-cc-114-1",
             "supplement-cc-judgments"
           ]
+        }
+      ],
+      "navDescription": "人民救濟的案例，及審判受阻的影響",
+      "relatedLinks": [
+        {
+          "href": "/justice/",
+          "label": "回到司法與警檢，看法院與檢察官的分工"
         }
       ]
     }

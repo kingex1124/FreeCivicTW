@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import type { ReactNode } from 'react';
 import type { AgencyDirectoryData } from './AgencyModel';
 export const RoleSchema = z.object({
   id: z.string(),
@@ -119,4 +120,8 @@ export type CivicPreviewProps = {
 export type RoleDetailsProps = { role: Role };
 export type CivicData = z.infer<typeof CivicSchema>;
 export type RelationFilter = 'all' | CivicData['relations'][number]['kind'];
-export type GovernmentProps = { data: CivicData; agencies: AgencyDirectoryData };
+export type GovernmentProps = {
+  data: CivicData;
+  agencies: AgencyDirectoryData;
+  legislation: ReactNode;
+};

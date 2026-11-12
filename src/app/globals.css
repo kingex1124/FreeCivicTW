@@ -6253,6 +6253,167 @@ input::placeholder {
   }
 }
 /* 看更多：主題導覽、白話重點與原生收合小節。 */
+.government-reading-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-top: 64px;
+}
+.government-reading-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.government-reading-content > .section-space {
+  padding-block: 40px;
+}
+.government-reading-content > #agency-directory {
+  margin-top: 0;
+  padding-top: 0;
+}
+.government-reading-content > [id] {
+  scroll-margin-top: 115px;
+}
+.more-topic-nav.government-topic-nav a {
+  padding: 12px 16px;
+}
+.more-topic-nav.government-topic-nav a strong {
+  margin-bottom: 4px;
+}
+.government-legislation-links {
+  display: grid;
+  gap: 16px;
+}
+.government-legislation-links a {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+.government-legislation-links a:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.government-legislation-links svg {
+  flex-shrink: 0;
+  color: var(--green);
+  margin-top: 4px;
+}
+.government-legislation-links a > svg:last-child {
+  margin-left: auto;
+}
+.government-legislation-links strong,
+.government-legislation-links span span {
+  display: block;
+}
+.government-legislation-links strong {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.legislation-route {
+  margin-block: 28px;
+}
+.legislation-route h3 {
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.legislation-route > p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+.legislation-route ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+.legislation-route a {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  min-height: 56px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--green);
+  font-weight: 700;
+}
+.legislation-route a:hover {
+  background: var(--sage);
+}
+.legislation-route a > span {
+  font-weight: 400;
+}
+.legislation-route a > svg {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-top: 4px;
+}
+.legislation-terms {
+  margin-block: 24px;
+  padding: 20px;
+  background: var(--sage);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.legislation-terms > div + div {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+.legislation-terms dt {
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.legislation-terms dd {
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  .government-reading-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .more-topic-nav.government-topic-nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .more-topic-nav.government-topic-nav > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .more-topic-nav.government-topic-nav > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .more-topic-nav.government-topic-nav a {
+    padding: 12px;
+    align-items: center;
+  }
+  .more-topic-nav.government-topic-nav a span span {
+    display: none;
+  }
+  .more-topic-nav.government-topic-nav a strong {
+    margin: 0;
+  }
+  .legislation-route ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .government-legislation-links a {
+    padding: 20px;
+    gap: 12px;
+  }
+}
 .more-layout {
   display: grid;
   grid-template-columns: 245px minmax(0, 1fr);
@@ -6327,11 +6488,13 @@ input::placeholder {
   padding-top: 0;
   border-top: 0;
 }
-.more-content .section-heading h2 {
+.more-content .section-heading h2,
+.more-topic .section-heading h2 {
   font-size: var(--text-heading);
   line-height: 1.5;
 }
 .more-content .section-heading p,
+.more-topic .section-heading p,
 .more-chapter-body p {
   line-height: 1.9;
 }

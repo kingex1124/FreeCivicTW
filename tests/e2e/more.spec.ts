@@ -20,6 +20,8 @@ test('看更多從主導覽進入，主題跳轉與鍵盤收合可用，選票�
     .getByRole('link', { name: '看更多', exact: true })
     .click();
   await expect(page).toHaveURL(/\/more\/$/);
+  await expect(page.getByRole('navigation', { name: '補充主題' }).getByRole('link')).toHaveCount(3);
+  await expect(page.locator('#national-legislation, #local-legislation')).toHaveCount(0);
   await expect(
     page
       .getByRole('navigation', { name: '主要導覽' })

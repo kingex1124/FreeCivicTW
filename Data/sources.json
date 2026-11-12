@@ -2360,6 +2360,136 @@
       "checkedAt": "2026-11-12",
       "scope": "追訴權時效與所列性犯罪被害人滿20歲前不計入期間的新規定。",
       "note": "不同罪名、新舊法、已完成時效與判決效果須分別判斷；犯罪追訴期間不是聲請憲法審查的六個月期限。"
+    },
+    {
+      "id": "legislation-ly-process",
+      "title": "立法院：立法程序",
+      "publisher": "立法院",
+      "url": "https://www.ly.gov.tw/Pages/List.aspx?nodeid=151",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "一般立法流程、提案、程序委員會、一至三讀、協商、復議及移送公布。",
+      "note": "使用者指定的官方入口；具體門檻與現行法律併讀，憲法舊條文須配合增修條文。"
+    },
+    {
+      "id": "legislation-ly-rules",
+      "title": "立法院議事規則",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0020059",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "第7、8、16、17、22、26、32、41至45、59條，提案、議程、程序動議及復議。",
+      "note": "法律案15人以上連署依條文原文說明，不將一般提案與黨團例外混用。"
+    },
+    {
+      "id": "legislation-ly-agenda",
+      "title": "立法院程序委員會組織規程",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010046",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "第2至5條，19人、黨團比例、每黨團至少1人、2位互選召委與議程職掌。",
+      "note": "程序委員會與常設委員會、院長副院長的職務與組成不同。"
+    },
+    {
+      "id": "legislation-ly-standing",
+      "title": "立法院各委員會組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010043",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "委員會審查、組成、人數、互選召委、輪值與議程等。",
+      "note": "常設委員會13至15人與每會期2位召委，不能套用到地方議會或所有特種委員會。"
+    },
+    {
+      "id": "legislation-ly-convener-election",
+      "title": "立法院各委員會召集委員選舉辦法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0020054",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "召委互選的無記名單記投票、得票與同意推選等程序。",
+      "note": "依辦法區分投票與合法推選，不推論任何召委可個人決定法律通過。"
+    },
+    {
+      "id": "legislation-ly-organization",
+      "title": "立法院組織法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0010044",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "院長副院長互選、院務主持、公平中立、8個常設委員會及黨團。",
+      "note": "不以特定任職人姓名作為制度內容，避免任期變動造成誤導。"
+    },
+    {
+      "id": "legislation-ly-speaker-election",
+      "title": "立法院立法委員互選院長副院長辦法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0020053",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "院長副院長分別互選、第一輪及第二輪門檻。",
+      "note": "院長不是總統任命，也非全民另投一張院長票。"
+    },
+    {
+      "id": "legislation-effective-dates",
+      "title": "中央法規標準法：公布與生效",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030133",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "第4、12至14條，公布、施行日期、公布日起算第3日及另定施行日期。",
+      "note": "公布不等於當下生效；另定日期、分段施行及過渡規定須另核對。"
+    },
+    {
+      "id": "legislation-local-organization",
+      "title": "地方立法機關組織準則：議事、委員會與公開",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0040005",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "第21至27條，大會主持、程序委員會、表決、議事公開及地方自訂議事規則。",
+      "note": "地方委員會的具體組成與門檻仍須依各議會規定。"
+    },
+    {
+      "id": "legislation-taipei-rules",
+      "title": "臺北市議會議事規則",
+      "publisher": "臺北市法規查詢系統／臺北市政府法務局",
+      "url": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL001172",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "提案附署、議程、讀會、審查、討論與復議等，作為地方完整流程示例。",
+      "note": "臺北一般提案與市法規案門檻不同，不能當作全臺統一規則。"
+    },
+    {
+      "id": "legislation-taipei-committees",
+      "title": "臺北市議會各委員會設置辦法",
+      "publisher": "臺北市法規查詢系統／臺北市政府法務局",
+      "url": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL001176",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "六個業務委員會、法規委員會的組成、召集人、主持與審查報告。",
+      "note": "業務委員會與法規委員會的召集人產生方式不同，不與程序委員會或立法院制度混同。"
+    },
+    {
+      "id": "legislation-kaohsiung-agenda",
+      "title": "高雄市議會程序委員會設置辦法",
+      "publisher": "高雄市議會",
+      "url": "https://www.kcc.gov.tw/Laws_List.aspx?n=83&s=253",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "第2至5條，程序委員會9人、正副議長當然委員兼召集人與其他成員組成。",
+      "note": "明示為高雄制度示例，不將立法院19人比例制或高雄規則套全臺地方議會。"
+    },
+    {
+      "id": "legislation-kaohsiung-rules",
+      "title": "高雄市議會議事規則：提案與讀會",
+      "publisher": "高雄市議會",
+      "url": "https://www.kcc.gov.tw/Laws_List.aspx?n=83&s=96",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "普通議員提案連署與市法規、預算三讀等，與臺北作差異比較。",
+      "note": "以各地現行議事規則為準，不因同為議會就假定所有程序門檻相同。"
     }
   ],
   "corrections": [
@@ -2440,6 +2570,12 @@
       "previous": "政治攻防尚未逐類解說誤導話術，憲法法庭補充欠缺兒少性犯罪追訴權時效等人民救濟案例及不受理原因比較。",
       "correction": "新增十種自編話術例子與查證方法；補充人民案例及115憲判6已於2026年8月判決、11位聲請人、發回不等於定罪、舊案不全面復活，並區分115審裁665要件不受理與法庭受阻。",
       "scope": "看更多／政治攻防與憲法法庭。"
+    },
+    {
+      "date": "2026-11-12",
+      "previous": "原政府頁法律流程為入門簡圖，未完整涵蓋程序角色、中央地方覆議、公布生效及憲法審查分支。",
+      "correction": "新增立法院及地方議會完整程序主題，連接提案、排程、審查、三讀、復議覆議、公布實施與憲法救濟；區分中央全體立委二分之一以上與地方出席議員三分之二的覆議維持門檻，標示地方示例差異。",
+      "scope": "看更多／立法程序，政府怎麼運作的閱讀導覽與入口。"
     }
   ]
 }
