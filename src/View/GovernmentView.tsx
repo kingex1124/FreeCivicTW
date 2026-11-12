@@ -15,7 +15,21 @@ export function RoleDetails({ role }: RoleDetailsProps) {
       <dl>
         <div>
           <dt>怎麼產生</dt>
-          <dd>{role.selection}</dd>
+          <dd>
+            {role.selection}
+            {[
+              'legislator',
+              'county-council',
+              'town-council',
+              'town-chief',
+              'indigenous-chief',
+              'indigenous-council',
+            ].includes(role.id) && (
+              <Link className="text-link" href="/more/#indigenous-guide">
+                看原住民選舉與投票資格差異 <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            )}
+          </dd>
         </div>
         <div>
           <dt>可以做什麼</dt>

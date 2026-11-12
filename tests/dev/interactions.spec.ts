@@ -78,7 +78,7 @@ test('區網表單查詢會保留條件並顯示結果，不重新載入頁面',
   await expect(page.locator('html')).toHaveAttribute('data-motion', /^(full|reduced)$/);
   await page.getByLabel('搜尋地名').fill('頭份');
   await page.getByRole('button', { name: '苗栗縣頭份市', exact: true }).click();
-  await page.getByLabel('立委票別教學情境').selectOption('mountain');
+  await page.getByLabel('選舉身分教學情境').selectOption('mountain');
   const county = await page.getByLabel('戶籍縣市', { exact: true }).inputValue();
   const town = await page.getByLabel('鄉鎮市區', { exact: true }).inputValue();
   let navigations = 0;
@@ -91,7 +91,7 @@ test('區網表單查詢會保留條件並顯示結果，不重新載入頁面',
   await expect(page.locator('.ballot-card')).toHaveCount(8);
   await expect(page.getByLabel('戶籍縣市', { exact: true })).toHaveValue(county);
   await expect(page.getByLabel('鄉鎮市區', { exact: true })).toHaveValue(town);
-  await expect(page.getByLabel('立委票別教學情境')).toHaveValue('mountain');
+  await expect(page.getByLabel('選舉身分教學情境')).toHaveValue('mountain');
   expect(navigations).toBe(0);
   expect(page.url()).toBe(url);
 });

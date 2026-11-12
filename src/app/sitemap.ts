@@ -6,6 +6,7 @@ import { JusticeService } from '@/Service/JusticeService';
 import { CivicService } from '@/Service/CivicService';
 import { OversightService } from '@/Service/OversightService';
 import { PublicResourceService } from '@/Service/PublicResourceService';
+import { SupplementService } from '@/Service/SupplementService';
 export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/justice/',
     '/oversight/',
     '/resources/',
+    '/more/',
     '/my-ballots/',
     '/media-literacy/',
     '/about/',
@@ -25,15 +27,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pages.map((path) => ({
       url: SiteService.absolute(path),
       lastModified:
-        path === '/resources/'
-          ? PublicResourceService.get().checkedAt
-          : path === '/justice/'
-            ? JusticeService.get().checkedAt
-            : path === '/oversight/'
-              ? OversightService.get().checkedAt
-              : path === '/government/'
-                ? CivicService.get().checkedAt
-                : SiteService.get().updatedAt,
+        path === '/more/'
+          ? SupplementService.get().checkedAt
+          : path === '/resources/'
+            ? PublicResourceService.get().checkedAt
+            : path === '/justice/'
+              ? JusticeService.get().checkedAt
+              : path === '/oversight/'
+                ? OversightService.get().checkedAt
+                : path === '/government/'
+                  ? CivicService.get().checkedAt
+                  : SiteService.get().updatedAt,
     })),
     ...LearningService.getArticles().map((a) => ({
       url: SiteService.absolute(`/learn/${a.slug}/`),

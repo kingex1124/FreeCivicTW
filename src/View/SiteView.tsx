@@ -106,6 +106,7 @@ export function Footer() {
             <Link href="/media-literacy/">媒體識讀練習</Link>
             <Link href="/oversight/">民間監督與公民資源</Link>
             <Link href="/resources/">便民查詢</Link>
+            <Link href="/more/">看更多：選舉、政治與憲法</Link>
             <Link href="/sources/">來源與更正</Link>
             <Link href="/about/">關於與聯絡</Link>
           </div>

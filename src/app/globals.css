@@ -315,6 +315,7 @@ summary:focus-visible {
 }
 /* Site frame */
 .site-header {
+  container: site-header / inline-size;
   border-bottom: 1px solid var(--tone-border, #d9e2d2);
   background: var(--header-background);
   position: sticky;
@@ -4023,7 +4024,8 @@ input::placeholder {
     grid-template-columns: 200px minmax(0, 1fr);
   }
 }
-@media (max-width: 87.5em) {
+/* Container rem queries also respond when the document font size grows. */
+@container site-header (max-width: 87.5rem) {
   .header-inner {
     height: 77px;
   }
@@ -6248,5 +6250,599 @@ input::placeholder {
   }
   .resource-search > span:last-child {
     padding-inline: 10px;
+  }
+}
+/* 看更多：主題導覽、白話重點與原生收合小節。 */
+.more-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+  padding-bottom: 72px;
+}
+.more-topic-nav {
+  position: sticky;
+  top: 115px;
+  max-height: calc(100dvh - 135px);
+  overflow-y: auto;
+  scroll-margin-top: 115px;
+}
+.more-topic-nav h2 {
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.more-topic-nav > p {
+  color: var(--muted);
+  margin-block: 10px 20px;
+}
+.more-topic-nav > div {
+  display: grid;
+  gap: 12px;
+}
+.more-topic-nav a {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+.more-topic-nav a:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.more-topic-nav a > svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--green);
+}
+.more-topic-nav a > svg:last-child {
+  margin-left: auto;
+}
+.more-topic-nav a span {
+  min-width: 0;
+}
+.more-topic-nav a strong,
+.more-topic-nav a span span {
+  display: block;
+}
+.more-topic-nav a strong {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.more-topic-nav a span span {
+  color: var(--muted);
+}
+.more-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.more-content > .indigenous-guide {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.more-content .section-heading h2 {
+  font-size: var(--text-heading);
+  line-height: 1.5;
+}
+.more-content .section-heading p,
+.more-chapter-body p {
+  line-height: 1.9;
+}
+.more-topic {
+  padding-top: 40px;
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 115px;
+}
+.more-takeaways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-block: 24px;
+}
+.more-takeaways article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green);
+  border-radius: 12px;
+  background: var(--white);
+}
+.more-takeaways h3,
+.more-notice h3,
+.more-chapter h4 {
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.more-notice {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--sage);
+  margin-block: 24px;
+}
+.more-notice p + p {
+  margin-top: 16px;
+}
+.more-reading-hint {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.more-chapter {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  margin-bottom: 16px;
+  scroll-margin-top: 115px;
+}
+.more-chapter > summary {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding: 24px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 12px;
+}
+.more-chapter > summary::-webkit-details-marker {
+  display: none;
+}
+.more-chapter > summary:hover {
+  background: var(--sage);
+}
+.more-chapter > summary > h3 {
+  min-width: 0;
+  flex: 1;
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--green);
+  margin: 0;
+}
+.more-chapter-caption {
+  display: block;
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.more-chapter-number {
+  color: var(--green);
+  font-weight: 700;
+  padding-top: 3px;
+}
+.more-chapter > summary > svg {
+  flex-shrink: 0;
+  color: var(--green);
+  margin-top: 5px;
+  transition: transform 180ms ease;
+}
+.more-chapter[open] > summary > svg {
+  transform: rotate(180deg);
+}
+.more-chapter-body {
+  padding: 24px;
+  border-top: 1px solid var(--line);
+}
+.more-chapter-body > p + p {
+  margin-top: 20px;
+}
+.more-points {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.more-points li {
+  padding-block: 20px;
+  border-top: 1px solid var(--line);
+}
+.more-points li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.more-example {
+  padding: 20px;
+  background: var(--sage);
+  border-radius: 10px;
+  margin-top: 24px;
+}
+.more-example h4 {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.more-example h4 svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.more-sources {
+  margin-top: 24px;
+}
+.more-sources > summary {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  padding-block: 12px;
+  min-height: 48px;
+}
+.more-sources .source-list {
+  padding: 20px 0 0;
+  margin: 0;
+  border: 0;
+}
+.more-sources .source-item {
+  overflow-wrap: anywhere;
+}
+.more-next-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-block: 28px 20px;
+}
+.more-tactics {
+  margin-top: 24px;
+}
+.more-tactic {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  scroll-margin-top: 115px;
+}
+.more-tactic > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  padding: 20px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 10px;
+}
+.more-tactic > summary::-webkit-details-marker {
+  display: none;
+}
+.more-tactic > summary:hover {
+  background: var(--sage);
+}
+.more-tactic > summary h4 {
+  margin: 0;
+}
+.more-tactic > summary svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--green);
+  transition: transform 180ms ease;
+}
+.more-tactic[open] > summary svg {
+  transform: rotate(180deg);
+}
+.more-tactic > div {
+  padding: 0 20px 20px;
+}
+.more-example-label {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.more-tactic dl > div {
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+}
+.more-tactic dt {
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.more-tactic dd {
+  margin: 0;
+  line-height: 1.9;
+}
+.more-tactic .more-tactic-check {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--sage);
+  padding: 16px;
+  margin-top: 12px;
+}
+@media (max-width: 1000px) {
+  .more-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .more-topic-nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .more-topic-nav > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .more-nav-note {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .more-layout {
+    gap: 20px;
+  }
+  .more-topic-nav > div,
+  .more-takeaways {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .more-topic-nav a {
+    align-items: center;
+  }
+  .more-topic-nav a strong {
+    margin-bottom: 2px;
+  }
+  .more-chapter > summary {
+    gap: 10px;
+    padding: 20px 16px;
+  }
+  .more-notice,
+  .more-chapter-body,
+  .more-takeaways article {
+    padding: 20px;
+  }
+  .more-chapter-number {
+    display: none;
+  }
+}
+/* 原住民選舉比較沿用同一份選舉規則資料。 */
+.indigenous-guide {
+  margin-top: 52px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 115px;
+}
+.indigenous-identity-notice,
+.indigenous-result-note,
+.indigenous-reading-link {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--sage);
+}
+.indigenous-shared {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-block: 24px;
+}
+.indigenous-shared article,
+.indigenous-geography,
+.indigenous-polling,
+.indigenous-checklist {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.indigenous-guide h3 {
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.indigenous-guide h4 {
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.indigenous-comparisons details {
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.indigenous-comparisons summary {
+  cursor: pointer;
+  padding: 22px 24px;
+  color: var(--green);
+}
+.indigenous-comparisons summary h3 {
+  display: inline;
+}
+.indigenous-comparisons summary span {
+  display: block;
+  margin-left: 20px;
+  margin-top: 8px;
+  font-size: var(--text-body);
+}
+.indigenous-comparisons details > div {
+  padding: 0 24px 24px;
+}
+.indigenous-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.indigenous-compare-grid > div {
+  padding: 18px;
+  background: var(--paper);
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.indigenous-compare-note {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 18px;
+}
+.indigenous-geography,
+.indigenous-polling,
+.indigenous-checklist {
+  margin-top: 24px;
+}
+.indigenous-geography h4 {
+  margin-top: 20px;
+}
+.indigenous-geography ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 24px;
+  padding-left: 1.4em;
+  list-style: disc;
+}
+.indigenous-geography li {
+  margin: 0;
+}
+.indigenous-checklist ol {
+  list-style: decimal;
+  margin-bottom: 18px;
+}
+.identity-help {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+.identity-help a,
+.indigenous-result-note a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-left: 6px;
+}
+.ballot-card .ballot-election-note {
+  color: var(--green);
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+.indigenous-reading-link {
+  margin-bottom: 28px;
+}
+.indigenous-council-guide {
+  margin-block: 32px;
+  padding-block: 28px;
+  border-block: 1px solid var(--line);
+  scroll-margin-top: 115px;
+}
+.indigenous-council-guide > p + p {
+  margin-top: 16px;
+}
+.indigenous-council-takeaways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-block: 24px;
+}
+.indigenous-council-takeaways article {
+  padding: 20px;
+  background: var(--sage);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.indigenous-council-detail {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-top: 14px;
+  scroll-margin-top: 115px;
+}
+.indigenous-council-detail > summary {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 22px 24px;
+  list-style: none;
+  cursor: pointer;
+}
+.indigenous-council-detail > summary::-webkit-details-marker {
+  display: none;
+}
+.indigenous-council-detail > summary h4 {
+  margin: 0;
+}
+.indigenous-council-detail > summary svg {
+  color: var(--green);
+  flex-shrink: 0;
+  margin-top: 3px;
+  transition: transform 180ms ease;
+}
+.indigenous-council-detail[open] > summary svg {
+  transform: rotate(180deg);
+}
+.indigenous-council-detail > div {
+  padding: 0 24px 24px;
+}
+.indigenous-council-detail > div > p + p {
+  margin-top: 20px;
+}
+.indigenous-council-answer,
+.indigenous-seat-note {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--sage);
+}
+.indigenous-council-answer {
+  font-weight: 700;
+}
+.indigenous-seat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 24px;
+  font-size: var(--text-body);
+}
+.indigenous-seat-table caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.indigenous-seat-table th,
+.indigenous-seat-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.indigenous-seat-table thead {
+  background: var(--sage);
+}
+.indigenous-seat-table th:first-child {
+  text-align: left;
+}
+.indigenous-seat-table tbody th {
+  font-weight: 400;
+}
+@media (max-width: 1000px) {
+  .indigenous-council-takeaways {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .indigenous-shared,
+  .indigenous-compare-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .indigenous-geography ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .indigenous-comparisons summary {
+    padding: 20px;
+  }
+  .indigenous-comparisons details > div {
+    padding: 0 20px 20px;
+  }
+  .indigenous-shared article,
+  .indigenous-geography,
+  .indigenous-polling,
+  .indigenous-checklist {
+    padding: 20px;
+  }
+  .indigenous-council-detail > summary {
+    padding: 20px;
+  }
+  .indigenous-council-detail > div {
+    padding: 0 20px 20px;
+  }
+  .indigenous-seat-table th,
+  .indigenous-seat-table td {
+    padding: 10px 4px;
   }
 }

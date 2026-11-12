@@ -4,6 +4,26 @@ import { RegionService } from './RegionService';
 import type { County, Town } from '@/Model/RegionModel';
 import type { BallotResult, IdentityScenario, ProfileId } from '@/Model/ElectionModel';
 export const ElectionService = {
+  getRules: ElectionRepository.get,
+  indigenousSourceIds() {
+    const guide = ElectionRepository.get().indigenousGuide;
+    return [
+      ...new Set([
+        ...guide.sharedBallots.flatMap((item) => item.sourceIds),
+        ...guide.comparisons.flatMap((item) => item.sourceIds),
+        ...guide.geography.sourceIds,
+        ...guide.polling.sourceIds,
+        ...guide.councils.takeaways.flatMap((item) => item.sourceIds),
+        ...guide.councils.snapshot.sourceIds,
+        ...guide.councils.questions.flatMap((item) => item.sourceIds),
+      ]),
+    ];
+  },
+  autonomousDistricts() {
+    return RegionService.get().counties.flatMap((county) =>
+      county.towns.filter((town) => town.autonomous).map((town) => county.name + town.name),
+    );
+  },
   profile(county: County, town: Town): ProfileId {
     if (town.autonomous) return 'indigenous-district';
     if (county.type === 'municipality') return 'municipality-district';
@@ -55,7 +75,16 @@ export const ElectionService = {
         title: replace(b.title),
         summary: replace(b.summary),
         role: CivicService.getRole(b.roleId),
+        electionNote:
+          b.id === 'county-council'
+            ? rules.indigenousGuide.localNotes.countyCouncil[identity]
+            : b.id === 'town-council'
+              ? rules.indigenousGuide.localNotes.townCouncil[identity]
+              : b.id === 'indigenous-council'
+                ? rules.indigenousGuide.localNotes.autonomousCouncil
+                : undefined,
       })),
+      identitySummary: rules.indigenousGuide.scenarioSummaries[identity],
       checkedAt: rules.checkedAt,
       sourceIds: rules.sourceIds,
       notice: rules.notice,

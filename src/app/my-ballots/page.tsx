@@ -1,10 +1,13 @@
 import { PageIntro } from '@/View/SiteView';
 import { ElectionView } from '@/View/ElectionView';
 import { SeoService } from '@/Service/SeoService';
+import { ElectionService } from '@/Service/ElectionService';
 export const metadata = SeoService.metadata({
   title: '我能選哪些職務',
-  description: '依戶籍縣市與鄉鎮市區，認識總統、立委及地方選舉的職務種類，分清一般區與自治區。',
+  description:
+    '依戶籍地認識中央與地方的民選職務、能做的事情與權力界線。原住民選舉的完整比較另收錄於「看更多」。',
   path: '/my-ballots/',
+  updatedAt: ElectionService.getRules().checkedAt,
 });
 export default function BallotsPage() {
   return (

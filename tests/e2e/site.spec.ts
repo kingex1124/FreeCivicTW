@@ -130,7 +130,7 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
     .getByRole('link', { name: '我的選票指南' })
     .click();
   await page.getByRole('button', { name: '先看頭份市範例' }).click();
-  await page.getByLabel('立委票別教學情境').selectOption('mountain');
+  await page.getByLabel('選舉身分教學情境').selectOption('mountain');
   expect(
     await page.evaluate(() =>
       (window.dataLayer ?? []).every(
@@ -189,7 +189,7 @@ test('地區查詢、身分票別替換、清除與同名搜尋', async ({ page 
   await expect(
     page.locator('.ballot-card strong').getByText('頭份市民代表', { exact: true }),
   ).toBeVisible();
-  await page.getByLabel('立委票別教學情境').selectOption('mountain');
+  await page.getByLabel('選舉身分教學情境').selectOption('mountain');
   await expect(page.locator('.ballot-card')).toHaveCount(8);
   await expect(
     page.locator('.ballot-card strong').getByText('山地原住民立法委員', { exact: true }),
@@ -284,7 +284,7 @@ test('地方局處與公所任用、選民服務及政風職掌可閱讀', async
   ).toHaveAttribute('href', 'https://www.aac.moj.gov.tw/6398/6624/6632/1181666/post');
   await page.goto('my-ballots/');
   await page.getByRole('button', { name: '先看頭份市範例' }).click();
-  await page.getByLabel('立委票別教學情境').selectOption('general');
+  await page.getByLabel('選舉身分教學情境').selectOption('general');
   const card = page
     .locator('.ballot-card')
     .filter({ has: page.locator('strong').getByText('區域立法委員', { exact: true }) });

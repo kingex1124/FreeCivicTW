@@ -17,6 +17,7 @@ export function NavigationView() {
     ['/oversight/', '民間監督'],
     ['/resources/', '便民查詢'],
     ['/media-literacy/', '媒體識讀'],
+    ['/more/', '看更多'],
     ['/about/', '關於本站'],
   ];
   return (

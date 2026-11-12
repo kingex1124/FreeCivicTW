@@ -6,6 +6,7 @@ import { ElectionService } from '@/Service/ElectionService';
 import { AnalyticsService } from '@/Service/AnalyticsService';
 import { RoleDetails } from './GovernmentView';
 import { SourceList } from './SourceView';
+import Link from 'next/link';
 import type { BallotCardProps, BallotResult, IdentityScenario } from '@/Model/ElectionModel';
 export function BallotCard({ ballot, index }: BallotCardProps) {
   return (
@@ -19,6 +20,9 @@ export function BallotCard({ ballot, index }: BallotCardProps) {
         <ChevronDown size={20} />
       </summary>
       <div className="ballot-details">
+        {ballot.electionNote && (
+          <p className="ballot-election-note">票別提醒：{ballot.electionNote}</p>
+        )}
         {ballot.role ? <RoleDetails role={ballot.role} /> : <p>{ballot.summary}</p>}
         <p className="board-note">
           這是職務種類教學；實際選區、身分及當次可領票資格請查選委會公告。
@@ -159,7 +163,7 @@ export function ElectionView() {
               ))}
             </select>
             <label htmlFor="identity">
-              立委票別教學情境 <small>不必填寫真實身分</small>
+              選舉身分教學情境 <small>不必填寫真實身分</small>
             </label>
             <select
               id="identity"
@@ -167,10 +171,14 @@ export function ElectionView() {
               onChange={(e) => changeIdentity(e.target.value as IdentityScenario)}
             >
               <option value="unspecified">先看各種制度差異</option>
-              <option value="general">一般區域立委情境</option>
-              <option value="plains">平地原住民立委情境</option>
-              <option value="mountain">山地原住民立委情境</option>
+              <option value="general">一般選民情境</option>
+              <option value="plains">平地原住民情境</option>
+              <option value="mountain">山地原住民情境</option>
             </select>
+            <p className="identity-help">
+              中央立委票會依情境變更；地方票別依當屆選區與資格，顯示對應提醒。
+              <Link href="/more/#indigenous-guide">到「看更多」了解原住民選舉差異</Link>
+            </p>
             <button className="button-primary lookup-submit" type="submit">
               看看有哪些職務
               <ArrowRight size={18} />
@@ -271,6 +279,9 @@ export function ElectionView() {
                 </h2>
                 <span className="pill">{result.profileLabel}</span>
                 <p>點開每個職務，看看能做什麼、又有哪些界線。</p>
+                {identity !== 'unspecified' && (
+                  <p className="indigenous-result-note">{result.identitySummary}</p>
+                )}
               </div>
               <section>
                 <div className="ballot-group-heading">

@@ -100,6 +100,14 @@ export function ArticleView({ article }: ArticleViewProps) {
         </Link>
       </aside>
       <article className="article-body">
+        {['central-government', 'local-government', 'election-basics'].includes(article.slug) && (
+          <aside className="indigenous-reading-link">
+            <p>原住民選舉的差異不只在立委，也要看地方議員、代表與自治區的不同規則。</p>
+            <Link className="text-link" href="/more/#indigenous-guide">
+              比較中央與地方的原住民選舉 <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </aside>
+        )}
         <div className="article-opening">
           <Lightbulb size={24} />
           <div>

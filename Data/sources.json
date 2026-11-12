@@ -37,8 +37,8 @@
       "publisher": "全國法規資料庫／法務部",
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
       "publishedAt": "2026-07-01",
-      "checkedAt": "2026-11-10",
-      "scope": "公職種類、選舉方式、選舉人資格、原住民選舉及投票；參考第 2 至 4、14 至 17 條及選舉相關規定。",
+      "checkedAt": "2026-11-12",
+      "scope": "公職種類、選舉方式、選舉人資格、原住民選舉及投票；參考第 2 至 4、14 至 17 條及選舉相關規定。 本次補充第20、35、36、57條：戶籍登記身分、選區與部分原住民投票所調整。",
       "note": "本工具不取得名冊、不核定個人選舉資格；當次領票種類以選舉機關公告及名冊為準。"
     },
     {
@@ -2100,6 +2100,266 @@
       "checkedAt": "2026-11-11",
       "scope": "組織聯絡入口及現行法人名稱，可供詢問參與協作。",
       "note": "組織聯絡管道供詢問工作與參與協作，與政府陳情、檢舉或司法救濟窗口不同。"
+    },
+    {
+      "id": "indigenous-national-cec",
+      "title": "原住民立法委員選舉公報與投票方法",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/api/file/ca9f8eaa-fba1-49f5-8441-8f7e5aef334e.pdf",
+      "scope": "全國平地、山地原住民各3席；候選人票只圈一人，政黨票另投。",
+      "note": "引用公報中的制度與投票說明，不引用候選人政見作為法律規則。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-local-seats",
+      "title": "地方制度法第33條：地方民代與原住民名額",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0040003&flno=33",
+      "scope": "地方議員平地、山地及合併原住民名額；鄉鎮市平地原住民代表名額。",
+      "note": "有名額不代表每個人都能任意選票，選區及資格須配合選罷法與當屆公告。未套用尚未適用的性別保障修正。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-candidate-rules",
+      "title": "公職人員選舉罷免法施行細則",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020011",
+      "scope": "第8條選務原住民身分；第13條山地鄉長與原住民區長候選人資格。",
+      "note": "區分候選人與選舉人的條件，不將候選人身分限制直接套到所有居民。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "election-system-cec",
+      "title": "國情簡介：選舉及公民投票",
+      "publisher": "行政院／資料來源中央選舉委員會",
+      "url": "https://www.ey.gov.tw/state/62879155A536D543/c78552af-72f4-45ef-bb89-a044cf2f3f1c",
+      "scope": "中央與地方選舉的基本票種、屬地首長及自治區代表選舉。",
+      "note": "只採制度說明，歷史人數與機關席次不作本工具的當屆名冊。",
+      "publishedAt": "2025-03-24",
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-local-training",
+      "title": "地方選舉講習：原住民與一般區域票別例外",
+      "publisher": "新竹市選舉委員會",
+      "url": "https://web.cec.gov.tw/api/file/1d8423b3-125c-4aaa-a590-951787aad047.pdf",
+      "scope": "111年講習說明當年山地原住民無對應原住民議員席次時的區域議員領票。",
+      "note": "歷史例子，只佐證不能一律以身分替換地方票別；不作2026年新竹市席次的判定。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-polling-2026",
+      "title": "115年地方選舉：保障原住民秘密投票措施",
+      "publisher": "中央選舉委員會",
+      "url": "https://www.cec.gov.tw/central/article/63642",
+      "scope": "部分少數原住民選舉人的議員票投票所異動。",
+      "note": "2026年選務說明，應核對當次通知單；不推定所有原住民均須分赴兩處投票。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-election-faq-2026",
+      "title": "115年地方選舉常見問答：原住民領票與投票新制",
+      "publisher": "中央選舉委員會",
+      "url": "https://info.cec.gov.tw/vote2026/question/",
+      "scope": "第14題原住民專屬領票處、名冊及部分少數選舉人的投票所異動，平地代表票比照。",
+      "note": "專屬領票作業與另至其他投票所是不同措施，不能混為所有原住民皆須異地投票。",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "supplement-cc-act",
+      "title": "憲法訴訟法：案件類型、判決效力及暫時處分",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030159",
+      "publishedAt": "2025-01-23",
+      "checkedAt": "2026-11-12",
+      "scope": "第1、38、43、49、52、55、59、65、75、80、82至86條，說明案件、拘束力、法規失效與程序。",
+      "note": "須與114年憲判字第1號併讀，不能把已被宣告失效的第4條第3項、第30條第2至6項、第95條修正內容當作現行有效規定。"
+    },
+    {
+      "id": "supplement-cc-114-1",
+      "title": "114年憲判字第1號：憲法訴訟法修正案",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=97&id=355485",
+      "publishedAt": "2025-12-19",
+      "checkedAt": "2026-11-12",
+      "scope": "2025年部分修法失效的主文與理由，及妨礙憲法審判對人民權利、制衡、急迫救濟的風險。",
+      "note": "主文宣告特定條文自判決公告日起失效；本次補充區分歷史修法、判決及條件式制度後果，不宣稱2026全面停止運作。"
+    },
+    {
+      "id": "supplement-cc-judgments",
+      "title": "憲法法庭：判決列表",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/judcurrentNew1.aspx?fid=38&page=1&tab=1",
+      "publishedAt": null,
+      "checkedAt": "2026-11-12",
+      "scope": "官方列示115年（2026）已作成的憲法判決，可追蹤公告與原始裁判。",
+      "note": "動態列表會更新；有判決不代表任何個案都已處理，也不是所有運作障礙均已排除的保證。"
+    },
+    {
+      "id": "supplement-cc-people",
+      "title": "人民聲請法規範憲法審查及裁判憲法審查",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=22",
+      "publishedAt": "2021-12-31",
+      "checkedAt": "2026-11-12",
+      "scope": "人民聲請要件、不利確定終局裁判、用盡審級與最終裁判送達翌日起六個月期限（憲訴法第59條）。",
+      "note": "制度介紹不是個案判斷；須併讀法律與有效判決，確認案件是否另有特別規定。"
+    },
+    {
+      "id": "supplement-cc-norms",
+      "title": "法規範憲法審查：立法委員及法院聲請",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=21",
+      "publishedAt": "2021-12-31",
+      "checkedAt": "2026-11-12",
+      "scope": "立委現有總額四分之一以上就行使職權聲請法律位階規範審查，以及法院聲請要件。",
+      "note": "少數立委的行使職權等要件，須配合有效判決理解；不是任何政治不同意均可直接受理。"
+    },
+    {
+      "id": "supplement-cc-institutions",
+      "title": "機關爭議案件",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=23",
+      "publishedAt": "2021-12-31",
+      "checkedAt": "2026-11-12",
+      "scope": "國家最高機關因行使職權發生憲法權限爭議、協商未果及相關程序（第65條）。",
+      "note": "不是所有行政爭議均屬本類型；聲請期間及要件須另行確認。"
+    },
+    {
+      "id": "supplement-cc-local",
+      "title": "地方自治保障案件",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=24",
+      "publishedAt": "2021-12-31",
+      "checkedAt": "2026-11-12",
+      "scope": "地方自治團體的法規範與裁判憲法審查，區分第82條及第83條聲請條件。",
+      "note": "先行救濟要求依案件類型不同，不能一概認為所有中央地方爭議均可直接聲請。"
+    },
+    {
+      "id": "supplement-cc-interim",
+      "title": "憲法訴訟法第43條：暫時處分",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030159&flno=43",
+      "publishedAt": "2025-01-23",
+      "checkedAt": "2026-11-12",
+      "scope": "案件繫屬、重大難以回復損害、急迫必要、無其他防免方法，以及暫時處分失效事由。",
+      "note": "聲請本身不停止執行；裁定後逾六個月等情況依法失效，不是自動無限期保護。"
+    },
+    {
+      "id": "supplement-cc-115-2",
+      "title": "115年憲判字第2號判決摘要：健保扣費義務裁罰",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/download/download.aspx?id=502162",
+      "publishedAt": "2026-02-06",
+      "checkedAt": "2026-11-12",
+      "scope": "固定倍數健保罰鍰可能造成個案顯然過苛，於判決所述範圍違憲，兩年內檢討修正。",
+      "note": "官方PDF摘要；不是全部罰鍰或健保扣費義務一概失效，個案適用須依完整判決。"
+    },
+    {
+      "id": "indigenous-council-seats-2026",
+      "title": "2026地方選舉公告：22縣市議員選區與應選名額",
+      "publisher": "中央選舉委員會",
+      "url": "https://info.cec.gov.tw/vote2026/static/file/2074fdd683844689b5bbdfe0e3ac48b3.pdf",
+      "publishedAt": "2026-08-20",
+      "scope": "中選務字第1153150253號，PDF第3至15頁：各縣市原住民議員名額及選區範圍。",
+      "note": "2026年11月28日選舉應選名額，不是實際在職或當選人數；22縣市公告未設平地、山地共同原住民名額。",
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-council-organization",
+      "title": "地方立法機關組織準則：議員名額",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0040005",
+      "publishedAt": "2026-06-12",
+      "scope": "第5、6條：直轄市與縣市原住民名額的人口級距、山地鄉及共同名額條件。",
+      "note": "本次引用議員名額制度；2026修正的性別保障另有適用時點，不將其當作平地山地合併選區。",
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-council-districts",
+      "title": "公職人員選舉罷免法第36條：地方選舉區範圍",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0020010&flno=36",
+      "publishedAt": null,
+      "scope": "地方議員以其行政區域為選區，原住民選區及行政區域內再劃分的規定。",
+      "note": "同一縣市的身分類別或地理範圍整合，均不得誤寫為跨縣市共同選地方議員。",
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "indigenous-council-questioning",
+      "title": "地方制度法第48條：地方議會的施政報告與質詢",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0040003&flno=48",
+      "publishedAt": null,
+      "scope": "議會定期會的施政報告、總質詢、業務質詢與各該首長及主管備詢。",
+      "note": "原住民議員與區域議員均為該地方議會議員；跨縣市協調或發言，不等於對外縣市首長有相同法定質詢權。",
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "id": "supplement-information-manipulation",
+      "title": "如何辨識資訊操弄：脈絡、偽造與查證",
+      "publisher": "歐盟執行委員會",
+      "url": "https://commission.europa.eu/digital-life/finding-information-you-can-trust_en",
+      "publishedAt": "2026-07-16",
+      "checkedAt": "2026-11-12",
+      "scope": "官方整理省略背景、修改影像、假冒來源及查證原則。",
+      "note": "本站十種話術的名稱、分類與假設例子為自編教學，不代表歐盟對臺灣特定人物或新聞作判定。"
+    },
+    {
+      "id": "supplement-cc-height-113-6",
+      "title": "113年憲判字第6號：消防警察人員類別考試身高限制案",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=38&id=349469",
+      "publishedAt": "2024-05-31",
+      "checkedAt": "2026-11-12",
+      "scope": "女性考生的身高標準與性別平等爭議；消防類別相關限制違憲、至遲一年失效，原判決廢棄發回。",
+      "note": "不是所有職務體格標準均違憲，也不是直接任用聲請人；須閱讀主文適用範圍。"
+    },
+    {
+      "id": "supplement-cc-survivors-115-6",
+      "title": "115年憲判字第6號判決摘要：兒少性犯罪追訴權時效",
+      "publisher": "司法院",
+      "url": "https://www.judicial.gov.tw/tw/cp-1887-1599834-2a082-1.html",
+      "publishedAt": "2026-08-14",
+      "checkedAt": "2026-11-12",
+      "scope": "甲等11人；被害人未滿18歲時遭性犯罪侵害的主張、程序、時效規則違憲與發回救濟。",
+      "note": "2026年已作成判決；不能寫成目前仍全面無法審理，也不得把廢棄發回當作有罪認定。"
+    },
+    {
+      "id": "supplement-cc-survivors-115-6-full",
+      "title": "115年憲判字第6號裁判全文與公開文件",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=97&id=352140",
+      "publishedAt": "2026-08-14",
+      "checkedAt": "2026-11-12",
+      "scope": "本案發回案件、其他時效已完成案件及2026修法的適用界線，尤其理由第46、49至51段。",
+      "note": "不推論所有舊案重新追訴；不將其他案件救濟受限，直接歸因於法庭曾運作受阻。"
+    },
+    {
+      "id": "supplement-cc-adult-115-665",
+      "title": "115年審裁字第665號：成年人性犯罪被害人的憲法聲請",
+      "publisher": "司法院憲法法庭",
+      "url": "https://cons.judicial.gov.tw/docdata.aspx?fid=40&id=359418",
+      "publishedAt": "2026-04-01",
+      "checkedAt": "2026-11-12",
+      "scope": "不同於兒少案的成年人被害人聲請；依未具體說明違憲、原裁定未適用部分規定等受理要件裁定不受理。",
+      "note": "不是115憲判6的11位聲請人；不是因停擺或六個月逾期而不受理，不揭露不必要身分與侵害細節。"
+    },
+    {
+      "id": "supplement-criminal-limit-2026",
+      "title": "2026年7月22日刑法第80條修正公布",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/News/NewsDetail.aspx?msgid=198983",
+      "publishedAt": "2026-07-22",
+      "checkedAt": "2026-11-12",
+      "scope": "追訴權時效與所列性犯罪被害人滿20歲前不計入期間的新規定。",
+      "note": "不同罪名、新舊法、已完成時效與判決效果須分別判斷；犯罪追訴期間不是聲請憲法審查的六個月期限。"
     }
   ],
   "corrections": [
@@ -2168,6 +2428,18 @@
       "previous": "人民角色僅列中央；個別機關的可點選介面位於下方總覽，尚未納入中央與地方角色區。",
       "correction": "人民角色改為中央與地方共用，選舉關係依頁籤篩選。角色區新增可收合機關選擇，點選即顯示該機關職掌、生活關聯及來源；特定地方單位另保留實際權責的專屬說明。",
       "scope": "政府頁籤機關選擇與生活關聯"
+    },
+    {
+      "date": "2026-11-12",
+      "previous": "原住民議員說明未清楚區分當屆席次、平地山地共同選區、同縣市跨鄉鎮區範圍及議會質詢對象。",
+      "correction": "補上2026公告22縣市席次表與臺北市全市各1席的例子，說明這屆沒有平地山地共同名額；合併制度仍存在，但不跨縣市，地方議員依法質詢自己縣市政府。",
+      "scope": "看更多／原住民選舉補充與來源。"
+    },
+    {
+      "date": "2026-11-12",
+      "previous": "政治攻防尚未逐類解說誤導話術，憲法法庭補充欠缺兒少性犯罪追訴權時效等人民救濟案例及不受理原因比較。",
+      "correction": "新增十種自編話術例子與查證方法；補充人民案例及115憲判6已於2026年8月判決、11位聲請人、發回不等於定罪、舊案不全面復活，並區分115審裁665要件不受理與法庭受阻。",
+      "scope": "看更多／政治攻防與憲法法庭。"
     }
   ]
 }

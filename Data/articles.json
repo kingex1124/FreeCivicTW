@@ -88,7 +88,11 @@
           "definition": "透過分工及監督，讓權力不集中於一個人或單一機關。"
         }
       ],
-      "sourceIds": ["constitution", "government-intro", "public-participation"],
+      "sourceIds": [
+        "constitution",
+        "government-intro",
+        "public-participation"
+      ],
       "updatedAt": "2026-11-10"
     },
     {
@@ -123,7 +127,8 @@
           "paragraphs": [
             "立法院由立法委員組成，審議法律與中央預算等議案。立委也能依法質詢行政院長及部會首長，要求說明施政。這與行政機關直接辦理工程、核發許可或執行計畫，是不同工作。",
             "民眾向立委反映問題，可能得到詢問、協調或追蹤的協助，但不能因此要求立委替機關作成違法決定。判斷表現時，可以分別看提案、審議、質詢及追蹤，而不是只看誰在現場出現。",
-            "新聞中的施政質詢，通常是立法委員提問，行政院長或主管部會首長備詢，例如問交通部長鐵路計畫、問數位發展部長數位服務。委員會也可依法邀請政府人員與有關係人員備詢，程序與對象須分開看；總統國情報告不等同行政院長式的強制答詢。"
+            "新聞中的施政質詢，通常是立法委員提問，行政院長或主管部會首長備詢，例如問交通部長鐵路計畫、問數位發展部長數位服務。委員會也可依法邀請政府人員與有關係人員備詢，程序與對象須分開看；總統國情報告不等同行政院長式的強制答詢。",
+            "立委候選人票依選務身分分區域、平地原住民及山地原住民三類，依法只投適用的一類。平地、山地原住民立委各以全國相應原住民為選舉區，各選3席，但每位選民仍只圈選一名候選人；原住民選民另依法投政黨票，並不因此增加區域立委票。"
           ]
         },
         {
@@ -195,9 +200,12 @@
         "constitutional-judgment-113-9",
         "legislature-functions",
         "legislator-conduct",
-        "petitions"
+        "petitions",
+        "indigenous-national-cec",
+        "indigenous-local-seats",
+        "election-system-cec"
       ],
-      "updatedAt": "2026-11-11"
+      "updatedAt": "2026-11-12"
     },
     {
       "id": "local-government",
@@ -229,7 +237,8 @@
           "title": "一般區與山地原住民區要分開",
           "paragraphs": [
             "一般區公所是市政府的派出機關，區長由市長依法任用，沒有因為叫區就一定設民選區長及區民代表會。例如臺北市大安區，不應套入一組不存在的區長、區民代表選票。",
-            "直轄市山地原住民區則有自治地位，設民選區長及區民代表會，例如新北市烏來區。這個差異是地區的制度類型，不是任意看到原住民身分就替任何地區多加兩種職務。"
+            "直轄市山地原住民區則有自治地位，設民選區長及區民代表會，例如新北市烏來區。這個差異是地區的制度類型，不是任意看到原住民身分就替任何地區多加兩種職務。",
+            "原住民身分與地方自治類型要分開：地方議員可能有平地、山地或合併原住民選區；鄉鎮市的平地原住民代表保留名額又是另一套條件。山地鄉與山地原住民區的屬地首長、代表選舉，也不是只有原住民居民能投。請看當屆選區及名冊，不能把所有地方票一律替換成原住民票。"
           ]
         },
         {
@@ -311,9 +320,12 @@
         "miaoli-organization-law",
         "government-ethics-law",
         "government-ethics-rules",
-        "integrity-agency-law"
+        "integrity-agency-law",
+        "indigenous-national-cec",
+        "indigenous-local-seats",
+        "election-system-cec"
       ],
-      "updatedAt": "2026-11-11"
+      "updatedAt": "2026-11-12"
     },
     {
       "id": "election-basics",
@@ -345,7 +357,8 @@
           "title": "地方要看自治類型，不是大家都一樣",
           "paragraphs": [
             "在縣下的鄉、鎮、縣轄市，常見職務種類包含縣長、縣議員、鄉鎮市長、鄉鎮市民代表、村里長。一般直轄市或市的區，則沒有同樣一組民選區長與區民代表；山地原住民區有自治例外。",
-            "地方議員與代表還可能有依身分及選區劃分的類別。切換原住民立委教學情境，不表示可以自動增加另一張地方議員票。先認識職務種類，再查正式選區與選務公告，才能避免把不同規則混在一起。"
+            "地方議員與代表還可能有依身分及選區劃分的類別。切換原住民立委教學情境，不表示可以自動增加另一張地方議員票。先認識職務種類，再查正式選區與選務公告，才能避免把不同規則混在一起。",
+            "原住民的地方選舉差異不能只用「多一張票」理解。地方議員可能有不同類別或合併的原住民選區，鄉鎮市平地原住民代表則須看是否設適用名額；住在山地原住民區與具有山地原住民身分也不是同一件事。選票指南提供中央地方比較，但不替代選委會的當屆選區公告及選舉人名冊。"
           ]
         },
         {
@@ -405,9 +418,12 @@
         "elections",
         "president-elections",
         "national-ballots",
-        "local-government"
+        "local-government",
+        "indigenous-national-cec",
+        "indigenous-local-seats",
+        "election-system-cec"
       ],
-      "updatedAt": "2026-11-10"
+      "updatedAt": "2026-11-12"
     },
     {
       "id": "appointments-and-checks",
@@ -597,7 +613,13 @@
           "definition": "地方自治團體依法律規定，由相應地方立法機關議決的自治法規。"
         }
       ],
-      "sourceIds": ["constitution", "amendments", "local-government", "audit", "finance"],
+      "sourceIds": [
+        "constitution",
+        "amendments",
+        "local-government",
+        "audit",
+        "finance"
+      ],
       "updatedAt": "2026-11-10"
     },
     {
@@ -798,7 +820,9 @@
           "definition": "比較不同來源與取得方式的資料，確認彼此支持、矛盾或尚缺的部分。"
         }
       ],
-      "sourceIds": ["media-education"],
+      "sourceIds": [
+        "media-education"
+      ],
       "updatedAt": "2026-11-10"
     }
   ]

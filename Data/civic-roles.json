@@ -129,7 +129,7 @@
       "level": "central",
       "category": "representative",
       "summary": "代表人民在立法院處理法律、預算與行政監督。",
-      "selection": "區域、原住民及政黨名單等不同方式選出；政黨票影響不分區及僑居國外國民席次。",
+      "selection": "區域、原住民及政黨名單等不同方式選出；政黨票影響不分區及僑居國外國民席次。 平地、山地原住民立委各有3席，以全國相應原住民為選舉區；原住民選民的候選人票不與區域立委票重複領取。",
       "powers": [
         "依法提出法律制定、修正或廢止方案，參與委員會審查與院會表決。",
         "審議中央政府預算，檢查經費用途、政策必要性與執行安排。",
@@ -159,7 +159,8 @@
         "constitutional-judgment-113-9",
         "petitions",
         "legislature-functions",
-        "legislator-conduct"
+        "legislator-conduct",
+        "indigenous-national-cec"
       ],
       "performanceChecks": [
         "檢視提案、審查及表決紀錄，不能只看提案數量或影片聲量。",
@@ -338,7 +339,7 @@
       "level": "county",
       "category": "representative",
       "summary": "在相應議會審議地方議案與預算，監督地方政府。",
-      "selection": "依當屆選區及法定類別由具資格的選舉人選出；不能僅靠住在哪一個區推定精確選區。",
+      "selection": "依當屆選區及法定類別由具資格的選舉人選出；不能僅靠住在哪一個區推定精確選區。 地方議員亦有平地、山地或合併原住民選區的制度，是否設置及適用票別須看當屆公告與選舉人名冊。",
       "powers": [
         "依法提出並參與審議地方自治條例及制度改善議案。",
         "審議相應縣市政府預算，檢查公共經費的用途、必要性與安排。",
@@ -358,7 +359,13 @@
       "oversight": "接受選民及公開議事監督，職權行使須符合憲法法律與自治制度。",
       "appointment": "依法辦理議會內部相關事項；不直接任命地方政府全部局處首長。",
       "example": "虛構例子：議員追問公園改善進度，由權責行政機關說明與執行。",
-      "sourceIds": ["local-government", "elections", "local-overview", "petitions"],
+      "sourceIds": [
+        "local-government",
+        "elections",
+        "local-overview",
+        "petitions",
+        "indigenous-local-seats"
+      ],
       "performanceChecks": [
         "檢視自治法規、預算審議、表決及質詢紀錄。",
         "是否先確認縣市政府權責，提出證據並追蹤回覆？",
@@ -381,7 +388,7 @@
       "level": "town",
       "category": "executive",
       "summary": "領導所屬鄉、鎮或縣轄市公所，處理依法分工的地方事務。",
-      "selection": "由該鄉鎮市具資格的選舉人選出；縣轄市長不是直轄市長。",
+      "selection": "由該鄉鎮市具資格的選舉人選出；縣轄市長不是直轄市長。 山地鄉鄉長候選人限山地原住民，但符合資格的鄉民投票並不因此限於山地原住民。",
       "powers": [
         "對外代表所屬鄉、鎮或縣轄市，綜理公所行政與施政計畫。",
         "提出公所預算案、自治議案及依法應提出的決算報告，接受代表會審議。",
@@ -396,7 +403,12 @@
       "oversight": "鄉鎮市民代表在定期會中，可依法質詢相應鄉鎮市長、公所一級單位主管與所屬機關首長；另受其他法定監督與責任制度約束。",
       "appointment": "公所人員依法律任用，主計、人事、政風等有專屬制度，不能任意安排名單。",
       "example": "虛構例子：先確認某座公園是否為公所管有，再向對應單位反映設施維護。",
-      "sourceIds": ["local-government", "local-overview"],
+      "sourceIds": [
+        "local-government",
+        "local-overview",
+        "indigenous-candidate-rules",
+        "election-system-cec"
+      ],
       "performanceChecks": [
         "公所負責的設施與服務是否有計畫、進度與支出紀錄？",
         "是否回應代表質詢與居民需求，對權責外問題說明轉介方向？"
@@ -438,7 +450,7 @@
       "level": "town",
       "category": "representative",
       "summary": "在民代表會審議公所相關自治議案與預算。",
-      "selection": "由相應鄉鎮市選區及類別的具資格選舉人選出。",
+      "selection": "由相應鄉鎮市選區及類別的具資格選舉人選出。 設置平地原住民代表名額時，相應資格選民投該類代表；不因山地原住民身分一律另增代表票。",
       "powers": [
         "依法提出並參與審議所屬鄉鎮市的自治規範與改善建議。",
         "審議相應公所預算，確認經費是否用於該層級的公共需要。",
@@ -457,7 +469,14 @@
       "oversight": "議事及職權行使受法律、公眾與選民監督。",
       "appointment": "不直接任命鄉鎮市長或全部公所主管；相關議事與人事程序依法辦理。",
       "example": "虛構例子：頭份市民代表審議市公所預算，苗栗縣議員處理的是縣級議會工作。",
-      "sourceIds": ["local-government", "elections", "local-overview", "petitions"],
+      "sourceIds": [
+        "local-government",
+        "elections",
+        "local-overview",
+        "petitions",
+        "indigenous-local-seats",
+        "election-system-cec"
+      ],
       "performanceChecks": [
         "是否認真審查公所預算、決算及自治議案？",
         "是否就公所權責質詢，追蹤居民問題與行政改善？"
@@ -505,7 +524,7 @@
       "level": "town",
       "category": "executive",
       "summary": "領導具有自治地位的直轄市山地原住民區公所。",
-      "selection": "由該自治區具資格的選舉人選出；候選人資格與選舉人資格須分開理解。",
+      "selection": "由該自治區具資格的選舉人選出；候選人資格與選舉人資格須分開理解。 候選人須具山地原住民身分；有資格的當地區民依法投票，不限山地原住民居民。",
       "powers": [
         "領導自治區公所，規劃依法屬於自治區的施政與公共服務。",
         "依準用鄉鎮市規定提出預算、自治議案與決算報告，接受區民代表會審議。",
@@ -522,7 +541,13 @@
       "oversight": "區民代表會依法準用鄉鎮市規定，監督並質詢自治區長及相關公所主管；自治區與直轄市及其他機關的關係另依法辦理。",
       "appointment": "區長與所屬人員依相應的選舉及任用制度產生，不套用一般區長任用方式。",
       "example": "虛構例子：新北市烏來區的地方職務含自治區長，與臺北市大安區不同。",
-      "sourceIds": ["local-government", "local-overview", "elections"],
+      "sourceIds": [
+        "local-government",
+        "local-overview",
+        "elections",
+        "indigenous-candidate-rules",
+        "election-system-cec"
+      ],
       "performanceChecks": [
         "自治區計畫、經費及執行成果是否公開並可追蹤？",
         "是否回應區民代表質詢，依法協調在地需求？"
@@ -534,7 +559,7 @@
       "level": "town",
       "category": "representative",
       "summary": "在自治區民代表會審議議案、預算並監督區公所。",
-      "selection": "依自治區當屆選區與法定類別，由具資格的選舉人選出。",
+      "selection": "依自治區當屆選區與法定類別，由具資格的選舉人選出。 這是屬地自治代表選舉，符合資格的非原住民區民也能投票，不是僅原住民選民可投的保留席。",
       "powers": [
         "依準用鄉鎮市規定提出並審議自治區的自治議案與改善建議。",
         "審議區公所預算，檢查經費用途與自治區公共需要。",
@@ -553,7 +578,13 @@
       "oversight": "依地方自治法制與議事程序運作，接受公開監督。",
       "appointment": "依民意機關的法定程序辦理內部事項，不直接任命自治區長。",
       "example": "虛構例子：烏來區民代表處理自治區層級議事，直轄市議員仍處理市級議事。",
-      "sourceIds": ["local-government", "local-overview", "elections", "petitions"],
+      "sourceIds": [
+        "local-government",
+        "local-overview",
+        "elections",
+        "petitions",
+        "election-system-cec"
+      ],
       "performanceChecks": [
         "是否審查自治區預算與決算，提出具體改善意見？",
         "是否追蹤公所主管業務與不同居民的公共需求？"

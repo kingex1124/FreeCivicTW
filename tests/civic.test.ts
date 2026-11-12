@@ -63,13 +63,22 @@ test('錯誤的縣市父子組合不產生預設答案', () => {
   assert.throws(() => ElectionService.lookup('65000', '10005010'));
   assert.throws(() => ElectionService.lookup('', ''));
 });
-test('原住民情境替換立委候選人票，不增加票數或地方票', () => {
+test('原住民情境替換立委候選人票，地方增加條件提醒而不虛構多一票', () => {
   const general = lookup('苗栗縣頭份市', 'general');
   for (const identity of ['plains', 'mountain'] as const) {
     const result = lookup('苗栗縣頭份市', identity);
     assert.equal(result.national.length, 3);
     assert.match(result.national[1].title, /原住民/);
-    assert.deepEqual(result.local, general.local);
+    assert.deepEqual(
+      result.local.map((ballot) => [ballot.id, ballot.title, ballot.summary, ballot.roleId]),
+      general.local.map((ballot) => [ballot.id, ballot.title, ballot.summary, ballot.roleId]),
+    );
+    const council = result.local.find((ballot) => ballot.id === 'county-council')!;
+    assert.match(council.electionNote!, /公告.*名冊/);
+    assert.notEqual(
+      council.electionNote,
+      general.local.find((ballot) => ballot.id === 'county-council')!.electionNote,
+    );
   }
 });
 test('所有368地區均有對應且可追溯的六類配置', () => {

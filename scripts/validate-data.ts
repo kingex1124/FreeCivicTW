@@ -9,12 +9,43 @@ import { getAgencyDirectory } from '@/Service/AgencyService';
 import { JusticeService } from '@/Service/JusticeService';
 import { OversightService } from '@/Service/OversightService';
 import { PublicResourceService } from '@/Service/PublicResourceService';
+import { SupplementService } from '@/Service/SupplementService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
 const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
+const supplement = SupplementService.get();
+unique(supplement.topics.map((topic) => topic.id));
+unique(supplement.topics.flatMap((topic) => topic.chapters.map((chapter) => chapter.id)));
+unique(
+  supplement.topics.flatMap((topic) =>
+    topic.chapters.flatMap((chapter) => chapter.tactics?.map((tactic) => tactic.id) ?? []),
+  ),
+);
+for (const id of SupplementService.sourceIds())
+  assert(sourceIds.has(id), `看更多來源不存在：${id}`);
+const electionRules = ElectionService.getRules();
+const indigenousGuide = electionRules.indigenousGuide;
+unique(indigenousGuide.comparisons.map((item) => item.id));
+unique(indigenousGuide.councils.questions.map((item) => item.id));
+unique(indigenousGuide.councils.snapshot.rows.map((item) => item.countyId));
+assert.deepEqual(
+  indigenousGuide.councils.snapshot.rows.map((item) => item.countyId).sort(),
+  RegionService.get()
+    .counties.map((county) => county.id)
+    .sort(),
+  '原住民議員席次表須涵蓋22縣市',
+);
+for (const row of indigenousGuide.councils.snapshot.rows) {
+  assert.equal(RegionService.getCounty(row.countyId)?.name, row.county);
+  if (row.combined > 0)
+    assert.equal(row.plains + row.mountain, 0, '合併名額不重複計為平地或山地保留席');
+}
+for (const id of ElectionService.indigenousSourceIds())
+  assert(sourceIds.has(id), `原住民選舉說明來源不存在：${id}`);
+for (const id of electionRules.sourceIds) assert(sourceIds.has(id), `選舉規則來源不存在：${id}`);
 const resources = PublicResourceService.get();
 unique(resources.entries.map((item) => item.id));
 unique(resources.categories.map((item) => item.id));

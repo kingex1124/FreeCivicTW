@@ -63,7 +63,7 @@ test('人民及選票指南中的公督盟連結前往新頁並展開內容', as
   await expect(page.locator('#org-ccw > summary')).toBeInViewport();
   await page.goto('my-ballots/');
   await page.getByRole('button', { name: '先看頭份市範例' }).click();
-  await page.getByLabel('立委票別教學情境').selectOption('general');
+  await page.getByLabel('選舉身分教學情境').selectOption('general');
   const card = page
     .locator('.ballot-card')
     .filter({ has: page.locator('summary').getByText('區域立法委員', { exact: true }) });

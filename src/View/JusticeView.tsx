@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   ArrowLeft,
   ArrowRight,
@@ -62,6 +63,13 @@ export function JusticeDetails({ entity }: JusticeDetailsProps) {
       <a className="text-link" href={entity.officialUrl} target="_blank" rel="noopener noreferrer">
         前往官方說明 <ExternalLink size={15} />
       </a>
+      {entity.id === 'constitutional-court' && (
+        <p>
+          <Link className="text-link" href="/more/#constitutional-court">
+            看更多：憲法法庭若無法正常審判，會影響誰？ <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        </p>
+      )}
       <JusticeSources sourceIds={entity.sourceIds} headingLevel="h4" />
     </div>
   );
