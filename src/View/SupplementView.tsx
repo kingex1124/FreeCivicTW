@@ -43,7 +43,7 @@ export function SupplementView({ data, indigenous }: SupplementViewProps) {
           <Link className="text-link" href="/my-ballots/">
             到我的選票指南查民選職務 <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
-          <a className="text-link" href="#more-topics">
+          <a className="text-link section-return" href="#more-topics">
             回到主題選擇 ↑
           </a>
         </div>

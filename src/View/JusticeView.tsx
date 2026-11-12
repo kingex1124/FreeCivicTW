@@ -270,36 +270,28 @@ export function JusticeView({ data }: JusticeViewProps) {
           >
             <span className="eyebrow">司法與警檢筆記</span>
             <h3 id="justice-selected-title">{selected?.name ?? '換個關鍵字試試看'}</h3>
-            <button
-              type="button"
-              className="quiet-button justice-return"
-              onClick={() => {
-                reveal(directoryRef.current);
-                searchRef.current?.focus({ preventScroll: true });
-              }}
-            >
-              <ArrowLeft size={15} aria-hidden="true" />
-              回到機關與角色選擇
-            </button>
             {selected ? (
               <JusticeDetails entity={selected} />
             ) : (
               <p>可搜尋機關名稱、角色或工作，例如「檢察官」與「報案」。</p>
             )}
+            <a
+              className="section-return mobile-section-return"
+              href="#justice-directory"
+              onClick={(event) => {
+                event.preventDefault();
+                reveal(directoryRef.current);
+                searchRef.current?.focus({ preventScroll: true });
+              }}
+            >
+              ↑ 回到機關與角色選擇
+            </a>
           </section>
         </div>
         <noscript>
           <p className="notice">未啟用 JavaScript 時，可使用下方「完整機關與角色說明」逐項閱讀。</p>
         </noscript>
-        <details className="justice-full-text" id="justice-full-text">
-          <summary>完整機關與角色說明（{data.entities.length} 項，免搜尋也能全部閱讀）</summary>
-          {data.entities.map((entity) => (
-            <section key={entity.id} id={`justice-full-${entity.id}`}>
-              <h3>{entity.name}</h3>
-              <JusticeDetails entity={entity} />
-            </section>
-          ))}
-        </details>
+
         <ul className="justice-coverage-notes">
           {data.coverageNotes.map((text) => (
             <li key={text}>{text}</li>
@@ -307,278 +299,339 @@ export function JusticeView({ data }: JusticeViewProps) {
         </ul>
       </section>
 
-      <section className="section-space" id="justice-courts" aria-labelledby="justice-courts-title">
-        <div className="section-heading">
+      <div className="government-reading-layout justice-reading-layout">
+        <nav
+          className="more-topic-nav government-topic-nav"
+          id="justice-topics"
+          aria-label="司法內容導覽"
+        >
+          <h2>想了解哪一段？</h2>
+          <p>從審判路徑開始，選一段慢慢看。</p>
           <div>
-            <div className="eyebrow">法院種類與審級</div>
-            <h2 id="justice-courts-title">不同的爭議，走不同的審判路徑。</h2>
-            <p>法院的級別、案件的審級與上訴次數，是三件要分清楚的事。</p>
-          </div>
-        </div>
-        <div className="justice-court-paths">
-          {data.courtPaths.map((item) => (
-            <article key={item.id}>
-              <h3>{item.title}</h3>
-              <ul>
-                {item.stages.map((stage) => (
-                  <li key={stage}>{stage}</li>
-                ))}
-              </ul>
-              <p>{item.note}</p>
-              <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="justice-process" aria-labelledby="justice-process-title">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">用刑事公訴案件當例子</div>
-            <h2 id="justice-process-title">{data.criminalFlow.title}</h2>
-            <p>{data.criminalFlow.intro}</p>
-          </div>
-        </div>
-        <div className="justice-flow-box">
-          <ol className="justice-flow-progress" aria-label="刑事公訴程序步驟">
-            {data.criminalFlow.steps.map((item, index) => (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  aria-current={step === index ? 'step' : undefined}
-                  onClick={() => setStep(index)}
-                >
-                  <span>{index + 1}</span>
-                  {item.title}
-                </button>
-              </li>
+            {[
+              ['justice-courts', '審判路徑', '不同案件由哪些法院審理'],
+              ['justice-process', '刑事程序', '偵查、起訴與審判'],
+              ['justice-custody', '羈押、交保與抗告', '限制、風險與救濟'],
+              ['justice-reporting', '報案與申告', '警察局與地檢署的管道'],
+              ['justice-faq', '常見疑問', '釐清容易混淆的觀念'],
+              ['justice-full-text', '完整機關與角色', '逐項閱讀全部機關說明'],
+            ].map(([id, title, description]) => (
+              <a key={id} href={`#${id}`}>
+                <span>
+                  <strong>{title}</strong>
+                  <span>{description}</span>
+                </span>
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
             ))}
-          </ol>
-          <div className="justice-current-step" aria-live="polite">
-            <span className="pill">{currentStep.actor}</span>
-            <h3>{currentStep.title}</h3>
-            <p>{currentStep.text}</p>
-            <ul>
-              {currentStep.details.map((text) => (
-                <li key={text}>{text}</li>
-              ))}
-            </ul>
-            {currentStep.outcomes && (
-              <div className="justice-outcomes">
-                {currentStep.outcomes.map((outcome) => (
-                  <article key={outcome.label}>
-                    <h4>{outcome.label}</h4>
-                    <p>{outcome.text}</p>
-                  </article>
-                ))}
+          </div>
+        </nav>
+        <div className="government-reading-content">
+          <section
+            className="section-space"
+            id="justice-courts"
+            aria-labelledby="justice-courts-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">法院種類與審級</div>
+                <h2 id="justice-courts-title">不同的爭議，走不同的審判路徑。</h2>
+                <p>法院的級別、案件的審級與上訴次數，是三件要分清楚的事。</p>
               </div>
-            )}
-            <JusticeSources sourceIds={currentStep.sourceIds} headingLevel="h4" />
-          </div>
-          <div className="flow-controls">
-            <button
-              type="button"
-              className="button-secondary"
-              disabled={step === 0}
-              onClick={() => setStep(step - 1)}
-            >
-              <ArrowLeft size={16} />
-              上一步
-            </button>
-            <button type="button" className="quiet-button" onClick={() => setStep(0)}>
-              <RotateCcw size={15} />
-              重來
-            </button>
-            <button
-              type="button"
-              className="button-primary"
-              disabled={step === data.criminalFlow.steps.length - 1}
-              onClick={() => setStep(step + 1)}
-            >
-              下一步
-              <ArrowRight size={16} />
-            </button>
-          </div>
-          <ul className="justice-flow-notes">
-            {data.criminalFlow.notes.map((text) => (
-              <li key={text}>{text}</li>
-            ))}
-          </ul>
-          <details className="justice-full-flow">
-            <summary>直接閱讀所有流程與分支</summary>
-            <ol>
-              {data.criminalFlow.steps.map((item) => (
-                <li key={item.id}>
-                  <h3>
-                    {item.title} · {item.actor}
-                  </h3>
-                  <p>{item.text}</p>
+            </div>
+            <div className="justice-court-paths">
+              {data.courtPaths.map((item) => (
+                <article key={item.id}>
+                  <h3>{item.title}</h3>
                   <ul>
-                    {item.details.map((text) => (
-                      <li key={text}>{text}</li>
+                    {item.stages.map((stage) => (
+                      <li key={stage}>{stage}</li>
                     ))}
                   </ul>
-                  {item.outcomes?.map((outcome) => (
-                    <p key={outcome.label}>
-                      <strong>{outcome.label}：</strong>
-                      {outcome.text}
-                    </p>
-                  ))}
+                  <p>{item.note}</p>
                   <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-                </li>
+                </article>
               ))}
-            </ol>
-          </details>
-        </div>
-      </section>
+            </div>
+            <a className="section-return mobile-section-return" href="#justice-topics">
+              ↑ 回到目錄
+            </a>
+          </section>
 
-      <section
-        className="section-space justice-custody"
-        id="justice-custody"
-        aria-labelledby="justice-custody-title"
-      >
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">分清人身自由、程序保全與救濟</div>
-            <h2 id="justice-custody-title">{data.custodyGuide.title}</h2>
-            <p>{data.custodyGuide.intro}</p>
-          </div>
-        </div>
-        <div className="justice-reporting-terms justice-custody-concepts">
-          {data.custodyGuide.concepts.map((item) => (
-            <article key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-            </article>
-          ))}
-        </div>
-        <div className="justice-custody-conditions">
-          <h3>交保後，可能還有哪些條件？</h3>
-          <p>{data.custodyGuide.conditionsIntro}</p>
-          <div className="justice-custody-disclosures">
-            {data.custodyGuide.conditions.map((item) => (
-              <details key={item.id} id={`custody-${item.id}`}>
-                <summary>{item.title}</summary>
-                <p>{item.text}</p>
-                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-              </details>
-            ))}
-          </div>
-        </div>
-        <article className="justice-prepare justice-custody-risk">
-          <h3>{data.custodyGuide.risk.title}</h3>
-          <p>{data.custodyGuide.risk.text}</p>
-          <JusticeSources sourceIds={data.custodyGuide.risk.sourceIds} headingLevel="h4" />
-          <div className="justice-custody-consequences">
-            {data.custodyGuide.risk.consequences.map((item) => (
-              <section key={item.id}>
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-              </section>
-            ))}
-          </div>
-        </article>
-        <article className="justice-custody-review">
-          <h3>{data.custodyGuide.review.title}</h3>
-          <p>{data.custodyGuide.review.intro}</p>
-          <ol>
-            {data.custodyGuide.review.steps.map((item) => (
-              <li key={item.id}>
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-                <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-              </li>
-            ))}
-          </ol>
-          <JusticeSources sourceIds={data.custodyGuide.review.sourceIds} headingLevel="h4" />
-        </article>
-      </section>
-
-      <section
-        className="section-space"
-        id="justice-reporting"
-        aria-labelledby="justice-reporting-title"
-      >
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">不把報案與申告想得太神祕</div>
-            <h2 id="justice-reporting-title">警察局報案、地檢署申告，怎麼分？</h2>
-            <p>{data.reporting.intro}</p>
-          </div>
-        </div>
-        <div className="justice-reporting-terms">
-          {data.reporting.terms.map((item) => (
-            <article key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
-            </article>
-          ))}
-        </div>
-        <div className="justice-reporting-channels">
-          {data.reporting.channels.map((channel) => (
-            <article key={channel.id}>
-              <h3>{channel.title}</h3>
-              <p className="justice-channel-where">{channel.where}</p>
-              <ol>
-                {channel.steps.map((item) => (
-                  <li key={item.title}>
-                    <h4>{item.title}</h4>
-                    <p>{item.text}</p>
+          <section id="justice-process" aria-labelledby="justice-process-title">
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">用刑事公訴案件當例子</div>
+                <h2 id="justice-process-title">{data.criminalFlow.title}</h2>
+                <p>{data.criminalFlow.intro}</p>
+              </div>
+            </div>
+            <div className="justice-flow-box">
+              <ol className="justice-flow-progress" aria-label="刑事公訴程序步驟">
+                {data.criminalFlow.steps.map((item, index) => (
+                  <li key={item.id}>
+                    <button
+                      type="button"
+                      aria-current={step === index ? 'step' : undefined}
+                      onClick={() => setStep(index)}
+                    >
+                      <span>{index + 1}</span>
+                      {item.title}
+                    </button>
                   </li>
                 ))}
               </ol>
-              <ul>
-                {channel.notes.map((text) => (
+              <div className="justice-current-step" aria-live="polite">
+                <span className="pill">{currentStep.actor}</span>
+                <h3>{currentStep.title}</h3>
+                <p>{currentStep.text}</p>
+                <ul>
+                  {currentStep.details.map((text) => (
+                    <li key={text}>{text}</li>
+                  ))}
+                </ul>
+                {currentStep.outcomes && (
+                  <div className="justice-outcomes">
+                    {currentStep.outcomes.map((outcome) => (
+                      <article key={outcome.label}>
+                        <h4>{outcome.label}</h4>
+                        <p>{outcome.text}</p>
+                      </article>
+                    ))}
+                  </div>
+                )}
+                <JusticeSources sourceIds={currentStep.sourceIds} headingLevel="h4" />
+              </div>
+              <div className="flow-controls">
+                <button
+                  type="button"
+                  className="button-secondary"
+                  disabled={step === 0}
+                  onClick={() => setStep(step - 1)}
+                >
+                  <ArrowLeft size={16} />
+                  上一步
+                </button>
+                <button type="button" className="quiet-button" onClick={() => setStep(0)}>
+                  <RotateCcw size={15} />
+                  重來
+                </button>
+                <button
+                  type="button"
+                  className="button-primary"
+                  disabled={step === data.criminalFlow.steps.length - 1}
+                  onClick={() => setStep(step + 1)}
+                >
+                  下一步
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+              <ul className="justice-flow-notes">
+                {data.criminalFlow.notes.map((text) => (
                   <li key={text}>{text}</li>
                 ))}
               </ul>
-              <a
-                className="text-link"
-                href={channel.officialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                官方窗口說明
-                <ExternalLink size={15} />
-              </a>
-              <JusticeSources sourceIds={channel.sourceIds} headingLevel="h4" />
-            </article>
-          ))}
-        </div>
-        <div className="justice-prepare">
-          <h3>先整理這些資訊，有助於說清楚。</h3>
-          <ul>
-            {data.reporting.prepare.map((text) => (
-              <li key={text}>{text}</li>
-            ))}
-          </ul>
-          <p>{data.reporting.notice}</p>
-          <JusticeSources sourceIds={data.reporting.sourceIds} headingLevel="h4" />
-        </div>
-      </section>
+              <details className="justice-full-flow">
+                <summary>直接閱讀所有流程與分支</summary>
+                <ol>
+                  {data.criminalFlow.steps.map((item) => (
+                    <li key={item.id}>
+                      <h3>
+                        {item.title} · {item.actor}
+                      </h3>
+                      <p>{item.text}</p>
+                      <ul>
+                        {item.details.map((text) => (
+                          <li key={text}>{text}</li>
+                        ))}
+                      </ul>
+                      {item.outcomes?.map((outcome) => (
+                        <p key={outcome.label}>
+                          <strong>{outcome.label}：</strong>
+                          {outcome.text}
+                        </p>
+                      ))}
+                      <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                    </li>
+                  ))}
+                </ol>
+              </details>
+            </div>
+            <a className="section-return mobile-section-return" href="#justice-topics">
+              ↑ 回到目錄
+            </a>
+          </section>
 
-      <section aria-labelledby="justice-faq-title" className="justice-faq">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">看司法新聞時，再多問一步</div>
-            <h2 id="justice-faq-title">容易混淆的幾件事。</h2>
-          </div>
-        </div>
-        {data.faq.map((item) => (
-          <details key={item.id}>
-            <summary>{item.title}</summary>
-            <p>{item.text}</p>
-            <JusticeSources sourceIds={item.sourceIds} />
+          <section
+            className="section-space justice-custody"
+            id="justice-custody"
+            aria-labelledby="justice-custody-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">分清人身自由、程序保全與救濟</div>
+                <h2 id="justice-custody-title">{data.custodyGuide.title}</h2>
+                <p>{data.custodyGuide.intro}</p>
+              </div>
+            </div>
+            <div className="justice-reporting-terms justice-custody-concepts">
+              {data.custodyGuide.concepts.map((item) => (
+                <article key={item.id}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                </article>
+              ))}
+            </div>
+            <div className="justice-custody-conditions">
+              <h3>交保後，可能還有哪些條件？</h3>
+              <p>{data.custodyGuide.conditionsIntro}</p>
+              <div className="justice-custody-disclosures">
+                {data.custodyGuide.conditions.map((item) => (
+                  <details key={item.id} id={`custody-${item.id}`}>
+                    <summary>{item.title}</summary>
+                    <p>{item.text}</p>
+                    <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                  </details>
+                ))}
+              </div>
+            </div>
+            <article className="justice-prepare justice-custody-risk">
+              <h3>{data.custodyGuide.risk.title}</h3>
+              <p>{data.custodyGuide.risk.text}</p>
+              <JusticeSources sourceIds={data.custodyGuide.risk.sourceIds} headingLevel="h4" />
+              <div className="justice-custody-consequences">
+                {data.custodyGuide.risk.consequences.map((item) => (
+                  <section key={item.id}>
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                    <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                  </section>
+                ))}
+              </div>
+            </article>
+            <article className="justice-custody-review">
+              <h3>{data.custodyGuide.review.title}</h3>
+              <p>{data.custodyGuide.review.intro}</p>
+              <ol>
+                {data.custodyGuide.review.steps.map((item) => (
+                  <li key={item.id}>
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                    <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                  </li>
+                ))}
+              </ol>
+              <JusticeSources sourceIds={data.custodyGuide.review.sourceIds} headingLevel="h4" />
+            </article>
+            <a className="section-return mobile-section-return" href="#justice-topics">
+              ↑ 回到目錄
+            </a>
+          </section>
+
+          <section
+            className="section-space"
+            id="justice-reporting"
+            aria-labelledby="justice-reporting-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">不把報案與申告想得太神祕</div>
+                <h2 id="justice-reporting-title">警察局報案、地檢署申告，怎麼分？</h2>
+                <p>{data.reporting.intro}</p>
+              </div>
+            </div>
+            <div className="justice-reporting-terms">
+              {data.reporting.terms.map((item) => (
+                <article key={item.id}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <JusticeSources sourceIds={item.sourceIds} headingLevel="h4" />
+                </article>
+              ))}
+            </div>
+            <div className="justice-reporting-channels">
+              {data.reporting.channels.map((channel) => (
+                <article key={channel.id}>
+                  <h3>{channel.title}</h3>
+                  <p className="justice-channel-where">{channel.where}</p>
+                  <ol>
+                    {channel.steps.map((item) => (
+                      <li key={item.title}>
+                        <h4>{item.title}</h4>
+                        <p>{item.text}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  <ul>
+                    {channel.notes.map((text) => (
+                      <li key={text}>{text}</li>
+                    ))}
+                  </ul>
+                  <a
+                    className="text-link"
+                    href={channel.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    官方窗口說明
+                    <ExternalLink size={15} />
+                  </a>
+                  <JusticeSources sourceIds={channel.sourceIds} headingLevel="h4" />
+                </article>
+              ))}
+            </div>
+            <div className="justice-prepare">
+              <h3>先整理這些資訊，有助於說清楚。</h3>
+              <ul>
+                {data.reporting.prepare.map((text) => (
+                  <li key={text}>{text}</li>
+                ))}
+              </ul>
+              <p>{data.reporting.notice}</p>
+              <JusticeSources sourceIds={data.reporting.sourceIds} headingLevel="h4" />
+            </div>
+            <a className="section-return mobile-section-return" href="#justice-topics">
+              ↑ 回到目錄
+            </a>
+          </section>
+
+          <section id="justice-faq" aria-labelledby="justice-faq-title" className="justice-faq">
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">看司法新聞時，再多問一步</div>
+                <h2 id="justice-faq-title">容易混淆的幾件事。</h2>
+              </div>
+            </div>
+            {data.faq.map((item) => (
+              <details key={item.id}>
+                <summary>{item.title}</summary>
+                <p>{item.text}</p>
+                <JusticeSources sourceIds={item.sourceIds} />
+              </details>
+            ))}
+            <a className="section-return mobile-section-return" href="#justice-topics">
+              ↑ 回到目錄
+            </a>
+          </section>
+          <details className="justice-full-text" id="justice-full-text">
+            <summary>完整機關與角色說明（{data.entities.length} 項，免搜尋也能全部閱讀）</summary>
+            {data.entities.map((entity) => (
+              <section key={entity.id} id={`justice-full-${entity.id}`}>
+                <h3>{entity.name}</h3>
+                <JusticeDetails entity={entity} />
+              </section>
+            ))}
           </details>
-        ))}
-      </section>
-      <p className="justice-checked-at">
-        資料查核：{data.checkedAt}
-        。本頁介紹制度與一般程序；個案的管轄、資格、期間及法律協助，請依官方窗口與適用法規確認。
-      </p>
+          <a className="section-return mobile-section-return" href="#justice-topics">
+            ↑ 回到目錄
+          </a>
+          <p className="justice-checked-at">
+            資料查核：{data.checkedAt}
+            。本頁介紹制度與一般程序；個案的管轄、資格、期間及法律協助，請依官方窗口與適用法規確認。
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -358,6 +358,13 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
               <SourceList sourceIds={role.sourceIds} compact />
             </>
           )}
+          <a
+            className="section-return mobile-section-return"
+            href="#government-agency-picker"
+            onClick={() => setAgencyPickerOpen(false)}
+          >
+            ↑ 回到角色與機關選擇
+          </a>
         </section>
       </div>
       <div className="government-reading-layout">
@@ -392,6 +399,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
         </nav>
         <div className="government-reading-content">
           <AgencyDirectoryView data={agencies} />
+          <a className="section-return mobile-section-return" href="#government-topics">
+            ↑ 回到目錄
+          </a>
           <section
             className="section-space"
             id="government-procedures"
@@ -496,6 +506,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
                 </ol>
               </noscript>
             </div>
+            <a className="section-return mobile-section-return" href="#government-topics">
+              ↑ 回到目錄
+            </a>
           </section>
           <section
             className="section-space"
@@ -566,6 +579,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
               本次任命與質詢資料查核：{data.checkedAt}
               。地方職務以各縣市組織自治條例、編制表及適用人事法規為準。
             </p>
+            <a className="section-return mobile-section-return" href="#government-topics">
+              ↑ 回到目錄
+            </a>
           </section>
           <section className="section-space" id="questioning" aria-labelledby="questioning-title">
             <div className="section-heading">
@@ -618,6 +634,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
                 </article>
               ))}
             </div>
+            <a className="section-return mobile-section-return" href="#government-topics">
+              ↑ 回到目錄
+            </a>
           </section>
           <section className="section-space" id="integrity" aria-labelledby="integrity-title">
             <div className="section-heading">
@@ -673,6 +692,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
               </article>
               <SourceList sourceIds={data.integrityGuide.sourceIds} compact />
             </details>
+            <a className="section-return mobile-section-return" href="#government-topics">
+              ↑ 回到目錄
+            </a>
           </section>
           <section
             className="section-space"
@@ -703,6 +725,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
                 </article>
               ))}
             </div>
+            <a className="section-return mobile-section-return" href="#government-topics">
+              ↑ 回到目錄
+            </a>
           </section>
           <details className="all-roles" id="government-all-roles">
             <summary>閱讀所有角色的文字說明</summary>
@@ -713,6 +738,9 @@ export function GovernmentView({ data, agencies, legislation }: GovernmentProps)
               </section>
             ))}
           </details>
+          <a className="section-return mobile-section-return" href="#government-topics">
+            ↑ 回到目錄
+          </a>
         </div>
       </div>
     </div>

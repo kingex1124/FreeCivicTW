@@ -108,7 +108,7 @@ test('司法頁手機選機關帶到說明，鍵盤、無障礙與不同螢幕�
   await expect(page.locator('.justice-inspector > h3')).toHaveText('律師與法律扶助');
   await expect(page.locator('.justice-inspector > h3')).toBeInViewport();
   await expect(page.locator('.justice-inspector')).toContainText('財團法人');
-  await page.getByRole('button', { name: '回到機關與角色選擇' }).click();
+  await page.locator('.justice-inspector').getByRole('link', { name: /回到機關與角色選擇/ }).click();
   await expect(page.getByRole('searchbox', { name: '搜尋司法機關、角色與工作' })).toBeFocused();
   const results = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])

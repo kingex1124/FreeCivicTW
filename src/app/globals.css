@@ -5635,9 +5635,6 @@ input::placeholder {
   font-size: var(--text-heading);
   margin-block: 10px 20px;
 }
-.justice-return {
-  margin-bottom: 20px;
-}
 .justice-entity-details dl {
   margin: 24px 0;
 }
@@ -5746,6 +5743,9 @@ input::placeholder {
   background: var(--tone-surface, #eff2e7);
   border-radius: 10px;
   padding: 28px;
+}
+.justice-current-step + .flow-controls {
+  margin-top: 20px;
 }
 .justice-current-step h3 {
   font-size: var(--text-heading);
@@ -6263,6 +6263,34 @@ input::placeholder {
 .government-reading-content {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+.justice-reading-layout .government-reading-content > #justice-courts {
+  padding-top: 0;
+}
+#government-agency-picker {
+  scroll-margin-top: 115px;
+}
+#justice-full-text {
+  scroll-margin-top: 115px;
+}
+.mobile-section-return {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .section-return {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 10px 18px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--green);
+    font-weight: 700;
+    text-decoration: none;
+  }
 }
 .government-reading-content > .section-space {
   padding-block: 40px;

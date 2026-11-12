@@ -149,7 +149,7 @@ export function TopicContentView({ topic, checkedAt, returnLink }: TopicContentP
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         ))}
-        <a className="text-link" href={returnLink.href}>
+        <a className="text-link section-return" href={returnLink.href}>
           {returnLink.label}
         </a>
       </div>
