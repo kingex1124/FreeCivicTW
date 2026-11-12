@@ -5,6 +5,12 @@
   --color-paper: var(--paper);
 }
 :root {
+  --text-body: 1rem;
+  --text-lead: 1.125rem;
+  --text-subheading: 1.25rem;
+  --text-heading: 1.5rem;
+  --text-title: 2rem;
+  --text-display: 2.5rem;
   --paper: #f7f8f2;
   --white: #fffefa;
   --ink: #20362f;
@@ -69,7 +75,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
@@ -81,6 +87,9 @@ button,
 input,
 select {
   font: inherit;
+}
+small {
+  font-size: inherit;
 }
 button,
 a,
@@ -154,13 +163,13 @@ summary:focus-visible {
 }
 .muted {
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: var(--text-body);
 }
 .eyebrow {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
+  font-size: var(--text-body);
   line-height: 1.8;
   letter-spacing: 0.12em;
   font-weight: 700;
@@ -174,7 +183,7 @@ summary:focus-visible {
 }
 .eyebrow > span:not(:empty) {
   font-family: monospace;
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-right: 4px;
 }
 .eyebrow.light {
@@ -186,7 +195,7 @@ summary:focus-visible {
   background: var(--sage);
   border-radius: 5px;
   padding: 4px 10px;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
   font-weight: 600;
   line-height: 1.65;
@@ -207,7 +216,7 @@ summary:focus-visible {
   border-radius: 7px;
   background: var(--green);
   color: var(--on-accent, #fff);
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 700;
   line-height: 1.65;
   transition:
@@ -233,7 +242,7 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 700;
   color: var(--green);
   background: none;
@@ -252,7 +261,7 @@ summary:focus-visible {
   align-items: center;
   gap: 8px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-body);
   text-decoration: underline;
   text-underline-offset: 5px;
 }
@@ -350,7 +359,7 @@ summary:focus-visible {
   margin-top: -2px;
 }
 .brand strong {
-  font-size: 21px;
+  font-size: var(--text-subheading);
   line-height: 1.25;
   letter-spacing: 0.04em;
   display: block;
@@ -361,20 +370,20 @@ summary:focus-visible {
 }
 .brand small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-body);
   font-weight: 700;
   letter-spacing: 0.19em;
   margin-top: 4px;
 }
 .brand-small strong {
-  font-size: 19px;
+  font-size: var(--text-subheading);
 }
 .main-nav {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-left: auto;
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 600;
 }
 .nav-links {
@@ -472,8 +481,9 @@ summary:focus-visible {
   border-radius: 999px;
   background: var(--white);
   color: var(--green-dark);
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 700;
+  white-space: nowrap;
   box-shadow: 0 2px 6px var(--tone-shadow, #20362f08);
 }
 .mobile-toggle[aria-expanded='true'] {
@@ -486,27 +496,30 @@ summary:focus-visible {
   bottom: max(18px, env(safe-area-inset-bottom));
   z-index: 20;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  min-width: 68px;
-  min-height: 78px;
-  padding: 10px;
+  gap: 4px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 8px;
   border: 2px solid var(--white);
   border-radius: 12px;
   background: var(--green);
   color: var(--on-accent);
   box-shadow: 0 5px 20px var(--tone-shadow, #20362f33);
-  font-size: 14px;
+  font-size: var(--text-body);
   font-weight: 700;
   line-height: 1.3;
   transition:
     background-color 160ms ease,
-    box-shadow 160ms ease;
+    box-shadow 160ms ease,
+    opacity 160ms ease;
 }
-.back-to-top small {
-  font-size: 10px;
+html[data-scroll-ready='true'] .back-to-top:not([data-visible='true']) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .back-to-top:hover {
   background: var(--action-hover);
@@ -524,14 +537,14 @@ summary:focus-visible {
 }
 .footer-main > div > p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   margin-top: 20px;
 }
 .footer-links {
   display: flex;
   gap: 55px;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .footer-links > div {
   display: flex;
@@ -539,7 +552,7 @@ summary:focus-visible {
   gap: 9px;
 }
 .footer-links strong {
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-bottom: 8px;
 }
 .footer-links a {
@@ -564,7 +577,7 @@ summary:focus-visible {
   align-items: center;
   gap: 6px;
   color: var(--green);
-  font-size: 11px;
+  font-size: var(--text-body);
   margin-top: 12px;
   word-break: break-all;
 }
@@ -573,7 +586,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   padding-block: 19px;
 }
@@ -584,7 +597,7 @@ summary:focus-visible {
   padding-block: 62px 35px;
 }
 .page-intro h1 {
-  font-size: clamp(30px, 3.8vw, 47px);
+  font-size: var(--text-title);
   font-weight: 800;
   margin-block: 19px;
   max-width: 970px;
@@ -593,7 +606,7 @@ summary:focus-visible {
 .intro-copy {
   max-width: 710px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--text-body);
   line-height: 2;
 }
 .page-intro-line {
@@ -608,13 +621,13 @@ summary:focus-visible {
   margin-bottom: 31px;
 }
 .section-heading h2 {
-  font-size: 29px;
+  font-size: var(--text-heading);
   font-weight: 800;
   margin-top: 10px;
 }
 .section-heading p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--text-body);
   margin-top: 9px;
 }
 .section-heading > .text-link {
@@ -631,7 +644,7 @@ summary:focus-visible {
   background: var(--sage);
   border-radius: 9px;
   padding: 23px 26px;
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.95;
   margin-block: 25px;
 }
@@ -643,7 +656,7 @@ summary:focus-visible {
   margin-top: 9px;
 }
 .notice strong {
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .not-found-actions {
   display: flex;
@@ -662,7 +675,7 @@ summary:focus-visible {
   padding-block: 10px;
 }
 .hero-copy h1 {
-  font-size: clamp(42px, 4.9vw, 66px);
+  font-size: var(--text-display);
   font-weight: 900;
   letter-spacing: -0.06em;
   line-height: 1.36;
@@ -688,7 +701,7 @@ summary:focus-visible {
 }
 .hero-copy > p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--text-body);
   line-height: 2.05;
   margin-top: 23px;
 }
@@ -703,14 +716,14 @@ summary:focus-visible {
   min-height: 50px;
 }
 .hero-about {
-  font-size: 11px;
+  font-size: var(--text-body);
   gap: 8px;
 }
 .hero-reassurance {
   display: flex;
   gap: 20px;
   margin-top: 25px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .hero-reassurance > span {
@@ -737,14 +750,14 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 9px;
+  font-size: var(--text-body);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
 .preview-label > span:last-child {
   margin-left: auto;
   color: var(--tone-text, #77836f);
-  font-size: 8px;
+  font-size: var(--text-body);
 }
 .live-dot {
   width: 5px;
@@ -779,10 +792,10 @@ summary:focus-visible {
   color: var(--green);
 }
 .preview-people strong {
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .preview-people small {
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .preview-vote {
@@ -803,14 +816,16 @@ summary:focus-visible {
   display: flex;
   gap: 7px;
   align-items: center;
-  font-size: 9px;
+  font-size: var(--text-body);
 }
 .preview-branches {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 13px;
 }
 .preview-building {
+  min-width: 0;
+  overflow-wrap: anywhere;
   border: 1px solid var(--tone-border, #cdd7c5);
   background: var(--tone-surface, #f6f7ef);
   border-radius: 10px;
@@ -837,11 +852,11 @@ summary:focus-visible {
   justify-content: center;
   gap: 4px;
   margin-top: 10px;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .building-label {
-  font-size: 10px;
+  font-size: var(--text-body);
   letter-spacing: 0.08em;
   color: var(--tone-text, #506c42);
 }
@@ -849,6 +864,7 @@ summary:focus-visible {
   display: block;
   height: 84px;
   width: 116px;
+  max-width: 100%;
   margin: 7px auto 10px;
   color: var(--tone-text, #50714a);
 }
@@ -887,11 +903,11 @@ summary:focus-visible {
 }
 .preview-building strong {
   display: block;
-  font-size: 17px;
+  font-size: var(--text-lead);
 }
 .preview-building small {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-top: 4px;
 }
@@ -900,7 +916,7 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--tone-text, #687d60);
   margin: 19px 0 14px;
 }
@@ -911,14 +927,14 @@ summary:focus-visible {
 .preview-tabs button {
   background: var(--tone-surface, #e0e7d6);
   border: 1px solid var(--tone-border, #c4d0b8);
-  font-size: 10px;
+  font-size: var(--text-body);
   border-radius: 6px;
   flex: 1;
   padding: 8px 6px;
 }
 .preview-tabs button span {
   font-family: monospace;
-  font-size: 9px;
+  font-size: var(--text-body);
   margin-right: 5px;
   opacity: 0.65;
 }
@@ -928,7 +944,7 @@ summary:focus-visible {
   border-color: var(--green);
 }
 .preview-caption {
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--tone-text, #64755b);
   display: flex;
   gap: 5px;
@@ -955,7 +971,7 @@ summary:focus-visible {
   gap: 8px;
 }
 .preview-detail-heading h2 {
-  font-size: 16px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .preview-detail-close {
@@ -984,23 +1000,23 @@ summary:focus-visible {
   padding: 2px 7px;
   background: var(--sage);
   border-radius: 4px;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .preview-detail h3 {
   margin-top: 2px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .preview-detail p {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .preview-detail .preview-participation-actions {
   list-style: disc;
   margin: 12px 0 0;
   padding-left: 1.25em;
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .preview-detail[data-mode='people'] > ul > li {
@@ -1018,7 +1034,7 @@ summary:focus-visible {
   min-height: 44px;
   border-top: 1px solid var(--line);
   padding-top: 10px;
-  font-size: 12px;
+  font-size: var(--text-body);
   font-weight: 700;
   color: var(--green);
 }
@@ -1046,14 +1062,14 @@ summary:focus-visible {
   align-items: center;
   gap: 25px;
   padding-block: 17px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .guide-strip-label {
   margin-right: auto;
 }
 .guide-strip strong {
-  font-size: 17px;
+  font-size: var(--text-lead);
   color: var(--green);
   font-family: Georgia, serif;
   font-weight: normal;
@@ -1070,7 +1086,7 @@ summary:focus-visible {
   gap: 8px;
   margin-left: auto;
   color: var(--green);
-  font-size: 9px;
+  font-size: var(--text-body);
 }
 .path-grid {
   display: grid;
@@ -1105,19 +1121,19 @@ summary:focus-visible {
   color: var(--green);
 }
 .path-no {
-  font-size: 9px;
+  font-size: var(--text-body);
   letter-spacing: 0.12em;
   font-family: monospace;
   color: var(--tone-text, #526747);
 }
 .path-card h3 {
-  font-size: 26px;
+  font-size: var(--text-heading);
   line-height: 1.55;
   font-weight: 800;
   margin-top: 23px;
 }
 .path-card p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 2;
   margin-top: 14px;
@@ -1126,7 +1142,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--green);
   margin-top: 29px;
   padding-top: 19px;
@@ -1143,13 +1159,13 @@ summary:focus-visible {
   padding-block: 60px;
 }
 .teaser-grid h2 {
-  font-size: 35px;
+  font-size: var(--text-title);
   font-weight: 800;
   line-height: 1.6;
   margin-top: 18px;
 }
 .teaser-grid p {
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--tone-text, #bccfc1);
   margin-top: 17px;
@@ -1176,10 +1192,10 @@ summary:focus-visible {
 .teaser-questions > a > span {
   color: var(--tone-text, #b9ccaa);
   font-family: monospace;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .teaser-questions > a > strong {
-  font-size: 16px;
+  font-size: var(--text-body);
   letter-spacing: 0;
 }
 .teaser-questions > a > svg {
@@ -1209,7 +1225,7 @@ summary:focus-visible {
   position: absolute;
   bottom: 10px;
   left: 16px;
-  font-size: 8px;
+  font-size: var(--text-body);
   letter-spacing: 0.09em;
   color: var(--tone-text, #526747);
 }
@@ -1235,7 +1251,7 @@ summary:focus-visible {
   border: 1px solid var(--tone-border, #a6b78d);
   background: var(--tone-surface-warm, #f5f6e6);
   color: var(--green);
-  font-size: 20px;
+  font-size: var(--text-subheading);
   font-weight: 800;
   margin-left: -12px;
   border-radius: 5px;
@@ -1268,7 +1284,7 @@ summary:focus-visible {
   background: var(--tone-art, #a5b28c);
 }
 .art-branches > span {
-  font-size: 9px;
+  font-size: var(--text-body);
   position: absolute;
   bottom: -29px;
   left: -12px;
@@ -1290,7 +1306,7 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   color: var(--tone-text, #416b54);
-  font-size: 22px;
+  font-size: var(--text-subheading);
   font-weight: 700;
   background: var(--tone-surface, #f5f8ef);
 }
@@ -1300,14 +1316,14 @@ summary:focus-visible {
   background: var(--tone-surface, #d3e0cc);
 }
 .art-local i {
-  font-size: 18px;
+  font-size: var(--text-lead);
   color: var(--tone-text, #92a58d);
   font-style: normal;
 }
 .article-preview-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--green);
   margin-top: 19px;
 }
@@ -1315,20 +1331,20 @@ summary:focus-visible {
   color: var(--muted);
 }
 .article-preview h3 {
-  font-size: 17px;
+  font-size: var(--text-lead);
   font-weight: 700;
   line-height: 1.75;
   margin-top: 9px;
 }
 .article-preview p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.95;
   margin-top: 10px;
 }
 .article-preview > .text-link {
   margin-top: 16px;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .mission-section {
   display: grid;
@@ -1343,19 +1359,19 @@ summary:focus-visible {
   padding-top: 22px;
 }
 .mission-section h2 {
-  font-size: 24px;
+  font-size: var(--text-heading);
   margin-top: 9px;
 }
 .mission-section p {
   max-width: 640px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   margin-top: 15px;
 }
 .mission-section .text-link {
   margin-top: 15px;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .mission-stamp {
   align-self: center;
@@ -1371,11 +1387,11 @@ summary:focus-visible {
   color: var(--tone-text, #506944);
 }
 .mission-stamp span {
-  font-size: 7px;
+  font-size: var(--text-body);
   letter-spacing: 0.1em;
 }
 .mission-stamp strong {
-  font-size: 19px;
+  font-size: var(--text-subheading);
   letter-spacing: 0.15em;
   line-height: 1.6;
   margin-block: 5px;
@@ -1394,12 +1410,12 @@ summary:focus-visible {
   background: var(--sage);
 }
 .quick-start-intro h2 {
-  font-size: 31px;
+  font-size: var(--text-heading);
   line-height: 1.6;
   margin-top: 20px;
 }
 .quick-start-intro > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 2;
   margin-top: 15px;
@@ -1420,31 +1436,31 @@ summary:focus-visible {
   align-items: center;
   cursor: pointer;
   list-style: none;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .quick-step-list summary:after {
   content: '+';
   margin-left: auto;
   color: var(--green);
-  font-size: 20px;
+  font-size: var(--text-subheading);
   font-weight: 400;
 }
 .quick-step-list details[open] summary:after {
   content: '−';
 }
 .quick-step-list summary > span {
-  font: 12px monospace;
+  font: var(--text-body) monospace;
   color: var(--tone-text, #80916b);
 }
 .quick-step-list p {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.95;
   margin: 14px 0 10px 34px;
   color: var(--muted);
 }
 .quick-step-list .text-link {
   margin-left: 34px;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .lesson-list {
   border-top: 1px solid var(--line);
@@ -1462,15 +1478,15 @@ summary:focus-visible {
 }
 .lesson-number {
   font-family: Georgia, serif;
-  font-size: 31px;
+  font-size: var(--text-heading);
   color: var(--tone-text, #627b51);
   min-width: 45px;
 }
 .lesson-row h3 {
-  font-size: 18px;
+  font-size: var(--text-lead);
 }
 .lesson-row p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-top: 7px;
 }
@@ -1480,7 +1496,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .slanted-arrow {
@@ -1501,7 +1517,7 @@ summary:focus-visible {
 .article-toc ol {
   list-style: none;
   padding: 0;
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.8;
   margin-block: 18px 27px;
@@ -1516,7 +1532,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .article-body {
@@ -1534,7 +1550,7 @@ summary:focus-visible {
   margin-top: 4px;
 }
 .article-opening h2 {
-  font-size: 24px;
+  font-size: var(--text-heading);
   line-height: 1.7;
   margin-top: 8px;
 }
@@ -1543,18 +1559,18 @@ summary:focus-visible {
   scroll-margin-top: 118px;
 }
 .section-counter {
-  font: 12px monospace;
+  font: var(--text-body) monospace;
   color: var(--tone-text, #596f49);
   letter-spacing: 0.08em;
 }
 .article-section h2 {
-  font-size: 23px;
+  font-size: var(--text-subheading);
   margin-top: 6px;
   margin-bottom: 21px;
   line-height: 1.6;
 }
 .article-section p {
-  font-size: 15px;
+  font-size: var(--text-body);
   line-height: 2.1;
   color: var(--tone-text, #44584c);
 }
@@ -1566,11 +1582,11 @@ summary:focus-visible {
   margin-block: 30px;
 }
 .example-box h3 {
-  font-size: 18px;
+  font-size: var(--text-lead);
   margin-top: 10px;
 }
 .example-box p {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--tone-text, #4a5e48);
   margin-top: 13px;
@@ -1586,12 +1602,12 @@ summary:focus-visible {
   color: var(--tone-warm-text, #7e713f);
 }
 .misconception h3 {
-  font-size: 18px;
+  font-size: var(--text-lead);
   line-height: 1.8;
   margin-top: 9px;
 }
 .misconception p {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 2;
   margin-top: 13px;
   color: var(--tone-warm-text, #6b664e);
@@ -1603,7 +1619,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 21px;
+  font-size: var(--text-subheading);
   margin-bottom: 16px;
 }
 .terms-section details {
@@ -1611,12 +1627,12 @@ summary:focus-visible {
   padding: 13px 4px;
 }
 .terms-section summary {
-  font-size: 14px;
+  font-size: var(--text-body);
   font-weight: 600;
   cursor: pointer;
 }
 .terms-section p {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--muted);
   margin-top: 12px;
@@ -1629,7 +1645,7 @@ summary:focus-visible {
   margin-block: 35px;
 }
 .quiz-box h3 {
-  font-size: 19px;
+  font-size: var(--text-subheading);
   line-height: 1.8;
   margin-block: 13px 21px;
 }
@@ -1647,7 +1663,7 @@ summary:focus-visible {
   border-radius: 7px;
   padding: 14px;
   margin-bottom: 10px;
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.8;
   cursor: pointer;
 }
@@ -1662,7 +1678,7 @@ summary:focus-visible {
   flex-shrink: 0;
 }
 .option-letter {
-  font: 12px monospace;
+  font: var(--text-body) monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1690,12 +1706,12 @@ summary:focus-visible {
   border-radius: 7px;
   border-left: 3px solid var(--green);
   margin-top: 25px;
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 2;
 }
 .quiz-feedback > strong {
   color: var(--green);
-  font-size: 16px;
+  font-size: var(--text-body);
 }
 .quiz-feedback > p {
   margin-top: 10px;
@@ -1704,7 +1720,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   padding-block: 20px;
 }
@@ -1728,7 +1744,7 @@ summary:focus-visible {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--green);
   margin-bottom: 8px;
 }
@@ -1736,7 +1752,7 @@ summary:focus-visible {
   justify-content: flex-end;
 }
 .lesson-neighbors strong {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.9;
 }
 .source-list {
@@ -1748,16 +1764,16 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 11px;
-  font-size: 19px;
+  font-size: var(--text-subheading);
   margin-bottom: 8px;
 }
 .source-list > .muted {
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-bottom: 15px;
 }
 .source-item {
   padding-block: 10px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .source-item > a {
   display: inline-flex;
@@ -1770,12 +1786,12 @@ summary:focus-visible {
 }
 .source-item small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-top: 6px;
 }
 .source-item p {
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 1.9;
   color: var(--muted);
   margin-top: 8px;
@@ -1785,13 +1801,13 @@ summary:focus-visible {
   margin-top: 22px;
 }
 .source-list.compact :is(h2, h3, h4) {
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .source-list.compact .source-item {
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .source-list.compact .source-item small {
-  font-size: 9px;
+  font-size: var(--text-body);
 }
 /* Government explorer */
 .government-workspace {
@@ -1819,7 +1835,7 @@ summary:focus-visible {
   background: none;
   border-radius: 5px;
   padding: 9px;
-  font-size: 13px;
+  font-size: var(--text-body);
   text-align: center;
 }
 .scope-switch button[aria-pressed='true'] {
@@ -1831,7 +1847,7 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--muted);
   padding-block: 21px;
 }
@@ -1866,12 +1882,12 @@ summary:focus-visible {
   box-shadow: 0 4px 0 var(--tone-shadow, #bdd0aa);
 }
 .role-node strong {
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 1.8;
   text-align: center;
 }
 .role-node > span {
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--tone-text, #6b7d61);
 }
 .role-node.selected > span {
@@ -1934,7 +1950,7 @@ summary:focus-visible {
   color: var(--green);
 }
 .agency-picker-header h3 {
-  font-size: 18px;
+  font-size: var(--text-lead);
   margin-top: 5px;
 }
 .agency-picker-close {
@@ -1955,7 +1971,7 @@ summary:focus-visible {
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
   padding: 18px;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .agency-picker-current {
   padding: 10px 12px;
@@ -1971,7 +1987,7 @@ summary:focus-visible {
 }
 .agency-picker-body input,
 .agency-picker-body select {
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .agency-picker-options {
   display: grid;
@@ -1994,11 +2010,11 @@ summary:focus-visible {
   overflow-wrap: anywhere;
 }
 .agency-picker-options strong {
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .agency-picker-options span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: var(--text-body);
   margin-top: 6px;
 }
 .agency-picker-options button[aria-pressed='true'] {
@@ -2010,7 +2026,7 @@ summary:focus-visible {
   color: var(--on-accent);
 }
 .agency-selection-note > p {
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .agency-selection-note > button {
   margin-top: 18px;
@@ -2018,7 +2034,7 @@ summary:focus-visible {
 .inspector-back-link {
   display: inline-block;
   margin-top: 14px;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .agency-inspection dd a {
   display: inline-flex;
@@ -2035,17 +2051,17 @@ summary:focus-visible {
   border-top: 1px solid var(--tone-border, #cfdbc4);
 }
 .relationship-panel h3 {
-  font-size: 15px;
+  font-size: var(--text-body);
   margin-bottom: 15px;
 }
 .field-label {
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--muted);
   display: block;
 }
 .relationship-panel select {
   margin-top: 7px;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .relation-list {
   padding: 0;
@@ -2054,7 +2070,7 @@ summary:focus-visible {
 }
 .relation-list > li {
   padding: 10px 0;
-  font-size: 11px;
+  font-size: var(--text-body);
   border-bottom: 1px dashed var(--tone-border, #d0d9c7);
 }
 .relation-line {
@@ -2076,7 +2092,7 @@ summary:focus-visible {
   padding: 10px 12px;
   border-radius: 6px;
   background: var(--white);
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .relation-offices summary {
   cursor: pointer;
@@ -2096,10 +2112,10 @@ summary:focus-visible {
 }
 .relation-arrow > small {
   text-align: center;
-  font-size: 8px;
+  font-size: var(--text-body);
 }
 .board-note {
-  font-size: 11px !important;
+  font-size: var(--text-body) !important;
   line-height: 1.9;
   color: var(--muted);
   margin-top: 14px;
@@ -2115,11 +2131,11 @@ summary:focus-visible {
   overflow: auto;
 }
 .role-inspector h2 {
-  font-size: 25px;
+  font-size: var(--text-heading);
   margin-top: 11px;
 }
 .role-summary {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.9;
   color: var(--green);
   margin-top: 16px;
@@ -2132,7 +2148,7 @@ summary:focus-visible {
   border-top: 1px solid var(--line);
 }
 .role-details dt {
-  font-size: 10px;
+  font-size: var(--text-body);
   letter-spacing: 0.08em;
   color: var(--green);
   font-weight: 700;
@@ -2140,7 +2156,7 @@ summary:focus-visible {
 }
 .role-details dd {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 1.95;
   color: var(--tone-text, #5d6e60);
 }
@@ -2185,12 +2201,12 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .integrity-points h3,
 .oversight-comparison h3,
 .integrity-reporting h3 {
-  font-size: 19px;
+  font-size: var(--text-subheading);
   margin-bottom: 14px;
 }
 .oversight-comparison article {
@@ -2228,7 +2244,7 @@ summary:focus-visible {
   border: 0;
   background: none;
   padding: 13px 23px;
-  font-size: 14px;
+  font-size: var(--text-body);
   border-bottom: 3px solid transparent;
   margin-bottom: -1px;
 }
@@ -2268,11 +2284,11 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--text-body);
   flex-shrink: 0;
 }
 .flow-progress strong {
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .flow-progress > button[aria-current] {
   border-color: var(--green);
@@ -2291,11 +2307,11 @@ summary:focus-visible {
   animation: reveal 0.25s both;
 }
 .flow-current h3 {
-  font-size: 25px;
+  font-size: var(--text-heading);
   margin-top: 17px;
 }
 .flow-current p {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 2;
   margin-top: 16px;
   max-width: 800px;
@@ -2316,7 +2332,7 @@ summary:focus-visible {
   background: var(--tone-surface, #f4f6ef);
   border-radius: 8px;
   margin-top: 20px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .full-flow li + li {
   margin-top: 24px;
@@ -2346,13 +2362,13 @@ summary:focus-visible {
 }
 .agency-directory-trigger strong {
   display: block;
-  font-size: clamp(17px, 2vw, 21px);
+  font-size: var(--text-subheading);
 }
 .agency-directory-trigger small {
   display: block;
   margin-top: 8px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .agency-directory[open] > summary > svg,
 .agency-entry[open] > summary > svg {
@@ -2366,14 +2382,14 @@ summary:focus-visible {
   background: var(--sage);
   border-radius: 8px;
   padding: clamp(18px, 2.5vw, 26px);
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .agency-coverage h3 {
-  font-size: 17px;
+  font-size: var(--text-lead);
   margin-bottom: 12px;
 }
 .agency-coverage > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .agency-controls {
@@ -2391,7 +2407,7 @@ summary:focus-visible {
   border-radius: 6px;
   border: 1px solid var(--line);
   background: var(--paper);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .agency-filters button[aria-pressed='true'] {
   background: var(--green);
@@ -2401,7 +2417,7 @@ summary:focus-visible {
 .agency-search {
   display: block;
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .agency-search > span:last-child {
   display: flex;
@@ -2427,16 +2443,16 @@ summary:focus-visible {
 .agency-toolbar {
   justify-content: space-between;
   margin-top: 18px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .agency-toolbar button {
   min-height: 44px;
-  font-size: 13px;
+  font-size: var(--text-body);
   padding: 9px 14px;
 }
 .agency-group-note,
 .agency-empty {
-  font-size: 14px;
+  font-size: var(--text-body);
   margin-bottom: 20px;
 }
 .agency-entries {
@@ -2459,28 +2475,28 @@ summary:focus-visible {
 }
 .agency-entry-tag {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
   margin-bottom: 8px;
 }
 .agency-entry h3 {
-  font-size: 19px;
+  font-size: var(--text-subheading);
   margin-bottom: 8px;
 }
 .agency-entry-summary {
   display: block;
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .agency-entry-aliases {
   display: block;
   color: var(--green);
-  font-size: 12px;
+  font-size: var(--text-body);
   margin-bottom: 8px;
 }
 .agency-entry-body {
   padding: 0 clamp(18px, 2.5vw, 25px) 25px;
-  font-size: 14px;
+  font-size: var(--text-body);
   overflow-wrap: anywhere;
 }
 .agency-entry-coverage {
@@ -2489,7 +2505,7 @@ summary:focus-visible {
 }
 .agency-entry-body > h4 {
   margin-block: 24px 12px;
-  font-size: 15px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .agency-entry-body > ul {
@@ -2512,7 +2528,7 @@ summary:focus-visible {
   padding: 24px 0 0;
   margin-top: 28px;
   border-top: 1px solid var(--line);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .local-agency-directories summary,
 .local-reference-inventories > summary {
@@ -2531,7 +2547,7 @@ summary:focus-visible {
   border-top: 1px solid var(--line);
 }
 .local-reference-inventories h3 {
-  font-size: 17px;
+  font-size: var(--text-lead);
 }
 .local-reference-inventories dl {
   display: grid;
@@ -2553,7 +2569,7 @@ summary:focus-visible {
 }
 .local-reference-inventories dd {
   margin: 10px 0 0;
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .local-agency-directories > ul {
   display: grid;
@@ -2579,7 +2595,7 @@ summary:focus-visible {
   margin-bottom: 24px;
   color: var(--green);
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .government-jumps a {
   text-decoration: underline;
@@ -2600,7 +2616,7 @@ summary:focus-visible {
 }
 .appointment-catalog h3,
 .questioning-notes h3 {
-  font-size: 21px;
+  font-size: var(--text-subheading);
   margin-bottom: 14px;
 }
 .appointment-procedure {
@@ -2631,12 +2647,12 @@ summary:focus-visible {
   background: var(--sage);
   border-radius: 5px;
   padding: 11px 14px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .appointment-notes {
   margin-block: 22px 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .appointment-catalog .source-list,
 .questioning-notes .source-list,
@@ -2653,7 +2669,7 @@ summary:focus-visible {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 14px;
+  font-size: var(--text-body);
   overflow-wrap: anywhere;
 }
 .questioning-table caption {
@@ -2691,7 +2707,7 @@ summary:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 20px;
   margin-top: 24px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 @media (max-width: 600px) {
   .questioning-table,
@@ -2725,13 +2741,13 @@ summary:focus-visible {
     display: block;
     color: var(--green);
     font-weight: 700;
-    font-size: 12px;
+    font-size: var(--text-body);
     margin-bottom: 8px;
   }
   .questioning-table .source-list h2,
   .questioning-table .source-list a,
   .questioning-table .source-list small {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
 }
 .citizen-oversight-layout {
@@ -2745,11 +2761,11 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
-  font-size: 14px;
+  font-size: var(--text-body);
   overflow-wrap: anywhere;
 }
 .citizen-oversight-card h3 {
-  font-size: 21px;
+  font-size: var(--text-subheading);
   margin-block: 16px;
 }
 .citizen-oversight-work {
@@ -2762,7 +2778,7 @@ summary:focus-visible {
 .citizen-oversight-work dt {
   color: var(--green);
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .citizen-oversight-work dd {
   margin: 8px 0 0;
@@ -2796,12 +2812,12 @@ summary:focus-visible {
   padding: 25px;
 }
 .situation-grid h3 {
-  font-size: 20px;
+  font-size: var(--text-subheading);
   margin-block: 16px;
 }
 .situation-grid p,
 .situation-grid li {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.9;
   color: var(--muted);
 }
@@ -2811,7 +2827,7 @@ summary:focus-visible {
   margin-top: 20px;
 }
 .situation-grid summary {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--green);
   font-weight: 700;
   cursor: pointer;
@@ -2826,7 +2842,7 @@ summary:focus-visible {
   background: var(--white);
 }
 .all-roles > summary {
-  font-size: 15px;
+  font-size: var(--text-body);
   font-weight: 700;
   cursor: pointer;
 }
@@ -2839,7 +2855,7 @@ summary:focus-visible {
 .oversight-intro {
   max-width: 900px;
   margin-bottom: 40px;
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .oversight-controls {
   padding: clamp(18px, 3vw, 28px);
@@ -2859,7 +2875,7 @@ summary:focus-visible {
 }
 .oversight-search-row label {
   min-width: 0;
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 700;
 }
 .oversight-search-row select {
@@ -2868,7 +2884,7 @@ summary:focus-visible {
 }
 .oversight-group-note {
   margin-top: 20px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .oversight-organizations {
   display: grid;
@@ -2910,28 +2926,28 @@ summary:focus-visible {
   gap: 8px 16px;
   margin-bottom: 14px;
   color: var(--green);
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .oversight-organization-tags > span:first-child {
   font-weight: 700;
 }
 .oversight-organization h3 {
   margin-bottom: 12px;
-  font-size: clamp(19px, 2vw, 23px);
+  font-size: var(--text-subheading);
 }
 .oversight-organization-summary,
 .oversight-organization-kind {
   display: block;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .oversight-organization-kind {
   margin-top: 12px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-body);
 }
 .oversight-organization-body {
   padding: 0 clamp(20px, 3vw, 30px) 30px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .oversight-watch-targets {
   display: flex;
@@ -2952,7 +2968,7 @@ summary:focus-visible {
 }
 .oversight-organization-columns h4 {
   margin-block: 24px 14px;
-  font-size: 16px;
+  font-size: var(--text-body);
 }
 .oversight-organization-columns section > h4:first-child {
   margin-top: 8px;
@@ -2991,7 +3007,7 @@ summary:focus-visible {
   text-underline-offset: 4px;
 }
 .oversight-resources p {
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .oversight-boundary-note {
@@ -3017,11 +3033,11 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--white);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .oversight-empty h3,
 .oversight-selection h2 {
-  font-size: 22px;
+  font-size: var(--text-subheading);
   margin-bottom: 16px;
 }
 @media (max-width: 750px) {
@@ -3045,7 +3061,7 @@ input {
   border: 1px solid var(--tone-border, #cbd6c3);
   border-radius: 6px;
   padding: 10px 12px;
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--ink);
 }
 select:disabled {
@@ -3070,12 +3086,12 @@ input::placeholder {
   top: 112px;
 }
 .lookup-form h2 {
-  font-size: 26px;
+  font-size: var(--text-heading);
   line-height: 1.6;
   margin-top: 15px;
 }
 .lookup-form > p {
-  font-size: 11px;
+  font-size: var(--text-body);
   line-height: 1.95;
   color: var(--muted);
   margin-top: 15px;
@@ -3085,14 +3101,14 @@ input::placeholder {
 }
 .lookup-form label {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-body);
   font-weight: 600;
   margin-top: 18px;
   margin-bottom: 7px;
 }
 .lookup-form label small {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-body);
   font-weight: 400;
   color: var(--muted);
   margin-top: 2px;
@@ -3124,7 +3140,7 @@ input::placeholder {
   margin-top: 7px;
 }
 .search-results > p {
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   padding-bottom: 7px;
 }
@@ -3136,7 +3152,7 @@ input::placeholder {
   border: 0;
   padding: 10px 5px;
   width: 100%;
-  font-size: 11px;
+  font-size: var(--text-body);
   text-align: left;
   border-top: 1px solid var(--tone-border, #e5eadf);
 }
@@ -3150,7 +3166,7 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: var(--text-body);
   color: var(--tone-text, #526944);
   margin: 22px 0;
 }
@@ -3167,7 +3183,7 @@ input::placeholder {
 .clear-lookup {
   display: flex;
   margin: 11px auto 0;
-  font-size: 10px;
+  font-size: var(--text-body);
 }
 .lookup-trust {
   display: flex;
@@ -3176,7 +3192,7 @@ input::placeholder {
   border-top: 1px solid var(--tone-border, #cfdbc2);
   margin-top: 20px;
   padding-top: 17px;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.9;
 }
@@ -3226,18 +3242,18 @@ input::placeholder {
   right: 7px;
 }
 .ballot-illustration > span {
-  font-size: 8px;
+  font-size: var(--text-body);
   letter-spacing: 0.15em;
   z-index: 2;
   color: var(--tone-text, #6f805f);
   margin-top: 20px;
 }
 .lookup-empty h2 {
-  font-size: 27px;
+  font-size: var(--text-heading);
   line-height: 1.7;
 }
 .lookup-empty > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--muted);
   margin-top: 19px;
@@ -3253,7 +3269,7 @@ input::placeholder {
   justify-content: center;
 }
 .lookup-example-tags > span {
-  font-size: 9px;
+  font-size: var(--text-body);
   border: 1px solid var(--line);
   padding: 4px 9px;
   border-radius: 4px;
@@ -3265,14 +3281,14 @@ input::placeholder {
   margin-bottom: 30px;
 }
 .result-heading h2 {
-  font-size: 30px;
+  font-size: var(--text-heading);
   display: flex;
   align-items: center;
   gap: 8px;
   margin-block: 12px;
 }
 .result-heading > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-top: 14px;
 }
@@ -3280,11 +3296,11 @@ input::placeholder {
   margin-block: 30px 17px;
 }
 .ballot-group-heading h3 {
-  font-size: 22px;
+  font-size: var(--text-subheading);
   margin-block: 8px;
 }
 .ballot-group-heading p {
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .ballot-card {
@@ -3316,7 +3332,7 @@ input::placeholder {
 }
 .ballot-number {
   font:
-    16px Georgia,
+    var(--text-body) Georgia,
     serif;
   display: flex;
   align-items: center;
@@ -3328,12 +3344,12 @@ input::placeholder {
   color: var(--tone-text, #72915a);
 }
 .ballot-card strong {
-  font-size: 16px;
+  font-size: var(--text-body);
   display: block;
 }
 .ballot-card small {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.95;
   margin-top: 8px;
@@ -3348,7 +3364,7 @@ input::placeholder {
   padding: 20px;
   border-radius: 9px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .lookup-results > .muted {
   margin-top: 18px;
@@ -3368,13 +3384,13 @@ input::placeholder {
   color: var(--tone-text, #c6d69f);
 }
 .media-method h2 {
-  font-size: 29px;
+  font-size: var(--text-heading);
   line-height: 1.65;
   margin-top: 18px;
 }
 .media-method p {
   color: var(--tone-text, #b8cdbd);
-  font-size: 12px;
+  font-size: var(--text-body);
   line-height: 2;
   margin-top: 20px;
 }
@@ -3390,13 +3406,13 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: 13px;
+  font-size: var(--text-body);
   padding: 12px 0;
   border-bottom: 1px solid var(--tone-border, #47654c);
   margin: 0;
 }
 .media-method li > span {
-  font: 10px monospace;
+  font: var(--text-body) monospace;
   color: var(--tone-text, #b7c791);
 }
 .scenario-grid {
@@ -3424,22 +3440,22 @@ input::placeholder {
   color: var(--tone-text, #78955f);
 }
 .scenario-card > .pill {
-  font-size: 9px;
+  font-size: var(--text-body);
 }
 .scenario-card h3 {
-  font-size: 20px;
+  font-size: var(--text-subheading);
   line-height: 1.7;
   margin-top: 14px;
 }
 .scenario-card > p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.95;
   margin-top: 13px;
 }
 .scenario-card > .text-link {
   margin-top: 23px;
-  font-size: 11px;
+  font-size: var(--text-body);
 }
 .media-disclaimer {
   margin-top: 35px;
@@ -3456,12 +3472,12 @@ input::placeholder {
   padding-right: 20px;
 }
 .practice-guide h2 {
-  font-size: 24px;
+  font-size: var(--text-heading);
   line-height: 1.6;
   margin-top: 15px;
 }
 .practice-guide ol {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--tone-text, #59704e);
   line-height: 2;
   margin-block: 20px;
@@ -3470,7 +3486,7 @@ input::placeholder {
   margin-top: 12px;
 }
 .practice-guide p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 2;
   border-top: 1px solid var(--line);
@@ -3478,7 +3494,7 @@ input::placeholder {
   margin-bottom: 21px;
 }
 .fiction-tag {
-  font-size: 10px;
+  font-size: var(--text-body);
   letter-spacing: 0.06em;
   color: var(--tone-warm-text, #7c794e);
   background: var(--tone-surface-warm, #f1edda);
@@ -3511,16 +3527,16 @@ input::placeholder {
   background: var(--tone-surface, #e7eddf);
   color: var(--tone-text, #789368);
   font:
-    22px Georgia,
+    var(--text-subheading) Georgia,
     serif;
 }
 .material-header strong {
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .material-header small {
   display: block;
   color: var(--muted);
-  font-size: 10px;
+  font-size: var(--text-body);
   margin-top: 3px;
 }
 .material-header > svg {
@@ -3528,7 +3544,7 @@ input::placeholder {
   color: var(--tone-text, #a0b08e);
 }
 .practice-material > p {
-  font-size: 18px;
+  font-size: var(--text-lead);
   line-height: 2;
   margin-block: 26px;
 }
@@ -3537,7 +3553,7 @@ input::placeholder {
   padding-left: 17px;
 }
 .claim-question h2 {
-  font-size: 17px;
+  font-size: var(--text-lead);
   line-height: 1.9;
   margin-top: 9px;
 }
@@ -3545,7 +3561,7 @@ input::placeholder {
   margin-top: 35px;
 }
 .evidence-section .section-heading h2 {
-  font-size: 21px;
+  font-size: var(--text-subheading);
 }
 .evidence-section .section-heading {
   margin-bottom: 18px;
@@ -3565,7 +3581,7 @@ input::placeholder {
   cursor: pointer;
 }
 .evidence-number {
-  font-size: 9px;
+  font-size: var(--text-body);
   background: var(--tone-surface, #dde7cf);
   border-radius: 4px;
   padding: 3px 7px;
@@ -3573,19 +3589,19 @@ input::placeholder {
   flex-shrink: 0;
 }
 .evidence-card strong {
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .evidence-plus {
   margin-left: auto;
   color: var(--tone-text, #6b8b56);
-  font-size: 22px;
+  font-size: var(--text-subheading);
 }
 .evidence-card[open] .evidence-plus {
   transform: rotate(45deg);
 }
 .evidence-card > p {
   padding: 0 23px 23px;
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--tone-text, #51634b);
 }
@@ -3597,7 +3613,7 @@ input::placeholder {
   margin-top: 22px;
 }
 .full-explanation summary {
-  font-size: 14px;
+  font-size: var(--text-body);
   color: var(--green);
   display: flex;
   gap: 10px;
@@ -3605,7 +3621,7 @@ input::placeholder {
   cursor: pointer;
 }
 .full-explanation > p {
-  font-size: 14px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 2;
   margin-top: 20px;
@@ -3616,7 +3632,7 @@ input::placeholder {
   padding-top: 28px;
 }
 .takeaway-box h2 {
-  font-size: 22px;
+  font-size: var(--text-subheading);
   line-height: 1.7;
   margin-top: 11px;
 }
@@ -3629,12 +3645,12 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 13px;
+  font-size: var(--text-body);
   border-bottom: 1px solid var(--line);
   padding: 13px 0;
 }
 .takeaway-box li > span {
-  font: 11px monospace;
+  font: var(--text-body) monospace;
   color: var(--tone-text, #526d3c);
 }
 .practice-finish {
@@ -3655,7 +3671,7 @@ input::placeholder {
   padding-block: 27px;
 }
 .source-catalog h2 {
-  font-size: 21px;
+  font-size: var(--text-subheading);
   margin-block: 12px;
 }
 .source-catalog h2 > a {
@@ -3667,14 +3683,15 @@ input::placeholder {
   text-decoration: underline;
 }
 .source-catalog article > p {
-  font-size: 13px;
+  overflow-wrap: anywhere;
+  font-size: var(--text-body);
   line-height: 2;
 }
 .metadata-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-top: 17px;
 }
@@ -3682,7 +3699,7 @@ input::placeholder {
   margin-top: 45px;
 }
 .corrections > h2 {
-  font-size: 25px;
+  font-size: var(--text-heading);
 }
 .corrections > div {
   margin-block: 25px;
@@ -3692,11 +3709,11 @@ input::placeholder {
   border-radius: 9px;
 }
 .corrections h3 {
-  font-size: 17px;
+  font-size: var(--text-lead);
   margin-top: 11px;
 }
 .corrections p {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 1.95;
   margin-top: 11px;
 }
@@ -3716,11 +3733,11 @@ input::placeholder {
   margin-bottom: 24px;
 }
 .about-letter h2 {
-  font-size: 29px;
+  font-size: var(--text-heading);
   margin-block: 18px 25px;
 }
 .about-letter > p {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 2.2;
   color: var(--tone-text, #4e6454);
 }
@@ -3728,7 +3745,7 @@ input::placeholder {
   margin-top: 26px;
 }
 .letter-signature {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--green);
   text-align: right;
   margin-top: 32px;
@@ -3737,7 +3754,7 @@ input::placeholder {
   padding-block: 42px;
 }
 .about-principles > h2 {
-  font-size: 25px;
+  font-size: var(--text-heading);
 }
 .about-principles ol {
   list-style: none;
@@ -3749,12 +3766,12 @@ input::placeholder {
   align-items: center;
   gap: 19px;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  font-size: var(--text-body);
   padding: 15px 0;
   margin: 0;
 }
 .about-principles li > span {
-  font: 11px monospace;
+  font: var(--text-body) monospace;
   color: var(--tone-text, #566e42);
 }
 .contact-box {
@@ -3768,11 +3785,11 @@ input::placeholder {
   color: var(--green);
 }
 .contact-box h2 {
-  font-size: 25px;
+  font-size: var(--text-heading);
   margin-top: 15px;
 }
 .contact-box > p {
-  font-size: 13px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--muted);
   margin-top: 15px;
@@ -3781,7 +3798,7 @@ input::placeholder {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 24px;
+  font-size: var(--text-heading);
   word-break: break-all;
   color: var(--green);
   border-bottom: 1px solid var(--tone-border, #b4c6a1);
@@ -3801,7 +3818,7 @@ input::placeholder {
   margin-top: 25px;
 }
 .copy-feedback {
-  font-size: 10px;
+  font-size: var(--text-body);
   color: var(--muted);
   width: 100%;
   display: block;
@@ -3816,7 +3833,7 @@ input::placeholder {
   border-radius: 11px;
 }
 .prose-card h2 {
-  font-size: 23px;
+  font-size: var(--text-subheading);
   margin-top: 35px;
   margin-bottom: 18px;
 }
@@ -3824,7 +3841,7 @@ input::placeholder {
   margin-top: 0;
 }
 .prose-card p {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 2;
   color: var(--tone-text, #566a58);
 }
@@ -3855,17 +3872,17 @@ input::placeholder {
   color: var(--green);
 }
 .consent-panel h2 {
-  font-size: 18px;
+  font-size: var(--text-lead);
 }
 .consent-panel p {
-  font-size: 12px;
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: 1.9;
   margin-top: 11px;
 }
 .consent-panel a {
   display: inline-block;
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--green);
   text-decoration: underline;
   margin-top: 8px;
@@ -3879,12 +3896,12 @@ input::placeholder {
 }
 .consent-actions .button-primary,
 .consent-actions .button-secondary {
-  font-size: 11px;
+  font-size: var(--text-body);
   padding: 9px 13px;
   min-height: 38px;
 }
 .consent-actions .quiet-button {
-  font-size: 10px;
+  font-size: var(--text-body);
 }
 @keyframes reveal {
   from {
@@ -3902,7 +3919,7 @@ input::placeholder {
     padding-block: 85px;
   }
   .hero-copy h1 {
-    font-size: 72px;
+    font-size: var(--text-display);
   }
   .civic-preview {
     padding: 27px 31px;
@@ -3926,14 +3943,14 @@ input::placeholder {
     padding-block: 52px;
   }
   .hero-copy h1 {
-    font-size: 50px;
+    font-size: var(--text-title);
   }
   .hero-actions {
     gap: 16px;
     flex-wrap: wrap;
   }
   .hero-about {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .preview-people {
     width: 92%;
@@ -3948,7 +3965,7 @@ input::placeholder {
     display: none;
   }
   .preview-caption {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .strip-end {
     display: none;
@@ -3960,7 +3977,7 @@ input::placeholder {
     padding: 23px;
   }
   .path-card h3 {
-    font-size: 23px;
+    font-size: var(--text-subheading);
   }
   .teaser-grid {
     gap: 40px;
@@ -3984,7 +4001,7 @@ input::placeholder {
     padding: 25px;
   }
   .lookup-empty h2 {
-    font-size: 23px;
+    font-size: var(--text-subheading);
   }
   .government-workspace {
     gap: 18px;
@@ -3999,22 +4016,22 @@ input::placeholder {
     gap: 8px;
   }
   .role-node strong {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .practice-layout {
     gap: 35px;
     grid-template-columns: 200px minmax(0, 1fr);
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 81.25em) {
   .header-inner {
     height: 77px;
   }
   .brand strong {
-    font-size: 19px;
+    font-size: var(--text-subheading);
   }
   .brand small {
-    font-size: 7px;
+    font-size: var(--text-body);
   }
   .main-nav {
     display: none;
@@ -4054,7 +4071,7 @@ input::placeholder {
     min-height: 46px;
     padding: 11px 14px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .nav-links > a::after {
     content: '';
@@ -4090,17 +4107,17 @@ input::placeholder {
     gap: 28px;
   }
   .hero-copy h1 {
-    font-size: 42px;
+    font-size: var(--text-title);
   }
   .hero-copy .eyebrow {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .hero-copy > p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .hero-reassurance {
     gap: 10px;
-    font-size: 8px;
+    font-size: var(--text-body);
     flex-wrap: wrap;
   }
   .hero-actions {
@@ -4108,7 +4125,7 @@ input::placeholder {
     margin-top: 24px;
   }
   .hero-actions .button-primary {
-    font-size: 11px;
+    font-size: var(--text-body);
     padding: 12px 15px;
     min-height: 45px;
   }
@@ -4117,7 +4134,7 @@ input::placeholder {
     border-radius: 12px;
   }
   .preview-label {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .preview-people {
     padding: 10px;
@@ -4125,7 +4142,7 @@ input::placeholder {
     width: 95%;
   }
   .preview-people strong {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .preview-people > svg {
     width: 18px;
@@ -4153,23 +4170,23 @@ input::placeholder {
     height: 18px;
   }
   .building-label {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .preview-building strong {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .preview-building small {
-    font-size: 7px;
+    font-size: var(--text-body);
   }
   .preview-building {
     padding: 10px 6px;
   }
   .preview-vote {
     margin-block: 12px;
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .preview-check {
-    font-size: 8px;
+    font-size: var(--text-body);
     margin-top: 15px;
   }
   .preview-check svg {
@@ -4179,11 +4196,11 @@ input::placeholder {
     gap: 5px;
   }
   .preview-tabs button {
-    font-size: 8px;
+    font-size: var(--text-body);
     padding: 7px 4px;
   }
   .preview-tabs button span {
-    font-size: 7px;
+    font-size: var(--text-body);
     margin-right: 2px;
   }
   .preview-caption {
@@ -4202,7 +4219,7 @@ input::placeholder {
   }
   .guide-strip > .container {
     gap: 18px;
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .guide-strip-label {
     display: none;
@@ -4214,10 +4231,10 @@ input::placeholder {
     padding-block: 58px;
   }
   .section-heading h2 {
-    font-size: 25px;
+    font-size: var(--text-heading);
   }
   .section-heading p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .path-grid {
     gap: 13px;
@@ -4226,19 +4243,19 @@ input::placeholder {
     padding: 20px 17px;
   }
   .path-card h3 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .path-card p {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .path-card-top svg {
     width: 24px;
   }
   .path-no {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .path-card-bottom {
-    font-size: 9px;
+    font-size: var(--text-body);
     gap: 10px;
   }
   .path-card-bottom .round-arrow {
@@ -4246,10 +4263,10 @@ input::placeholder {
     height: 30px;
   }
   .teaser-grid h2 {
-    font-size: 29px;
+    font-size: var(--text-heading);
   }
   .teaser-questions > a > strong {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .teaser-questions > a {
     gap: 13px;
@@ -4263,7 +4280,7 @@ input::placeholder {
   .art-rights > span {
     width: 60px;
     height: 75px;
-    font-size: 17px;
+    font-size: var(--text-lead);
   }
   .art-local {
     gap: 5px;
@@ -4271,14 +4288,14 @@ input::placeholder {
   .art-local > span {
     width: 42px;
     height: 42px;
-    font-size: 17px;
+    font-size: var(--text-lead);
   }
   .art-local > span:last-child {
     width: 35px;
     height: 35px;
   }
   .article-preview h3 {
-    font-size: 15px;
+    font-size: var(--text-body);
   }
   .mission-section {
     grid-template-columns: 35px 1fr;
@@ -4288,10 +4305,10 @@ input::placeholder {
     display: none;
   }
   .mission-section h2 {
-    font-size: 22px;
+    font-size: var(--text-subheading);
   }
   .page-intro h1 {
-    font-size: 36px;
+    font-size: var(--text-title);
   }
   .government-workspace {
     grid-template-columns: 1fr;
@@ -4308,7 +4325,7 @@ input::placeholder {
     min-height: 115px;
   }
   .role-node strong {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .government-board {
     padding: 25px;
@@ -4320,10 +4337,10 @@ input::placeholder {
     padding: 20px;
   }
   .situation-grid h3 {
-    font-size: 17px;
+    font-size: var(--text-lead);
   }
   .flow-progress strong {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .flow-box {
     padding: 26px;
@@ -4337,56 +4354,56 @@ input::placeholder {
     top: 98px;
   }
   .lookup-form h2 {
-    font-size: 23px;
+    font-size: var(--text-subheading);
   }
   .lookup-empty {
     padding: 40px 14px;
     min-height: 630px;
   }
   .lookup-empty h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .lookup-empty > p {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .lookup-empty br {
     display: none;
   }
   .result-heading h2 {
-    font-size: 25px;
+    font-size: var(--text-heading);
   }
   .ballot-card > summary {
     gap: 9px;
     padding: 17px 13px;
   }
   .ballot-card strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .ballot-card small {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .ballot-details {
     padding-left: 22px;
     padding-right: 22px;
   }
   .ballot-group-heading h3 {
-    font-size: 19px;
+    font-size: var(--text-subheading);
   }
   .ballot-number {
-    font-size: 14px;
+    font-size: var(--text-body);
     min-width: 29px;
     min-height: 29px;
   }
   .lookup-results .notice {
     padding: 17px;
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .media-method {
     gap: 28px;
     padding: 32px;
   }
   .media-method h2 {
-    font-size: 24px;
+    font-size: var(--text-heading);
   }
   .scenario-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -4401,7 +4418,7 @@ input::placeholder {
     border-radius: 10px;
   }
   .practice-guide h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .practice-guide ol {
     display: flex;
@@ -4416,7 +4433,7 @@ input::placeholder {
     display: none;
   }
   .practice-guide .text-link {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .quick-start {
     grid-template-columns: 1fr 1.8fr;
@@ -4425,13 +4442,13 @@ input::placeholder {
     padding: 27px;
   }
   .quick-start-intro h2 {
-    font-size: 26px;
+    font-size: var(--text-heading);
   }
   .quick-step-list {
     padding: 12px 23px;
   }
   .quick-step-list summary {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .article-layout {
     grid-template-columns: 1fr;
@@ -4458,7 +4475,7 @@ input::placeholder {
     max-width: none;
   }
   .article-opening h2 {
-    font-size: 22px;
+    font-size: var(--text-subheading);
   }
   .footer-links {
     gap: 35px;
@@ -4470,10 +4487,10 @@ input::placeholder {
   }
   .header-inner {
     height: 72px;
-    gap: 8px;
+    gap: 4px;
   }
   .brand strong {
-    font-size: 18px;
+    font-size: var(--text-body);
   }
   .brand-mark {
     gap: 2px;
@@ -4484,7 +4501,10 @@ input::placeholder {
     height: 8px;
   }
   .brand {
-    gap: 9px;
+    gap: 5px;
+  }
+  .site-header .brand small {
+    display: none;
   }
   .main-nav {
     top: 80px;
@@ -4502,12 +4522,14 @@ input::placeholder {
   }
   .mobile-toggle {
     min-height: 44px;
+    gap: 4px;
+    padding-inline: 8px;
   }
   .back-to-top {
     right: max(12px, env(safe-area-inset-right));
     bottom: max(12px, env(safe-area-inset-bottom));
-    min-width: 60px;
-    min-height: 70px;
+    min-width: 48px;
+    min-height: 48px;
     padding: 8px;
   }
   .home-hero {
@@ -4519,15 +4541,15 @@ input::placeholder {
     padding: 0;
   }
   .hero-copy .eyebrow {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .hero-copy h1 {
-    font-size: 49px;
+    font-size: var(--text-title);
     margin-top: 19px;
     line-height: 1.35;
   }
   .hero-copy > p {
-    font-size: 14px;
+    font-size: var(--text-body);
     line-height: 2;
     margin-top: 19px;
   }
@@ -4537,14 +4559,14 @@ input::placeholder {
     flex-wrap: wrap;
   }
   .hero-actions .button-primary {
-    font-size: 12px;
+    font-size: var(--text-body);
     padding: 13px 17px;
   }
   .hero-about {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .hero-reassurance {
-    font-size: 9px;
+    font-size: var(--text-body);
     gap: 18px;
     margin-top: 21px;
   }
@@ -4557,11 +4579,11 @@ input::placeholder {
     transform: rotate(0.6deg);
   }
   .preview-label {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .preview-label > span:last-child {
     display: inline;
-    font-size: 7px;
+    font-size: var(--text-body);
   }
   .preview-people {
     padding: 13px;
@@ -4569,7 +4591,7 @@ input::placeholder {
     width: 90%;
   }
   .preview-people strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .preview-people > svg {
     width: 22px;
@@ -4601,36 +4623,36 @@ input::placeholder {
     height: 23px;
   }
   .building-label {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .preview-building strong {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .preview-building small {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .preview-tabs button {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .preview-tabs button span {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .preview-caption {
     justify-content: center;
     text-align: center;
-    font-size: 8px;
+    font-size: var(--text-body);
     min-height: 0;
   }
   .preview-check {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .guide-strip > .container {
     gap: 8px;
     padding-block: 15px;
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .guide-strip strong {
-    font-size: 16px;
+    font-size: var(--text-body);
     margin-right: 3px;
   }
   .guide-strip i {
@@ -4649,18 +4671,18 @@ input::placeholder {
     margin-bottom: 24px;
   }
   .section-heading h2 {
-    font-size: 24px;
+    font-size: var(--text-heading);
     line-height: 1.65;
     margin-top: 9px;
   }
   .section-heading > .text-link {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .section-heading .eyebrow {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .section-heading p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .path-grid {
     grid-template-columns: 1fr;
@@ -4671,14 +4693,14 @@ input::placeholder {
     position: relative;
   }
   .path-card h3 {
-    font-size: 25px;
+    font-size: var(--text-heading);
     margin-top: 13px;
   }
   .path-card h3 br {
     display: none;
   }
   .path-card p {
-    font-size: 12px;
+    font-size: var(--text-body);
     margin-top: 11px;
   }
   .path-card p br {
@@ -4688,10 +4710,10 @@ input::placeholder {
     width: 26px;
   }
   .path-no {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .path-card-bottom {
-    font-size: 10px;
+    font-size: var(--text-body);
     margin-top: 20px;
     padding-top: 16px;
   }
@@ -4705,18 +4727,18 @@ input::placeholder {
     padding-block: 40px;
   }
   .teaser-grid h2 {
-    font-size: 31px;
+    font-size: var(--text-heading);
     line-height: 1.6;
   }
   .teaser-grid p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .teaser-questions > a {
     padding-block: 22px;
     gap: 17px;
   }
   .teaser-questions > a > strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .article-preview-grid {
     grid-template-columns: 1fr;
@@ -4728,12 +4750,12 @@ input::placeholder {
   .art-rights > span {
     width: 80px;
     height: 97px;
-    font-size: 22px;
+    font-size: var(--text-subheading);
   }
   .art-local > span {
     width: 63px;
     height: 63px;
-    font-size: 24px;
+    font-size: var(--text-heading);
   }
   .art-local > span:last-child {
     width: 50px;
@@ -4743,13 +4765,13 @@ input::placeholder {
     gap: 17px;
   }
   .article-preview h3 {
-    font-size: 19px;
+    font-size: var(--text-subheading);
   }
   .article-preview p {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .article-preview-meta {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .mission-section {
     padding-block: 32px 40px;
@@ -4760,15 +4782,15 @@ input::placeholder {
     width: 28px;
   }
   .mission-section h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
     line-height: 1.7;
   }
   .mission-section p {
-    font-size: 12px;
+    font-size: var(--text-body);
     line-height: 2.1;
   }
   .mission-section .eyebrow {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .footer-main {
     grid-template-columns: 1fr;
@@ -4776,20 +4798,20 @@ input::placeholder {
     gap: 28px;
   }
   .footer-main > div > p {
-    font-size: 11px;
+    font-size: var(--text-body);
     margin-top: 17px;
   }
   .footer-links {
     gap: 42px;
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .footer-links strong {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .footer-bottom {
     flex-wrap: wrap;
     gap: 10px;
-    font-size: 9px;
+    font-size: var(--text-body);
     padding-block: 17px;
   }
   .footer-bottom > a {
@@ -4803,16 +4825,16 @@ input::placeholder {
     padding-bottom: 27px;
   }
   .page-intro .eyebrow {
-    font-size: 8px;
+    font-size: var(--text-body);
     letter-spacing: 0.09em;
   }
   .page-intro h1 {
-    font-size: 30px;
+    font-size: var(--text-heading);
     line-height: 1.55;
     margin-block: 15px;
   }
   .intro-copy {
-    font-size: 13px;
+    font-size: var(--text-body);
     line-height: 2;
   }
   .page-intro-line {
@@ -4825,7 +4847,7 @@ input::placeholder {
     padding: 25px;
   }
   .quick-start-intro h2 {
-    font-size: 26px;
+    font-size: var(--text-heading);
     line-height: 1.4;
     margin-top: 16px;
   }
@@ -4833,7 +4855,7 @@ input::placeholder {
     display: none;
   }
   .quick-start-intro > p {
-    font-size: 12px;
+    font-size: var(--text-body);
     margin-top: 12px;
   }
   .quick-start-intro > p br {
@@ -4844,12 +4866,12 @@ input::placeholder {
   }
   .quick-step-list summary {
     gap: 12px;
-    font-size: 12px;
+    font-size: var(--text-body);
     line-height: 1.85;
   }
   .quick-step-list p {
     margin-left: 27px;
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .quick-step-list .text-link {
     margin-left: 27px;
@@ -4862,7 +4884,7 @@ input::placeholder {
     padding-right: 38px;
   }
   .lesson-number {
-    font-size: 27px;
+    font-size: var(--text-heading);
     min-width: 28px;
   }
   .lesson-row > div {
@@ -4870,17 +4892,17 @@ input::placeholder {
     min-width: 0;
   }
   .lesson-row h3 {
-    font-size: 16px;
+    font-size: var(--text-body);
     line-height: 1.8;
   }
   .lesson-row p {
-    font-size: 11px;
+    font-size: var(--text-body);
     line-height: 1.95;
   }
   .lesson-time {
     width: 100%;
     margin-left: 43px;
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .lesson-row > .round-arrow {
     position: absolute;
@@ -4901,21 +4923,21 @@ input::placeholder {
     margin-bottom: 27px;
   }
   .article-opening h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
     line-height: 1.8;
   }
   .article-opening > .eyebrow {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .article-section {
     margin-block: 25px 36px;
   }
   .article-section h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
     line-height: 1.65;
   }
   .article-section p {
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 2.1;
   }
   .example-box,
@@ -4928,12 +4950,12 @@ input::placeholder {
     margin-block: 27px;
   }
   .quiz-box h3 {
-    font-size: 17px;
+    font-size: var(--text-lead);
   }
   .quiz-option {
     padding: 13px 10px;
     gap: 9px;
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .quiz-option .option-letter {
     display: none;
@@ -4942,22 +4964,22 @@ input::placeholder {
     gap: 12px;
   }
   .quiz-actions .button-primary {
-    font-size: 12px;
+    font-size: var(--text-body);
     padding-inline: 15px;
   }
   .quiz-feedback {
     padding: 17px;
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .source-list {
     margin-top: 27px;
     padding-top: 23px;
   }
   .source-list h2 {
-    font-size: 17px;
+    font-size: var(--text-lead);
   }
   .source-item {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .source-item a {
     display: inline;
@@ -4967,11 +4989,11 @@ input::placeholder {
     margin-left: 5px;
   }
   .source-item small {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .article-review {
     flex-wrap: wrap;
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .article-review a {
     margin-left: 0;
@@ -4981,7 +5003,7 @@ input::placeholder {
     gap: 20px;
   }
   .lesson-neighbors strong {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .government-board {
     padding: 18px;
@@ -4997,29 +5019,29 @@ input::placeholder {
     width: 20px;
   }
   .role-node strong {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .role-node > span {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .role-inspector {
     padding: 23px;
   }
   .role-inspector h2 {
-    font-size: 25px;
+    font-size: var(--text-heading);
   }
   .relation-list > li {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .relation-arrow > small {
-    font-size: 8px;
+    font-size: var(--text-body);
   }
   .flow-tabs {
     gap: 4px;
     flex-wrap: nowrap;
   }
   .flow-tabs > button {
-    font-size: 11px;
+    font-size: var(--text-body);
     padding: 12px 7px;
     flex: 1;
   }
@@ -5036,24 +5058,24 @@ input::placeholder {
     padding: 13px 0;
   }
   .flow-progress strong {
-    font-size: 9px;
+    font-size: var(--text-body);
     line-height: 1.9;
   }
   .flow-progress > button > span {
     width: 23px;
     height: 23px;
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .flow-current {
     padding: 23px 20px;
     min-height: 240px;
   }
   .flow-current h3 {
-    font-size: 23px;
+    font-size: var(--text-subheading);
     line-height: 1.7;
   }
   .flow-current p {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .flow-controls {
     gap: 9px;
@@ -5061,7 +5083,7 @@ input::placeholder {
   .flow-controls .button-primary,
   .flow-controls .button-secondary {
     padding: 11px 12px;
-    font-size: 11px;
+    font-size: var(--text-body);
     gap: 9px;
   }
   .situation-grid {
@@ -5072,7 +5094,7 @@ input::placeholder {
     padding: 23px;
   }
   .situation-grid h3 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .lookup-layout {
     grid-template-columns: 1fr;
@@ -5083,30 +5105,30 @@ input::placeholder {
     padding: 25px;
   }
   .lookup-form h2 {
-    font-size: 27px;
+    font-size: var(--text-heading);
     line-height: 1.5;
   }
   .lookup-form h2 br {
     display: none;
   }
   .lookup-form > p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .lookup-form > p br {
     display: none;
   }
   .lookup-form label {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .lookup-form label small {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .lookup-form form {
     margin-top: 22px;
   }
   .lookup-form select,
   .lookup-form input {
-    font-size: 14px;
+    font-size: var(--text-body);
     min-height: 48px;
   }
   .lookup-empty {
@@ -5114,26 +5136,26 @@ input::placeholder {
     padding: 35px 20px;
   }
   .lookup-empty h2 {
-    font-size: 24px;
+    font-size: var(--text-heading);
   }
   .lookup-empty > p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .result-heading h2 {
-    font-size: 29px;
+    font-size: var(--text-heading);
   }
   .ballot-group-heading h3 {
-    font-size: 22px;
+    font-size: var(--text-subheading);
   }
   .ballot-card > summary {
     padding: 19px 15px;
     gap: 12px;
   }
   .ballot-card strong {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .ballot-card small {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .ballot-details {
     padding: 0 22px 20px;
@@ -5141,10 +5163,10 @@ input::placeholder {
   .ballot-number {
     min-width: 32px;
     min-height: 32px;
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .lookup-results .notice {
-    font-size: 12px;
+    font-size: var(--text-body);
     padding: 21px;
   }
   .media-method {
@@ -5154,14 +5176,14 @@ input::placeholder {
     margin-bottom: 40px;
   }
   .media-method h2 {
-    font-size: 25px;
+    font-size: var(--text-heading);
     line-height: 1.7;
   }
   .media-method p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .media-method li {
-    font-size: 12px;
+    font-size: var(--text-body);
     gap: 14px;
   }
   .scenario-grid {
@@ -5175,10 +5197,10 @@ input::placeholder {
     margin-bottom: 18px;
   }
   .scenario-card h3 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .scenario-card > p {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .practice-layout {
     gap: 25px;
@@ -5188,7 +5210,7 @@ input::placeholder {
   }
   .practice-guide ol {
     display: block;
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .practice-guide li + li {
     margin-top: 5px;
@@ -5197,47 +5219,47 @@ input::placeholder {
     padding: 23px;
   }
   .practice-material > p {
-    font-size: 16px;
+    font-size: var(--text-body);
     line-height: 2.1;
   }
   .material-header strong {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .material-header small {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .material-header > svg {
     width: 20px;
   }
   .claim-question h2 {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .evidence-section .section-heading {
     gap: 10px;
   }
   .evidence-section .section-heading h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
   }
   .evidence-card > summary {
     gap: 9px;
     padding: 17px 14px;
   }
   .evidence-number {
-    font-size: 8px;
+    font-size: var(--text-body);
     padding: 3px 6px;
   }
   .evidence-card strong {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .evidence-card > p {
-    font-size: 13px;
+    font-size: var(--text-body);
     padding: 0 20px 20px;
   }
   .takeaway-box h2 {
-    font-size: 20px;
+    font-size: var(--text-subheading);
   }
   .takeaway-box li {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .practice-finish > * {
     width: 100%;
@@ -5247,21 +5269,21 @@ input::placeholder {
     padding: 19px;
   }
   .full-explanation summary {
-    font-size: 13px;
+    font-size: var(--text-body);
   }
   .notice {
     padding: 21px;
-    font-size: 12px;
+    font-size: var(--text-body);
     gap: 12px;
   }
   .notice > svg {
     width: 20px;
   }
   .notice strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .source-catalog h2 {
-    font-size: 19px;
+    font-size: var(--text-subheading);
     line-height: 1.7;
   }
   .source-catalog h2 > a {
@@ -5272,32 +5294,32 @@ input::placeholder {
   }
   .metadata-row {
     gap: 9px;
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .corrections h3 {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .about-letter {
     padding: 28px;
   }
   .about-letter h2 {
-    font-size: 25px;
+    font-size: var(--text-heading);
   }
   .about-letter > p {
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 2.2;
   }
   .about-letter .eyebrow {
-    font-size: 9px;
+    font-size: var(--text-body);
   }
   .letter-signature {
-    font-size: 10px;
+    font-size: var(--text-body);
   }
   .about-principles > h2 {
-    font-size: 23px;
+    font-size: var(--text-subheading);
   }
   .about-principles li {
-    font-size: 13px;
+    font-size: var(--text-body);
     gap: 15px;
     line-height: 2;
   }
@@ -5305,13 +5327,13 @@ input::placeholder {
     padding: 25px 20px;
   }
   .contact-box h2 {
-    font-size: 24px;
+    font-size: var(--text-heading);
   }
   .contact-box > p {
-    font-size: 12px;
+    font-size: var(--text-body);
   }
   .email-address {
-    font-size: 18px;
+    font-size: var(--text-lead);
     gap: 5px;
   }
   .email-address svg {
@@ -5322,18 +5344,18 @@ input::placeholder {
   }
   .contact-actions .button-primary,
   .contact-actions .button-secondary {
-    font-size: 11px;
+    font-size: var(--text-body);
     padding: 11px 14px;
   }
   .prose-card {
     padding: 26px;
   }
   .prose-card h2 {
-    font-size: 21px;
+    font-size: var(--text-subheading);
     line-height: 1.7;
   }
   .prose-card p {
-    font-size: 14px;
+    font-size: var(--text-body);
     line-height: 2;
   }
   .consent-panel {
@@ -5344,10 +5366,10 @@ input::placeholder {
     gap: 12px;
   }
   .consent-panel h2 {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .consent-panel p {
-    font-size: 11px;
+    font-size: var(--text-body);
   }
   .consent-panel > svg {
     width: 20px;
@@ -5403,7 +5425,7 @@ input::placeholder {
 }
 .justice-principles > h2 {
   margin-bottom: 22px;
-  font-size: 27px;
+  font-size: var(--text-heading);
 }
 .justice-principle-grid,
 .justice-system-grid,
@@ -5431,19 +5453,19 @@ input::placeholder {
 .justice-reporting-channels h3,
 .justice-prepare h3 {
   margin-bottom: 12px;
-  font-size: 19px;
+  font-size: var(--text-subheading);
 }
 .justice-principle-grid p,
 .justice-system-card p,
 .justice-court-paths p,
 .justice-reporting-terms p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-index {
   display: block;
   font-family: monospace;
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--green);
   margin-bottom: 12px;
 }
@@ -5470,7 +5492,7 @@ input::placeholder {
 .justice-organization-path li {
   border-left: 2px solid var(--line);
   padding: 7px 12px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-system-card .text-link {
   margin-top: auto;
@@ -5485,11 +5507,11 @@ input::placeholder {
   border-radius: 10px;
   margin-top: 22px;
   color: var(--green-dark);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-sources {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .justice-sources > summary {
@@ -5516,7 +5538,7 @@ input::placeholder {
   border: 1px solid var(--tone-border, #bacbb4);
   border-radius: 7px;
   background: var(--white);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-group-filters button[aria-pressed='true'] {
   background: var(--green);
@@ -5540,11 +5562,11 @@ input::placeholder {
   min-height: 48px;
   border: none;
   background: transparent;
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .justice-directory-tools > p {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .justice-workspace {
   display: grid;
@@ -5579,10 +5601,10 @@ input::placeholder {
     border-color 0.2s;
 }
 .justice-entity-card strong {
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-entity-card span {
-  font-size: 11px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .justice-entity-card:hover {
@@ -5608,7 +5630,7 @@ input::placeholder {
   scroll-margin-top: 105px;
 }
 .justice-inspector > h3 {
-  font-size: 25px;
+  font-size: var(--text-heading);
   margin-block: 10px 20px;
 }
 .justice-return {
@@ -5623,14 +5645,14 @@ input::placeholder {
   border-top: 1px solid var(--line);
 }
 .justice-entity-details dt {
-  font-size: 13px;
+  font-size: var(--text-body);
   font-weight: 700;
   color: var(--green);
   margin-bottom: 8px;
 }
 .justice-entity-details dd {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--text-body);
   color: var(--muted);
 }
 .justice-entity-details dd ul {
@@ -5659,7 +5681,7 @@ input::placeholder {
   border-top: 1px solid var(--line);
 }
 .justice-full-text > section > h3 {
-  font-size: 23px;
+  font-size: var(--text-subheading);
   margin-bottom: 16px;
 }
 .justice-coverage-notes,
@@ -5667,7 +5689,7 @@ input::placeholder {
 .justice-checked-at {
   margin-top: 24px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .justice-court-paths,
 .justice-reporting-channels {
@@ -5676,7 +5698,7 @@ input::placeholder {
   gap: 22px;
 }
 .justice-court-paths ul {
-  font-size: 14px;
+  font-size: var(--text-body);
   padding-left: 1.2em;
   margin-block: 18px;
 }
@@ -5705,11 +5727,11 @@ input::placeholder {
   border-top: 3px solid var(--line);
   background: var(--paper);
   text-align: left;
-  font-size: 13px;
+  font-size: var(--text-body);
 }
 .justice-flow-progress button span {
   display: block;
-  font: 12px monospace;
+  font: var(--text-body) monospace;
   margin-bottom: 6px;
 }
 .justice-flow-progress button[aria-current='step'] {
@@ -5724,14 +5746,14 @@ input::placeholder {
   padding: 28px;
 }
 .justice-current-step h3 {
-  font-size: 24px;
+  font-size: var(--text-heading);
   margin-block: 15px;
 }
 .justice-current-step p,
 .justice-current-step li,
 .justice-full-flow p,
 .justice-full-flow li {
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-current-step > ul {
   margin-block: 18px 0;
@@ -5748,7 +5770,7 @@ input::placeholder {
   border-radius: 8px;
 }
 .justice-outcomes h4 {
-  font-size: 15px;
+  font-size: var(--text-body);
   margin-bottom: 8px;
   color: var(--green);
 }
@@ -5761,7 +5783,7 @@ input::placeholder {
 }
 .justice-full-flow h3 {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: var(--text-lead);
 }
 .justice-reporting-terms {
   margin-bottom: 24px;
@@ -5770,7 +5792,7 @@ input::placeholder {
   align-items: start;
 }
 .justice-channel-where {
-  font-size: 14px;
+  font-size: var(--text-body);
   color: var(--green);
 }
 .justice-reporting-channels ol {
@@ -5780,13 +5802,13 @@ input::placeholder {
   padding: 10px 0;
 }
 .justice-reporting-channels h4 {
-  font-size: 16px;
+  font-size: var(--text-body);
   margin-bottom: 8px;
 }
 .justice-reporting-channels p,
 .justice-reporting-channels ul,
 .justice-prepare {
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-reporting-channels ul {
   color: var(--muted);
@@ -5799,7 +5821,7 @@ input::placeholder {
 .justice-faq > details > .justice-sources {
   margin: 0;
   padding: 0 22px 22px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-empty {
   grid-column: 1 / -1;
@@ -5815,12 +5837,12 @@ input::placeholder {
 }
 .justice-custody-conditions > h3,
 .justice-custody-review > h3 {
-  font-size: 22px;
+  font-size: var(--text-subheading);
   margin-bottom: 12px;
 }
 .justice-custody-conditions > p,
 .justice-custody-review > p {
-  font-size: 14px;
+  font-size: var(--text-body);
   color: var(--muted);
   margin-bottom: 20px;
 }
@@ -5840,7 +5862,7 @@ input::placeholder {
   padding: 18px 20px;
   min-height: 44px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: var(--text-body);
   font-weight: 700;
   color: var(--green-dark);
 }
@@ -5848,7 +5870,7 @@ input::placeholder {
 .justice-custody-disclosures > details > .justice-sources {
   margin: 0;
   padding: 0 20px 18px;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .justice-custody-consequences {
   margin-top: 22px;
@@ -5860,7 +5882,7 @@ input::placeholder {
 }
 .justice-custody-consequences h4,
 .justice-custody-review li > h4 {
-  font-size: 16px;
+  font-size: var(--text-body);
   margin-bottom: 10px;
 }
 .justice-custody-review {
@@ -5872,7 +5894,7 @@ input::placeholder {
 }
 .justice-custody-review > ol > li {
   padding: 12px 0;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 @media (max-width: 1000px) {
   .justice-workspace {

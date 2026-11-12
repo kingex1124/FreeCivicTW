@@ -77,6 +77,19 @@ test('手機與中型螢幕導覽有文字提示，可開關、捲動選項並�
   }
 });
 
+test('放大字體後手機主要頁面仍可閱讀且不水平溢出', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  for (const path of [
+    './', 'government/', 'learn/', 'learn/democracy-and-rights/', 'justice/',
+    'oversight/', 'my-ballots/', 'media-literacy/', 'about/', 'sources/', 'privacy/',
+  ]) {
+    await page.goto(path);
+    await page.evaluate(() => { document.documentElement.style.fontSize = '20px'; });
+    expect(await page.evaluate(() => getComputedStyle(document.body).fontSize)).toBe('20px');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), path).toBe(true);
+  }
+});
+
 test('主選單切頁由頂端開始，平滑捲動不再把新頁往下帶', async ({ page }) => {
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -138,7 +151,7 @@ test('全部頁面都有Top，鍵盤回頂端保留選擇且減少動畫與無JS
     ...media.scenarios.map((scenario) => `media-literacy/${scenario.slug}/`),
   ]) {
     await page.goto(path);
-    await expect(page.getByRole('link', { name: 'Top 回到頂端', exact: true })).toHaveAttribute(
+    await expect(page.locator('.back-to-top')).toHaveAttribute(
       'href',
       '#page-top',
     );
@@ -146,6 +159,7 @@ test('全部頁面都有Top，鍵盤回頂端保留選擇且減少動畫與無JS
   }
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('government/');
+  await expect(page.locator('.back-to-top')).toBeHidden();
   await page.getByRole('button', { name: '地方政府', exact: true }).click();
   await page.evaluate(() =>
     window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }),
@@ -156,6 +170,7 @@ test('全部頁面都有Top，鍵盤回頂端保留選擇且減少動畫與無JS
   await top.focus();
   await page.keyboard.press('Enter');
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+  await expect(page.locator('.back-to-top')).toBeHidden();
   await expect(page.getByRole('button', { name: '地方政府', exact: true })).toHaveAttribute(
     'aria-pressed',
     'true',
