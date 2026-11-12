@@ -66,17 +66,32 @@ test('官方工具在無JavaScript可閱讀全部入口，具有metadata與靜�
 
 test('官方工具手機、桌機、放大字體及深淺色皆可閱讀，通過無障礙檢查', async ({ page }) => {
   test.setTimeout(90000);
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('resources/');
   for (const theme of ['light', 'dark']) {
-    await page.addInitScript((value) => localStorage.setItem('fc-color-theme', value), theme);
     await page.setViewportSize({ width: theme === 'dark' ? 390 : 1440, height: 900 });
-    await page.goto('resources/');
+    await page.evaluate((value) => localStorage.setItem('fc-color-theme', value), theme);
+    await page.reload();
+    await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
     await page.getByRole('button', { name: '判決', exact: true }).click();
+    // Extend the entrance animation so contrast is checked while it is in progress.
+    await page.addStyleTag({
+      content: '.resource-guide > div { animation-duration: 60s !important; }',
+    });
     await page.locator('#resource-judgments summary').click();
     await expect(page.locator('.resource-advanced')).toHaveAttribute('open', '');
+    const guide = page.locator('#resource-judgments .resource-guide > div');
+    await expect(guide).toHaveCSS('animation-name', 'resource-guide-enter');
+    await expect(guide).toHaveCSS('opacity', '1');
     const result = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
       .analyze();
-    expect(result.violations.map((item) => item.id)).toEqual([]);
+    expect(
+      result.violations.map((item) => ({
+        id: item.id,
+        nodes: item.nodes.map((node) => ({ target: node.target, summary: node.failureSummary })),
+      })),
+    ).toEqual([]);
   }
   for (const width of [320, 390, 1024, 1401, 1440]) {
     await page.setViewportSize({ width, height: 900 });

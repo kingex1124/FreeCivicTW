@@ -6179,7 +6179,15 @@ input::placeholder {
 }
 .resource-guide > div {
   padding-top: 18px;
-  animation: reveal 200ms ease;
+  animation: resource-guide-enter 200ms ease;
+}
+@keyframes resource-guide-enter {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 .resource-guide h4:not(:first-child) {
   margin-top: 20px;
