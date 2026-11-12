@@ -10,7 +10,12 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    # Keep this tag aligned with @playwright/test in package.json/package-lock.json.
+    # Browsers and Linux libraries are preinstalled; no apt installation at runtime.
+    container:
+      image: mcr.microsoft.com/playwright:v1.65.0-noble
+      options: --init --ipc=host
     permissions:
       contents: read
       pages: read
@@ -37,9 +42,7 @@ jobs:
           NEXT_PUBLIC_GTM_CONTAINER_ID: ${{ vars.GTM_CONTAINER_ID || 'GTM-5WLN6LNC' }}
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID || 'G-M72DVMGDDH' }}
       - name: Browser validation
-        run: |
-          npx playwright install --with-deps chromium
-          npm run test:e2e
+        run: npm run test:e2e
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           TEST_CANONICAL_ORIGIN: ${{ steps.pages.outputs.origin }}
@@ -48,7 +51,7 @@ jobs:
           path: out
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write

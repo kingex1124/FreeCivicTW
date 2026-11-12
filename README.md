@@ -164,7 +164,7 @@ npm run test:dev
 
 單元測試涵蓋所有地區配置、原住民票替換、同名查詢、錯誤父子地區、理解題與 JSON-LD。資料檢查包含 ID、來源、角色關係、完整文章與題庫引用。
 
-瀏覽器測試以真正的 `out/` 執行，涵蓋手機、互動、無 JavaScript、metadata、404 與 WCAG 2.2 AA 自動掃描。Windows 使用已安裝的 Microsoft Edge；Linux CI 執行 `npx playwright install --with-deps chromium` 安裝測試瀏覽器。畫面存於忽略追蹤的 `.qa/`，失敗紀錄存於 `test-results/`。
+瀏覽器測試以真正的 `out/` 執行，涵蓋手機、互動、無 JavaScript、metadata、404 與 WCAG 2.2 AA 自動掃描。Windows 使用已安裝的 Microsoft Edge；Linux CI 與 Pages 建置固定使用 Ubuntu 24.04 runner，以及已包含瀏覽器與系統相依套件的 [Playwright 官方容器](https://playwright.dev/docs/docker) `mcr.microsoft.com/playwright:v1.65.0-noble`。不再於 Browser validation 執行 apt 安裝，避免 runner 版本自動升級或 Ubuntu 套件站 DNS 問題阻擋測試；瀏覽器驗證仍完整執行，通過後才上傳部署產物。更新 `@playwright/test` 時，必須同步更新兩份 workflow 的容器版本。畫面存於忽略追蹤的 `.qa/`，失敗紀錄存於 `test-results/`。
 
 自動掃描不能取代真人可用性／可存取性審閱。目前尚未執行需求中的五位初學者測試，也沒有正式流量可量測第 75 百分位 Core Web Vitals。
 
