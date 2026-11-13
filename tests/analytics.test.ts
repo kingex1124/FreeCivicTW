@@ -4,16 +4,14 @@ import { AnalyticsService } from '@/Service/AnalyticsService';
 import { AnalyticsRepository } from '@/Repository/AnalyticsRepository';
 import type { AnalyticsEvent, AnalyticsParameters } from '@/Model/AnalyticsModel';
 
-test('分析事件只能在啟用且同意時發送，額外與敏感參數不會穿透', () => {
+test('分析事件只在啟用時發送，額外與敏感參數不會穿透', () => {
   const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
   const configured = AnalyticsService.configured;
-  const consent = AnalyticsRepository.readConsent;
   const send = AnalyticsRepository.send;
   const sent: { event: AnalyticsEvent; params: AnalyticsParameters }[] = [];
   try {
     Reflect.set(globalThis, 'window', {});
     AnalyticsService.configured = () => true;
-    AnalyticsRepository.readConsent = () => 'accepted';
     AnalyticsRepository.send = (event, params) => {
       sent.push({ event, params });
     };
@@ -32,11 +30,6 @@ test('分析事件只能在啟用且同意時發送，額外與敏感參數不�
       step: -1,
     });
     assert.deepEqual(sent[1].params, {});
-    AnalyticsRepository.readConsent = () => 'rejected';
-    AnalyticsService.track('lesson_complete');
-    AnalyticsRepository.readConsent = () => 'unknown';
-    AnalyticsService.track('lesson_complete');
-    AnalyticsRepository.readConsent = () => 'accepted';
     AnalyticsService.configured = () => false;
     AnalyticsService.track('lesson_complete');
     AnalyticsService.configured = () => true;
@@ -44,7 +37,6 @@ test('分析事件只能在啟用且同意時發送，額外與敏感參數不�
     assert.equal(sent.length, 2);
   } finally {
     AnalyticsService.configured = configured;
-    AnalyticsRepository.readConsent = consent;
     AnalyticsRepository.send = send;
     if (originalWindow) Object.defineProperty(globalThis, 'window', originalWindow);
     else Reflect.deleteProperty(globalThis, 'window');

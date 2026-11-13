@@ -1,4 +1,3 @@
-export type Consent = 'unknown' | 'accepted' | 'rejected';
 export const AnalyticsEvents = [
   'learning_path_start',
   'lesson_complete',

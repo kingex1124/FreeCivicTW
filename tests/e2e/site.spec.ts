@@ -5,16 +5,12 @@ import sourceData from '../../Data/sources.json';
 import civicData from '../../Data/civic-roles.json';
 import agencyData from '../../Data/government-agencies.json';
 
-test.beforeEach(async ({ page }, testInfo) => {
+test.beforeEach(async ({ page }) => {
   // 即使驗證正式建置，也不將自動化測試流量送到 Google。
   await page.route(
     /^https:\/\/([^/]+\.)?(googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//,
     (route) => route.abort(),
   );
-  // 一般功能使用拒絕統計的情境；同意流程另以假 ID 完整驗證。
-  if (!testInfo.title.includes('分析SDK')) {
-    await page.addInitScript(() => localStorage.setItem('fc-consent', 'rejected'));
-  }
 });
 
 test('首頁可閱讀並連到三條路徑，沒有瀏覽器執行錯誤', async ({ page }) => {
@@ -105,24 +101,17 @@ test('首頁人民與房子卡片能展開說明、切換與收起，手機及�
   }
 });
 
-test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async ({ page }) => {
-  test.skip(
-    process.env.TEST_ANALYTICS !== 'true',
-    '僅在隔離的模擬分析設定下執行，禁止送到真實 GA。',
-  );
+test('分析SDK自動載入並保護查詢情境，不重複初始化', async ({ page }) => {
+  test.skip(process.env.TEST_ANALYTICS !== 'true', '僅使用假 ID 與攔截請求驗證，不送到真實 GA。');
   const requests: string[] = [];
+  await page.addInitScript(() => localStorage.setItem('fc-consent', 'rejected'));
   await page.route('https://www.googletagmanager.com/**', async (route) => {
     requests.push(route.request().url());
-    await route.fulfill({
-      contentType: 'application/javascript',
-      body: 'document.cookie="_ga=qa-only; path=/";',
-    });
+    await route.fulfill({ contentType: 'application/javascript', body: '/* isolated test SDK */' });
   });
   await page.route('**/*google-analytics.com/**', (route) => route.abort());
   await page.goto('./');
-  await expect(page.locator('.consent-panel')).toBeVisible();
-  expect(requests).toEqual([]);
-  await page.getByRole('button', { name: '允許使用統計', exact: true }).click();
+  await expect(page.locator('.consent-panel')).toHaveCount(0);
   await expect.poll(() => requests.length).toBe(1);
   expect(requests[0]).toBe('https://www.googletagmanager.com/gtm.js?id=GTM-TEST00001');
   await page
@@ -141,8 +130,9 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
   const commands = await page.evaluate(() =>
     (window.dataLayer ?? []).map((item) => Array.from(item as Iterable<unknown>)),
   );
-  const events = commands.filter((command) => command[0] === 'event');
-  expect(events.some((command) => command[1] === 'ballot_lookup_complete')).toBe(true);
+  expect(
+    commands.some((command) => command[0] === 'event' && command[1] === 'ballot_lookup_complete'),
+  ).toBe(true);
   expect(JSON.stringify(commands)).not.toContain('苗栗');
   expect(JSON.stringify(commands)).not.toContain('mountain');
   expect(commands.filter((command) => command[0] === 'js')).toHaveLength(1);
@@ -151,33 +141,15 @@ test('分析SDK必須先同意，撤回後停用且不包含查詢情境', async
     'consent',
     'default',
     {
-      analytics_storage: 'denied',
+      analytics_storage: 'granted',
       ad_storage: 'denied',
       ad_user_data: 'denied',
       ad_personalization: 'denied',
     },
   ]);
-  await page.getByRole('link', { name: '隱私與分析設定', exact: true }).click();
-  await page.getByRole('button', { name: '管理分析同意' }).click();
-  await page.getByRole('button', { name: '拒絕／撤回' }).click();
-  expect(await page.evaluate(() => Reflect.get(window, 'ga-disable-G-TEST00001'))).toBe(true);
-  expect(await page.evaluate(() => document.cookie)).not.toContain('_ga=');
-  expect(requests).toHaveLength(1);
-  const before = await page.evaluate(() => (window.dataLayer ?? []).length);
-  await page
-    .getByRole('navigation', { name: '主要導覽' })
-    .getByRole('link', { name: '我的選票指南' })
-    .click();
-  await page.getByRole('button', { name: '先看頭份市範例' }).click();
-  expect(await page.evaluate(() => (window.dataLayer ?? []).length)).toBe(before);
-  await page.getByRole('link', { name: '隱私與分析設定', exact: true }).click();
-  await page.getByRole('button', { name: '管理分析同意' }).click();
-  await page.getByRole('button', { name: '允許使用統計', exact: true }).click();
-  expect(await page.evaluate(() => Reflect.get(window, 'ga-disable-G-TEST00001'))).toBe(false);
-  const reinitialized = await page.evaluate(() =>
-    (window.dataLayer ?? []).map((item) => Array.from(item as Iterable<unknown>)),
-  );
-  expect(reinitialized.filter((command) => command[0] === 'js')).toHaveLength(1);
+  await page.getByRole('link', { name: '隱私與使用統計', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '網站使用統計' })).toBeVisible();
+  await expect(page.locator('.consent-panel')).toHaveCount(0);
   expect(requests).toHaveLength(1);
 });
 
@@ -487,23 +459,15 @@ test('媒體練習可看證據、答錯、修改及不作答讀解析', async ({
   await expect(page.getByRole('button', { name: '已完成這次練習' })).toBeVisible();
 });
 
-test('來源、聯絡信箱與撤回設定可用，未同意不載入GA', async ({ page }) => {
-  const analyticsRequests: string[] = [];
-  page.on('request', (request) => {
-    if (/google-analytics|googletagmanager/.test(request.url()))
-      analyticsRequests.push(request.url());
-  });
+test('來源、聯絡信箱與隱私說明可用', async ({ page }) => {
   await page.goto('about/');
   await expect(page.locator('a.email-address')).toHaveAttribute(
     'href',
     'mailto:amaochen0110@gmail.com',
   );
   await page.goto('privacy/');
-  await page.getByRole('button', { name: '管理分析同意' }).click();
-  await page.getByRole('button', { name: '拒絕／撤回' }).click();
+  await expect(page.getByRole('heading', { name: '網站使用統計' })).toBeVisible();
   await expect(page.locator('.consent-panel')).toHaveCount(0);
-  expect(await page.evaluate(() => localStorage.getItem('fc-consent'))).toBe('rejected');
-  expect(analyticsRequests).toEqual([]);
   await page.goto('sources/');
   await expect(page.locator('.source-catalog article')).toHaveCount(sourceData.sources.length + 1);
 });

@@ -92,7 +92,7 @@ npm run preview
 - 政府頁從「中央與地方，機關都在做什麼？」起設九項閱讀導覽，涵蓋機關、流程、立法院立法、議會立法、人事、質詢、政風、生活情境與角色全文。兩套立法內容直接在同頁閱讀，不再放入「看更多」；相關連結與靜態SEO也指向政府頁。上方互動工作區不納入側欄；窄螢幕改為精簡導覽，桌機側欄可捲動、鍵盤可跳轉。
 - 六題虛構媒體識讀情境：證據展開、答題、修改、逐項解析及學習行動。
 - 關於本站、開發初衷、公開聯絡信箱、複製與更正郵件入口、來源及更正紀錄。
-- 響應式、減少動畫、文字替代、鍵盤表單、SEO metadata、JSON-LD、sitemap、404 與 GA 同意控制。
+- 響應式、減少動畫、文字替代、鍵盤表單、SEO metadata、JSON-LD、sitemap、404 與 GA 使用統計。
 
 查詢結果是制度教學，不是個人的實際選舉資格或可領票認證。未提供當屆精確選區、候選人、現任者及投開票所；這些在需求文件中列為另行查核的範圍。
 
@@ -129,17 +129,17 @@ GitHub Pages 建置已預設啟用使用者提供的 Google Tag `GTM-5WLN6LNC`�
 
 - `ANALYTICS_ENABLED`：`true` 或 `false`（未設定時正式部署為 `true`）
 - `GTM_CONTAINER_ID`：`GTM-...`（預設 `GTM-5WLN6LNC`）
-- `GA_MEASUREMENT_ID`：`G-...`（預設 `G-M72DVMGDDH`，供撤回時停用該 GA 資源）
+- `GA_MEASUREMENT_ID`：`G-...`（預設 `G-M72DVMGDDH`，供辨識該 GA 資源）
 
-這些 ID 為公開設定，不是 API Secret。網站只有在啟用且讀者明確同意後才初始化 `dataLayer`、`gtag('js', new Date())` 並載入 `gtm.js?id=GTM-5WLN6LNC`；拒絕／撤回後停用後續 GA 收集並處理分析 Cookie。隱私頁可重新開啟設定。
+這些 ID 為公開設定，不是 API Secret。正式網站啟用分析後會自動初始化 `dataLayer`、`gtag('js', new Date())` 並載入 `gtm.js?id=GTM-5WLN6LNC`，不再顯示同意詢問；先前保存在瀏覽器的設定不影響自動載入。隱私頁說明 GA4 可能使用 Cookie 並處理裝置及網路資訊。
 
 採用 [Google 最新安裝方式](https://developers.google.com/tag-platform/gtagjs)，由 Google Tag Manager 管理目的地。程式不再另外掛載 `gtag/js` 或呼叫 `gtag('config')`，避免重複計數。請在 Google Tag Manager 確認該容器已將 `G-M72DVMGDDH` 設為 Google Analytics 目的地並發布；若容器已有設定，不必再建立另一組相同標記。這部分屬於 Google 帳戶設定，無法由本機程式確認或代為發布。
 
 在 GA4 網頁資料串流開啟 Enhanced Measurement 的頁面載入與 browser history 換頁追蹤；本站不再手動發送 `page_view`，避免雙重計數。請先以自己的測試資源檢查首次進站、Next.js 換頁與上一頁／下一頁。
 
-自訂事件經 Service 白名單，僅使用公開內容 ID 或必要步驟，不含戶籍、身分情境、搜尋原文、答題答案或來信內容。不在網址保存查詢條件。已填入使用者提供的正式 ID；正式後台收數仍需部署後允許使用統計，並以 Tag Assistant／GA4 即時報表確認。
+自訂事件經 Service 白名單，僅使用公開內容 ID 或必要步驟，不含戶籍、身分情境、搜尋原文、答題答案或來信內容。不在網址保存查詢條件。已填入使用者提供的正式 ID；部署後仍須以 Tag Assistant／GA4 即時報表確認正式後台收數。
 
-隔離的 SDK 同意／撤回測試已使用假 ID 與攔截的第三方 script 執行，不送往真實 GA。可在 PowerShell 重現：
+隔離的 SDK 自動載入測試使用假 ID 與攔截的第三方 script 執行，不送往真實 GA。可在 PowerShell 重現：
 
 ```powershell
 $env:NEXT_PUBLIC_SITE_ORIGIN = 'http://localhost:4173'

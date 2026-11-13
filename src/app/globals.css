@@ -3854,56 +3854,6 @@ input::placeholder {
 .prose-card button {
   margin-top: 20px;
 }
-.consent-panel {
-  position: fixed;
-  bottom: 22px;
-  left: 22px;
-  width: min(520px, calc(100% - 44px));
-  z-index: 60;
-  border: 1px solid var(--tone-border, #acbd9b);
-  background: var(--white);
-  box-shadow: 0 8px 45px var(--tone-shadow, #20362f22);
-  border-radius: 12px;
-  padding: 24px;
-  display: flex;
-  gap: 15px;
-  align-items: start;
-}
-.consent-panel > svg {
-  color: var(--green);
-}
-.consent-panel h2 {
-  font-size: var(--text-lead);
-}
-.consent-panel p {
-  font-size: var(--text-body);
-  color: var(--muted);
-  line-height: 1.9;
-  margin-top: 11px;
-}
-.consent-panel a {
-  display: inline-block;
-  font-size: var(--text-body);
-  color: var(--green);
-  text-decoration: underline;
-  margin-top: 8px;
-}
-.consent-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-}
-.consent-actions .button-primary,
-.consent-actions .button-secondary {
-  font-size: var(--text-body);
-  padding: 9px 13px;
-  min-height: 38px;
-}
-.consent-actions .quiet-button {
-  font-size: var(--text-body);
-}
 @keyframes reveal {
   from {
     opacity: 0.4;
@@ -5359,22 +5309,6 @@ input::placeholder {
   .prose-card p {
     font-size: var(--text-body);
     line-height: 2;
-  }
-  .consent-panel {
-    bottom: 12px;
-    left: 12px;
-    width: calc(100% - 24px);
-    padding: 20px;
-    gap: 12px;
-  }
-  .consent-panel h2 {
-    font-size: var(--text-body);
-  }
-  .consent-panel p {
-    font-size: var(--text-body);
-  }
-  .consent-panel > svg {
-    width: 20px;
   }
   .not-found-actions {
     flex-direction: column;

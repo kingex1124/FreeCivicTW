@@ -2,7 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.addInitScript(() => localStorage.setItem('fc-consent', 'rejected'));
+  await page.route(
+    /^https:\/\/([^/]+\.)?(googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//,
+    (route) => route.abort(),
+  );
 });
 
 test('政府角色筆記及各段落可回到手機目錄，選擇保留', async ({ page }) => {

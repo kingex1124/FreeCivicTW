@@ -122,7 +122,7 @@ export function Footer() {
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} FreeCivicTW · 公民教育計畫</span>
-        <Link href="/privacy/">隱私與分析設定</Link>
+        <Link href="/privacy/">隱私與使用統計</Link>
         <span>制度資料查核：{site.updatedAt}</span>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import { AnalyticsRepository } from '@/Repository/AnalyticsRepository';
 import { SiteConfig } from '@/Config/SiteConfig';
-import type { AnalyticsEvent, AnalyticsParameters, Consent } from '@/Model/AnalyticsModel';
+import type { AnalyticsEvent, AnalyticsParameters } from '@/Model/AnalyticsModel';
 import { AnalyticsEvents } from '@/Model/AnalyticsModel';
 export const AnalyticsService = {
   configured: () =>
@@ -9,20 +9,13 @@ export const AnalyticsService = {
     /^G-[A-Z0-9]+$/.test(SiteConfig.gaId),
   gaId: () => SiteConfig.gaId,
   scriptUrl: () => `https://www.googletagmanager.com/gtm.js?id=${SiteConfig.gtmId}`,
-  readConsent: AnalyticsRepository.readConsent,
-  setConsent(value: Consent) {
-    AnalyticsRepository.writeConsent(value);
-    if (value === 'accepted') AnalyticsRepository.prepare();
-    else AnalyticsRepository.applyConsent(value);
-  },
   prepare: AnalyticsRepository.prepare,
   routeChanged: AnalyticsRepository.routeChanged,
   track(event: AnalyticsEvent, parameters: AnalyticsParameters = {}) {
     if (
       typeof window === 'undefined' ||
       !AnalyticsEvents.includes(event) ||
-      !AnalyticsService.configured() ||
-      AnalyticsRepository.readConsent() !== 'accepted'
+      !AnalyticsService.configured()
     )
       return;
     const allowed: AnalyticsParameters = {};
