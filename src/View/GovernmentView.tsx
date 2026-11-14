@@ -379,13 +379,13 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
             {[
               ['agency-directory', '機關職責', '中央與地方的單位在做什麼'],
               ['government-procedures', '制度流程', '任命、法律與預算的簡圖'],
+              ['appointments', '人事任命', '誰任命部長、局處長'],
               ['national-legislation', '立法院立法', '中央提案、三讀、覆議與公布'],
               ['local-legislation', '議會立法', '地方三讀、覆議、核定與施行'],
-              ['referendum', '公投', '全國與地方，對事情作決定'],
-              ['recall', '罷免', '對人的去留作決定，先看職務'],
-              ['appointments', '人事任命', '誰任命部長、局處長'],
               ['questioning', '質詢與備詢', '誰在問、誰來回答'],
               ['integrity', '政風與監督', '廉政、調查與監督的分工'],
+              ['referendum', '公投', '全國與地方，對事情作決定'],
+              ['recall', '罷免', '對人的去留作決定，先看職務'],
               ['government-situations', '生活情境', '遇到問題，先找哪些線索'],
               ['government-all-roles', '所有角色', '逐項閱讀職掌與權力界線'],
             ].map(([id, title, description]) => (
@@ -512,41 +512,6 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
               ↑ 回到目錄
             </a>
           </section>
-          <section
-            className="section-space"
-            id="government-legislation"
-            aria-labelledby="government-legislation-title"
-          >
-            <div className="section-heading">
-              <div>
-                <div className="eyebrow">從草案到正式實施</div>
-                <h2 id="government-legislation-title">法律與自治條例，是怎麼制定的？</h2>
-                <p>
-                  往下選擇中央或地方，直接在本頁閱讀議事角色、三讀、復議與覆議、公布、生效，以及憲法審查。
-                </p>
-              </div>
-            </div>
-            <div className="government-legislation-links">
-              <a href="#national-legislation">
-                <ScrollText size={24} aria-hidden="true" />
-                <span>
-                  <strong>立法院立法</strong>
-                  <span>程序委員會、召委、院長，到行政院覆議與總統公布。</span>
-                </span>
-                <ArrowRight size={20} aria-hidden="true" />
-              </a>
-              <a href="#local-legislation">
-                <Landmark size={24} aria-hidden="true" />
-                <span>
-                  <strong>地方議會立法</strong>
-                  <span>議長、委員會、地方覆議，到核定、公布及實施。</span>
-                </span>
-                <ArrowRight size={20} aria-hidden="true" />
-              </a>
-            </div>
-            {legislation}
-          </section>
-          <div className="participation-topics">{participation}</div>
           <section className="section-space" id="appointments" aria-labelledby="appointments-title">
             <div className="section-heading">
               <div>
@@ -585,6 +550,40 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
             <a className="section-return mobile-section-return" href="#government-topics">
               ↑ 回到目錄
             </a>
+          </section>
+          <section
+            className="section-space"
+            id="government-legislation"
+            aria-labelledby="government-legislation-title"
+          >
+            <div className="section-heading">
+              <div>
+                <div className="eyebrow">從草案到正式實施</div>
+                <h2 id="government-legislation-title">法律與自治條例，是怎麼制定的？</h2>
+                <p>
+                  往下選擇中央或地方，直接在本頁閱讀議事角色、三讀、復議與覆議、公布、生效，以及憲法審查。
+                </p>
+              </div>
+            </div>
+            <div className="government-legislation-links">
+              <a href="#national-legislation">
+                <ScrollText size={24} aria-hidden="true" />
+                <span>
+                  <strong>立法院立法</strong>
+                  <span>程序委員會、召委、院長，到行政院覆議與總統公布。</span>
+                </span>
+                <ArrowRight size={20} aria-hidden="true" />
+              </a>
+              <a href="#local-legislation">
+                <Landmark size={24} aria-hidden="true" />
+                <span>
+                  <strong>地方議會立法</strong>
+                  <span>議長、委員會、地方覆議，到核定、公布及實施。</span>
+                </span>
+                <ArrowRight size={20} aria-hidden="true" />
+              </a>
+            </div>
+            {legislation}
           </section>
           <section className="section-space" id="questioning" aria-labelledby="questioning-title">
             <div className="section-heading">
@@ -699,6 +698,7 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
               ↑ 回到目錄
             </a>
           </section>
+          <div className="participation-topics">{participation}</div>
           <section
             className="section-space"
             id="government-situations"
