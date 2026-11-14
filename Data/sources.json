@@ -37,8 +37,8 @@
       "publisher": "全國法規資料庫／法務部",
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
       "publishedAt": "2026-07-01",
-      "checkedAt": "2026-11-12",
-      "scope": "公職種類、選舉方式、選舉人資格、原住民選舉及投票；參考第 2 至 4、14 至 17 條及選舉相關規定。 本次補充第20、35、36、57條：戶籍登記身分、選區與部分原住民投票所調整。",
+      "checkedAt": "2026-11-14",
+      "scope": "公職種類、選舉方式、選舉人資格、原住民選舉及投票；參考第 2 至 4、14 至 17 條及選舉相關規定。 本次補充第20、35、36、57條：戶籍登記身分、選區與部分原住民投票所調整。 本次補充第75至92條：一般公職罷免的對象、資格、提議連署、文件、時程、投票及結果。",
       "note": "本工具不取得名冊、不核定個人選舉資格；當次領票種類以選舉機關公告及名冊為準。"
     },
     {
@@ -47,8 +47,8 @@
       "publisher": "全國法規資料庫／法務部",
       "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020053",
       "publishedAt": "2026-08-19",
-      "checkedAt": "2026-11-10",
-      "scope": "總統副總統選舉方式、選舉區及選舉人條件。",
+      "checkedAt": "2026-11-14",
+      "scope": "總統副總統選舉方式、選舉區及選舉人條件。 本次補充第70至78條：總統副總統罷免的提出、投票及結果。",
       "note": "日期為頁面所列修正日期。僑居國外、遷籍與其他特殊資格不由本站自動判斷。"
     },
     {
@@ -2490,9 +2490,95 @@
       "checkedAt": "2026-11-12",
       "scope": "普通議員提案連署與市法規、預算三讀等，與臺北作差異比較。",
       "note": "以各地現行議事規則為準，不因同為議會就假定所有程序門檻相同。"
+    },
+    {
+      "id": "participation-referendum",
+      "title": "公民投票法",
+      "publisher": "全國法規資料庫／法務部",
+      "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020050",
+      "publishedAt": "2025-12-03",
+      "checkedAt": "2026-11-14",
+      "scope": "第1至3、7至16、23、26至32條：全國與地方範圍、資格、提案連署、時程、通過門檻及結果效力。",
+      "note": "以現行法為準，不能沿用舊版固定公投日；修憲複決等另依憲法。"
+    },
+    {
+      "id": "participation-local-taipei",
+      "title": "臺北市公民投票自治條例",
+      "publisher": "臺北市法規查詢系統",
+      "url": "https://laws.gov.taipei/Law/LawSearch/LawArticleContent/FL068380",
+      "publishedAt": "2021-05-20",
+      "checkedAt": "2026-11-14",
+      "scope": "第5至10條：臺北市地方公投的資格、提案千分之一及連署百分之二點五等示例。",
+      "note": "只作臺北市例子，不當成其他縣市規則；第12-1條附有行政院函告無效註記，不作有效投票日期依據。"
+    },
+    {
+      "id": "participation-referendum-date",
+      "title": "115年全國性公民投票案投票日期及工作進行程序表說明",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/central/article/64319",
+      "publishedAt": null,
+      "checkedAt": "2026-11-14",
+      "scope": "現行公投法第23條成案後三至六個月及與全國性選舉同日規則之官方適用說明。",
+      "note": "當案公告僅供查核現行排程，不以舊宣導頁的兩年固定公投日取代新法。"
+    },
+    {
+      "id": "participation-recall-guide",
+      "title": "公職人員罷免進行程序指引（114年2月18日修正後）",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/api/file/ef4fefb3-6c2f-43c9-bc80-fea2b324ff17.pdf",
+      "publishedAt": null,
+      "checkedAt": "2026-11-14",
+      "scope": "提議、連署、資格與表件、法定期限、成案、投票及結果的官方程序指引。",
+      "note": "使用修正後版本並與2026年現行選罷法併讀；不代收文件或核定資格。"
+    },
+    {
+      "id": "participation-recall-id",
+      "title": "選罷法修正後提議及連署應附身分證正反面影本說明",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/central/article/59173",
+      "publishedAt": null,
+      "checkedAt": "2026-11-14",
+      "scope": "2025年修法後罷免提議與連署的文件要求與格式更新。",
+      "note": "以當案合法格式為準，不向本站提交身分證或連署名冊。"
+    },
+    {
+      "id": "participation-recall-indigenous",
+      "title": "114年公投與立委罷免投票人人數說明",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/central/article/61198",
+      "publishedAt": null,
+      "checkedAt": "2026-11-14",
+      "scope": "原住民不列入區域立委罷免投票人的官方說明。",
+      "note": "僅引用選舉身分類別與投票資格的區別，不將2025年投票人人數當成現況。"
+    },
+    {
+      "id": "participation-constitutional-result",
+      "title": "111年憲法修正案公民複決第1案投票結果公告",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/api/file/13286564-5a1e-45ec-aa18-7b19a88f8af2.pdf",
+      "publishedAt": "2022-12-02",
+      "checkedAt": "2026-11-14",
+      "scope": "18歲公民權修憲複決，同意票多於不同意票但未過選舉人總額半數，不通過。",
+      "note": "歷史案例；不把修憲門檻當成一般公投門檻。"
+    },
+    {
+      "id": "participation-constitutional-intro",
+      "title": "公民投票簡介：憲法修正案公民複決",
+      "publisher": "中央選舉委員會",
+      "url": "https://web.cec.gov.tw/central/article/21443",
+      "publishedAt": null,
+      "checkedAt": "2026-11-14",
+      "scope": "憲法增修條文第1、12條及2022修憲複決案之程序說明。",
+      "note": "只引用修憲程序及案例；統計案數與一般公投時程須另查現行公告。"
     }
   ],
   "corrections": [
+    {
+      "date": "2026-11-14",
+      "previous": "政府頁尚未完整說明公投與罷免。",
+      "correction": "新增全國、地方公投及一般公職、總統副總統罷免的分流，依現行法區分資格、提案連署、投票門檻、時程與效力；不沿用舊公投日，也不把地方門檻當全國通用。",
+      "scope": "政府怎麼運作／公投與罷免"
+    },
     {
       "date": "2026-11-11",
       "previous": "公督盟說明位於政府頁，尚未整合其他全國與地方民間監督資源。",

@@ -6201,6 +6201,12 @@ input::placeholder {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+.participation-topics {
+  padding-block: 40px;
+}
+.participation-topics > .more-topic:first-child {
+  margin-top: 0;
+}
 .justice-reading-layout .government-reading-content > #justice-courts {
   padding-top: 0;
 }

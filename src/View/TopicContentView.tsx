@@ -66,7 +66,7 @@ export function TopicContentView({ topic, checkedAt, returnLink }: TopicContentP
       {topic.flowOverview && (
         <nav className="legislation-route" aria-label={`${topic.shortTitle}流程捷徑`}>
           <h3>先看整條路，再點步驟讀說明</h3>
-          <p>這是主要路徑；覆議與憲法審查是有條件的分支，不是每案必經。</p>
+          <p>{topic.flowNotice ?? '這是主要路徑；覆議與憲法審查是有條件的分支，不是每案必經。'}</p>
           <ol>
             {topic.flowOverview.map((item, index) => (
               <li key={item.target}>

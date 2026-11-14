@@ -17,7 +17,10 @@ test('政府角色筆記及各段落可回到手機目錄，選擇保留', async
   await page.locator('.role-inspector .section-return').click();
   await expect(page.locator('#government-agency-picker')).toBeInViewport();
   await page.locator('.agency-picker-trigger').click();
-  await page.locator('.agency-picker-options').getByRole('button', { name: /^交通局/ }).click();
+  await page
+    .locator('.agency-picker-options')
+    .getByRole('button', { name: /^交通局/ })
+    .click();
   await expect(page.locator('.role-inspector > h2')).toHaveText('交通局');
   await page.locator('.role-inspector .section-return').click();
   await expect(page.locator('#government-agency-picker')).toBeInViewport();
@@ -28,6 +31,8 @@ test('政府角色筆記及各段落可回到手機目錄，選擇保留', async
     ['制度流程', '#government-procedures > .section-return'],
     ['立法院立法', '#national-legislation .section-return'],
     ['議會立法', '#local-legislation .section-return'],
+    ['公投', '#referendum .section-return'],
+    ['罷免', '#recall .section-return'],
     ['人事任命', '#appointments > .section-return'],
     ['質詢與備詢', '#questioning > .section-return'],
     ['政風與監督', '#integrity > .section-return'],

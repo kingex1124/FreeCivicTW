@@ -22,6 +22,7 @@ export const TopicContentSchema = z.object({
     .array(z.object({ label: text, target: text }))
     .min(1)
     .optional(),
+  flowNotice: text.optional(),
   relatedLinks: z.array(z.object({ href: text.startsWith('/'), label: text })).min(1),
   chapters: z
     .array(

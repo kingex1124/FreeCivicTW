@@ -4,17 +4,19 @@ import { CivicService } from '@/Service/CivicService';
 import { SeoService } from '@/Service/SeoService';
 import { getAgencyDirectory } from '@/Service/AgencyService';
 import { LegislationService } from '@/Service/LegislationService';
+import { ParticipationService } from '@/Service/ParticipationService';
 import { SourceService } from '@/Service/SourceService';
 import { SiteService } from '@/Service/SiteService';
 import { TopicContentView } from '@/View/TopicContentView';
 
 const legislation = LegislationService.get();
+const participation = ParticipationService.get();
 export const metadata = SeoService.metadata({
   title: '政府怎麼運作',
   description:
-    '透過段落導覽、可搜尋的機關總覽，認識中央地方職責、人事任命、質詢與監督，並閱讀立法院與議會的完整立法、覆議、公布施行及憲法審查程序。',
+    '認識中央地方政府職責、立法、人事與監督，以及全國和地方公投、立委與地方公職罷免、總統副總統罷免的資格、程序與效果。',
   path: '/government/',
-  updatedAt: legislation.checkedAt,
+  updatedAt: participation.checkedAt,
 });
 export default function GovernmentPage() {
   return (
@@ -25,10 +27,10 @@ export default function GovernmentPage() {
           __html: SeoService.json({
             '@context': 'https://schema.org',
             '@type': 'LearningResource',
-            name: '政府怎麼運作：中央地方職責與完整立法程序',
+            name: '政府怎麼運作：中央地方職責、立法、公投與罷免',
             url: SiteService.absolute('/government/'),
             inLanguage: 'zh-TW',
-            dateModified: legislation.checkedAt,
+            dateModified: participation.checkedAt,
             isAccessibleForFree: true,
             learningResourceType: '政府制度與立法程序說明',
             about: [
@@ -38,10 +40,14 @@ export default function GovernmentPage() {
               '行政院覆議',
               '自治條例',
               '憲法審查',
+              '全國性公民投票',
+              '地方性公民投票',
+              '公職人員罷免',
+              '總統副總統罷免',
             ],
-            citation: SourceService.resolve(LegislationService.sourceIds()).map(
-              (source) => source.url,
-            ),
+            citation: SourceService.resolve([
+              ...new Set([...LegislationService.sourceIds(), ...ParticipationService.sourceIds()]),
+            ]).map((source) => source.url),
           }),
         }}
       />
@@ -58,6 +64,14 @@ export default function GovernmentPage() {
             key={topic.id}
             topic={topic}
             checkedAt={legislation.checkedAt}
+            returnLink={{ href: '#government-topics', label: '回到政府內容導覽 ↑' }}
+          />
+        ))}
+        participation={participation.topics.map((topic) => (
+          <TopicContentView
+            key={topic.id}
+            topic={topic}
+            checkedAt={participation.checkedAt}
             returnLink={{ href: '#government-topics', label: '回到政府內容導覽 ↑' }}
           />
         ))}

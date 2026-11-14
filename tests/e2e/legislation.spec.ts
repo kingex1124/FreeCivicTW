@@ -24,7 +24,7 @@ test('政府導覽從機關總覽才開始，跳轉保留上方選擇並可進�
     }),
   ).toBe(true);
   const nav = page.getByRole('navigation', { name: '政府內容導覽' });
-  await expect(nav.getByRole('link')).toHaveCount(9);
+  await expect(nav.getByRole('link')).toHaveCount(11);
   await nav.getByRole('link', { name: /人事任命/ }).click();
   await expect(page.locator('#appointments-title')).toBeInViewport();
   await expect(page.getByRole('button', { name: '地方政府', exact: true })).toHaveAttribute(

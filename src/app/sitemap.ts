@@ -8,6 +8,7 @@ import { OversightService } from '@/Service/OversightService';
 import { PublicResourceService } from '@/Service/PublicResourceService';
 import { SupplementService } from '@/Service/SupplementService';
 import { LegislationService } from '@/Service/LegislationService';
+import { ParticipationService } from '@/Service/ParticipationService';
 export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -37,7 +38,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
               : path === '/oversight/'
                 ? OversightService.get().checkedAt
                 : path === '/government/'
-                  ? [CivicService.get().checkedAt, LegislationService.get().checkedAt]
+                  ? [
+                      CivicService.get().checkedAt,
+                      LegislationService.get().checkedAt,
+                      ParticipationService.get().checkedAt,
+                    ]
                       .sort()
                       .at(-1)!
                   : SiteService.get().updatedAt,
