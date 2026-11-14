@@ -250,8 +250,11 @@ summary:focus-visible {
   padding: 0;
   text-decoration: none;
 }
-.text-link:hover {
-  gap: 18px;
+.text-link > svg {
+  transition: transform 160ms ease;
+}
+.text-link:hover > svg {
+  transform: translateX(6px);
 }
 .quiet-button {
   border: 0;

@@ -58,10 +58,19 @@ test('政府導覽從機關總覽才開始，跳轉保留上方選擇並可進�
   await expect(page.locator('#local-reconsideration')).toContainText('出席議員三分之二');
   await page.locator('#local-promulgation > summary').click();
   await expect(page.locator('#local-promulgation')).toContainText('核定文送達');
-  await page
-    .locator('#local-legislation')
-    .getByRole('link', { name: '回到政府內容導覽 ↑' })
-    .click();
+  const local = page.locator('#local-legislation');
+  const returnLink = local.getByRole('link', { name: '回到政府內容導覽 ↑' });
+  await page.mouse.move(0, 0);
+  await returnLink.scrollIntoViewIfNeeded();
+  const returnOffset = () =>
+    returnLink.evaluate(
+      (link) => link.getBoundingClientRect().top - link.parentElement!.getBoundingClientRect().top,
+    );
+  const beforeHover = await returnOffset();
+  // Hovering a nearby link must not wrap the footer and move the return target.
+  await local.getByRole('link', { name: '回政府頁的完整立法入口', exact: true }).hover();
+  expect(await returnOffset()).toBe(beforeHover);
+  await returnLink.click();
   await expect(nav.getByRole('link', { name: /議會立法/ })).toBeInViewport();
 });
 
