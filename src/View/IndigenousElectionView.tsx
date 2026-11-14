@@ -80,10 +80,13 @@ function IndigenousCouncilGuide({ guide }: IndigenousCouncilGuideProps) {
                 <p>{item.example.text}</p>
               </aside>
             )}
-            <details className="more-sources">
-              <summary>查看這個問題的官方依據</summary>
-              <SourceList sourceIds={item.sourceIds} compact headingLevel="h4" />
-            </details>
+            <SourceList
+              sourceIds={item.sourceIds}
+              compact
+              headingLevel="h4"
+              className="more-sources"
+              summary="查看這個問題的官方依據"
+            />
           </div>
         </details>
       ))}
@@ -173,10 +176,13 @@ export function IndigenousElectionView({
           到便民查詢找中選會公告與公報 <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
       </section>
-      <details className="more-sources">
-        <summary>查看原住民選舉的官方依據</summary>
-        <SourceList sourceIds={sourceIds} compact headingLevel="h3" />
-      </details>
+      <SourceList
+        sourceIds={sourceIds}
+        compact
+        headingLevel="h3"
+        className="more-sources"
+        summary="查看原住民選舉的官方依據"
+      />
       <p className="muted">原住民選舉制度查核：{checkedAt}</p>
     </section>
   );

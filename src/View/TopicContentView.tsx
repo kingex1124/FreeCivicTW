@@ -58,10 +58,13 @@ export function TopicContentView({ topic, checkedAt, returnLink }: TopicContentP
         {topic.notice.paragraphs.map((text) => (
           <p key={text}>{text}</p>
         ))}
-        <details className="more-sources">
-          <summary>查看這段說明的依據</summary>
-          <SourceList sourceIds={topic.notice.sourceIds} compact headingLevel="h4" />
-        </details>
+        <SourceList
+          sourceIds={topic.notice.sourceIds}
+          compact
+          headingLevel="h4"
+          className="more-sources"
+          summary="查看這段說明的依據"
+        />
       </aside>
       {topic.flowOverview && (
         <nav className="legislation-route" aria-label={`${topic.shortTitle}流程捷徑`}>
@@ -134,10 +137,13 @@ export function TopicContentView({ topic, checkedAt, returnLink }: TopicContentP
                   ))}
                 </div>
               )}
-              <details className="more-sources">
-                <summary>查看本節依據與延伸閱讀</summary>
-                <SourceList sourceIds={chapter.sourceIds} compact headingLevel="h4" />
-              </details>
+              <SourceList
+                sourceIds={chapter.sourceIds}
+                compact
+                headingLevel="h4"
+                className="more-sources"
+                summary="查看本節依據與延伸閱讀"
+              />
             </div>
           </details>
         ))}
@@ -149,7 +155,7 @@ export function TopicContentView({ topic, checkedAt, returnLink }: TopicContentP
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         ))}
-        <a className="text-link section-return" href={returnLink.href}>
+        <a className="text-link section-return mobile-section-return" href={returnLink.href}>
           {returnLink.label}
         </a>
       </div>

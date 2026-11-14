@@ -19,10 +19,13 @@ import type { SourceListProps } from '@/Model/SourceModel';
 
 function JusticeSources({ sourceIds, headingLevel = 'h3' }: SourceListProps) {
   return (
-    <details className="justice-sources">
-      <summary>查看官方依據</summary>
-      <SourceList sourceIds={sourceIds} compact headingLevel={headingLevel} />
-    </details>
+    <SourceList
+      sourceIds={sourceIds}
+      compact
+      headingLevel={headingLevel}
+      className="justice-sources"
+      summary="查看官方依據"
+    />
   );
 }
 

@@ -1759,6 +1759,20 @@ html[data-scroll-ready='true'] .back-to-top:not([data-visible='true']) {
   font-size: var(--text-body);
   line-height: 1.9;
 }
+.source-disclosure {
+  margin-top: 24px;
+}
+.source-disclosure > summary {
+  min-height: 44px;
+  padding-block: 8px;
+  color: var(--green);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.source-disclosure > .source-list {
+  margin-top: 12px;
+}
 .source-list {
   border-top: 1px solid var(--line);
   padding-top: 30px;
@@ -6395,6 +6409,9 @@ input::placeholder {
   align-items: start;
   padding-bottom: 72px;
 }
+.more-layout .mobile-section-return {
+  display: none;
+}
 .more-topic-nav {
   position: sticky;
   top: 115px;
@@ -6691,6 +6708,9 @@ input::placeholder {
 @media (max-width: 1000px) {
   .more-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .more-layout .mobile-section-return {
+    display: inline-flex;
   }
   .more-topic-nav {
     position: static;

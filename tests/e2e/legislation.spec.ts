@@ -59,19 +59,20 @@ test('政府導覽從機關總覽才開始，跳轉保留上方選擇並可進�
   await page.locator('#local-promulgation > summary').click();
   await expect(page.locator('#local-promulgation')).toContainText('核定文送達');
   const local = page.locator('#local-legislation');
-  const returnLink = local.getByRole('link', { name: '回到政府內容導覽 ↑' });
+  await expect(page.locator('.government-reading-content .section-return:visible')).toHaveCount(0);
+  const comparisonLink = local.getByRole('link', { name: '比較立法院的立法程序', exact: true });
   await page.mouse.move(0, 0);
-  await returnLink.scrollIntoViewIfNeeded();
-  const returnOffset = () =>
-    returnLink.evaluate(
-      (link) => link.getBoundingClientRect().top - link.parentElement!.getBoundingClientRect().top,
-    );
-  const beforeHover = await returnOffset();
-  // Hovering a nearby link must not wrap the footer and move the return target.
+  await comparisonLink.scrollIntoViewIfNeeded();
+  const linkOffset = () =>
+    comparisonLink.evaluate((link) => {
+      const rect = link.getBoundingClientRect();
+      const parent = link.parentElement!.getBoundingClientRect();
+      return { top: rect.top - parent.top, left: rect.left - parent.left };
+    });
+  const beforeHover = await linkOffset();
+  // Hovering a nearby link must not reflow the footer and move another link.
   await local.getByRole('link', { name: '回政府頁的完整立法入口', exact: true }).hover();
-  expect(await returnOffset()).toBe(beforeHover);
-  await returnLink.click();
-  await expect(nav.getByRole('link', { name: /議會立法/ })).toBeInViewport();
+  expect(await linkOffset()).toEqual(beforeHover);
 });
 
 test('杯葛、立法角色、公布生效和憲法分支無JS完整可讀並有官方來源', async ({ browser, baseURL }) => {

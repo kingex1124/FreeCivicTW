@@ -219,9 +219,9 @@ test('任命職務可展開，質詢對象與程序界線可閱讀', async ({ pa
   await expect(page.locator('#central-ministers .office-list li')).toHaveCount(15);
   await expect(page.locator('#central-ministers')).toContainText('數位發展部部長');
   await expect(page.locator('#central-ministers')).toContainText('運動部部長');
-  await page.locator('#taipei-heads summary').click();
+  await page.locator('#taipei-heads').getByText(/^查看 \d+ 項職務$/).click();
   await expect(page.locator('#taipei-heads .office-list')).toContainText('交通局局長');
-  await page.locator('#miaoli-heads summary').click();
+  await page.locator('#miaoli-heads').getByText(/^查看 \d+ 項職務$/).click();
   await expect(page.locator('#miaoli-heads .office-list')).toContainText('交通工務處處長');
   await page.getByRole('link', { name: '誰質詢、誰備詢？' }).click();
   await expect(page.locator('.questioning-table tbody tr')).toHaveCount(4);
@@ -511,12 +511,20 @@ test('無JavaScript仍能閱讀完整文章、角色與題目', async ({ browser
   const page = await context.newPage();
   await page.goto(baseURL + 'learn/democracy-and-rights/');
   await expect(page.locator('.article-section')).toHaveCount(4);
-  await expect(page.locator('.source-list')).toContainText('依據與延伸閱讀');
+  const sources = page.locator('.source-disclosure');
+  await expect(sources).not.toHaveAttribute('open');
+  await expect(sources.locator('.source-list')).toBeHidden();
+  await sources.locator(':scope > summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(sources.locator('.source-list')).toBeVisible();
+  await expect(sources.locator('.source-list')).toContainText('依據與延伸閱讀');
+  await page.keyboard.press('Space');
+  await expect(sources.locator('.source-list')).toBeHidden();
   await page.goto(baseURL + 'government/');
   await page.locator('.all-roles > summary').click();
   await expect(page.locator('.all-roles > section')).toHaveCount(civicData.roles.length);
   await expect(page.locator('#central-ministers .office-list li')).toHaveCount(15);
-  await page.locator('#miaoli-heads summary').click();
+  await page.locator('#miaoli-heads').getByText(/^查看 \d+ 項職務$/).click();
   await expect(page.locator('#miaoli-heads .office-list')).toContainText('交通工務處處長');
   await expect(page.locator('.questioning-table')).toContainText('立法委員');
   await page.locator('.agency-directory > summary').click();
@@ -524,7 +532,7 @@ test('無JavaScript仍能閱讀完整文章、角色與題目', async ({ browser
   const transport = page
     .locator('.agency-entry')
     .filter({ has: page.locator('h3').getByText('交通部', { exact: true }) });
-  await transport.locator('summary').click();
+  await transport.locator(':scope > summary').click();
   await expect(transport.locator('.agency-entry-body')).toBeVisible();
   await expect(transport.locator('.agency-entry-body')).toContainText('主要在做什麼');
   await page.goto(baseURL + 'media-literacy/chart-scale/');

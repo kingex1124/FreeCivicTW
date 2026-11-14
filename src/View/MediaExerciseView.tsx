@@ -5,6 +5,7 @@ import { FileSearch, ArrowRight, BookOpenCheck, Check, ArrowLeft } from 'lucide-
 import { ExerciseService } from '@/Service/ExerciseService';
 import { AnalyticsService } from '@/Service/AnalyticsService';
 import { ExerciseView } from './ExerciseView';
+import { SourceList } from './SourceView';
 import type { ScenarioProps } from '@/Model/MediaLiteracyModel';
 export function MediaExerciseView({ scenario, nextSlug }: ScenarioProps) {
   const [all, setAll] = useState(false);
@@ -116,16 +117,8 @@ export function MediaExerciseView({ scenario, nextSlug }: ScenarioProps) {
           </Link>
         </div>
         <p className="muted">回答不保存，也不產生個人政治傾向或能力排名。</p>
-        <div className="source-item">
-          <a
-            href="https://depart.moe.edu.tw/ED2100/News.aspx?n=1353704343B62511&sms=2ADD120E8E2615E3"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            延伸：教育部媒體素養教育白皮書
-          </a>
-          <small>情境與解析為本站自編；不是官方對真實案件的查核結論。</small>
-        </div>
+        <SourceList sourceIds={['media-education']} compact summary="查看媒體識讀延伸閱讀" />
+        <p className="muted">情境與解析為本站自編；不是官方對真實案件的查核結論。</p>
       </div>
     </div>
   );

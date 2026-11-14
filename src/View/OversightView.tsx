@@ -246,10 +246,13 @@ export function OversightView({ data }: OversightViewProps) {
                 >
                   前往{organization.shortName}官網 <ExternalLink size={16} aria-hidden="true" />
                 </a>
-                <details className="oversight-sources">
-                  <summary>查看組織介紹與資料依據</summary>
-                  <SourceList sourceIds={organization.sourceIds} compact headingLevel="h4" />
-                </details>
+                <SourceList
+                  sourceIds={organization.sourceIds}
+                  compact
+                  headingLevel="h4"
+                  className="oversight-sources"
+                  summary="查看組織介紹與資料依據"
+                />
               </div>
             </details>
           ))}

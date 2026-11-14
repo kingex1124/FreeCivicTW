@@ -21,5 +21,7 @@ export type SourceListProps = {
   sourceIds: string[];
   compact?: boolean;
   headingLevel?: 'h2' | 'h3' | 'h4';
+  summary?: string;
+  className?: string;
 };
 export type SourceLinkProps = { source: Source };

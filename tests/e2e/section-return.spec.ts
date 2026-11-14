@@ -41,6 +41,7 @@ test('政府角色筆記及各段落可回到手機目錄，選擇保留', async
   ];
   for (const [name, selector] of entries) {
     await nav.getByRole('link', { name: new RegExp(name) }).click();
+    await expect(page.locator(selector)).toHaveText('↑ 回到目錄');
     await page.locator(selector).click();
     await expect(nav.getByRole('heading')).toBeInViewport();
   }
@@ -74,6 +75,7 @@ test('司法目錄從審判路徑開始，完整機關說明在最後，手機�
     ['完整機關與角色', '#justice-full-text + .section-return'],
   ]) {
     await nav.getByRole('link', { name: new RegExp(name) }).click();
+    await expect(page.locator(selector)).toHaveText('↑ 回到目錄');
     await page.locator(selector).click();
     await expect(nav.getByRole('heading')).toBeInViewport();
   }
@@ -101,8 +103,15 @@ test('看更多三個主題都能返回目錄，無 JavaScript 也可使用', as
       ['憲法法庭', '#constitutional-court .section-return'],
     ]) {
       await nav.getByRole('link', { name: new RegExp(name) }).click();
+      await expect(page.locator(selector)).toHaveText('↑ 回到目錄');
       await page.locator(selector).click();
       await expect(nav.getByRole('heading')).toBeInViewport();
+    }
+    await page.setViewportSize({ width: 1000, height: 900 });
+    await expect(page.locator('.more-content .section-return:visible')).toHaveCount(3);
+    for (const width of [1001, 1100, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await expect(page.locator('.more-content .section-return:visible')).toHaveCount(0);
     }
   } finally {
     await context.close();

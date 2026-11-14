@@ -64,7 +64,7 @@ export default function GovernmentPage() {
             key={topic.id}
             topic={topic}
             checkedAt={legislation.checkedAt}
-            returnLink={{ href: '#government-topics', label: '回到政府內容導覽 ↑' }}
+            returnLink={{ href: '#government-topics', label: '↑ 回到目錄' }}
           />
         ))}
         participation={participation.topics.map((topic) => (
@@ -72,7 +72,7 @@ export default function GovernmentPage() {
             key={topic.id}
             topic={topic}
             checkedAt={participation.checkedAt}
-            returnLink={{ href: '#government-topics', label: '回到政府內容導覽 ↑' }}
+            returnLink={{ href: '#government-topics', label: '↑ 回到目錄' }}
           />
         ))}
       />

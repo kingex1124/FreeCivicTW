@@ -43,8 +43,8 @@ export function SupplementView({ data, indigenous }: SupplementViewProps) {
           <Link className="text-link" href="/my-ballots/">
             到我的選票指南查民選職務 <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
-          <a className="text-link section-return" href="#more-topics">
-            回到主題選擇 ↑
+          <a className="text-link section-return mobile-section-return" href="#more-topics">
+            ↑ 回到目錄
           </a>
         </div>
         {data.topics.map((topic) => (
@@ -52,7 +52,7 @@ export function SupplementView({ data, indigenous }: SupplementViewProps) {
             key={topic.id}
             topic={topic}
             checkedAt={data.checkedAt}
-            returnLink={{ href: '#more-topics', label: '回到主題選擇 ↑' }}
+            returnLink={{ href: '#more-topics', label: '↑ 回到目錄' }}
           />
         ))}
       </div>
