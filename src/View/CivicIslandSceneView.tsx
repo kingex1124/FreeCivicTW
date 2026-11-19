@@ -660,6 +660,11 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
       const width = mount!.clientWidth,
         height = mount!.clientHeight;
       const noteIsOpen = mount!.closest('.island-map')?.getAttribute('data-note-open') === 'true';
+      const journeysOpen =
+        mount!.closest('.island-map')?.getAttribute('data-journeys-open') === 'true';
+      const tripHeight =
+        mount!.closest('.island-map')?.querySelector<HTMLElement>('.island-map-trip')
+          ?.offsetHeight ?? 0;
       const journeyIsActive = live.current.connections.some(
         (connection) => connection.kind === 'journey',
       );
@@ -675,7 +680,7 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
         ]
           .map((value) => value.toFixed(4))
           .join(',') +
-        `:${width}:${height}:${live.current.activeGroup}:${noteIsOpen}:${journeyIsActive}:${document.documentElement.style.fontSize}:${hoveredIdRef.current}:${live.current.highlightSelected}:${live.current.selectedId}`;
+        `:${width}:${height}:${live.current.activeGroup}:${noteIsOpen}:${journeysOpen}:${tripHeight}:${journeyIsActive}:${document.documentElement.style.fontSize}:${hoveredIdRef.current}:${live.current.highlightSelected}:${live.current.selectedId}`;
       if (layoutKey === lastLabelLayout) return;
       lastLabelLayout = layoutKey;
       const nearest = groups.reduce(
@@ -777,12 +782,12 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
             (live.current.highlightSelected && node.id === live.current.selectedId),
         ),
       );
-      const lower = height - (journeyIsActive ? 140 : 68);
+      const lower = height - (tripHeight ? tripHeight + 80 : 68);
       const intro = mount!.closest('.island-map')?.querySelector('.island-map-intro');
       const introBottom = intro
         ? intro.getBoundingClientRect().bottom - mount!.getBoundingClientRect().top + 8
         : 140;
-      const top = noteIsOpen ? 62 : Math.min(introBottom, height * 0.45);
+      const top = noteIsOpen || journeysOpen ? 62 : Math.min(introBottom, height * 0.45);
       for (let pass = 0; pass < 26; pass++) {
         for (let i = 0; i < placements.length; i++)
           for (let j = i + 1; j < placements.length; j++) {

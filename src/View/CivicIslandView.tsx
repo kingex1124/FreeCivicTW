@@ -15,6 +15,7 @@ import {
   Layers,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   ExternalLink,
   X,
 } from 'lucide-react';
@@ -85,7 +86,8 @@ export function CivicIslandView({ data }: IslandViewProps) {
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState('central-role-people');
   const [noteOpen, setNoteOpen] = useState(false);
-  const [panelCollapsed, setPanelCollapsed] = useState(false);
+  const [panelCollapsed, setPanelCollapsed] = useState(true);
+  const [journeysOpen, setJourneysOpen] = useState(false);
   const [journeyId, setJourneyId] = useState<string | null>(null);
   const [step, setStep] = useState(0);
   const [showConnections, setShowConnections] = useState(true);
@@ -97,6 +99,43 @@ export function CivicIslandView({ data }: IslandViewProps) {
   const openerRef = useRef<HTMLElement | null>(null);
   const homeRef = useRef<HTMLButtonElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
+  const journeyPanelRef = useRef<HTMLElement>(null);
+  const journeyScrollRef = useRef<HTMLDivElement>(null);
+  const journeyToggleRef = useRef<HTMLButtonElement>(null);
+  const journeyDetailsRef = useRef<HTMLButtonElement>(null);
+  const directorySearchRef = useRef<HTMLInputElement>(null);
+  const directoryPanelRef = useRef<HTMLElement>(null);
+  const directoryToggleRef = useRef<HTMLButtonElement>(null);
+  const closeJourneys = useCallback(() => {
+    setJourneysOpen(false);
+    requestAnimationFrame(() =>
+      (journeyDetailsRef.current ?? journeyToggleRef.current)?.focus({ preventScroll: true }),
+    );
+  }, []);
+  const closeDirectory = useCallback(() => {
+    setPanelCollapsed(true);
+    requestAnimationFrame(() => directoryToggleRef.current?.focus({ preventScroll: true }));
+  }, []);
+  function openJourneys() {
+    setNoteOpen(false);
+    setPanelCollapsed(true);
+    setJourneysOpen(true);
+  }
+  function openDirectory() {
+    setJourneysOpen(false);
+    setNoteOpen(false);
+    setPanelCollapsed(false);
+    requestAnimationFrame(() => {
+      if (directoryPanelRef.current) directoryPanelRef.current.scrollTop = 0;
+      directorySearchRef.current?.focus({ preventScroll: true });
+    });
+  }
+  function readSelectedNote() {
+    const active = document.activeElement;
+    openerRef.current = active instanceof HTMLElement ? active : null;
+    setJourneysOpen(false);
+    setNoteOpen(true);
+  }
   useEffect(() => {
     const header = document.querySelector('.site-header');
     if (!header) return;
@@ -139,20 +178,30 @@ export function CivicIslandView({ data }: IslandViewProps) {
       const opener = openerRef.current;
       if (opener?.isConnected && !opener.closest('[inert]') && opener.getClientRects().length > 0)
         opener.focus({ preventScroll: true });
-      else homeRef.current?.focus({ preventScroll: true });
+      else
+        (homeRef.current?.disabled ? directoryToggleRef.current : homeRef.current)?.focus({
+          preventScroll: true,
+        });
     });
   }, []);
   const revealMap = useCallback(() => {
-    if (window.matchMedia('(max-width:1000px)').matches)
-      requestAnimationFrame(() =>
-        document.getElementById('island-map')?.scrollIntoView({
-          block: 'start',
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'instant'
-            : 'smooth',
-        }),
-      );
+    if (window.matchMedia('(max-width:1000px)').matches) setPanelCollapsed(true);
   }, []);
+  useEffect(() => {
+    if (!journeysOpen) return;
+    journeyPanelRef.current?.focus({ preventScroll: true });
+    const scroll = journeyScrollRef.current;
+    const story = scroll?.querySelector<HTMLElement>('.island-story');
+    if (scroll) scroll.scrollTop = journey && story ? story.offsetTop - 12 : 0;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeJourneys();
+      }
+    };
+    document.addEventListener('keydown', close);
+    return () => document.removeEventListener('keydown', close);
+  }, [journeysOpen, closeJourneys, journey]);
   useEffect(() => {
     if (!noteOpen) return;
     noteRef.current?.focus({ preventScroll: true });
@@ -176,6 +225,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
       setSelectedId(id);
       setGroup(node.group);
       setJourneyId(null);
+      setJourneysOpen(false);
       setNoteOpen(true);
       setCommand((previous) => ({ kind: 'node', targetId: id, sequence: previous.sequence + 1 }));
       revealMap();
@@ -187,6 +237,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
       setGroup(id);
       setQuery('');
       setJourneyId(null);
+      setJourneysOpen(false);
       setNoteOpen(false);
       setCommand((previous) => ({ kind: 'group', targetId: id, sequence: previous.sequence + 1 }));
       revealMap();
@@ -200,6 +251,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
       setGroup(district.group);
       setQuery('');
       setJourneyId(null);
+      setJourneysOpen(false);
       setNoteOpen(false);
       setCommand((previous) => ({
         kind: 'district',
@@ -227,15 +279,9 @@ export function CivicIslandView({ data }: IslandViewProps) {
     setSelectedId(item.steps[0].nodeId);
     setNoteOpen(false);
     setShowConnections(true);
+    setJourneysOpen(false);
     camera('reset');
-    requestAnimationFrame(() =>
-      document.getElementById('island-map')?.scrollIntoView({
-        block: 'start',
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-          ? 'instant'
-          : 'smooth',
-      }),
-    );
+    requestAnimationFrame(() => journeyDetailsRef.current?.focus({ preventScroll: true }));
   }
   function goStep(index: number) {
     if (!journey) return;
@@ -252,6 +298,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
             aria-label="公民島互動地圖"
             data-scene={status}
             data-note-open={noteOpen}
+            data-journeys-open={journeysOpen}
           >
             <div className="island-map-toolbar">
               <header className="island-map-intro">
@@ -331,19 +378,20 @@ export function CivicIslandView({ data }: IslandViewProps) {
             />
             <button
               type="button"
+              ref={directoryToggleRef}
               className="island-panel-toggle"
               aria-label={panelCollapsed ? '展開搜尋欄' : '收合搜尋欄'}
               title={panelCollapsed ? '展開搜尋欄' : '收合搜尋欄'}
               aria-expanded={!panelCollapsed}
               aria-controls="island-directory-panel"
-              onClick={() => setPanelCollapsed((value) => !value)}
+              onClick={() => (panelCollapsed ? openDirectory() : closeDirectory())}
             >
               {panelCollapsed ? (
                 <ChevronLeft size={19} aria-hidden="true" />
               ) : (
                 <ChevronRight size={19} aria-hidden="true" />
               )}
-              <span>{panelCollapsed ? '展開' : '收合'}</span>
+              <span>{panelCollapsed ? '搜尋' : '收合'}</span>
             </button>
             {status === 'unavailable' && (
               <div className="island-scene-unavailable" role="status">
@@ -420,7 +468,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
                 </div>
               </section>
             )}
-            {journey && current && !noteOpen && (
+            {journey && current && !noteOpen && !journeysOpen && (
               <div className="island-map-trip" aria-label="地圖上的旅程控制">
                 <button
                   type="button"
@@ -429,7 +477,9 @@ export function CivicIslandView({ data }: IslandViewProps) {
                   title="結束情境導覽"
                   onClick={() => {
                     setJourneyId(null);
-                    homeRef.current?.focus({ preventScroll: true });
+                    requestAnimationFrame(() =>
+                      journeyToggleRef.current?.focus({ preventScroll: true }),
+                    );
                   }}
                 >
                   <X size={17} aria-hidden="true" />
@@ -459,28 +509,147 @@ export function CivicIslandView({ data }: IslandViewProps) {
                   </button>
                   <button
                     type="button"
-                    className="island-trip-read"
-                    onClick={() => setNoteOpen(true)}
+                    ref={journeyDetailsRef}
+                    className="island-trip-details"
+                    aria-label="查看情境完整說明"
+                    onClick={openJourneys}
                   >
+                    說明
+                  </button>
+                  <button type="button" className="island-trip-read" onClick={readSelectedNote}>
                     讀機關筆記
                   </button>
                 </div>
               </div>
             )}
+            <button
+              type="button"
+              className="island-journey-toggle"
+              ref={journeyToggleRef}
+              hidden={journeysOpen || noteOpen || Boolean(journey)}
+              aria-expanded={journeysOpen}
+              aria-controls="island-journeys"
+              onClick={openJourneys}
+            >
+              <Route size={19} aria-hidden="true" />
+              情境導覽
+              <ChevronUp size={17} aria-hidden="true" />
+            </button>
+            <section
+              className="island-journeys"
+              role="dialog"
+              aria-modal="false"
+              hidden={!journeysOpen}
+              inert={!journeysOpen}
+              ref={journeyPanelRef}
+              tabIndex={-1}
+              id="island-journeys"
+              aria-labelledby="island-journeys-title"
+            >
+              <div className="island-section-heading">
+                <div>
+                  <p className="eyebrow">
+                    <Route size={19} aria-hidden="true" />
+                    跟著情境，跨島走一趟
+                  </p>
+                  <h2 id="island-journeys-title">事情發生後，輪到誰做什麼？</h2>
+                </div>
+                <button
+                  type="button"
+                  className="island-journeys-close"
+                  aria-label="關閉情境導覽"
+                  onClick={closeJourneys}
+                >
+                  <X size={20} aria-hidden="true" />
+                </button>
+              </div>
+              <div className="island-journeys-scroll" ref={journeyScrollRef}>
+                <button
+                  className="island-connection-toggle"
+                  type="button"
+                  aria-pressed={showConnections}
+                  onClick={() => setShowConnections((value) => !value)}
+                >
+                  關係連線：{showConnections ? '開啟' : '關閉'}
+                </button>
+                <div className="island-journey-choices">
+                  {data.journeys.map((item) => (
+                    <button
+                      type="button"
+                      key={item.id}
+                      aria-pressed={journeyId === item.id}
+                      onClick={() => startJourney(item.id)}
+                    >
+                      {item.title}
+                      <ArrowRight size={18} aria-hidden="true" />
+                    </button>
+                  ))}
+                </div>
+                {journey && current ? (
+                  <div className="island-story">
+                    <p className="eyebrow">
+                      {journey.title} · {step + 1} / {journey.steps.length}
+                    </p>
+                    <ol className="island-story-steps">
+                      {journey.steps.map((item, index) => (
+                        <li key={item.nodeId}>
+                          <button
+                            type="button"
+                            aria-current={step === index ? 'step' : undefined}
+                            aria-label={`第 ${index + 1} 步：${item.title}`}
+                            onClick={() => goStep(index)}
+                          >
+                            {index + 1}
+                          </button>
+                        </li>
+                      ))}
+                    </ol>
+                    <div className="island-story-copy" id="island-journey-step" aria-live="polite">
+                      <h3>{current.title}</h3>
+                      <p>{current.text}</p>
+                    </div>
+                    <div className="island-story-actions">
+                      <button type="button" onClick={() => goStep(step - 1)} disabled={step === 0}>
+                        <ArrowLeft size={17} aria-hidden="true" />
+                        上一步
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => goStep(step + 1)}
+                        disabled={step === journey.steps.length - 1}
+                      >
+                        下一步
+                        <ArrowRight size={17} aria-hidden="true" />
+                      </button>
+                      <button type="button" onClick={() => goStep(0)}>
+                        重來
+                      </button>
+                      <button type="button" onClick={() => setJourneyId(null)}>
+                        結束導覽
+                      </button>
+                    </div>
+                    <p className="island-story-notice">{journey.notice}</p>
+                  </div>
+                ) : (
+                  <p className="island-journey-hint">
+                    選一段旅程，地圖上的建築與連線會跟著亮起，也可逐步或跳步閱讀。
+                  </p>
+                )}
+                <p className="island-map-notice">
+                  島嶼與分區是學習主題的示意，不代表真實地點、機關隸屬或行政層級。法院依法獨立審判；連線也不一定是上下隸屬。
+                </p>
+              </div>
+            </section>
             <div className="island-map-footer">
               <span>
                 <Compass size={18} aria-hidden="true" />
                 <span className="island-touch-hint">點島名 · 選分區 · 拉近看機關</span>
                 <span className="island-mouse-hint">左鍵移動 · 右鍵旋轉 · 滾輪縮放</span>
               </span>
-              <a
-                className="island-open-directory"
-                href="#island-directory-panel"
-                onClick={() => setPanelCollapsed(false)}
-              >
+              <button type="button" className="island-open-directory" onClick={openDirectory}>
                 <Search size={17} aria-hidden="true" />
                 搜尋機關
-              </a>
+              </button>
               <span className="island-map-state" role="status">
                 {group === 'all' ? '全島總覽' : data.groups.find((item) => item.id === group)?.name}
               </span>
@@ -489,13 +658,28 @@ export function CivicIslandView({ data }: IslandViewProps) {
         </div>
         <aside
           className="island-panel"
+          ref={directoryPanelRef}
           id="island-directory-panel"
           tabIndex={-1}
           aria-label="機關探索與搜尋"
           inert={panelCollapsed}
           aria-hidden={panelCollapsed}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') {
+              event.preventDefault();
+              closeDirectory();
+            }
+          }}
         >
           <div className="island-panel-heading">
+            <button
+              type="button"
+              className="island-directory-close"
+              aria-label="收合搜尋欄"
+              onClick={closeDirectory}
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
             <p className="eyebrow">THE CIVIC DIRECTORY</p>
             <h2>從一個名字，認識它的工作。</h2>
             <p>{data.nodes.length} 項角色與機關，點選即可閱讀。</p>
@@ -504,6 +688,7 @@ export function CivicIslandView({ data }: IslandViewProps) {
             <Search size={19} aria-hidden="true" />
             <span className="sr-only">搜尋公民島機關與角色</span>
             <input
+              ref={directorySearchRef}
               type="search"
               placeholder="例如：交通、檢察官、議員"
               value={query}
@@ -583,103 +768,21 @@ export function CivicIslandView({ data }: IslandViewProps) {
           </div>
         </aside>
       </div>
-      <div className="island-supplemental">
-        <p className="island-map-notice">
-          島嶼與分區是學習主題的示意，不代表真實地點、機關隸屬或行政層級。法院依法獨立審判；連線也不一定是上下隸屬。
-        </p>
-        <section
-          className="island-journeys"
-          id="island-journeys"
-          aria-labelledby="island-journeys-title"
-        >
-          <div className="island-section-heading">
-            <div>
-              <p className="eyebrow">
-                <Route size={19} aria-hidden="true" />
-                跟著情境，跨島走一趟
-              </p>
-              <h2 id="island-journeys-title">事情發生後，輪到誰做什麼？</h2>
-            </div>
-            <button
-              className="island-connection-toggle"
-              type="button"
-              aria-pressed={showConnections}
-              onClick={() => setShowConnections((value) => !value)}
-            >
-              關係連線：{showConnections ? '開啟' : '關閉'}
-            </button>
-          </div>
-          <div className="island-journey-choices">
-            {data.journeys.map((item) => (
-              <button
-                type="button"
-                key={item.id}
-                aria-pressed={journeyId === item.id}
-                onClick={() => startJourney(item.id)}
-              >
-                {item.title}
-                <ArrowRight size={18} aria-hidden="true" />
-              </button>
-            ))}
-          </div>
-          {journey && current ? (
-            <div className="island-story">
-              <p className="eyebrow">
-                {journey.title} · {step + 1} / {journey.steps.length}
-              </p>
-              <ol className="island-story-steps">
-                {journey.steps.map((item, index) => (
-                  <li key={item.nodeId}>
-                    <button
-                      type="button"
-                      aria-current={step === index ? 'step' : undefined}
-                      aria-label={`第 ${index + 1} 步：${item.title}`}
-                      onClick={() => goStep(index)}
-                    >
-                      {index + 1}
-                    </button>
-                  </li>
-                ))}
-              </ol>
-              <div className="island-story-copy" id="island-journey-step" aria-live="polite">
-                <h3>{current.title}</h3>
-                <p>{current.text}</p>
-              </div>
-              <div className="island-story-actions">
-                <button type="button" onClick={() => goStep(step - 1)} disabled={step === 0}>
-                  <ArrowLeft size={17} aria-hidden="true" />
-                  上一步
-                </button>
-                <button
-                  type="button"
-                  onClick={() => goStep(step + 1)}
-                  disabled={step === journey.steps.length - 1}
-                >
-                  下一步
-                  <ArrowRight size={17} aria-hidden="true" />
-                </button>
-                <button type="button" onClick={() => goStep(0)}>
-                  重來
-                </button>
-                <button type="button" onClick={() => setJourneyId(null)}>
-                  結束導覽
-                </button>
-              </div>
-              <p className="island-story-notice">{journey.notice}</p>
-            </div>
-          ) : (
-            <p className="island-journey-hint">
-              選一段旅程，地圖上的建築與連線會跟著亮起，也可逐步或跳步閱讀。
-            </p>
-          )}
-        </section>
-        <noscript>
+      <noscript>
+        <style>
+          {
+            'html:has(.island-page), body:has(.island-page) { overflow: auto; } .island-page { height: auto; overflow: visible; } .island-workspace { display: none; }'
+          }
+        </style>
+        <div className="container island-nojs">
+          <h1>公民島互動探索</h1>
           <p className="notice">
-            你可以前往原頁閱讀：<Link href="/government/">政府怎麼運作的完整介紹</Link>、
+            啟用 JavaScript 後可以探索立體島嶼；你也可以直接閱讀：
+            <Link href="/government/">政府怎麼運作的完整介紹</Link>、
             <Link href="/justice/">司法與警檢完整介紹</Link>。
           </p>
-        </noscript>
-      </div>
+        </div>
+      </noscript>
     </div>
   );
 }

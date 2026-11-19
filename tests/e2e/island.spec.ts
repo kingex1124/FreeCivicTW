@@ -9,12 +9,112 @@ test.describe.configure({ timeout: 60000 });
 async function waitForCamera(page: Page) {
   await expect(page.locator('.island-three-canvas')).toHaveAttribute('data-camera-moving', 'false');
 }
+async function openDirectory(page: Page) {
+  const panel = page.locator('.island-panel');
+  if ((await panel.getAttribute('aria-hidden')) === 'true')
+    await page.getByRole('button', { name: '展開搜尋欄', exact: true }).click();
+  await expect(panel).toBeVisible();
+  await expect(panel).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+}
+async function openJourneyControls(page: Page) {
+  if (await page.locator('#island-journeys').isHidden()) {
+    const details = page.getByRole('button', { name: '查看情境完整說明', exact: true });
+    if (await details.count()) await details.click();
+    else await page.getByRole('button', { name: '情境導覽', exact: true }).click();
+  }
+  await expect(page.locator('#island-journeys')).toBeVisible();
+}
 test.beforeEach(async ({ page }) => {
   await page.route(
     /^https:\/\/([^/]+\.)?(googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//,
     (route) => route.abort(),
   );
 });
+
+for (const viewport of [
+  { width: 1440, height: 900 },
+  { width: 390, height: 844 },
+  { width: 320, height: 568 },
+]) {
+  test(`${viewport.width}px 公民島維持滿版，滾輪不帶離地圖，情境可在畫面內開關並保留步驟`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport);
+    await page.goto('civic-island/');
+    await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+    const viewportFits = async () => {
+      await expect
+        .poll(() =>
+          page.evaluate(() => ({
+            x: scrollX,
+            y: scrollY,
+            overflow: document.documentElement.scrollHeight > innerHeight + 1,
+            horizontal: document.documentElement.scrollWidth > innerWidth,
+            mapHeight: Math.round(
+              document.querySelector('.island-map')?.getBoundingClientRect().height ?? 0,
+            ),
+          })),
+        )
+        .toEqual({ x: 0, y: 0, overflow: false, horizontal: false, mapHeight: viewport.height });
+    };
+    await expect(page.locator('.island-panel')).toBeHidden();
+    await expect(page.locator('#island-journeys')).toBeHidden();
+    await expect(page.locator('.island-supplemental')).toHaveCount(0);
+    await expect(page.locator('.back-to-top')).toBeHidden();
+    await viewportFits();
+    await page.mouse.move(viewport.width / 2, viewport.height / 2);
+    await page.mouse.wheel(0, 900);
+    await viewportFits();
+    await page.locator('body').focus();
+    await page.keyboard.press('PageDown');
+    await viewportFits();
+    await openJourneyControls(page);
+    const panel = page.getByRole('dialog', { name: '事情發生後，輪到誰做什麼？', exact: true });
+    await expect(panel).toBeFocused();
+    const box = await panel.boundingBox();
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(viewport.height);
+    await page.keyboard.press('Escape');
+    await expect(panel).toBeHidden();
+    await expect(page.getByRole('button', { name: '情境導覽', exact: true })).toBeFocused();
+    await openJourneyControls(page);
+    await panel.locator('.island-journey-choices > button').first().click();
+    await expect(panel).toBeHidden();
+    await page.getByRole('button', { name: '旅程下一步', exact: true }).click();
+    await expect(page.locator('.island-map-trip')).toContainText('2 /');
+    await openJourneyControls(page);
+    await expect(panel.locator('.island-story-copy')).toContainText(
+      data.journeys[0].steps[1].title,
+    );
+    const body = panel.locator('.island-journeys-scroll');
+    await body.evaluate((element) => (element.scrollTop = 0));
+    await body.hover();
+    await page.mouse.wheel(0, 1300);
+    await expect.poll(() => body.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+    await page.mouse.wheel(0, 1300);
+    await viewportFits();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('button', { name: '查看情境完整說明', exact: true })).toBeFocused();
+    await expect(page.locator('.island-map-trip')).toContainText('2 /');
+    await openDirectory(page);
+    await page.getByLabel('搜尋公民島機關與角色').fill('交通');
+    await page.getByRole('button', { name: '收合搜尋欄', exact: true }).click();
+    await expect(page.locator('.island-panel')).toBeHidden();
+    await viewportFits();
+    await page.getByRole('button', { name: '展開網站頂列', exact: true }).click();
+    if (viewport.width <= 1000)
+      await page.getByRole('button', { name: '開啟導覽', exact: true }).click();
+    await page
+      .getByRole('navigation', { name: '主要導覽' })
+      .getByRole('link', { name: '政府怎麼運作', exact: true })
+      .click();
+    await expect(page).toHaveURL(/\/government\/$/);
+    await page.mouse.move(160, 400);
+    await page.mouse.wheel(0, 900);
+    await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(100);
+    await expect(page.locator('.site-footer')).toBeVisible();
+  });
+}
 test('公民島整條頂列預設收起，展開後恢復原選單，可用鍵盤收合且重新進入仍收起', async ({ page }) => {
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });
@@ -90,6 +190,8 @@ test('公民島滿版呈現，點島名拉近並顯示建築標籤，點標籤�
   });
   await expect(page.locator('canvas[data-island-canvas]')).toBeVisible();
   await expect(page.getByRole('button', { name: /切換平面|切換立體/ })).toHaveCount(0);
+  await expect(page.locator('.island-panel')).toBeHidden();
+  await openDirectory(page);
   const map = await page.locator('.island-map').boundingBox(),
     panel = await page.locator('.island-panel').boundingBox();
   expect(map!.x).toBe(0);
@@ -141,6 +243,7 @@ test('公民島搜尋欄可收合展開、保留條件，無結果可清除並�
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('civic-island/');
   await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+  await openDirectory(page);
   const mapWidth = await page
     .locator('.island-map')
     .evaluate((element) => element.getBoundingClientRect().width);
@@ -182,6 +285,7 @@ for (const group of ['central', 'local'] as const) {
   }) => {
     await page.goto('civic-island/');
     await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+    await openDirectory(page);
     await page
       .getByRole('navigation', { name: '島嶼分類' })
       .getByRole('button', { name: group === 'central' ? /中央政府/ : /地方政府/ })
@@ -220,6 +324,7 @@ test('島內分區手機可往返地圖與清單，大字標籤不重疊且深�
   test.setTimeout(90000);
   await page.goto('civic-island/');
   await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+  await openDirectory(page);
   await page
     .getByRole('navigation', { name: '島嶼分類' })
     .getByRole('button', { name: /地方政府/ })
@@ -264,6 +369,7 @@ test('島內分區手機可往返地圖與清單，大字標籤不重疊且深�
   ).toBeVisible();
   await page.setViewportSize({ width: 320, height: 900 });
   await page.evaluate(() => (document.documentElement.style.fontSize = '20px'));
+  await openDirectory(page);
   await page
     .getByRole('navigation', { name: '島內職能分區' })
     .getByRole('button', { name: /^民意與自治/ })
@@ -301,6 +407,7 @@ test('島內分區手機可往返地圖與清單，大字標籤不重疊且深�
 test('遠景滑鼠指向建築顯示名稱，離開後收起，浮出的標籤可以開啟筆記', async ({ page }) => {
   await page.goto('civic-island/');
   await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+  await openDirectory(page);
   const canvas = await page.locator('canvas[data-island-canvas]').boundingBox();
   const labels = page.locator('.island-building-label:visible');
   await expect(labels).toHaveCount(0);
@@ -345,6 +452,8 @@ test('遠景滑鼠指向建築顯示名稱，離開後收起，浮出的標籤�
 for (const journey of data.journeys) {
   test(`島嶼旅程「${journey.title}」可下一步、跳步、重來與結束，保留制度界線`, async ({ page }) => {
     await page.goto('civic-island/');
+    await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+    await openJourneyControls(page);
     const choices = page.locator('.island-journey-choices');
     const expectLabel = async (nodeId: string) => {
       const label = page.locator(`.island-building-label[data-node-id="${nodeId}"]`);
@@ -361,14 +470,17 @@ for (const journey of data.journeys) {
     await expectLabel(journey.steps[1].nodeId);
     await page.getByRole('button', { name: '旅程上一步', exact: true }).click();
     await expectLabel(journey.steps[0].nodeId);
+    await openJourneyControls(page);
     await page.locator('.island-story-steps button').last().click();
     await expectLabel(journey.steps.at(-1)!.nodeId);
+    await page.getByRole('button', { name: '關閉情境導覽', exact: true }).click();
     await page.getByRole('button', { name: '讀機關筆記', exact: true }).click();
     await expect(page.locator('#island-note-title')).toHaveText(
       data.nodes.find((n) => n.id === journey.steps.at(-1)!.nodeId)!.name,
     );
     await page.getByRole('button', { name: '關閉機關筆記', exact: true }).click();
     await expect(page.getByRole('button', { name: '旅程下一步', exact: true })).toBeDisabled();
+    await openJourneyControls(page);
     await page.locator('.island-story').getByRole('button', { name: '重來', exact: true }).click();
     await expect(page.locator('.island-story-copy')).toContainText(journey.steps[0].title);
     await page
@@ -382,6 +494,7 @@ test('地圖上的小叉叉可用鍵盤結束情境，手機可操作並能重�
   for (const width of [1440, 320]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('civic-island/');
+    await openJourneyControls(page);
     const choice = page.locator('.island-journey-choices > button').first();
     await choice.click();
     await page.getByRole('button', { name: '旅程下一步', exact: true }).click();
@@ -394,8 +507,9 @@ test('地圖上的小叉叉可用鍵盤結束情境，手機可操作並能重�
     await expect(trip).toHaveCount(0);
     await expect(page.locator('.island-story')).toHaveCount(0);
     await expect(choice).toHaveAttribute('aria-pressed', 'false');
-    await expect(page.getByRole('button', { name: '重設地圖視角', exact: true })).toBeFocused();
+    await expect(page.getByRole('button', { name: '情境導覽', exact: true })).toBeFocused();
     await expect(page.locator('#island-map')).toBeInViewport();
+    await openJourneyControls(page);
     await choice.click();
     await expect(trip).toContainText('1 /');
     await expect(page.getByRole('button', { name: '旅程上一步', exact: true })).toBeDisabled();
@@ -420,6 +534,7 @@ test('沒有3D能力及手機也能探索，鍵盤操作、深淺色、大字與
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('civic-island/');
   await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'unavailable');
+  await openDirectory(page);
   await page.getByLabel('搜尋公民島機關與角色').fill('檢察官');
   const choice = page
     .locator('.island-directory>button')
@@ -428,6 +543,7 @@ test('沒有3D能力及手機也能探索，鍵盤操作、深淺色、大字與
   await page.keyboard.press('Enter');
   await expect(page.locator('#island-note-title')).toHaveText('檢察官');
   await page.getByRole('button', { name: '關閉機關筆記', exact: true }).click();
+  await openDirectory(page);
   await expect(page.locator('#island-map')).toBeInViewport();
   for (const theme of ['light', 'dark']) {
     await page.evaluate((value) => (document.documentElement.dataset.theme = value), theme);
@@ -460,6 +576,8 @@ test('立體建築標籤與浮動筆記在深淺色可閱讀，手機可往返�
     await expect(page.locator('.island-building-label:visible')).toHaveCount(
       data.nodes.filter((node) => node.group === 'courts').length,
     );
+    await openJourneyControls(page);
+    await expect(page.locator('#island-journeys')).toHaveCSS('opacity', '1');
     const audit = await new AxeBuilder({ page })
       .include('.island-workspace')
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
@@ -471,6 +589,7 @@ test('立體建築標籤與浮動筆記在深淺色可閱讀，手機可往返�
       })),
       theme,
     ).toEqual([]);
+    await page.getByRole('button', { name: '關閉情境導覽', exact: true }).click();
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole('button', { name: '重設地圖視角', exact: true }).click();
@@ -486,6 +605,7 @@ test('立體建築標籤與浮動筆記在深淺色可閱讀，手機可往返�
   expect(dialog!.y).toBeGreaterThanOrEqual(map!.y);
   expect(dialog!.y + dialog!.height).toBeLessThanOrEqual(map!.y + map!.height);
   await page.getByRole('button', { name: '關閉機關筆記', exact: true }).click();
+  await openDirectory(page);
   await page.getByRole('button', { name: '收合搜尋欄', exact: true }).click();
   await expect(page.locator('.island-panel')).toBeHidden();
   await page.locator('.island-open-directory').click();
