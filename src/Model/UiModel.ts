@@ -3,6 +3,7 @@ export type IntroProps = {
   eyebrow: string;
   title: string;
   description: string;
+  breadcrumbs?: ReactNode;
   children?: ReactNode;
 };
 export type ChildrenProps = { children: ReactNode };

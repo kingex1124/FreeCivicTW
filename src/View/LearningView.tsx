@@ -159,7 +159,10 @@ export function ArticleView({ article }: ArticleViewProps) {
         <SourceList sourceIds={article.sourceIds} />
         <div className="article-review">
           <CheckCircle2 size={16} />
-          <span>內容查核：{article.updatedAt}</span>
+          <span>整理：FreeCivicTW 公民自由課</span>
+          <span>
+            內容查核：<time dateTime={article.updatedAt}>{article.updatedAt}</time>
+          </span>
           <a href={SiteService.correctionLink(`/learn/${article.slug}/`)}>這裡有需要更正的地方？</a>
         </div>
         <nav className="lesson-neighbors" aria-label="相關筆記">

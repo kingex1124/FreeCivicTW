@@ -83,6 +83,18 @@ npm run preview
 
 保留原始驗證檔，之後每次部署都會一併輸出。驗證成功不代表保證收錄或排名；也不需要把驗證檔加進 sitemap。檔名及內容須維持 Google 提供的形式，詳見 [Search Console 官方驗證說明](https://support.google.com/webmasters/answer/9008080?hl=zh-Hant)。
 
+## SEO 與 AI 搜尋（GEO）
+
+`Data/seo.json` 維護 13 個主頁的搜尋標題與摘要；`SeoRepository` 驗證資料，`SeoService` 合併 8 篇文章、6 題練習與各內容的日期，統一產生 metadata、canonical、麵包屑、sitemap 及純文字索引。新增主頁時須一併登錄；新增已發布文章或練習則自動加入。所有網址使用同一個正式 origin 與 `basePath`，不把篩選、追蹤參數或網址片段當成獨立索引頁。
+
+各頁初始 HTML 都有 JSON-LD，使用相同的 WebSite／Organization 身分，依實際內容標示 Article、LearningResource、CollectionPage 或 AboutPage。文章附整理者、查核日期、來源引用及章節連結；媒體識讀的搜尋摘要先標示「虛構教學情境，非真實事件」。沒有資料的發布日期、專家審查或評分不會自行補造。編輯原則與更正政策分別對應 `/about/#editorial-policy`、`/sources/#corrections`；來源仍維持預設收合，文字已在靜態 HTML 中。
+
+`/llms.txt` 是由同一份目錄產生的可選純文字入口，供會讀取它的工具使用，並非 Google 收錄或 AI 引用的必要條件；依 [Google 官方 AI 搜尋建議](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)，Google 不使用這類檔案作為排名或特殊標記。GEO 的重點是可存取的正文、清楚的原始來源、編輯責任與適用範圍。公民島保留滿版互動，不新增頁面下方內容；無 JavaScript 時可前往政府與司法的完整文字頁。
+
+sitemap 的 `lastmod` 來自內容資料，文章與練習分別沿用自身更新日，不使用每次建置時間，也不把網站資訊更新日當成全站法規重新查核日。404 使用 `noindex` 並移除繼承的首頁 canonical。新增的 SEO 測試會核對所有實際路由、靜態標題／摘要／結構化資料、站內連結可發現性、分享圖、404 與兩種部署路徑。
+
+部署後，在已驗證的 Search Console 資源提交 `https://kingex1124.github.io/FreeCivicTW/sitemap.xml`，並以「網址審查」查看首頁與重要主題。專案的 `/FreeCivicTW/robots.txt` 無法替代網域根目錄的 `/robots.txt`；若根網域另有 robots 規則，需在管理根網域的 repository 處理。收錄與 AI 引用由各搜尋服務決定，需在部署後觀察實際成效。
+
 ## 已實作的內容與功能
 
 - 首頁三條學習入口、四步快速摘要與八篇完整入門文章。

@@ -1,5 +1,11 @@
 import { ActionLink, PageIntro } from '@/View/SiteView';
-export const metadata = { title: '找不到這頁', robots: { index: false, follow: false } };
+export const metadata = {
+  title: '找不到這頁',
+  robots: { index: false, follow: false },
+  alternates: { canonical: null },
+  openGraph: null,
+  twitter: null,
+};
 export default function NotFound() {
   return (
     <>

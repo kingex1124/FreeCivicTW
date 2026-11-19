@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pages": [
+    {
+      "path": "/",
+      "label": "首頁",
+      "title": "公民自由課｜台灣民主、政府制度與媒體識讀入門",
+      "description": "不用公民基礎，也能看懂台灣民主。用白話筆記、政府與司法圖解、公投罷免說明、媒體識讀練習與公民島，認識權力分工、每一張選票與查證方法。免費閱讀，附資料來源與查核日期。",
+      "schemaType": "WebSite"
+    },
+    {
+      "path": "/learn/",
+      "label": "公民入門",
+      "title": "公民快速入門：民主、中央地方與選舉基礎",
+      "description": "不需要公民基礎，從八篇白話筆記認識民主與自由、中央地方政府、選舉職務和媒體識讀。提供生活例子、名詞解釋、理解練習與原始資料，依自己的步調學習。",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/government/",
+      "label": "政府怎麼運作",
+      "title": "政府怎麼運作：中央地方、立法、公投與罷免",
+      "description": "中央與地方政府、立委和議員各能做什麼？白話說明部長與局處首長任命、質詢、預算、立法院及議會立法、覆議與公布施行，以及全國和地方公投、不同公職罷免的程序與界線。",
+      "schemaType": "LearningResource"
+    },
+    {
+      "path": "/justice/",
+      "label": "司法與警檢",
+      "title": "司法與警檢：法院、檢察官、警察怎麼分工",
+      "description": "用白話認識司法獨立、各級法院、檢察官與警察分工。從報案、偵查、起訴到法院審判，說明羈押、交保、抗告與電子監控的差異、限制和救濟，附官方資料與查核日期。",
+      "schemaType": "LearningResource"
+    },
+    {
+      "path": "/civic-island/",
+      "label": "公民島",
+      "title": "公民島：互動探索中央、地方與司法機關",
+      "description": "走訪中央政府、地方政府、法院、檢察與警察五座制度島嶼。點島名與建築認識機關職責，跟著任命、監督及刑事案件情境，看懂機關如何分工；也可透過搜尋閱讀機關筆記。",
+      "schemaType": "LearningResource"
+    },
+    {
+      "path": "/oversight/",
+      "label": "民間監督",
+      "title": "民間監督：認識公督盟與公民監督團體",
+      "description": "認識公民監督國會聯盟、經濟民主連合及關注國會、地方議會、廉政、司法、人權、開放資訊與環境政策的民間團體。依主題找到公開成果、原始紀錄、閱讀方法與參與管道。",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/resources/",
+      "label": "便民查詢",
+      "title": "便民查詢：食安、判決、財產申報與政府入口",
+      "description": "整理食安、雞蛋溯源、判決書、民代財產申報、報稅與社會保險等查詢入口，以及中央、22縣市政府與議會網站。說明能查什麼、怎麼查，並標示官方與民間資料來源。",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/more/",
+      "label": "看更多",
+      "title": "看更多：原住民選舉、政治攻防與憲法法庭",
+      "description": "原住民選舉跟一般選舉差在哪裡？什麼是政治攻防、問A答B與杯葛？人民何時會用到憲法法庭？用白話例子、官方依據與實際案例，認識選舉差異、辨識誤導話術和憲法救濟。",
+      "schemaType": "LearningResource"
+    },
+    {
+      "path": "/my-ballots/",
+      "label": "我的選票指南",
+      "title": "我的選票指南：依戶籍地認識民選職務",
+      "description": "選擇戶籍縣市與鄉鎮市區，認識總統、立委、地方首長、議員、代表與村里長的職責、產生方式和權力界線。這是選舉制度教學，個人投票資格與當次票別仍依選務公告。",
+      "schemaType": "LearningResource"
+    },
+    {
+      "path": "/media-literacy/",
+      "label": "媒體識讀",
+      "title": "媒體識讀練習：看標題、找來源與核對脈絡",
+      "description": "用六個虛構教學情境練習查證：看標題、找日期、讀完整引言、理解圖表、核對轉傳來源與影像。可以修改答案或直接閱讀解析，把查證方法帶回日常生活。",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/about/",
+      "label": "關於與聯絡",
+      "title": "關於公民自由課：開發初衷、編輯原則與聯絡",
+      "description": "了解 FreeCivicTW 公民自由課的開發初衷、資料整理與更正方式。以白話幫助沒有公民基礎的人理解台灣民主、學會查證，並公開來源、適用範圍及聯絡信箱。",
+      "schemaType": "AboutPage"
+    },
+    {
+      "path": "/sources/",
+      "label": "來源與更正",
+      "title": "資料來源與更正紀錄：法規、選務與公民教育",
+      "description": "查閱公民自由課引用的法規、選務、行政區、司法及媒體識讀資料，核對發布者、來源網址、適用範圍與本站查核日期。提供內容更正紀錄與回報管道。",
+      "schemaType": "CollectionPage"
+    },
+    {
+      "path": "/privacy/",
+      "label": "隱私與使用統計",
+      "title": "隱私與使用統計：資料處理及 Google Analytics",
+      "description": "了解公民自由課的地區查詢、媒體識讀作答、深淺色偏好與 Google Analytics 使用統計如何處理資料，以及瀏覽器設定、外部來源與聯絡方式。",
+      "schemaType": "WebPage"
+    }
+  ]
+}

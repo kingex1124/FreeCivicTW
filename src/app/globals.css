@@ -643,6 +643,42 @@ html[data-scroll-ready='true'] .back-to-top:not([data-visible='true']) {
 .page-intro {
   padding-block: 62px 35px;
 }
+.page-intro:has(.breadcrumbs) {
+  padding-top: 30px;
+}
+.breadcrumbs {
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: var(--text-body);
+  line-height: 1.8;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+.breadcrumbs li > svg {
+  flex-shrink: 0;
+  align-self: center;
+}
+.breadcrumbs a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.breadcrumbs [aria-current='page'] {
+  overflow-wrap: anywhere;
+}
 .page-intro h1 {
   font-size: var(--text-title);
   font-weight: 800;
@@ -1765,6 +1801,7 @@ html[data-scroll-ready='true'] .back-to-top:not([data-visible='true']) {
 }
 .article-review {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 9px;
   font-size: var(--text-body);
@@ -3817,6 +3854,21 @@ input::placeholder {
 .about-principles > h2 {
   font-size: var(--text-heading);
 }
+#editorial-policy,
+#corrections {
+  scroll-margin-top: 115px;
+}
+.about-principles > ol + h2 {
+  margin-top: 38px;
+}
+.about-principles > p {
+  margin-top: 18px;
+  line-height: 2;
+  color: var(--muted);
+}
+.about-principles > .button-secondary {
+  margin-top: 22px;
+}
 .about-principles ol {
   list-style: none;
   padding: 0;
@@ -4835,6 +4887,9 @@ input::placeholder {
   .page-intro {
     padding-top: 35px;
     padding-bottom: 27px;
+  }
+  .page-intro:has(.breadcrumbs) {
+    padding-top: 20px;
   }
   .page-intro .eyebrow {
     font-size: var(--text-body);
@@ -6228,11 +6283,21 @@ input::placeholder {
     width: calc(100% - 48px);
     max-width: 1480px;
   }
-  .header-inner {gap:16px;}
-  .main-nav {gap:10px;}
-  .nav-links > a {padding-inline:9px;}
-  .brand {gap:9px;}
-  .brand small {letter-spacing:.14em;}
+  .header-inner {
+    gap: 16px;
+  }
+  .main-nav {
+    gap: 10px;
+  }
+  .nav-links > a {
+    padding-inline: 9px;
+  }
+  .brand {
+    gap: 9px;
+  }
+  .brand small {
+    letter-spacing: 0.14em;
+  }
 }
 @media (max-width: 700px) {
   .resource-intro {

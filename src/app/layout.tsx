@@ -7,15 +7,10 @@ import { BackToTop } from '@/View/BackToTopView';
 import { AnalyticsView } from '@/View/AnalyticsView';
 import type { ChildrenProps } from '@/Model/UiModel';
 import './globals.css';
-const site = SiteService.get();
 export const metadata: Metadata = {
-  ...SeoService.metadata({
-    title: '公民自由課｜從生活出發，看懂台灣民主',
-    description: site.description,
-    path: '/',
-  }),
+  ...SeoService.metadataFor('/'),
   title: {
-    default: '公民自由課｜從生活出發，看懂台灣民主',
+    default: SeoService.getPage('/').title,
     template: '%s｜公民自由課 FreeCivicTW',
   },
   metadataBase: new URL(SiteService.absolute('/')),

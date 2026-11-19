@@ -52,7 +52,7 @@ export function SourcesPage() {
           <p className="muted">{region.source.license}。地區分類與自治例外另以地方制度來源核對。</p>
         </article>
       </div>
-      <section className="corrections">
+      <section className="corrections" id="corrections">
         <h2>內容更正紀錄</h2>
         {data.corrections.map((c, i) => (
           <div key={i}>

@@ -20,6 +20,7 @@ export const SiteSchema = z.object({
     z.object({ id: z.string(), label: z.string(), href: z.string(), learningPathId: z.string() }),
   ),
   editorialPrinciples: z.array(z.string()),
+  editorialPolicy: z.object({ title: z.string(), paragraphs: z.array(z.string()).min(1) }),
   notices: z.object({
     educationalPurpose: z.string(),
     ballotLookup: z.string(),

@@ -37,9 +37,10 @@ export function ActionLink({ href, children, secondary, className = '' }: Action
     </Link>
   );
 }
-export function PageIntro({ eyebrow, title, description, children }: IntroProps) {
+export function PageIntro({ eyebrow, title, description, breadcrumbs, children }: IntroProps) {
   return (
     <section className="page-intro container">
+      {breadcrumbs}
       <div className="eyebrow">
         <span />
         {eyebrow}
@@ -124,7 +125,7 @@ export function Footer() {
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} FreeCivicTW · 公民教育計畫</span>
         <Link href="/privacy/">隱私與使用統計</Link>
-        <span>制度資料查核：{site.updatedAt}</span>
+        <span>網站資訊更新：{site.updatedAt}</span>
       </div>
     </footer>
   );

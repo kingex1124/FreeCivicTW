@@ -17,7 +17,7 @@ export function AboutView() {
         ))}
         <div className="letter-signature">FreeCivicTW · 公民自由課</div>
       </section>
-      <section className="about-principles">
+      <section className="about-principles" id="editorial-policy">
         <h2>我們希望怎麼說清楚</h2>
         <ol>
           {site.editorialPrinciples.map((p, i) => (
@@ -27,6 +27,13 @@ export function AboutView() {
             </li>
           ))}
         </ol>
+        <h2>{site.editorialPolicy.title}</h2>
+        {site.editorialPolicy.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+        <ActionLink href="/sources/#corrections" secondary>
+          查看來源與更正紀錄
+        </ActionLink>
       </section>
       <section className="contact-box" id="contact">
         <Mail size={29} />
