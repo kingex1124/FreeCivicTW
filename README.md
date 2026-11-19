@@ -4,6 +4,14 @@
 
 以 React 19、Next.js 16 App Router、TypeScript、Tailwind CSS、Zod 與 Lucide 開發。正式輸出為純靜態網站，部署至 GitHub Pages，不需要 Node.js 伺服器。
 
+「公民島」位於 `/civic-island/`，從主選單「媒體識讀」之後或首頁主標題上方的精簡入口進入。整條網站頂列預設收起，展開後恢復原本選單。中央與地方各設 8 個職能學習分區，先看島名、再看分區，靠近一區才顯示區內機關標籤；分區按鈕與右側捷徑均可拉近、搜尋則直接定位機關。分區為教學整理，不代表行政隸屬。以 Three.js 呈現中央、地方、法院、檢察與警察五座島，整合現有 112 項角色與機關；支援建築點選、分類搜尋、關係連線、三段情境旅程、視角控制及深淺色。內容共用 Civic、Agency、Justice 資料，島嶼半徑、分區與旅程放在 `Data/civic-island.json`，由 Island Repository／Service 整理。
+
+公民島單獨隱藏全站 footer，切到其他頁面即恢復。112 個角色與機關各有明確的 `buildingProfiles` 設定，由 Model 驗證、Service 對應，View 的 `CivicIslandBuildingView.ts` 統一繪製 40 種風格化建築，包含紅磚塔樓、議場、法院、警消、交通站體、醫療、體育、文化及其他職能意象。繪製尺寸同時用於點選範圍、選取圈與名稱標籤高度，所有靜態幾何仍按材質合併。地標輪廓參考[總統府建築介紹](https://www.president.gov.tw/Page/91)、[行政院建築導覽](https://www.ey.gov.tw/eyvisit/cp.aspx?n=BDE9F2483D680794)、[立法院建築調查](https://lyrp.ly.gov.tw/Uploads/Download/download/202211201642578815hEk.pdf)及[司法大廈建築巡禮](https://www.judicial.gov.tw/tw/cp-4-12-84ddf-1.html)；其餘依機關職能製作代表性造型。
+
+立體場景按頁面延遲載入，靜態物件依材質合併、行動裝置限制像素比與幀率，離開畫面或切到背景時停止繪製；提供滿版 3D 地圖、大標籤拉近與各建築標籤、地圖內可關閉的筆記卡；遠景懸停建築與情境導覽選取時會顯示機關名稱，右側搜尋欄可往右收合並保留條件。藍色海灣外圍有連續岸線、草坡、山丘、樹林與岩石，海面及背景採一致色彩，遠景裁切範圍包含周圍地形，避免低視角露出海面邊界。3D 不可用時仍可使用機關清單；無 JavaScript 可透過頁面連結前往政府與司法原頁閱讀，公民島不重複列出全機關文字區，也不顯示額外的關於與來源摺疊區。互動形式參考 HEART 政策島與臺北施政島，模型與頁面程式由本專案重新製作，Three.js 授權保留於 `public/three-license.txt`。
+
+每座島都有步行人物與港口。`Data/civic-island.json` 的 `activity` 維護港口方向及五條渡輪航線；`IslandService` 規劃避開建築、樹木與候船亭的步行路線，並計算往返與停靠。`CivicIslandActivityView.ts` 繪製候船亭、座椅、階梯、雙泊位碼頭及港燈；人物手腳、服裝、渡輪、泊船及尾流使用共享的 InstancedMesh 更新，沒有為每個人物增加獨立繪製批次。人物與船隻屬生活情境裝飾，不代表真實官員、行政隸屬或案件移送程序。動畫隨地圖暫停繪製，恢復後不跳進度，離頁時釋放實例緩衝。
+
 ## 本機開發
 
 建議 Node.js 22 最新 LTS 修補版（至少 22.13）及 npm。

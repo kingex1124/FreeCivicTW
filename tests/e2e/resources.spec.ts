@@ -54,6 +54,22 @@ test('官方工具可從主選單進入，搜尋與篩選交集保留輸入，�
     'href',
     'https://priso.cy.gov.tw/layout/baselist',
   );
+  await query.fill('民間版選舉公報');
+  const gazette = page.locator('#resource-civil-election-gazette-2026');
+  await expect(gazette).toBeVisible();
+  await expect(page.locator('.resource-card')).toHaveCount(1);
+  await expect(gazette.locator('.resource-tags > span')).toHaveText(['民間工具', '民代與選舉']);
+  await expect(gazette.locator('.resource-link')).toHaveAttribute(
+    'href',
+    'https://gazette2026.taiwangogo.tw/',
+  );
+  await gazette.locator('summary').click();
+  await expect(gazette).toContainText('並非中選會發布的正式選舉公報');
+  await expect(gazette.locator('.resource-verification a')).toHaveAttribute(
+    'href',
+    'https://gazette2026.taiwangogo.tw/data-sources/',
+  );
+  await expect(gazette.locator('.resource-verification a')).toContainText('資料來源與查核依據');
   await page.getByLabel('單位類型', { exact: true }).selectOption('all');
   await query.fill('判決');
   await query.press('Enter');

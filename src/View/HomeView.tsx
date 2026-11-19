@@ -1,5 +1,14 @@
 import Link from 'next/link';
-import { ArrowUpRight, ArrowRight, BookOpen, ScanSearch, Vote, Check, Sprout } from 'lucide-react';
+import {
+  ArrowUpRight,
+  ArrowRight,
+  BookOpen,
+  ScanSearch,
+  Vote,
+  Check,
+  Sprout,
+  Compass,
+} from 'lucide-react';
 import { LearningService } from '@/Service/LearningService';
 import { SiteService } from '@/Service/SiteService';
 import { RegionService } from '@/Service/RegionService';
@@ -15,6 +24,14 @@ export function HomeView() {
     <>
       <section className="home-hero container">
         <div className="hero-copy">
+          <Link href="/civic-island/" className="home-island-entry">
+            <Compass size={23} aria-hidden="true" />
+            <span>
+              <strong>探索公民島</strong>
+              <span>點建築，看懂機關分工</span>
+            </span>
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
           <div className="eyebrow">
             <span />
             給每一個想多了解一點的你

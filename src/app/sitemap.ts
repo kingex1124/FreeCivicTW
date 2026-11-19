@@ -9,6 +9,7 @@ import { PublicResourceService } from '@/Service/PublicResourceService';
 import { SupplementService } from '@/Service/SupplementService';
 import { LegislationService } from '@/Service/LegislationService';
 import { ParticipationService } from '@/Service/ParticipationService';
+import { IslandService } from '@/Service/IslandService';
 export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/learn/',
     '/government/',
     '/justice/',
+    '/civic-island/',
     '/oversight/',
     '/resources/',
     '/more/',
@@ -29,23 +31,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pages.map((path) => ({
       url: SiteService.absolute(path),
       lastModified:
-        path === '/more/'
-          ? SupplementService.get().checkedAt
-          : path === '/resources/'
-            ? PublicResourceService.get().checkedAt
-            : path === '/justice/'
-              ? JusticeService.get().checkedAt
-              : path === '/oversight/'
-                ? OversightService.get().checkedAt
-                : path === '/government/'
-                  ? [
-                      CivicService.get().checkedAt,
-                      LegislationService.get().checkedAt,
-                      ParticipationService.get().checkedAt,
-                    ]
-                      .sort()
-                      .at(-1)!
-                  : SiteService.get().updatedAt,
+        path === '/civic-island/'
+          ? IslandService.get().checkedAt
+          : path === '/more/'
+            ? SupplementService.get().checkedAt
+            : path === '/resources/'
+              ? PublicResourceService.get().checkedAt
+              : path === '/justice/'
+                ? JusticeService.get().checkedAt
+                : path === '/oversight/'
+                  ? OversightService.get().checkedAt
+                  : path === '/government/'
+                    ? [
+                        CivicService.get().checkedAt,
+                        LegislationService.get().checkedAt,
+                        ParticipationService.get().checkedAt,
+                      ]
+                        .sort()
+                        .at(-1)!
+                    : SiteService.get().updatedAt,
     })),
     ...LearningService.getArticles().map((a) => ({
       url: SiteService.absolute(`/learn/${a.slug}/`),

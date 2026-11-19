@@ -12,12 +12,18 @@ import { PublicResourceService } from '@/Service/PublicResourceService';
 import { SupplementService } from '@/Service/SupplementService';
 import { LegislationService } from '@/Service/LegislationService';
 import { ParticipationService } from '@/Service/ParticipationService';
+import { IslandService } from '@/Service/IslandService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
   assert.equal(new Set(values).size, values.length, '資料 ID 必須唯一');
 const sources = SourceService.get().sources;
 unique(sources.map((s) => s.id));
 const sourceIds = new Set(sources.map((s) => s.id));
+const island = IslandService.get();
+unique(island.nodes.map(node=>node.id));
+unique(island.districts.map(district=>district.id));
+unique(island.districts.flatMap(district=>district.members));
+for(const node of island.nodes)for(const id of node.sourceIds)assert(sourceIds.has(id),`公民島來源不存在：${id}`);
 const supplement = SupplementService.get();
 const topics = [
   ...supplement.topics,

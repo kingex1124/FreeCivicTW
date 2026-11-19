@@ -217,7 +217,8 @@ export function PublicResourcesView({ data, regions }: PublicResourcesViewProps)
                   </ul>
                   <p className="resource-verification">
                     <a href={item.verificationUrl} target="_blank" rel="noopener noreferrer">
-                      官方查核依據<span className="sr-only">：{item.title}（另開分頁）</span>
+                      {item.level === 'civic' ? '資料來源與查核依據' : '官方查核依據'}
+                      <span className="sr-only">：{item.title}（另開分頁）</span>
                     </a>{' '}
                     · 本站核對 {item.checkedAt}
                   </p>

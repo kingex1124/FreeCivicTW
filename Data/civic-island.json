@@ -1,0 +1,1148 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-14",
+  "activity": {
+    "harbors": [
+      { "group": "central", "angle": 43 },
+      { "group": "local", "angle": -43 },
+      { "group": "courts", "angle": 120 },
+      { "group": "prosecution", "angle": 180 },
+      { "group": "police", "angle": -120 }
+    ],
+    "ferries": [
+      { "id": "central-local", "from": "central", "to": "local", "via": [[-5, 0]], "color": "#39765c", "speed": 0.85, "phase": 12 },
+      { "id": "central-courts", "from": "central", "to": "courts", "via": [[0, -18]], "color": "#58778e", "speed": 0.8, "phase": 28 },
+      { "id": "courts-prosecution", "from": "courts", "to": "prosecution", "via": [[24, -15]], "color": "#b57855", "speed": 0.75, "phase": 18 },
+      { "id": "prosecution-police", "from": "prosecution", "to": "police", "via": [[24, 15]], "color": "#3e8290", "speed": 0.8, "phase": 30 },
+      { "id": "police-local", "from": "police", "to": "local", "via": [[0, 18]], "color": "#a17a3d", "speed": 0.78, "phase": 6 }
+    ]
+  },
+  "groups": [
+    {
+      "id": "central",
+      "name": "中央政府",
+      "subtitle": "全國政策、立法與憲政分工",
+      "color": "#39765c",
+      "position": [-29, -27],
+      "radius": 21.5,
+      "landmark": "palace"
+    },
+    {
+      "id": "local",
+      "name": "地方政府",
+      "subtitle": "從縣市到公所，連結生活現場",
+      "color": "#a17a3d",
+      "position": [-29, 27],
+      "radius": 21.5,
+      "landmark": "town"
+    },
+    {
+      "id": "courts",
+      "name": "法院與審判",
+      "subtitle": "依法獨立審判，保障權利",
+      "color": "#58778e",
+      "position": [18, -32],
+      "radius": 7.4,
+      "landmark": "court"
+    },
+    {
+      "id": "prosecution",
+      "name": "檢察與偵查",
+      "subtitle": "偵查犯罪、起訴與實行公訴",
+      "color": "#a56753",
+      "position": [38, 0],
+      "radius": 7.4,
+      "landmark": "office"
+    },
+    {
+      "id": "police",
+      "name": "警察與調查",
+      "subtitle": "維護治安、受理報案與調查",
+      "color": "#3e8290",
+      "position": [18, 32],
+      "radius": 7.4,
+      "landmark": "police"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "criminal",
+      "title": "一件刑事案件，怎麼走？",
+      "intro": "跟著一份案件資料，認識警察、檢察官和法院的分工。",
+      "notice": "這是一般公訴程序的教學示意。也可依法直接向檢察官提出告訴、告發；不起訴、緩起訴及特殊程序可能走不同分支，並非每案都會進法院。",
+      "steps": [
+        {
+          "nodeId": "police-justice-police-stations",
+          "title": "向警察說明發生什麼事",
+          "text": "警察受理報案、記錄事實，依法調查及蒐集證據。受理報案不等於已經認定任何人有罪。",
+          "connection": null
+        },
+        {
+          "nodeId": "prosecution-justice-district-prosecutors",
+          "title": "檢察官依法偵查",
+          "text": "案件資料依法移送或由檢察官直接受理後，檢察官進行偵查，也可依法指揮司法警察調查。",
+          "connection": "移送資料、依法偵查"
+        },
+        {
+          "nodeId": "prosecution-justice-prosecutors",
+          "title": "決定是否起訴",
+          "text": "依案件事實與法律，可能起訴、不起訴或緩起訴。不是資料一送出，就一定會起訴。",
+          "connection": "依法作成處分"
+        },
+        {
+          "nodeId": "courts-justice-district-courts",
+          "title": "起訴後，由法院審判",
+          "text": "進入法院後，由法官依法獨立審判。檢察官在法庭上實行公訴；法院不必照檢察官的主張作判決。",
+          "connection": "符合要件時起訴，由法院審判"
+        }
+      ]
+    },
+    {
+      "id": "cabinet",
+      "title": "行政團隊，是誰組成的？",
+      "intro": "從選票走到任命，分清楚人民選出誰、誰再依法任命誰。",
+      "notice": "以一般中央行政團隊示意。總統、副總統是一組選出；部長由行政院長提請總統任命。大法官等憲政人事另有提名與立法院同意等程序。",
+      "steps": [
+        {
+          "nodeId": "central-role-people",
+          "title": "人民依法投票",
+          "text": "具資格的選民選出總統、副總統一組。這張選票不是直接選出行政院長或各部部長。",
+          "connection": null
+        },
+        {
+          "nodeId": "central-role-president",
+          "title": "總統任命行政院長",
+          "text": "總統依憲法程序任命行政院長。總統與副總統的職權不同，並不是兩人都能各自任命部長。",
+          "connection": "依法選出總統、副總統"
+        },
+        {
+          "nodeId": "central-role-premier",
+          "title": "行政院長提請任命部長",
+          "text": "行政院長領導行政團隊，提請總統任命各部部長；不是民眾另外投一張部長選票。",
+          "connection": "總統任命行政院長"
+        },
+        {
+          "nodeId": "central-role-ministers",
+          "title": "各部依法推動業務、接受監督",
+          "text": "各部長在自己的主管業務內施政、編列及執行預算，並依法接受立法院質詢與監督。",
+          "connection": "行政院長提請，總統任命"
+        },
+        {
+          "nodeId": "central-role-legislator",
+          "title": "立法委員依法監督行政團隊",
+          "text": "立委審議法律、預算並依法質詢，不能因為監督行政機關，就取代行政機關執行業務或命令法官判決。",
+          "connection": "依法質詢與監督（此步是監督關係）",
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "local-life",
+      "title": "地方的交通問題，可以找誰？",
+      "intro": "用一個虛構的交通改善問題，認識民眾、首長、局處與議會。",
+      "notice": "這是地方自治分工的假設情境，不代表所有道路都由地方政府管理。國道、省道、市區道路與交通執法的權責不同，仍須確認道路及業務主管機關。",
+      "steps": [
+        {
+          "nodeId": "local-role-people",
+          "title": "居民提出具體問題",
+          "text": "把地點、時間與需要改善的狀況說清楚，可向主管機關陳情或透過民代服務處反映。選民服務不保證一定有特定結果。",
+          "connection": null
+        },
+        {
+          "nodeId": "local-agency-local-transport",
+          "title": "交通單位確認權責、研議改善",
+          "text": "地方交通單位依權責處理交通規劃與公共運輸等業務；若屬其他機關業務，須依實際分工處理。",
+          "connection": "反映問題，確認承辦權責"
+        },
+        {
+          "nodeId": "local-role-county-chief",
+          "title": "地方首長協調施政與資源",
+          "text": "縣市首長帶領地方行政團隊，依法提出施政及預算。不能跳過法律、預算與必要程序，直接保證所有改善工程。",
+          "connection": "地方行政團隊依法分工"
+        },
+        {
+          "nodeId": "local-role-county-council",
+          "title": "議會審議預算、依法質詢",
+          "text": "議員可就主管業務向首長與相關局處首長依法質詢，並審議預算。議員不是交通局長的上司，不能自行決標或指揮承包商。",
+          "connection": "依法審議與監督（此步是監督關係）",
+          "reverse": true
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "from": "central-agency-central-moi",
+      "to": "police-justice-national-police-agency",
+      "label": "警政署隸屬內政部；依法辦理全國警政業務",
+      "kind": "execution"
+    },
+    {
+      "from": "central-agency-central-moj",
+      "to": "prosecution-justice-district-prosecutors",
+      "label": "檢察行政體系；法務部長不得對個案下具體偵查命令",
+      "kind": "execution"
+    },
+    {
+      "from": "prosecution-justice-prosecutors",
+      "to": "police-justice-judicial-police",
+      "label": "刑事偵查中依法指揮，不是一般行政隸屬",
+      "kind": "investigation"
+    },
+    {
+      "from": "prosecution-justice-prosecutors",
+      "to": "courts-justice-district-courts",
+      "label": "依法起訴並實行公訴；法院依法獨立審判",
+      "kind": "case"
+    },
+    {
+      "from": "local-role-county-chief",
+      "to": "police-justice-local-police",
+      "label": "地方警政行政；警察另有法定指揮監督分工",
+      "kind": "execution"
+    },
+    {
+      "from": "central-agency-central-motc",
+      "to": "local-agency-local-transport",
+      "label": "中央地方交通業務依法分工，不代表所有地方交通事務都由交通部指揮",
+      "kind": "cooperation"
+    },
+    {
+      "from": "local-role-county-council",
+      "to": "local-agency-local-transport",
+      "label": "就地方主管業務依法質詢與監督",
+      "kind": "oversight"
+    },
+    {
+      "from": "central-role-legislator",
+      "to": "central-agency-central-motc",
+      "label": "就交通部主管業務依法質詢與監督",
+      "kind": "oversight"
+    }
+  ],
+  "districts": [
+    {
+      "id": "central-civic",
+      "group": "central",
+      "name": "人民與憲政",
+      "color": "#d1dec0",
+      "offset": [0, 0],
+      "radius": 4.8,
+      "members": [
+        "central-role-people",
+        "central-role-president",
+        "central-role-premier",
+        "central-role-ministers",
+        "central-role-legislator",
+        "central-role-judiciary",
+        "central-role-examination",
+        "central-role-control"
+      ]
+    },
+    {
+      "id": "central-governance",
+      "group": "central",
+      "name": "行政與廉政",
+      "color": "#c6daca",
+      "offset": [0, -12.2],
+      "radius": 4.8,
+      "members": [
+        "central-role-integrity",
+        "central-agency-central-moi",
+        "central-agency-central-moj",
+        "central-agency-central-dgpa",
+        "central-agency-central-cec"
+      ]
+    },
+    {
+      "id": "central-finance",
+      "group": "central",
+      "name": "財政與金融",
+      "color": "#dfddc0",
+      "offset": [9.54, -7.61],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-mof",
+        "central-agency-central-dgbas",
+        "central-agency-central-cbc",
+        "central-agency-central-fsc"
+      ]
+    },
+    {
+      "id": "central-technology",
+      "group": "central",
+      "name": "產業與科技",
+      "color": "#cbdcce",
+      "offset": [11.89, 2.71],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-moea",
+        "central-agency-central-ndc",
+        "central-agency-central-nstc",
+        "central-agency-central-moda",
+        "central-agency-central-ftc",
+        "central-agency-central-ncc"
+      ]
+    },
+    {
+      "id": "central-infrastructure",
+      "group": "central",
+      "name": "建設與環境",
+      "color": "#d5ddc4",
+      "offset": [5.29, 10.99],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-motc",
+        "central-agency-central-pcc",
+        "central-agency-central-moenv",
+        "central-agency-central-moa",
+        "central-agency-central-oac"
+      ]
+    },
+    {
+      "id": "central-care",
+      "group": "central",
+      "name": "健康與勞動",
+      "color": "#dcdac0",
+      "offset": [-5.29, 10.99],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-mol",
+        "central-agency-central-mohw",
+        "central-agency-central-vac"
+      ]
+    },
+    {
+      "id": "central-culture",
+      "group": "central",
+      "name": "教育與文化",
+      "color": "#cad9bf",
+      "offset": [-11.89, 2.71],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-moe",
+        "central-agency-central-moc",
+        "central-agency-central-sports",
+        "central-agency-central-cip",
+        "central-agency-central-hakka",
+        "central-agency-central-npm"
+      ]
+    },
+    {
+      "id": "central-international",
+      "group": "central",
+      "name": "國防與國際",
+      "color": "#d8dfcb",
+      "offset": [-9.54, -7.61],
+      "radius": 4.8,
+      "members": [
+        "central-agency-central-mofa",
+        "central-agency-central-mnd",
+        "central-agency-central-mac",
+        "central-agency-central-ocac"
+      ]
+    },
+    {
+      "id": "local-civic",
+      "group": "local",
+      "name": "民意與自治",
+      "color": "#d1dec0",
+      "offset": [0, 0],
+      "radius": 4.8,
+      "members": [
+        "local-role-people",
+        "local-role-county-chief",
+        "local-role-local-heads",
+        "local-role-county-council",
+        "local-role-town-chief",
+        "local-role-town-council",
+        "local-role-indigenous-chief",
+        "local-role-indigenous-council"
+      ]
+    },
+    {
+      "id": "local-community",
+      "group": "local",
+      "name": "基層與族群",
+      "color": "#c6daca",
+      "offset": [0, -12.2],
+      "radius": 4.8,
+      "members": [
+        "local-role-town-heads",
+        "local-role-district-chief",
+        "local-role-village-chief",
+        "local-agency-local-civil",
+        "local-agency-local-district",
+        "local-agency-local-military",
+        "local-agency-local-indigenous",
+        "local-agency-local-hakka"
+      ]
+    },
+    {
+      "id": "local-care",
+      "group": "local",
+      "name": "健康與照顧",
+      "color": "#dfddc0",
+      "offset": [9.54, -7.61],
+      "radius": 4.8,
+      "members": [
+        "local-agency-local-social",
+        "local-agency-local-longcare",
+        "local-agency-local-health"
+      ]
+    },
+    {
+      "id": "local-culture",
+      "group": "local",
+      "name": "教育與文化",
+      "color": "#cbdcce",
+      "offset": [11.89, 2.71],
+      "radius": 4.8,
+      "members": [
+        "local-agency-local-education",
+        "local-agency-local-culture",
+        "local-agency-local-tourism",
+        "local-agency-local-sports"
+      ]
+    },
+    {
+      "id": "local-infrastructure",
+      "group": "local",
+      "name": "交通與居住",
+      "color": "#d5ddc4",
+      "offset": [5.29, 10.99],
+      "radius": 4.8,
+      "members": [
+        "local-agency-local-transport",
+        "local-agency-local-works",
+        "local-agency-local-metro",
+        "local-agency-local-urban",
+        "local-agency-local-land"
+      ]
+    },
+    {
+      "id": "local-environment",
+      "group": "local",
+      "name": "產業與環境",
+      "color": "#dcdac0",
+      "offset": [-5.29, 10.99],
+      "radius": 4.8,
+      "members": [
+        "local-agency-local-industry",
+        "local-agency-local-agriculture",
+        "local-agency-local-labor",
+        "local-agency-local-youth",
+        "local-agency-local-water",
+        "local-agency-local-environment",
+        "local-agency-local-reservoir"
+      ]
+    },
+    {
+      "id": "local-governance",
+      "group": "local",
+      "name": "行政治理",
+      "color": "#cad9bf",
+      "offset": [-11.89, 2.71],
+      "radius": 4.8,
+      "members": [
+        "local-agency-local-finance",
+        "local-agency-local-tax",
+        "local-agency-local-digital",
+        "local-agency-local-research",
+        "local-agency-local-secretariat",
+        "local-agency-local-training",
+        "local-agency-local-accounting",
+        "local-agency-local-personnel"
+      ]
+    },
+    {
+      "id": "local-safety",
+      "group": "local",
+      "name": "安全與廉政",
+      "color": "#d8dfcb",
+      "offset": [-9.54, -7.61],
+      "radius": 4.8,
+      "members": [
+        "local-role-integrity",
+        "local-agency-local-legal",
+        "local-agency-local-integrity",
+        "local-agency-local-police",
+        "local-agency-local-fire"
+      ]
+    }
+  ],
+  "buildingProfiles": [
+    {
+      "nodeId": "central-role-people",
+      "style": "plaza",
+      "accent": "#4e8b71",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-role-president",
+      "style": "presidential",
+      "accent": "#a85645",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-role-premier",
+      "style": "executive",
+      "accent": "#6d8776",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-role-ministers",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-role-legislator",
+      "style": "parliament",
+      "accent": "#557e6c",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-role-judiciary",
+      "style": "judicial-yuan",
+      "accent": "#53765d",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-role-examination",
+      "style": "examination",
+      "accent": "#9c7158",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-role-control",
+      "style": "watchdog",
+      "accent": "#687e80",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-role-integrity",
+      "style": "watchdog",
+      "accent": "#687e80",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-role-people",
+      "style": "plaza",
+      "accent": "#4e8b71",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-role-county-chief",
+      "style": "city-hall",
+      "accent": "#5d8290",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-role-local-heads",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-role-county-council",
+      "style": "council",
+      "accent": "#5c8793",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-role-town-chief",
+      "style": "community",
+      "accent": "#b27955",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-role-town-heads",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-role-town-council",
+      "style": "council",
+      "accent": "#5c8793",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-role-district-chief",
+      "style": "community",
+      "accent": "#b27955",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-role-indigenous-chief",
+      "style": "indigenous",
+      "accent": "#9b6b55",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-role-indigenous-council",
+      "style": "council",
+      "accent": "#5c8793",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-role-village-chief",
+      "style": "community",
+      "accent": "#b27955",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-role-integrity",
+      "style": "watchdog",
+      "accent": "#687e80",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-moi",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-mofa",
+      "style": "international",
+      "accent": "#6f8ca2",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-mnd",
+      "style": "defense",
+      "accent": "#777d59",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-mof",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-moe",
+      "style": "education",
+      "accent": "#b37959",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-moj",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-moea",
+      "style": "engineering",
+      "accent": "#a78b58",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-motc",
+      "style": "transport",
+      "accent": "#558794",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-mol",
+      "style": "labor",
+      "accent": "#9e7c60",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-moa",
+      "style": "agriculture",
+      "accent": "#6c966a",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-mohw",
+      "style": "medical",
+      "accent": "#4d9b89",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-moenv",
+      "style": "environment",
+      "accent": "#68947c",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-moc",
+      "style": "culture",
+      "accent": "#917691",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-moda",
+      "style": "technology",
+      "accent": "#538b99",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-sports",
+      "style": "sports",
+      "accent": "#5d927d",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-ndc",
+      "style": "planning",
+      "accent": "#78918a",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-nstc",
+      "style": "research",
+      "accent": "#627d9b",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-mac",
+      "style": "international",
+      "accent": "#6f8ca2",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-fsc",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-oac",
+      "style": "maritime",
+      "accent": "#477d9c",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-ocac",
+      "style": "international",
+      "accent": "#6f8ca2",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-vac",
+      "style": "care",
+      "accent": "#bb8b72",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-cip",
+      "style": "indigenous",
+      "accent": "#9b6b55",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-hakka",
+      "style": "culture",
+      "accent": "#917691",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-pcc",
+      "style": "engineering",
+      "accent": "#a78b58",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-dgbas",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-dgpa",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-cbc",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 3
+    },
+    {
+      "nodeId": "central-agency-central-npm",
+      "style": "museum",
+      "accent": "#527e66",
+      "variant": 0
+    },
+    {
+      "nodeId": "central-agency-central-cec",
+      "style": "election",
+      "accent": "#8b7b9b",
+      "variant": 1
+    },
+    {
+      "nodeId": "central-agency-central-ftc",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 2
+    },
+    {
+      "nodeId": "central-agency-central-ncc",
+      "style": "technology",
+      "accent": "#538b99",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-civil",
+      "style": "community",
+      "accent": "#b27955",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-finance",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-tax",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-education",
+      "style": "education",
+      "accent": "#b37959",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-industry",
+      "style": "engineering",
+      "accent": "#a78b58",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-agriculture",
+      "style": "agriculture",
+      "accent": "#6c966a",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-works",
+      "style": "engineering",
+      "accent": "#a78b58",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-water",
+      "style": "water",
+      "accent": "#4b8ca1",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-transport",
+      "style": "transport",
+      "accent": "#558794",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-social",
+      "style": "care",
+      "accent": "#bb8b72",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-longcare",
+      "style": "medical",
+      "accent": "#4d9b89",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-labor",
+      "style": "labor",
+      "accent": "#9e7c60",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-youth",
+      "style": "education",
+      "accent": "#b37959",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-health",
+      "style": "medical",
+      "accent": "#4d9b89",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-environment",
+      "style": "environment",
+      "accent": "#68947c",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-culture",
+      "style": "culture",
+      "accent": "#917691",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-tourism",
+      "style": "tourism",
+      "accent": "#ab936a",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-urban",
+      "style": "planning",
+      "accent": "#78918a",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-land",
+      "style": "planning",
+      "accent": "#78918a",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-digital",
+      "style": "technology",
+      "accent": "#538b99",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-research",
+      "style": "research",
+      "accent": "#627d9b",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-sports",
+      "style": "sports",
+      "accent": "#5d927d",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-indigenous",
+      "style": "indigenous",
+      "accent": "#9b6b55",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-hakka",
+      "style": "culture",
+      "accent": "#917691",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-military",
+      "style": "defense",
+      "accent": "#777d59",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-metro",
+      "style": "railway",
+      "accent": "#5e8290",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-secretariat",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-legal",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-training",
+      "style": "education",
+      "accent": "#b37959",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-accounting",
+      "style": "finance",
+      "accent": "#9b895a",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-personnel",
+      "style": "office",
+      "accent": "#728c8e",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-integrity",
+      "style": "watchdog",
+      "accent": "#687e80",
+      "variant": 3
+    },
+    {
+      "nodeId": "local-agency-local-police",
+      "style": "police",
+      "accent": "#3c688a",
+      "variant": 0
+    },
+    {
+      "nodeId": "local-agency-local-fire",
+      "style": "fire",
+      "accent": "#b8614b",
+      "variant": 1
+    },
+    {
+      "nodeId": "local-agency-local-reservoir",
+      "style": "water",
+      "accent": "#4b8ca1",
+      "variant": 2
+    },
+    {
+      "nodeId": "local-agency-local-district",
+      "style": "community",
+      "accent": "#b27955",
+      "variant": 3
+    },
+    {
+      "nodeId": "courts-justice-judicial-yuan",
+      "style": "judicial-yuan",
+      "accent": "#53765d",
+      "variant": 0
+    },
+    {
+      "nodeId": "courts-justice-constitutional-court",
+      "style": "constitutional",
+      "accent": "#6d829d",
+      "variant": 1
+    },
+    {
+      "nodeId": "courts-justice-district-courts",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 2
+    },
+    {
+      "nodeId": "courts-justice-high-courts",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 3
+    },
+    {
+      "nodeId": "courts-justice-supreme-court",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 0
+    },
+    {
+      "nodeId": "courts-justice-administrative-courts",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 1
+    },
+    {
+      "nodeId": "courts-justice-ip-commercial-court",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 2
+    },
+    {
+      "nodeId": "courts-justice-disciplinary-court",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 3
+    },
+    {
+      "nodeId": "courts-justice-juvenile-family-courts",
+      "style": "care",
+      "accent": "#bb8b72",
+      "variant": 0
+    },
+    {
+      "nodeId": "courts-justice-judges",
+      "style": "court",
+      "accent": "#897b65",
+      "variant": 1
+    },
+    {
+      "nodeId": "courts-justice-citizen-judges",
+      "style": "council",
+      "accent": "#5c8793",
+      "variant": 2
+    },
+    {
+      "nodeId": "prosecution-justice-ministry-justice",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 0
+    },
+    {
+      "nodeId": "prosecution-justice-supreme-prosecutors",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 1
+    },
+    {
+      "nodeId": "prosecution-justice-high-prosecutors",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 2
+    },
+    {
+      "nodeId": "prosecution-justice-district-prosecutors",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 3
+    },
+    {
+      "nodeId": "prosecution-justice-prosecutors",
+      "style": "prosecutors",
+      "accent": "#a07662",
+      "variant": 0
+    },
+    {
+      "nodeId": "prosecution-justice-investigation-bureau",
+      "style": "investigation",
+      "accent": "#4a6582",
+      "variant": 1
+    },
+    {
+      "nodeId": "prosecution-justice-integrity-agency",
+      "style": "watchdog",
+      "accent": "#687e80",
+      "variant": 2
+    },
+    {
+      "nodeId": "police-justice-national-police-agency",
+      "style": "police",
+      "accent": "#3c688a",
+      "variant": 0
+    },
+    {
+      "nodeId": "police-justice-local-police",
+      "style": "police",
+      "accent": "#3c688a",
+      "variant": 1
+    },
+    {
+      "nodeId": "police-justice-criminal-investigation-bureau",
+      "style": "investigation",
+      "accent": "#4a6582",
+      "variant": 2
+    },
+    {
+      "nodeId": "police-justice-police-stations",
+      "style": "police",
+      "accent": "#3c688a",
+      "variant": 3
+    },
+    {
+      "nodeId": "police-justice-judicial-police",
+      "style": "police",
+      "accent": "#3c688a",
+      "variant": 0
+    }
+  ]
+}
