@@ -504,6 +504,28 @@ summary:focus-visible {
     0 0 0 3px var(--tone-shadow, #d7e3c5),
     0 3px 10px var(--tone-shadow, #185b4514);
 }
+.main-nav .nav-support {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  min-height: 46px;
+  padding: 8px 10px;
+  border: 1px solid var(--tone-border, #c8d7bf);
+  border-radius: 999px;
+  color: var(--green);
+  background: var(--white);
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.main-nav .nav-support:hover {
+  background: var(--sage);
+  border-color: var(--green);
+}
 .header-actions {
   display: flex;
   gap: 6px;
@@ -3851,6 +3873,40 @@ input::placeholder {
 .about-principles {
   padding-block: 42px;
 }
+.about-support {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sage);
+}
+.about-support-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--green);
+}
+.about-support h2 {
+  font-size: var(--text-subheading);
+  font-weight: 700;
+  line-height: 1.6;
+}
+.about-support p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 2;
+}
+.about-support .button-primary {
+  margin-top: 20px;
+}
 .about-principles > h2 {
   font-size: var(--text-heading);
 }
@@ -6281,7 +6337,7 @@ input::placeholder {
 @media (min-width: 87.501em) {
   .header-inner.container {
     width: calc(100% - 48px);
-    max-width: 1480px;
+    max-width: 1600px;
   }
   .header-inner {
     gap: 16px;
@@ -6297,6 +6353,31 @@ input::placeholder {
   }
   .brand small {
     letter-spacing: 0.14em;
+  }
+}
+@container site-header (min-width: 87.5rem) and (max-width: 105rem) {
+  .header-inner {
+    gap: 10px;
+  }
+  .main-nav {
+    gap: 8px;
+  }
+  .brand small {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .about-support {
+    display: block;
+    padding: 22px;
+  }
+  .about-support-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  .about-support .button-primary {
+    width: 100%;
   }
 }
 @media (max-width: 700px) {

@@ -21,6 +21,13 @@
     "correctionSubject": "FreeCivicTW 內容更正建議",
     "correctionFields": ["頁面網址", "疑似問題", "建議修正與參考來源"]
   },
+  "support": {
+    "url": "https://amaochen0110.bobaboba.me/",
+    "navLabel": "支持本站",
+    "title": "請我喝杯珍奶，讓公民課繼續下去。",
+    "description": "如果這個網站對你有幫助，歡迎透過 BobaMe 請我喝杯珍奶，支持公民自由課持續整理內容與開發功能。網站內容免費閱讀，依自己的心意支持就好。",
+    "buttonLabel": "請我喝杯珍奶"
+  },
   "primaryEntries": [
     {
       "id": "quick-start",

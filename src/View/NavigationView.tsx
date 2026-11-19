@@ -2,11 +2,12 @@
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ChevronDown, ChevronUp, CupSoda } from 'lucide-react';
 import { Brand } from './SiteView';
 import { ThemeToggle } from './ThemeView';
 import { SiteService } from '@/Service/SiteService';
 export function NavigationView() {
+  const support = SiteService.get().support;
   const pathname = SiteService.routePath(usePathname());
   const [openPath, setOpenPath] = useState<string | null>(null);
   const [headerPath, setHeaderPath] = useState<string | null>(null);
@@ -81,6 +82,17 @@ export function NavigationView() {
                 我的選票指南
                 <ArrowUpRight size={15} />
               </Link>
+              <a
+                href={support.url}
+                className="nav-support"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpenPath(null)}
+              >
+                <CupSoda size={16} aria-hidden="true" />
+                <span>{support.navLabel}</span>
+                <span className="sr-only">（另開分頁）</span>
+              </a>
             </nav>
             <div className="header-actions">
               <ThemeToggle />

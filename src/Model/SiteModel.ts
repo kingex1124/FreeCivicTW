@@ -16,6 +16,13 @@ export const SiteSchema = z.object({
     correctionSubject: z.string(),
     correctionFields: z.array(z.string()),
   }),
+  support: z.object({
+    url: z.url().startsWith('https://'),
+    navLabel: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    buttonLabel: z.string().min(1),
+  }),
   primaryEntries: z.array(
     z.object({ id: z.string(), label: z.string(), href: z.string(), learningPathId: z.string() }),
   ),

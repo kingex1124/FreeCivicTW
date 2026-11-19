@@ -1,4 +1,4 @@
-import { Mail, ArrowUpRight, Sprout, ShieldCheck } from 'lucide-react';
+import { Mail, ArrowUpRight, Sprout, ShieldCheck, CupSoda } from 'lucide-react';
 import { SiteService } from '@/Service/SiteService';
 import { ActionLink } from './SiteView';
 import { CopyEmailButton } from './ContactView';
@@ -16,6 +16,25 @@ export function AboutView() {
           <p key={i}>{p}</p>
         ))}
         <div className="letter-signature">FreeCivicTW · 公民自由課</div>
+      </section>
+      <section className="about-support" aria-labelledby="support-title">
+        <div className="about-support-icon">
+          <CupSoda size={28} aria-hidden="true" />
+        </div>
+        <div>
+          <h2 id="support-title">{site.support.title}</h2>
+          <p>{site.support.description}</p>
+          <a
+            className="button-primary"
+            href={site.support.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {site.support.buttonLabel}
+            <ArrowUpRight size={18} aria-hidden="true" />
+            <span className="sr-only">（另開分頁）</span>
+          </a>
+        </div>
       </section>
       <section className="about-principles" id="editorial-policy">
         <h2>我們希望怎麼說清楚</h2>
