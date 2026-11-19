@@ -14,6 +14,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.65.0-noble
       options: --init --ipc=host
     strategy:
+      fail-fast: false
       matrix:
         base-path: ['', '/FreeCivicTW']
     env:
@@ -33,3 +34,11 @@ jobs:
       - run: npm run build
       - run: npm run test:e2e
       - run: npm run test:dev
+      - name: Save browser failure details
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: browser-failures-${{ strategy.job-index }}
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7

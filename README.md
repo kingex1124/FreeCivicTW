@@ -14,6 +14,10 @@
 
 ## 本機開發
 
+公民島的 WebGL 場景以 30fps 為繪製上限，持續慢幀時降低畫布解析度；文字標籤、搜尋及操作按鈕仍使用原生解析度，人物與船隻動畫持續運作。搜尋欄收合期間延後重建畫布，減少連續配置繪圖緩衝。瀏覽器測試依中央、地方、手機與各段旅程拆開，等待鏡頭完成移動後再操作標籤，保留原有斷言與無障礙檢查。CI 兩種部署路徑分別完成驗證，失敗時上傳 `test-results/` 供下載 trace。
+
+工具鏈目前固定 TypeScript 6.0.3 與 typescript-eslint 8.72.2；後者的 peer dependency 為 `>=4.8.4 <6.1.0`。Dependabot 暫時忽略超出此範圍的 TypeScript 版本升級，待 linter 支援後再一起調整；不使用 `--force` 或 `--legacy-peer-deps` 繞過相依衝突。
+
 建議 Node.js 22 最新 LTS 修補版（至少 22.13）及 npm。
 
 ```powershell

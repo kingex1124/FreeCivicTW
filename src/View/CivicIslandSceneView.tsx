@@ -35,9 +35,12 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
       onStatus('unavailable');
       return;
     }
-    renderer.setPixelRatio(
-      Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.25 : 1.75),
+    const nativePixelRatio = Math.min(
+      window.devicePixelRatio,
+      window.innerWidth < 700 ? 1.25 : 1.75,
     );
+    let renderQuality = 1;
+    renderer.setPixelRatio(nativePixelRatio);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
@@ -81,9 +84,11 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
     } | null = null;
     const cancelFlight = () => {
       flight = null;
+      mount!.dataset.cameraMoving = 'false';
     };
     controls.addEventListener('start', cancelFlight);
     function fly(toTarget: THREE.Vector3, toZoom: number, toPosition?: THREE.Vector3) {
+      mount!.dataset.cameraMoving = 'true';
       const destination = toPosition ?? camera.position.clone().sub(controls.target).add(toTarget);
       if (reduced) {
         camera.position.copy(destination);
@@ -91,6 +96,7 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
         camera.zoom = toZoom;
         camera.updateProjectionMatrix();
         controls.update();
+        mount!.dataset.cameraMoving = 'false';
         return;
       }
       flight = {
@@ -531,9 +537,17 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
       camera.bottom = -heightSpan / 2;
       camera.updateProjectionMatrix();
     }
-    const resizeObserver = new ResizeObserver(resize);
+    // A sliding sidebar changes width on every animation frame. Allocate the WebGL
+    // drawing buffer once it settles instead of reallocating it dozens of times.
+    let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 80);
+    });
     resizeObserver.observe(mount);
     resize();
+    mount.dataset.cameraMoving = 'false';
+    mount.dataset.renderQuality = '1.00';
     const groupZoom = (group: IslandSceneProps['groups'][number]) =>
       THREE.MathUtils.clamp(
         Math.min(
@@ -638,7 +652,8 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
       disposed = false,
       visible = true,
       last = 0,
-      activitySeconds = 0;
+      activitySeconds = 0,
+      slowFrames = 0;
     const projection = new THREE.Vector3();
     let lastLabelLayout = '';
     function positionLabels() {
@@ -649,7 +664,15 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
         (connection) => connection.kind === 'journey',
       );
       const layoutKey =
-        [...camera.position.toArray(), ...camera.quaternion.toArray(), camera.zoom]
+        [
+          ...camera.position.toArray(),
+          ...camera.quaternion.toArray(),
+          camera.zoom,
+          camera.left,
+          camera.right,
+          camera.top,
+          camera.bottom,
+        ]
           .map((value) => value.toFixed(4))
           .join(',') +
         `:${width}:${height}:${live.current.activeGroup}:${noteIsOpen}:${journeyIsActive}:${document.documentElement.style.fontSize}:${hoveredIdRef.current}:${live.current.highlightSelected}:${live.current.selectedId}`;
@@ -855,7 +878,18 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
       raf = 0;
       if (disposed || !visible || document.hidden) return;
       raf = requestAnimationFrame(render);
-      if (time - last < (window.innerWidth < 700 ? 33 : 16)) return;
+      // Leave main-thread time for labels, search, keyboard and pointer input.
+      // Animation uses elapsed time, so a 30fps render budget does not slow walking or sailing.
+      if (time - last < 1000 / 30) return;
+      const frameInterval = time - last;
+      if (last && frameInterval > 70 && frameInterval < 1000) slowFrames++;
+      else if (frameInterval < 50) slowFrames = Math.max(0, slowFrames - 1);
+      if (slowFrames >= 8 && renderQuality > 0.6) {
+        renderQuality = Math.max(0.6, renderQuality * 0.8);
+        renderer.setPixelRatio(Math.max(0.6, nativePixelRatio * renderQuality));
+        slowFrames = 0;
+        mount!.dataset.renderQuality = renderQuality.toFixed(2);
+      }
       // Advance only visible frames, avoiding a jump after a hidden tab resumes.
       const delta = last ? Math.min(0.1, (time - last) / 1000) : 0;
       last = time;
@@ -868,7 +902,10 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
         controls.target.lerpVectors(flight.fromTarget, flight.toTarget, eased);
         camera.zoom = THREE.MathUtils.lerp(flight.fromZoom, flight.toZoom, eased);
         camera.updateProjectionMatrix();
-        if (progress === 1) flight = null;
+        if (progress === 1) {
+          flight = null;
+          mount!.dataset.cameraMoving = 'false';
+        }
       }
       controls.update();
       refreshLinks();
@@ -927,6 +964,7 @@ export default function CivicIslandSceneView(props: IslandSceneProps) {
     return () => {
       disposed = true;
       cancelAnimationFrame(raf);
+      clearTimeout(resizeTimer);
       resizeObserver.disconnect();
       intersection.disconnect();
       themeObserver.disconnect();

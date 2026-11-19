@@ -1,7 +1,14 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { IslandService } from '../../src/Service/IslandService';
 const data = IslandService.get();
+// A real WebGL scene is slower on software-rendered CI runners than a text page.
+// Keep each journey and island independent instead of accumulating their entire
+// actionability/animation budget inside one 35-second test.
+test.describe.configure({ timeout: 60000 });
+async function waitForCamera(page: Page) {
+  await expect(page.locator('.island-three-canvas')).toHaveAttribute('data-camera-moving', 'false');
+}
 test.beforeEach(async ({ page }) => {
   await page.route(
     /^https:\/\/([^/]+\.)?(googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//,
@@ -30,7 +37,7 @@ test('公民島整條頂列預設收起，展開後恢復原選單，可用鍵�
       await page.locator('.site-header').evaluate((el) => el.getBoundingClientRect().height),
     ).toBe(0);
     await expect
-      .poll(async () => Math.round((await page.locator('.island-map').boundingBox())!.height))
+      .poll(async () => Math.round((await page.locator('.island-map').boundingBox())?.height ?? 0))
       .toBe(900);
     await toggle.focus();
     await page.keyboard.press('Enter');
@@ -94,6 +101,7 @@ test('公民島滿版呈現，點島名拉近並顯示建築標籤，點標籤�
   await expect(page.locator('.island-building-label:visible')).toHaveCount(
     data.nodes.filter((n) => n.group === 'courts').length,
   );
+  await waitForCamera(page);
   const node = page.locator(
     '.island-building-label[data-node-id="courts-justice-district-courts"]',
   );
@@ -111,6 +119,7 @@ test('公民島滿版呈現，點島名拉近並顯示建築標籤，點標籤�
   await page.mouse.move(10, 10);
   await expect(page.locator('.island-building-label:visible')).toHaveCount(0);
   await page.locator('.island-district-label[data-district-id="central-infrastructure"]').click();
+  await waitForCamera(page);
   await page.locator('.island-building-label[data-node-id="central-agency-central-motc"]').click();
   await expect(page.locator('#island-note-title')).toHaveText('交通部');
   await page.keyboard.press('Escape');
@@ -124,35 +133,55 @@ test('公民島滿版呈現，點島名拉近並顯示建築標籤，點標籤�
   await expect(page.getByLabel('搜尋公民島機關與角色')).toHaveValue('地方法院');
   await page.keyboard.press('Escape');
   await expect(choice).toBeFocused();
+  expect(errors).toEqual([]);
+});
+
+test('公民島搜尋欄可收合展開、保留條件，無結果可清除並重設全島', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('civic-island/');
+  await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+  const mapWidth = await page
+    .locator('.island-map')
+    .evaluate((element) => element.getBoundingClientRect().width);
+  await page.getByLabel('搜尋公民島機關與角色').fill('地方法院');
+  const choice = page.locator('.island-directory').getByRole('button', { name: /地方法院/ });
+  await expect(choice).toBeVisible();
   await page.getByRole('button', { name: '收合搜尋欄', exact: true }).click();
   await expect(page.locator('.island-panel')).toBeHidden();
   await expect(page.locator('.island-panel')).toHaveAttribute('inert', '');
   const expand = page.getByRole('button', { name: '展開搜尋欄', exact: true });
   await expect(expand).toHaveAttribute('aria-expanded', 'false');
   await expect
-    .poll(async () => (await page.locator('.island-map').boundingBox())!.width)
+    .poll(() =>
+      page.locator('.island-map').evaluate((element) => element.getBoundingClientRect().width),
+    )
     .toBe(1440);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await expand.click();
   await expect(page.getByLabel('搜尋公民島機關與角色')).toHaveValue('地方法院');
   await expect(choice).toBeVisible();
   await expect
-    .poll(async () => (await page.locator('.island-map').boundingBox())!.width)
-    .toBe(map!.width);
+    .poll(() =>
+      page.locator('.island-map').evaluate((element) => element.getBoundingClientRect().width),
+    )
+    .toBe(mapWidth);
   await page.getByLabel('搜尋公民島機關與角色').fill('不存在的機關XYZ');
   await expect(page.locator('.island-directory>button')).toHaveCount(0);
   await page.getByRole('button', { name: '清除搜尋與分類' }).click();
   await expect(page.locator('.island-directory>button')).toHaveCount(data.nodes.length);
   await page.getByRole('button', { name: '重設地圖視角', exact: true }).click();
+  await waitForCamera(page);
   await expect(page.locator('.island-building-label:visible')).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
-test('中央與地方先顯示分區，拉近後只列該區機關，可切換所有分區並返回', async ({ page }) => {
-  test.setTimeout(90000);
-  await page.goto('civic-island/');
-  await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
-  for (const group of ['central', 'local']) {
+for (const group of ['central', 'local'] as const) {
+  test(`${group === 'central' ? '中央' : '地方'}島先顯示分區，拉近後只列該區機關，可切換全部分區並返回`, async ({
+    page,
+  }) => {
+    await page.goto('civic-island/');
+    await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
     await page
       .getByRole('navigation', { name: '島嶼分類' })
       .getByRole('button', { name: group === 'central' ? /中央政府/ : /地方政府/ })
@@ -170,6 +199,7 @@ test('中央與地方先顯示分區，拉近後只列該區機關，可切換�
         'data-detail-district',
         district.id,
       );
+      await waitForCamera(page);
       await expect
         .poll(() =>
           page
@@ -183,7 +213,18 @@ test('中央與地方先顯示分區，拉近後只列該區機關，可切換�
     await page.getByRole('button', { name: '回到島內分區', exact: true }).click();
     await expect(page.locator('.island-district-label:visible')).toHaveCount(districts.length);
     await expect(page.locator('.island-building-label:visible')).toHaveCount(0);
-  }
+  });
+}
+
+test('島內分區手機可往返地圖與清單，大字標籤不重疊且深淺色通過無障礙', async ({ page }) => {
+  test.setTimeout(90000);
+  await page.goto('civic-island/');
+  await expect(page.locator('.island-map')).toHaveAttribute('data-scene', 'ready');
+  await page
+    .getByRole('navigation', { name: '島嶼分類' })
+    .getByRole('button', { name: /地方政府/ })
+    .click();
+  await waitForCamera(page);
   await page.setViewportSize({ width: 390, height: 844 });
   await page
     .getByRole('navigation', { name: '島內職能分區' })
@@ -301,16 +342,16 @@ test('遠景滑鼠指向建築顯示名稱，離開後收起，浮出的標籤�
   await expect(page.locator('#island-note-title')).toHaveText(hoveredName);
 });
 
-test('三段島嶼旅程可下一步、跳步、重來與結束，保留偵查和審判界線', async ({ page }) => {
-  await page.goto('civic-island/');
-  const choices = page.locator('.island-journey-choices');
-  const expectLabel = async (nodeId: string) => {
-    const label = page.locator(`.island-building-label[data-node-id="${nodeId}"]`);
-    await expect(label).toBeVisible();
-    await expect(label).toHaveAttribute('aria-pressed', 'true');
-    await expect(label).toHaveText(data.nodes.find((node) => node.id === nodeId)!.name);
-  };
-  for (const journey of data.journeys) {
+for (const journey of data.journeys) {
+  test(`島嶼旅程「${journey.title}」可下一步、跳步、重來與結束，保留制度界線`, async ({ page }) => {
+    await page.goto('civic-island/');
+    const choices = page.locator('.island-journey-choices');
+    const expectLabel = async (nodeId: string) => {
+      const label = page.locator(`.island-building-label[data-node-id="${nodeId}"]`);
+      await expect(label).toBeVisible();
+      await expect(label).toHaveAttribute('aria-pressed', 'true');
+      await expect(label).toHaveText(data.nodes.find((node) => node.id === nodeId)!.name);
+    };
     await choices.getByRole('button', { name: journey.title }).click();
     await expect(page.locator('.island-map-trip')).toBeVisible();
     await expect(page.locator('.island-story-copy')).toContainText(journey.steps[0].title);
@@ -335,8 +376,8 @@ test('三段島嶼旅程可下一步、跳步、重來與結束，保留偵查�
       .getByRole('button', { name: '結束導覽', exact: true })
       .click();
     await expect(page.locator('.island-map-trip')).toHaveCount(0);
-  }
-});
+  });
+}
 test('地圖上的小叉叉可用鍵盤結束情境，手機可操作並能重新開始', async ({ page }) => {
   for (const width of [1440, 320]) {
     await page.setViewportSize({ width, height: 900 });
@@ -358,7 +399,9 @@ test('地圖上的小叉叉可用鍵盤結束情境，手機可操作並能重�
     await choice.click();
     await expect(trip).toContainText('1 /');
     await expect(page.getByRole('button', { name: '旅程上一步', exact: true })).toBeDisabled();
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
   }
 });
 test('沒有3D能力及手機也能探索，鍵盤操作、深淺色、大字與無障礙正常', async ({ page }) => {
