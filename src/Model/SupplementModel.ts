@@ -3,14 +3,15 @@ import type { IndigenousElectionGuideProps } from './ElectionModel';
 import { TopicContentSchema } from './TopicContentModel';
 
 export const SupplementTopicSchema = TopicContentSchema.extend({
-  id: z.enum(['political-debate', 'constitutional-court']),
+  id: z.enum(['political-debate', 'constitutional-court', 'authoritarianism']),
+  checkedAt: z.iso.date(),
 });
 export const SupplementSchema = z.object({
   schemaVersion: z.literal(1),
   checkedAt: z.iso.date(),
   title: z.string().min(1),
   description: z.string().min(1),
-  topics: z.array(SupplementTopicSchema).length(2),
+  topics: z.array(SupplementTopicSchema).min(2),
 });
 export type SupplementData = z.infer<typeof SupplementSchema>;
 export type SupplementTopic = z.infer<typeof SupplementTopicSchema>;

@@ -88,7 +88,7 @@ test('司法目錄從審判路徑開始，完整機關說明在最後，手機�
   ).toBe(true);
 });
 
-test('看更多三個主題都能返回目錄，無 JavaScript 也可使用', async ({ browser, baseURL }) => {
+test('看更多各主題都能返回目錄，無 JavaScript 也可使用', async ({ browser, baseURL }) => {
   const context = await browser.newContext({
     javaScriptEnabled: false,
     viewport: { width: 390, height: 844 },
@@ -101,6 +101,7 @@ test('看更多三個主題都能返回目錄，無 JavaScript 也可使用', as
       ['原住民選舉', '.more-content > .more-next-links .section-return'],
       ['政治攻防', '#political-debate .section-return'],
       ['憲法法庭', '#constitutional-court .section-return'],
+      ['威權與思想控制', '#authoritarianism .section-return'],
     ]) {
       await nav.getByRole('link', { name: new RegExp(name) }).click();
       await expect(page.locator(selector)).toHaveText('↑ 回到目錄');
@@ -108,7 +109,7 @@ test('看更多三個主題都能返回目錄，無 JavaScript 也可使用', as
       await expect(nav.getByRole('heading')).toBeInViewport();
     }
     await page.setViewportSize({ width: 1000, height: 900 });
-    await expect(page.locator('.more-content .section-return:visible')).toHaveCount(3);
+    await expect(page.locator('.more-content .section-return:visible')).toHaveCount(4);
     for (const width of [1001, 1100, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await expect(page.locator('.more-content .section-return:visible')).toHaveCount(0);

@@ -2570,6 +2570,106 @@
       "checkedAt": "2026-11-14",
       "scope": "憲法增修條文第1、12條及2022修憲複決案之程序說明。",
       "note": "只引用修憲程序及案例；統計案數與一般公投時程須另查現行公告。"
+    },
+    {
+      "id": "authoritarian-regimes-row",
+      "title": "Regimes of the World：政治體制分類的原始研究",
+      "publisher": "Anna Lührmann、Marcus Tannenberg、Staffan I. Lindberg／Politics and Governance",
+      "url": "https://www.cogitatiopress.com/politicsandgovernance/article/view/1214",
+      "publishedAt": null,
+      "scope": "威權與民主的制度分類，包含封閉式、選舉式威權及不同民主類型；用來說明形式選舉與實質競爭的差別。",
+      "note": "2018年原始研究，DOI：10.17645/pag.v6i1.1214，作者以 CC BY 4.0 開放。分類依定義與測量方式，不能用單一事件自行替國家貼標籤。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-vdem-2026",
+      "title": "V-Dem Democracy Report 2026：體制類型與民主條件",
+      "publisher": "哥德堡大學 V-Dem Institute／報告作者團隊",
+      "url": "https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf",
+      "publishedAt": null,
+      "scope": "報告第13頁的體制分類圖：選舉競爭、表達與結社自由，以及司法、立法制衡等條件。",
+      "note": "2026年3月出版，主要資料截至2025年。RoW 分類有灰色地帶與測量不確定性；本節用於說明判讀面向，並未把資料年份當成即時國家評定。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-informational-autocrats",
+      "title": "Informational Autocrats：資訊型威權如何維持統治",
+      "publisher": "Sergei Guriev、Daniel Treisman／Journal of Economic Perspectives",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/jep.33.4.100",
+      "publishedAt": null,
+      "scope": "宣傳、收編、審查與塑造治理能力形象的研究；說明威權統治的方法不只有公開的大規模鎮壓。",
+      "note": "2019年論文，33卷4期，100–127頁。這是對部分威權趨勢的研究框架，不代表所有國家或時期都採相同手段，也不能直接證明某一個人的動機。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-illusory-truth",
+      "title": "Knowledge does not protect against illusory truth：重複與真實性判斷",
+      "publisher": "Lisa K. Fazio 等／Journal of Experimental Psychology: General；Duke Scholars 作者機構摘要",
+      "url": "https://scholars.duke.edu/publication/1090926",
+      "publishedAt": null,
+      "scope": "重複陳述、處理熟悉感與真實性判斷的實驗研究，用來解釋為何「常聽到」不等於「已證實」。",
+      "note": "2015年10月論文，DOI：10.1037/xge0000098。實驗結果有研究條件與範圍，不能推成任何人都能被重複口號完全控制。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-archives-censorship",
+      "title": "威權統治時期的臺灣禁書：各種查禁方式",
+      "publisher": "國家發展委員會檔案管理局／檔案支援教學網",
+      "url": "https://art.archives.gov.tw/tw/art/2120.html",
+      "publishedAt": null,
+      "scope": "歷史檔案教學中的公布查禁書冊、查扣、扣押、焚毀、限制閱讀、列管與封存等做法。",
+      "note": "這是臺灣威權時期的歷史材料，所列法令與機關不得直接當成今日仍有效的管制制度。教學文字為本站整理，原始檔案可沿頁面繼續核對。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-white-terror",
+      "title": "平反政治受難事件：白色恐怖、基本權利與寒蟬效應",
+      "publisher": "法務部",
+      "url": "https://www.moj.gov.tw/2204/2795/2796/242425/post",
+      "publishedAt": null,
+      "scope": "臺灣戒嚴與白色恐怖歷史中，基本權利限制、不同政治意見者受迫害及對社會表達造成的影響。",
+      "note": "本節引用歷史背景與權利侵害說明，沒有把頁面當時的平復案件統計當成今日累計數，也不提供個案法律判斷。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-ushmm-censorship",
+      "title": "Nazi Propaganda and Censorship：納粹宣傳與審查",
+      "publisher": "美國大屠殺紀念館（United States Holocaust Memorial Museum）",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/nazi-propaganda-and-censorship",
+      "publishedAt": null,
+      "scope": "納粹德國對報紙、書籍、電影、廣播等傳播管道的控制，以及歧視性宣傳的歷史材料。",
+      "note": "使用特定歷史案例來理解機制，保留時空、制度與侵害程度的差異；不能只因當代口號相似，就直接宣稱情況完全相同。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-ushmm-youth",
+      "title": "Indoctrinating Youth：納粹德國的青年思想灌輸",
+      "publisher": "美國大屠殺紀念館（United States Holocaust Memorial Museum）",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/indoctrinating-youth",
+      "publishedAt": null,
+      "scope": "學校教材、青年組織與服從領袖、種族歧視等納粹思想傳播的歷史紀錄。",
+      "note": "用來說明壓縮自主判斷空間的歷史做法，不把所有教育、國家認同或集體活動都稱作思想控制。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-digital-distraction",
+      "title": "社群貼文與策略性分散注意力：King、Pan、Roberts 原始研究",
+      "publisher": "Gary King、Jennifer Pan、Margaret E. Roberts／American Political Science Review",
+      "url": "https://www.cambridge.org/core/journals/american-political-science-review/article/how-the-chinese-government-fabricates-social-media-posts-for-strategic-distraction-not-engaged-argument/4662DB26E2685BAF1485F14369BD137C",
+      "publishedAt": "2017-07-27",
+      "scope": "How the Chinese Government Fabricates Social Media Posts for Strategic Distraction, Not Engaged Argument：特定中國社群資料中，政府製作貼文的內容與可能目的。",
+      "note": "2017年研究，DOI：10.1017/S0003055417000144。研究範圍與估計不能直接套成今日所有平台情況，更不能據此指認個別帳號是受雇或受指揮。",
+      "checkedAt": "2026-11-22"
+    },
+    {
+      "id": "authoritarian-unesco-mil",
+      "title": "UNESCO 媒體與資訊素養：批判理解資訊與數位環境",
+      "publisher": "聯合國教科文組織（UNESCO）",
+      "url": "https://www.unesco.org/en/media-information-literacy",
+      "publishedAt": null,
+      "scope": "媒體與資訊素養、批判理解資訊、處理錯誤及不實訊息與仇恨言論的教育方向。",
+      "note": "本節的生活查證問題與假設練習由本站編寫；引用教育原則，不宣稱 UNESCO 對特定政黨、人物或個案作出判定。",
+      "checkedAt": "2026-11-22"
     }
   ],
   "corrections": [

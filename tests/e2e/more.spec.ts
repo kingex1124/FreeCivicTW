@@ -20,7 +20,9 @@ test('看更多從主導覽進入，主題跳轉與鍵盤收合可用，選票�
     .getByRole('link', { name: '看更多', exact: true })
     .click();
   await expect(page).toHaveURL(/\/more\/$/);
-  await expect(page.getByRole('navigation', { name: '補充主題' }).getByRole('link')).toHaveCount(3);
+  await expect(page.getByRole('navigation', { name: '補充主題' }).getByRole('link')).toHaveCount(
+    topics.topics.length + 1,
+  );
   await expect(page.locator('#national-legislation, #local-legislation')).toHaveCount(0);
   await expect(
     page
@@ -59,6 +61,52 @@ test('看更多從主導覽進入，主題跳轉與鍵盤收合可用，選票�
   await expect(page).toHaveURL(/\/more\/#indigenous-guide$/);
   await expect(page.locator('#indigenous-guide-title')).toBeInViewport();
   expect(errors).toEqual([]);
+});
+
+test('威權主題可從目錄進入、鍵盤展開，區分制度、宣傳與判讀界線，來源預設收合', async ({ page }) => {
+  await page.goto('more/');
+  await page
+    .getByRole('navigation', { name: '補充主題' })
+    .getByRole('link', { name: /威權與思想控制/ })
+    .click();
+  const topic = page.locator('#authoritarianism');
+  await expect(page.locator('#authoritarianism-title')).toBeInViewport();
+  await expect(topic.locator('.more-chapter')).toHaveCount(13);
+  await expect(topic.locator('details[open]')).toHaveCount(0);
+  await expect(topic.locator('.more-notice')).toContainText('單一失言');
+  const first = page.locator('#authoritarian-meaning > summary');
+  await first.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#authoritarian-meaning')).toHaveAttribute('open', '');
+  await expect(page.locator('#authoritarian-meaning .more-chapter-body')).toContainText('有權威');
+  for (const id of [
+    'authoritarian-system',
+    'authoritarian-repetition',
+    'authoritarian-fear',
+    'authoritarian-digital',
+    'authoritarian-history',
+    'authoritarian-practice',
+  ])
+    await page.locator(`#${id} > summary`).click();
+  await expect(page.locator('#authoritarian-system')).toContainText('有些威權體制仍舉行選舉');
+  await expect(page.locator('#authoritarian-repetition')).toContainText('特定實驗條件');
+  await expect(page.locator('#authoritarian-fear')).toContainText('公開附和，不一定等於內心相信');
+  await expect(page.locator('#authoritarian-digital')).toContainText('不能拿來指認');
+  await expect(page.locator('#authoritarian-history')).toContainText('臺灣威權時期的禁書');
+  await expect(page.locator('#authoritarian-practice')).toContainText(
+    '同一標準也用在自己支持的人身上',
+  );
+  await expect(topic.locator('.source-disclosure[open]')).toHaveCount(0);
+  await page.locator('#authoritarian-repetition .more-sources > summary').click();
+  await expect(page.locator('#authoritarian-repetition .source-item a').first()).toHaveAttribute(
+    'href',
+    'https://scholars.duke.edu/publication/1090926',
+  );
+  await expect(page.locator('#authoritarianism > p.muted')).toContainText('2026-11-22');
+  await expect(page.locator('#constitutional-court > p.muted')).toContainText('2026-11-12');
+  const schema = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText());
+  expect(schema.about).toContain('威權體制');
+  expect(schema.citation).toContain('https://art.archives.gov.tw/tw/art/2120.html');
 });
 
 test('看更多無JS可讀全部小節及依據，靜態SEO與sitemap收錄新頁', async ({

@@ -24,6 +24,11 @@ export default function MorePage() {
             '人民權利救濟',
             '追訴權時效',
             '權力分立',
+            '威權體制',
+            '政治宣傳',
+            '資訊審查',
+            '思想灌輸',
+            '媒體識讀',
           ],
           citation: SourceService.resolve(SupplementService.sourceIds()).map(
             (source) => source.url,

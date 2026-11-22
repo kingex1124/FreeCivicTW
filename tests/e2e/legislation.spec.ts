@@ -82,7 +82,7 @@ test('杯葛、立法角色、公布生效和憲法分支無JS完整可讀並有
     await page.goto(baseURL + 'more/');
     await expect(page.locator('#national-legislation, #local-legislation')).toHaveCount(0);
     await expect(page.getByRole('navigation', { name: '補充主題' }).getByRole('link')).toHaveCount(
-      3,
+      4,
     );
     const moreSchema = JSON.parse(
       await page.locator('script[type="application/ld+json"]').innerText(),

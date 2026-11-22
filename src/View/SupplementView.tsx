@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight, MessagesSquare, Scale, Vote } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, MessagesSquare, Scale, Vote, Eye } from 'lucide-react';
 import type { SupplementViewProps } from '@/Model/SupplementModel';
 import { IndigenousElectionView } from './IndigenousElectionView';
 import { TopicContentView } from './TopicContentView';
@@ -8,6 +8,7 @@ export function SupplementView({ data, indigenous }: SupplementViewProps) {
   const icons = {
     'political-debate': MessagesSquare,
     'constitutional-court': Scale,
+    authoritarianism: Eye,
   };
   const links = [
     { id: 'indigenous-guide', title: '原住民選舉', text: '中央、地方的選票與資格比較', Icon: Vote },
@@ -51,7 +52,7 @@ export function SupplementView({ data, indigenous }: SupplementViewProps) {
           <TopicContentView
             key={topic.id}
             topic={topic}
-            checkedAt={data.checkedAt}
+            checkedAt={topic.checkedAt}
             returnLink={{ href: '#more-topics', label: '↑ 回到目錄' }}
           />
         ))}
