@@ -6,11 +6,13 @@ import { SeoService } from '@/Service/SeoService';
 import { getAgencyDirectory } from '@/Service/AgencyService';
 import { LegislationService } from '@/Service/LegislationService';
 import { ParticipationService } from '@/Service/ParticipationService';
+import { CabinetConfidenceService } from '@/Service/CabinetConfidenceService';
 import { SourceService } from '@/Service/SourceService';
 import { TopicContentView } from '@/View/TopicContentView';
 
 const legislation = LegislationService.get();
 const participation = ParticipationService.get();
+const confidence = CabinetConfidenceService.get();
 export const metadata = SeoService.metadataFor('/government/');
 export default function GovernmentPage() {
   return (
@@ -18,13 +20,16 @@ export default function GovernmentPage() {
       <StructuredData
         path="/government/"
         details={{
-          name: '政府怎麼運作：中央地方職責、立法、公投與罷免',
+          name: '政府怎麼運作：中央地方職責、立法、倒閣與公民參與',
           learningResourceType: '政府制度與立法程序說明',
           about: [
             '中央與地方政府',
             '立法院立法程序',
             '地方議會立法程序',
             '行政院覆議',
+            '不信任案與倒閣',
+            '解散立法院與國會重選',
+            '中央與地方政治責任',
             '自治條例',
             '憲法審查',
             '全國性公民投票',
@@ -38,6 +43,7 @@ export default function GovernmentPage() {
               ...getAgencyDirectory().entries.flatMap((entry) => entry.sourceIds),
               ...LegislationService.sourceIds(),
               ...ParticipationService.sourceIds(),
+              ...CabinetConfidenceService.sourceIds(),
             ]),
           ]).map((source) => source.url),
         }}
@@ -59,6 +65,13 @@ export default function GovernmentPage() {
             returnLink={{ href: '#government-topics', label: '↑ 回到目錄' }}
           />
         ))}
+        confidence={
+          <TopicContentView
+            topic={confidence.topic}
+            checkedAt={confidence.checkedAt}
+            returnLink={{ href: '#government-topics', label: '↑ 回到目錄' }}
+          />
+        }
         participation={participation.topics.map((topic) => (
           <TopicContentView
             key={topic.id}

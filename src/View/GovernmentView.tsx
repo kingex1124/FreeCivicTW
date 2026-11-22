@@ -105,7 +105,13 @@ export function RoleDetails({ role }: RoleDetailsProps) {
     </div>
   );
 }
-export function GovernmentView({ data, agencies, legislation, participation }: GovernmentProps) {
+export function GovernmentView({
+  data,
+  agencies,
+  legislation,
+  confidence,
+  participation,
+}: GovernmentProps) {
   const [scope, setScope] = useState<'central' | 'local'>('central');
   const [selected, setSelected] = useState('premier');
   const [selectedAgencyId, setSelectedAgencyId] = useState<string | null>(null);
@@ -383,6 +389,7 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
               ['national-legislation', '立法院立法', '中央提案、三讀、覆議與公布'],
               ['local-legislation', '議會立法', '地方三讀、覆議、核定與施行'],
               ['questioning', '質詢與備詢', '誰在問、誰來回答'],
+              ['cabinet-confidence', '倒閣與重選', '不信任案、院長辭職與國會改選'],
               ['integrity', '政風與監督', '廉政、調查與監督的分工'],
               ['referendum', '公投', '全國與地方，對事情作決定'],
               ['recall', '罷免', '對人的去留作決定，先看職務'],
@@ -640,6 +647,7 @@ export function GovernmentView({ data, agencies, legislation, participation }: G
               ↑ 回到目錄
             </a>
           </section>
+          {confidence}
           <section className="section-space" id="integrity" aria-labelledby="integrity-title">
             <div className="section-heading">
               <div>

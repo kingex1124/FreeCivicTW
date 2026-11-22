@@ -35,6 +35,7 @@ test('政府角色筆記及各段落可回到手機目錄，選擇保留', async
     ['罷免', '#recall .section-return'],
     ['人事任命', '#appointments > .section-return'],
     ['質詢與備詢', '#questioning > .section-return'],
+    ['倒閣與重選', '#cabinet-confidence .section-return'],
     ['政風與監督', '#integrity > .section-return'],
     ['生活情境', '#government-situations > .section-return'],
     ['所有角色', '#government-all-roles + .section-return'],

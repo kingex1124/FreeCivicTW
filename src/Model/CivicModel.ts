@@ -124,5 +124,6 @@ export type GovernmentProps = {
   data: CivicData;
   agencies: AgencyDirectoryData;
   legislation: ReactNode;
+  confidence: ReactNode;
   participation: ReactNode;
 };

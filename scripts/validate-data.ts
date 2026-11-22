@@ -12,6 +12,7 @@ import { PublicResourceService } from '@/Service/PublicResourceService';
 import { SupplementService } from '@/Service/SupplementService';
 import { LegislationService } from '@/Service/LegislationService';
 import { ParticipationService } from '@/Service/ParticipationService';
+import { CabinetConfidenceService } from '@/Service/CabinetConfidenceService';
 import { IslandService } from '@/Service/IslandService';
 import assert from 'node:assert/strict';
 const unique = (values: string[]) =>
@@ -29,6 +30,7 @@ const topics = [
   ...supplement.topics,
   ...LegislationService.get().topics,
   ...ParticipationService.get().topics,
+  CabinetConfidenceService.get().topic,
 ];
 unique(topics.map((topic) => topic.id));
 unique(topics.flatMap((topic) => topic.chapters.map((chapter) => chapter.id)));
@@ -53,6 +55,8 @@ for (const id of LegislationService.sourceIds())
   assert(sourceIds.has(id), `立法程序來源不存在：${id}`);
 for (const id of ParticipationService.sourceIds())
   assert(sourceIds.has(id), `公投罷免來源不存在：${id}`);
+for (const id of CabinetConfidenceService.sourceIds())
+  assert(sourceIds.has(id), `倒閣重選來源不存在：${id}`);
 const electionRules = ElectionService.getRules();
 const indigenousGuide = electionRules.indigenousGuide;
 unique(indigenousGuide.comparisons.map((item) => item.id));

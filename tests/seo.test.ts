@@ -7,6 +7,7 @@ import { SiteService } from '@/Service/SiteService';
 import { LearningService } from '@/Service/LearningService';
 import { MediaLiteracyService } from '@/Service/MediaLiteracyService';
 import { ParticipationService } from '@/Service/ParticipationService';
+import { CabinetConfidenceService } from '@/Service/CabinetConfidenceService';
 
 test('SEO 目錄涵蓋每個實際靜態頁與已發布文章、練習，網址、標題與描述不重複', () => {
   function staticRoutes(directory: string, route = '/'): string[] {
@@ -32,7 +33,10 @@ test('SEO 目錄涵蓋每個實際靜態頁與已發布文章、練習，網址�
     const metadata = SeoService.metadataFor(page.path);
     assert.equal(metadata.alternates?.canonical, SiteService.absolute(page.path));
   }
-  assert.equal(SeoService.getPage('/government/').updatedAt, ParticipationService.get().checkedAt);
+  assert.equal(
+    SeoService.getPage('/government/').updatedAt,
+    [ParticipationService.get().checkedAt, CabinetConfidenceService.get().checkedAt].sort().at(-1),
+  );
   assert.equal(
     SeoService.getPage('/media-literacy/').updatedAt,
     MediaLiteracyService.get().updatedAt,

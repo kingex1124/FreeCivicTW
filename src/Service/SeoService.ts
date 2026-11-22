@@ -8,6 +8,7 @@ import { CivicService } from './CivicService';
 import { JusticeService } from './JusticeService';
 import { LegislationService } from './LegislationService';
 import { ParticipationService } from './ParticipationService';
+import { CabinetConfidenceService } from './CabinetConfidenceService';
 import { OversightService } from './OversightService';
 import { PublicResourceService } from './PublicResourceService';
 import { SupplementService } from './SupplementService';
@@ -32,6 +33,7 @@ function getPages(): SeoPage[] {
       getAgencyDirectory().checkedAt,
       LegislationService.get().checkedAt,
       ParticipationService.get().checkedAt,
+      CabinetConfidenceService.get().checkedAt,
     ),
     '/justice/': JusticeService.get().checkedAt,
     '/civic-island/': latest(
